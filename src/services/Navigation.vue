@@ -12,19 +12,21 @@
               >info@biogreenint.com
             </li>
             <li>
-              <i class="fa fa-map-marker" aria-hidden="true"></i>Nikunja 02,
-              Khilkhet
+              <i class="fa fa-map-marker" aria-hidden="true"></i>House No: 27 (2nd Floor)
+            Road No: 05, Nikunja 02, Khilkhet,Dhaka-1229, Bangladesh
             </li>
           </ul>
+        </div>
+      </div>
+      <div class="brand">
+        <div>
+          <img src="../assets/image/logo.png" />
         </div>
         <div class="login">
           <router-link to="/login"
             ><i class="fa fa-sign-in" aria-hidden="true"></i>login</router-link
           >
         </div>
-      </div>
-      <div class="brand">
-        <img src="../assets/image/logo.png" />
       </div>
       <div class="navbar">
         <ul>
@@ -56,10 +58,7 @@
 </template>
 
 <script>
-
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped>
@@ -80,46 +79,59 @@ nav {
 nav .info {
   position: relative;
   display: flex;
-  justify-content: space-between;
   line-height: 30px;
+  background: #1b1b1b;
+  width: 100%;
 }
 .info ul {
   float: left;
   margin-left: 100px;
   position: relative;
+  display: flex;
+  padding-top: 5px;
 }
 .info ul li {
-  display: inline-block;
+  display: inline;
   margin: 0 5px;
   font-size: 16px;
   font-weight: 500;
+  list-style: none;
 }
-.info ul li i,
-.login i {
-  padding: 5px;
+.info ul li i{
+  margin: 0 5px;
   font-size: 18px;
   font-weight: 500;
-  color: #fff;
 }
-.info .login {
-  margin-right: 50px;
-}
-.info .login a {
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+
 nav .brand {
-  display: block;
-  padding-left: 150px;
-  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  /* padding-left: 150px; */
+  background: rgb(25, 4, 63);
   border-top: 1px solid #1b1b1b;
   border-bottom: 1px solid #1b1b1b;
 }
 .brand img {
   padding: 5px;
+}
+
+/* .brand i {
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+} */
+.brand .login {
+  margin-right: 50px;
+  margin-top: 10px;
+}
+.brand .login a {
+  font-size: 20px;
+  font-weight: 700;
+    font-family: "Oswald", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 nav::after {
   content: " ";
@@ -208,7 +220,7 @@ nav::after {
     float: left;
     margin-left: 25%;
     position: relative;
-    margin-top:10px;
+    margin-top: 10px;
     display: block;
   }
   .info ul li {
@@ -237,7 +249,7 @@ nav::after {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    margin-bottom:10px;
+    margin-bottom: 10px;
   }
   nav .brand {
     display: block;
@@ -256,22 +268,22 @@ nav::after {
   }
   .navbar {
     display: inline-block;
-     width: 100%;
-     height:100px;
-     overflow-y: hidden;
-     overflow-x: scroll;
+    width: 100%;
+    height: 100px;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
   .navbar ul {
-    margin-left:-5%;
+    margin-left: -5%;
     margin-right: 10%;
     position: relative;
-     display: flex;
+    display: flex;
   }
   .navbar ul li {
     background: #1b1b1b;
     margin: 0 5px;
     list-style: none;
-    padding:5px;
+    padding: 5px;
   }
   .navbar ul li a {
     color: #fff;

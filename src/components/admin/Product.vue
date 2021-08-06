@@ -196,6 +196,14 @@ export default {
     };
   },
 
+  created() {
+    this.readData();
+  },
+
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+
   methods: {
     deleteImage() {},
     uploadImage(e) {
@@ -304,9 +312,6 @@ export default {
         });
     },
   },
-  created() {
-    this.readData();
-  },
 };
 </script>
 
@@ -353,7 +358,7 @@ label {
 }
 .row2 {
   width: 100%;
-  height: 400px;
+  height: 100%;
   padding: 20px;
   margin-left: 25%;
 }

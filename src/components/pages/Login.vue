@@ -4,14 +4,10 @@
       <div class="row">
         <div class="col-md-6">
           <h3>Login Form</h3>
-          <div class="alert alert-danger" v-if="error">{{ error }}</div>
           <form @submit.prevent="onLogin">
             <div class="from-group">
               <label>Email</label>
               <input type="text" class="form-control" v-model.trim="email" />
-              <div class="error" style="color: red" v-if="errors.email">
-                {{ errors.email }}
-              </div>
             </div>
             <div class="from-group">
               <label>Password</label>
@@ -20,9 +16,6 @@
                 class="form-control"
                 v-model.trim="password"
               />
-              <div class="error" style="color: red" v-if="errors.password">
-                {{ errors.password }}
-              </div>
             </div>
             <div class="my-3">
               <button class="btn btn-primary" type="submit">LogIn</button>
@@ -42,7 +35,6 @@ export default {
     return {
       email: "",
       password: "",
-      errors: [],
     };
   },
   

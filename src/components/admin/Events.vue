@@ -1,70 +1,67 @@
 <template>
-  <div class="photo">
+  <div class="events">
     <div class="row">
       <div class="col-md-12">
         <div class="form">
-          <h3>Add Event</h3>
+          <h3>Add Celebration</h3>
           <form>
-          <div class="form-group">
-            <label>Occation Name</label>
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Event Name .."
-              v-model="gallery.occation_name"
-            />
-          </div>
-           <div class="form-group">
-            <label>Description</label>
-            <textarea
-              class="form-control"
-              v-model="gallery.description"
-            ></textarea>
-          </div>
-          <div class="form-group my-4 upload">
-            <label>Upload Image</label>
-            <input class="form-control" type="file" @change="uploadImage" />
-          </div>
             <div class="form-group">
-              <div class="p-1">
-                 <img :src="gallery.image" style="width:80px;height:50px;">
+              <label>Occation Name</label>
+              <input type="text" class="form-control" v-model="occation.name" />
+            </div>
+            <div class="form-group">
+              <label>Occation Place</label>
+              <input
+                type="text"
+                class="form-control"
+                v-model="occation.place"
+              />
+            </div>
+            <div class="form-group">
+              <label>Upload Image</label>
+              <input type="file" class="form-control" @change="uploadImage" />
+            </div>
+            <div class="form-group">
+              <div class="p-3">
+                <img :src="occation.image" style="width: 80px; height: 50px" />
               </div>
             </div>
-          <div class="btn">
-            <button class="btn btn-primary" @click.prevent="saveData">
-              Add Gallary
-            </button>
-          </div>
+            <div class="my-3">
+              <button class="btn btn-primary" @click.prevent="saveData">
+                Add Slider
+              </button>
+            </div>
           </form>
         </div>
       </div>
     </div>
+
     <div class="row2">
       <div class="col-md-12">
         <div class="table">
           <table class="table table-striped">
-             <thead>
+            <thead>
               <tr>
-                <th>Event name</th>
-                <th>Description</th>
+                <th>Name</th>
+                <th>place</th>
                 <th>Image</th>
                 <th>Modify</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="gallery in gallerys" :key="gallery.id">
-                <td>{{ gallery.data().occation_name }}</td>
-                <td>{{ gallery.data().description }}</td>
-                <td>{{ gallery.data().image }}</td>
+              <tr v-for="occation in occations" :key="occation.id">
+                <td>{{ occation.data().name }}</td>
+                <td>{{ occation.data().place }}</td>
+                <td>{{ occation.data().image }}</td>
                 <td>
                   <button
-                    @click.prevent="editProduct(gallery)"
+                    @click.prevent="editOccation(occation)"
                     class="btn btn-primary"
                   >
                     Edit
                   </button>
                   <button
-                    @click="deleteProduct(gallery.id)"
+                    @click="deleteOccation(occation.id)"
                     class="btn btn-danger"
                   >
                     Delete
@@ -89,33 +86,29 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editLabel">Update Product</h5>
+            <h5 class="modal-title" id="editLabel">Add Partner</h5>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label>Event Name</label>
+              <label>Occation Name</label>
+              <input type="text" class="form-control" v-model="occation.name" />
+            </div>
+            <div class="form-group">
+              <label>Occation Place</label>
               <input
-                class="form-control"
                 type="text"
-                placeholder="Event Name .."
-                v-model="gallery.occation_name"
+                class="form-control"
+                v-model="occation.place"
               />
             </div>
-                 <div class="form-group">
-              <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="gallery.description"
-              ></textarea>
-            </div>
-            <div class="form-group my-4 upload">
+            <div class="form-group my-2 upload">
               <label>Upload Image</label>
-              <input type="file" @change="uploadImage" />
+              <input class="form-control" type="file" @change="uploadImage" />
             </div>
             <div class="form-group">
               <div class="p-1">
-                 <img :src="gallery.image" style="width:80px;height:50px;">
-                 <span class="delete-img" @click="deleteImage(image)">X</span>
+                <img :src="occation.image" style="width: 80px; height: 50px" />
+                <span class="delete-img" @click="deleteImage(image)">X</span>
               </div>
             </div>
           </div>
@@ -126,7 +119,7 @@
             <button
               type="button"
               class="btn btn-primary"
-              @click="updateProduct()"
+              @click="updateOccation()"
             >
               Update
             </button>
@@ -138,61 +131,51 @@
 </template>
 
 <script>
-import { fb,db } from "../../firebase";
+import { fb, db } from "../../firebase";
+
 export default {
-  name: "Gallery",
   data() {
     return {
-      showModal: false,
-      gallerys: [],
-      gallery: {
-        occation_name: "",
-        description:"",
-        image:"",
+       showModal: false,
+      occations: [],
+      occation: {
+        name: "",
+        place: "",
+        image: "",
       },
       active_item: null,
     };
   },
 
-    created() {
-          db.collection("gallerys")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            this.gallerys.push(doc);
-          });
-        });
-    },
+  created() {
+    this.readData();
+  },
 
- mounted() {
+  mounted() {
     window.scrollTo(0, 0);
   },
-  methods: {
-    deleteImage(){},
 
-    uploadImage(e){
-    if(e.target.files[0]){
+  methods: {
+    uploadImage(e) {
+      if (e.target.files[0]) {
         let file = e.target.files[0];
-      var storageRef = fb.storage().ref('gallerys/' +file.name);
-      let uploadTask = storageRef.put(file);
-      
-      uploadTask.on('state_changed', 
-        () => {
-     
-        }, 
-        () => {
-          // Handle unsuccessful uploads
-        }, 
-        () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            this.gallery.image = downloadURL;
-            console.log('File available at', downloadURL);
-          });
-        }
-      );
-    }
+        var storageRef = fb.storage().ref("occations/" + file.name);
+        let uploadTask = storageRef.put(file);
+        console.log(uploadTask);
+
+        uploadTask.on(
+          "state_changed",
+          () => {},
+          () => {},
+          () => {
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              this.occation.image = downloadURL;
+              console.log("File available at", downloadURL);
+            });
+            console.log(this.occation.image);
+          }
+        );
+      }
     },
 
     inClose() {
@@ -200,23 +183,21 @@ export default {
     },
 
     watcher() {
-      db.collection("gallerys")
-        .onSnapshot((querySnapshot) => {
-          this.gallarys = [];
-          querySnapshot.forEach((doc) => {
-            this.gallerys.push(doc);
-          });
-         
+      db.collection("occations").onSnapshot((querySnapshot) => {
+        this.occations = [];
+        querySnapshot.forEach((doc) => {
+          this.occations.push(doc);
         });
+      });
     },
 
-    updateProduct() {
-      db.collection("gallerys")
+    updateOccation() {
+      db.collection("occations")
         .doc(this.active_item)
-        .update(this.gallery)
+        .update(this.occation)
         .then(() => {
-           this.showModal = false;
-           this.watcher();
+          this.showModal = false;
+          this.watcher();
           console.log("Document successfully updated!");
         })
         .catch((error) => {
@@ -225,15 +206,15 @@ export default {
         });
     },
 
-    editProduct(gallery) {
+    editOccation(occation) {
       this.showModal = true;
-      this.gallery = gallery.data();
-      this.active_item = gallery.id;
+      this.occation = occation.data();
+      this.active_item = occation.id;
     },
 
-    deleteProduct(doc) {
+    deleteOccation(doc) {
       if (confirm("Are you sure?")) {
-        db.collection("gallerys")
+        db.collection("occations")
           .doc(doc)
           .delete()
           .then(() => {
@@ -247,29 +228,30 @@ export default {
     },
 
     readData() {
-      db.collection("gallerys")
+      db.collection("occations")
         .get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
-            this.gallerys.push(doc);
+            this.occations.push(doc);
           });
         });
     },
-    reset(){
-      this.gallery={
-        gallery_name: "",
-        description:"",
-        image:null,
-      }
+
+    reset() {
+      this.occation = {
+        name: "",
+        place: "",
+        image: "",
+      };
     },
 
     saveData() {
-      db.collection("gallerys")
-        .add(this.gallery)
+      db.collection("occations")
+        .add(this.occation)
         .then((docRef) => {
           this.reset();
-           this.readData();
+          this.readData();
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {
@@ -280,9 +262,8 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.photo {
+.events {
   width: 100%;
   height: 100%;
   padding: 0;
@@ -291,7 +272,7 @@ export default {
 }
 .row {
   width: 100%;
-  height: 600px;
+  height: 550px;
   padding: 20px;
   margin-left: 25%;
   display: flex;
@@ -333,15 +314,14 @@ label {
   width: 100%;
   margin: 5px;
   background: #fff;
-    overflow-y: scroll;
+  overflow-y: scroll;
   border: 2px solid blue;
 }
 .col-md-12 .table {
   padding: 10px;
   margin: 10px;
-
 }
-.modal{
+.modal {
   display: block;
 }
 </style>

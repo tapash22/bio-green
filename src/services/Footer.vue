@@ -43,7 +43,7 @@
     <div class="bottom">
       <div class="container">
         <div class="col-md-8">
-          <p>All right reserved in &copy;Bio-green</p>
+          <p>All right reserved in &copy;UltraWave</p>
         </div>
         <div class="col-md-4">
           <ul>

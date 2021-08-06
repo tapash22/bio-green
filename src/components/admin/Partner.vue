@@ -4,39 +4,54 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Partner</h3>
-           <form>
-        <div class="form-group">
-            <label>Company  Name</label>
-            <input class="form-control" type="text" v-model="partner.partner_name" />
-          </div>
-           <div class="form-group">
-            <label>Country Name</label>
-            <input class="form-control" type="text" v-model="partner.country_name" />
-          </div>
-          <div class="form-group">
-            <label>Product List</label>
-            <input class="form-control" type="text" v-model="partner.product_list"/>
-          </div>
-          <div class="form-group">
-            <label>Description</label>
-            <textarea class="form-control" v-model="partner.description"></textarea>
-          </div>
-           <div class="form-group my-4 upload">
-            <label>Upload Image</label>
-            <input class="form-control" type="file" @change="uploadImage" />
-          </div>
-           <div class="form-group">
+          <form>
+            <div class="form-group">
+              <label>Company Name</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.partner_name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Country Name</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.country_name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Product List</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.product_list"
+              />
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea
+                class="form-control"
+                v-model="partner.description"
+              ></textarea>
+            </div>
+            <div class="form-group my-4 upload">
+              <label>Upload Image</label>
+              <input class="form-control" type="file" @change="uploadImage" />
+            </div>
+            <div class="form-group">
               <div class="p-1">
-                 <img :src="partner.image" style="width:80px;height:50px;">
-                 <span class="delete-img" @click="deleteImage(image)">X</span>
+                <img :src="partner.image" style="width: 80px; height: 50px" />
+                <span class="delete-img" @click="deleteImage(image)">X</span>
               </div>
-            </div> 
-          <div class="btn">
-            <button class="btn btn-primary" @click.prevent="saveData">
-              Add Partner
-            </button>
-          </div>
-        </form>
+            </div>
+            <div class="btn">
+              <button class="btn btn-primary" @click.prevent="saveData">
+                Add Partner
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -44,23 +59,23 @@
       <div class="col-md-12">
         <div class="table">
           <table class="table table-striped">
-           <thead>
-            <tr>
-              <th>Company Name</th>
-              <th>Country Name</th>
-              <th>Product List</th>
-              <th>Detail</th>
-              <th>Image</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="partner in partners" :key="partner.id">
-              <td>{{ partner.data().partner_name }}</td>
-              <td>{{ partner.data().country_name }}</td>
-              <td>{{ partner.data().product_list }}</td>
-              <td>{{ partner.data().description }}</td>
-              <td>{{ partner.data().image }}</td>
-              <td>
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Country Name</th>
+                <th>Product List</th>
+                <th>Detail</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="partner in partners" :key="partner.id">
+                <td>{{ partner.data().partner_name }}</td>
+                <td>{{ partner.data().country_name }}</td>
+                <td>{{ partner.data().product_list }}</td>
+                <td>{{ partner.data().description }}</td>
+                <td>{{ partner.data().image }}</td>
+                <td>
                   <button
                     @click.prevent="editProduct(partner)"
                     class="btn btn-primary"
@@ -73,15 +88,15 @@
                   >
                     Delete
                   </button>
-              </td>
-            </tr>
-          </tbody>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
     </div>
 
-       <div
+    <div
       class="modal"
       id="edit"
       tabindex="-1"
@@ -96,32 +111,47 @@
             <h5 class="modal-title" id="editLabel">Add Partner</h5>
           </div>
           <div class="modal-body">
-                 <div class="form-group">
-            <label>Company  Name</label>
-            <input class="form-control" type="text" v-model="partner.partner_name" />
-          </div>
-           <div class="form-group">
-            <label>Country Name</label>
-            <input class="form-control" type="text" v-model="partner.country_name" />
-          </div>
-          <div class="form-group">
-            <label>Product List</label>
-            <input class="form-control" type="text" v-model="partner.product_list"/>
-          </div>
-          <div class="form-group">
-            <label>Description</label>
-            <textarea class="form-control" v-model="partner.description"></textarea>
-          </div>
-          <div class="form-group my-2 upload">
-            <label>Upload Image</label>
-            <input class="form-control" type="file" @change="uploadImage"/>
-          </div>
-           <div class="form-group">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.partner_name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Country Name</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.country_name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Product List</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.product_list"
+              />
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea
+                class="form-control"
+                v-model="partner.description"
+              ></textarea>
+            </div>
+            <div class="form-group my-2 upload">
+              <label>Upload Image</label>
+              <input class="form-control" type="file" @change="uploadImage" />
+            </div>
+            <div class="form-group">
               <div class="p-1">
-                 <img :src="partner.image" style="width:80px;height:50px;">
-                 <span class="delete-img" @click="deleteImage(image)">X</span>
+                <img :src="partner.image" style="width: 80px; height: 50px" />
+                <span class="delete-img" @click="deleteImage(image)">X</span>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" @click="inClose()">
@@ -142,49 +172,52 @@
 </template>
 
 <script>
-import { fb,db } from '../../firebase';
-export default{
-  name:'partner',
-  data(){
-    return{
-      showModal:false,
-      partners:[],
-      partner:{
-        partner_name:'',
-        country_name:'',
-        product_list:'',
-        description:'',
-        image:'',
+import { fb, db } from "../../firebase";
+export default {
+  name: "partner",
+  data() {
+    return {
+      showModal: false,
+      partners: [],
+      partner: {
+        partner_name: "",
+        country_name: "",
+        product_list: "",
+        description: "",
+        image: "",
       },
       active_item: null,
     };
   },
 
-  methods: {
-      
-    deleteImage(){
+  created() {
+    this.readData();
+  },
 
-    },
-    uploadImage(e){
-    if(e.target.files[0]){
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+
+  methods: {
+    deleteImage() {},
+    uploadImage(e) {
+      if (e.target.files[0]) {
         let file = e.target.files[0];
-      var storageRef = fb.storage().ref('partners/' +file.name);
-      let uploadTask = storageRef.put(file);
-      
-      uploadTask.on('state_changed', 
-        () => {
-     
-        }, 
-        () => {
-        }, 
-        () => {
-          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            this.partner.image = downloadURL;
-            console.log('File available at', downloadURL);
-          });
-        }
-      );
-    }
+        var storageRef = fb.storage().ref("partners/" + file.name);
+        let uploadTask = storageRef.put(file);
+
+        uploadTask.on(
+          "state_changed",
+          () => {},
+          () => {},
+          () => {
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              this.partner.image = downloadURL;
+              console.log("File available at", downloadURL);
+            });
+          }
+        );
+      }
     },
 
     inClose() {
@@ -192,14 +225,12 @@ export default{
     },
 
     watcher() {
-      db.collection("partners")
-        .onSnapshot((querySnapshot) => {
-          this.partners = [];
-          querySnapshot.forEach((doc) => {
-            this.partners.push(doc);
-          });
-         
+      db.collection("partners").onSnapshot((querySnapshot) => {
+        this.partners = [];
+        querySnapshot.forEach((doc) => {
+          this.partners.push(doc);
         });
+      });
     },
 
     updateProduct() {
@@ -207,8 +238,8 @@ export default{
         .doc(this.active_item)
         .update(this.partner)
         .then(() => {
-           this.showModal = false;
-           this.watcher();
+          this.showModal = false;
+          this.watcher();
           console.log("Document successfully updated!");
         })
         .catch((error) => {
@@ -249,22 +280,22 @@ export default{
         });
     },
 
-     reset(){
-      this.product={
-         partner_name:'',
-        country_name:'',
-        product_list:'',
-        description:'',
-        image:'',
-      }
+    reset() {
+      this.product = {
+        partner_name: "",
+        country_name: "",
+        product_list: "",
+        description: "",
+        image: "",
+      };
     },
 
     saveData() {
       db.collection("partners")
         .add(this.partner)
         .then((docRef) => {
-           this.readData();
-           this.reset();
+          this.readData();
+          this.reset();
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {
@@ -272,10 +303,7 @@ export default{
         });
     },
   },
-  created() {
-    this.readData();
-  },
-}
+};
 </script>
 
 <style scoped>
@@ -288,7 +316,7 @@ export default{
 }
 .row {
   width: 100%;
-  height: 600px;
+  height: 750px;
   padding: 20px;
   margin-left: 25%;
   display: flex;
@@ -330,14 +358,14 @@ label {
   width: 100%;
   margin: 5px;
   background: #fff;
-    overflow-y: scroll;
+  overflow-y: scroll;
   border: 2px solid blue;
 }
 .col-md-12 .table {
   padding: 10px;
   margin: 10px;
 }
-.modal{
+.modal {
   display: block;
 }
 </style>

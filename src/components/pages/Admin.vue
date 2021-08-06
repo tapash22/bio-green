@@ -15,7 +15,10 @@
             </li>
             <li><router-link to="/admin/photo">Add Photo</router-link></li>
             <li>
-              <router-link to="/admin/slider">Aadd Slider</router-link>
+              <router-link to="/admin/slider">Add Slider</router-link>
+            </li>
+             <li>
+              <router-link to="/admin/events">Add Event</router-link>
             </li>
           </ul>
         </nav>
@@ -115,7 +118,7 @@ nav {
   margin: 0;
 }
 .col-md-4 ul li {
-  height: 80px;
+  height: 70px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -129,13 +132,17 @@ nav {
   font-family: "Oswald", sans-serif;
   color: #fff;
   text-decoration: none;
-  padding: 20px;
+  padding: 10px;
 }
 .col-md-4 ul li:hover,
-.col-md-4 ul li a:hover {
+.col-md-4 ul li a:hover
+ {
   background: #fff;
   color: #000;
 }
+/* .col-md-4 ul li a.router-link-active{
+  background: #fff;
+} */
 .col-md-8 {
   width: 80%;
   height: 100%;

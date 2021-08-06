@@ -17,6 +17,8 @@ import Product from './components/admin/Product.vue';
 import Partner from './components/admin/Partner.vue';
 import Photo from './components/admin/Photo.vue';
 import Slider from './components/admin/Slider.vue';
+import Events from './components/admin/Events.vue';
+import { fb } from './firebase';
 
 
 const routes = [
@@ -44,6 +46,7 @@ const routes = [
             { path: 'Partner', component: Partner },
             { path: 'photo', component: Photo },
             { path: 'slider', component: Slider },
+            { path: 'events', component: Events},
         ]
     }
 ];
@@ -53,14 +56,16 @@ const router = createRouter({
     routes: routes,
 });
 
-// router.beforeEach((to, from, next) => {
-//     if ( to.meta.auth && !store.getters[`auth/${IS_USER_AUTHENTICATE_GETTER}`]) {
-//         next('/login');
-//     } else if ( !to.meta.auth && store.getters[`auth/${IS_USER_AUTHENTICATE_GETTER}`]) {
-//         next('/admin/dashboard');
-//     } else {
-//         next();
-//     }
-// });
+router.beforeEach((to, from, next) => {
+    const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
+    const currentUser = fb.auth().currentUser;
+    if (requiresAuth && !currentUser) {
+        next('/login');
+    } else if (requiresAuth && currentUser) {
+        next();
+    } else {
+        next();
+    }
+});
 
 export default router;
