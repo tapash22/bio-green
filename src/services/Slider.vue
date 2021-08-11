@@ -14,10 +14,10 @@ export default {
   data() {
     return {
       images: [
-        "https://i.postimg.cc/ZYgNpczH/1.jpg",
-        "https://i.postimg.cc/4N9959Jg/2.jpg",
-        "https://i.postimg.cc/W1mJRcFY/1d.jpg",
-        "https://i.postimg.cc/xjWRnY89/2d.jpg",
+        "https://i.postimg.cc/857fbbNQ/224681503-497296784901975-1300258797412440655-n.jpg",
+        "https://i.postimg.cc/4ytKDNYW/226554823-877059902932524-6833740814339133011-n.jpg",
+        "https://i.postimg.cc/T3Tysxfc/221181460-1431401593910316-1021560237896693314-n.jpg",
+        "https://i.postimg.cc/gjqzywXb/225502893-513780176581529-7235155694314969814-n.jpg",
       ],
       timer: null,
       currentIndex: 0,
@@ -75,7 +75,7 @@ img {
   position: absolute;
   top: 40%;
   width: auto;
-  color: green;
+  color: #fff;
   font-weight: bold;
   font-size: 2.5rem;
   font-weight: 500;

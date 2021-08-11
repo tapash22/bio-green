@@ -37,11 +37,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
+
 .row {
   padding: 0;
   margin: 0;

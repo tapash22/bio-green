@@ -2,21 +2,10 @@
   <div class="products">
     <div class="container">
       <div class="row">
-        <h3
-          data-aos="fade-down"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
-          Our Products
-        </h3>
+        <h3>Aqua</h3>
         <div class="col-md-4" v-for="product in products" :key="product.img">
-          <div
-            class="card"
-            data-aos="zoom-in"
-            data-aos-delay="1000"
-            data-aos-once="false"
-          >
-            <router-link :to="product.url">
+          <div class="card">
+            <a :href="product.url">
               <div class="card-body">
                 <div class="img">
                   <img :src="product.img" />
@@ -25,7 +14,7 @@
               <div class="card-footer">
                 <p>{{ product.title }}</p>
               </div>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
@@ -40,21 +29,39 @@ export default {
       products: [
         {
           id: 1,
-          title: "Poultry",
-          img: "https://i.postimg.cc/g0cHy9Z9/poltry.jpg",
-          url: "/poultry",
+          title: "AQua",
+          img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
+          url: "https://en.wikipedia.org/wiki/Aqua_(band)",
         },
         {
           id: 2,
-          title: "Ruminent",
-          img: "https://i.postimg.cc/gk9ySLZH/runinent.jpg",
-          url: "/ruminent",
+          title: "AQua",
+          img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
+          url: "https://en.wikipedia.org/wiki/Aqua_(band)",
         },
         {
           id: 3,
           title: "AQua",
           img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
-          url: "/aqua",
+          url: "https://en.wikipedia.org/wiki/Aqua_(band)",
+        },
+        {
+          id: 4,
+          title: "AQua",
+          img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
+          url: "https://en.wikipedia.org/wiki/Aqua_(band)",
+        },
+        {
+          id: 5,
+          title: "AQua",
+          img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
+          url: "https://en.wikipedia.org/wiki/Aqua_(band)",
+        },
+        {
+          id: 6,
+          title: "AQua",
+          img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
+          url: "https://en.wikipedia.org/wiki/Aqua_(band)",
         },
       ],
     };

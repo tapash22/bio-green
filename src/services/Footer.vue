@@ -5,7 +5,7 @@
         <div class="col-md-4 text">
           <h3>We <strong>are</strong></h3>
           <p>
-            Provet Resources Limited is a World Class Animal Health Care
+            Bio-green international Limited is a World Class Animal Health Care
             Solution provider committed to deal with a wide range of world
             renowned products to market inside the Country through its own
             Distribution Network.inside the Country through its own Distribution
@@ -17,9 +17,9 @@
           <ul>
             <li><router-link to="/home">Home</router-link></li>
             <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/products">Products</router-link></li>
             <li><router-link to="/photos">Gallery</router-link></li>
             <li><router-link to="/blog">Blog</router-link></li>
-            <li><router-link to="/products">Products</router-link></li>
             <li><router-link to="/partners">Partners</router-link></li>
             <li><router-link to="/contact">Contact</router-link></li>
           </ul>
@@ -115,8 +115,10 @@ ul li a {
 .link {
   text-align: center;
 }
+
 .link li{
   padding: 2px;
+    text-align: center;
 }
 .link a {
   text-decoration: none;
@@ -125,7 +127,6 @@ ul li a {
   font-size: 18px;
   font-weight: 500;
   border-bottom: 3px solid green;
- 
 }
 .add address {
   text-align: left;
@@ -172,5 +173,18 @@ ul li a {
     text-align: left;
     padding: 20px;
   }
+.link li{
+  padding: 2px;
+    text-align: left;
+}
+.link a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 3px solid green;
+  text-align: left;
+}
 }
 </style>

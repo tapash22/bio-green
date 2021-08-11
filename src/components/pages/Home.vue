@@ -2,24 +2,34 @@
   <div class="home">
     <Slider />
     <div class="container">
-        
-    <div class="row">
-      <h3>Our product</h3>
+      <div class="row">
+        <h3>Our products</h3>
         <p>We deliver performances rather just a product to your business</p>
         <div class="col-md-12" style="width: 100%; height: 100%">
           <Carousel />
-        </div>
+        </div>   
       </div>
-      <div class="row event">
+      
+      <!-- event -->
+      <div class="row event my-5">
         <h3>Event List</h3>
-        <div class="col-md-6">
+        <div
+          class="col-md-6"
+          data-aos="fade-right"
+          data-aos-delay="500"
+          data-aos-once="false"
+        >
           <div class="event-list">
             <img src="../../assets/image/event.jpg" />
-            <p>Event name</p>
-            <p>Event Data</p>
+            <p>Event name <br />Event Data</p>
           </div>
         </div>
-        <div class="col-md-6 event-item">
+        <div
+          class="col-md-6 event-item"
+          data-aos="fade-left"
+          data-aos-delay="500"
+          data-aos-once="false"
+        >
           <div class="box">
             <div class="box-h">
               <img src="../../assets/image/event.jpg" />
@@ -78,6 +88,63 @@
                 Bio-green Annual Excursion: 2020 <br />
                 by Bio-green Resources Limited,at Dream Square Resort, Gazipur.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- blog -->
+      <div class="row blog my-3">
+        <h3>Bio-Green Blog</h3>
+        <div
+          class="col-md-4"
+          v-for="blog in blogs"
+          :key="blog.id"
+          data-aos="fade-left"
+          data-aos-delay="500"
+          data-aos-once="false"
+        >
+          <div class="card">
+            <div class="card-header">
+              <img :src="blog.img" />
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>{{ blog.text1 }}</li>
+                <li>{{ blog.text }}</li>
+                <li><button class="btn btn-primary">Read more</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="row">
+    <div class="image"></div>
+    </div> -->
+
+<!-- about -->
+    <div class="about">
+      <h3>Our Plan</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4" v-for="about in abouts" :key="about.id">
+            <div
+              class="round"
+              data-aos="zoom-in"
+              data-aos-delay="500"
+              data-aos-once="false"
+            >
+              <p>{{ about.text }}</p>
+            </div>
+            <div
+              class="box"
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1000"
+            >
+              <p>{{ about.name }}</p>
             </div>
           </div>
         </div>
@@ -95,6 +162,57 @@ export default {
     Slider,
     Carousel,
   },
+  data() {
+    return {
+      blogs: [
+        {
+          id: "1",
+          name: "The way you treat the animals around",
+          img: "https://i.postimg.cc/9XGbSKsS/pawel-czerwinski-qlno-Ayck9-Zc-unsplash.jpg",
+          text1: "The way you treat the animals around",
+          text: "author name",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
+        },
+        {
+          id: "2",
+          name: "The way you treat the animals around",
+          img: "https://i.postimg.cc/9FCbj1hf/david-clode-Jd-Nixbs-Lw-S8-unsplash.jpg",
+          text1: "The way you treat the animals around",
+          text: "author name",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
+        },
+        {
+          id: "3",
+          name: "The way you treat the animals around",
+          img: "https://i.postimg.cc/rwp9DmzX/gabor-szuts-m-KKRN7p2j-Os-unsplash.jpg",
+          text1: "The way you treat the animals around",
+          text: "author name",
+          description:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
+        },
+      ],
+
+      abouts: [
+        {
+          id: "1",
+          name: "We deliver performances rather just a product to your business We deliver performances rather just a product to your business ",
+          text: "A",
+        },
+        {
+          id: "2",
+          name: "We deliver performances rather just a product to your businessWe deliver performances rather just a product to your business",
+          text: "B",
+        },
+        {
+          id: "3",
+          name: "We deliver performances rather just a product to your business We deliver performances rather just a product to your business",
+          text: "C",
+        },
+      ],
+    };
+  },
 
   mounted() {
     window.scrollTo(0, 0);
@@ -106,9 +224,11 @@ export default {
 .home {
   margin-top: 160px;
 }
+
 .row {
   padding: 0;
   margin: 0;
+  position: relative;
 }
 .row h3 {
   text-align: center;
@@ -135,12 +255,13 @@ export default {
 .row2 .col-md-4 {
   padding: 10px;
 }
-
+/* event */
 .event {
   padding: 0;
   margin: 10px;
   width: 100%;
   height: 500px;
+  background: #fff;
 }
 .event h3 {
   text-align: center;
@@ -168,11 +289,11 @@ export default {
 }
 .event .event-list p {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   font-family: "Oswald", sans-serif;
   color: #000;
   text-align: left;
-  padding: 0;
+  padding-top: 10px;
 }
 .event .event-item {
   width: 50%;
@@ -202,12 +323,116 @@ export default {
   margin: 0;
 }
 .event .box .box-b p {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   font-family: "Oswald", sans-serif;
   color: #000;
   text-align: left;
 }
+
+/* blog */
+.blog{
+  background: #fff;
+}
+.blog .col-md-4 .card {
+  width: 300px;
+  height: 100%;
+  padding: 0;
+  margin: 5px;
+  background: #fff;
+}
+.blog .col-md-4 .card .card-header {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+}
+.blog .col-md-4 .card-header img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.blog .col-md-4 .card-body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.blog .card-body ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.blog .card-body ul li {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  list-style: none;
+}
+.blog .card-body ul li button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* about */
+.about {
+  width: 100%;
+  height: 400px;
+  background-image: url("../../assets/image/about_h.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.about h3 {
+  padding: 20px;
+  color: #fff;
+}
+.about .row {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.about .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+}
+.about .col-md-4 .round {
+  display: block;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(117, 10, 103, 0.699);
+  margin-left: 45%;
+}
+.about .col-md-4 .round p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.about .col-md-4 .box {
+  padding: 0;
+  margin: 10px;
+  width: 350px;
+  border-radius: 10%;
+  background: rgba(14, 13, 13, 0.397);
+}
+.about .col-md-4 .box p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
 
 @media only screen and (max-width: 767px) {
   .home {
@@ -292,33 +517,5 @@ export default {
     color: #000;
     text-align: left;
   }
-  /* .col-md-12 .row {
-    margin-bottom: 20px;
-  }
-  .col-md-12 .row .col-md-3 .card {
-    margin: 10px;
-  }
-  .col-md-12 .row .col-md-3 .card-header .images {
-    width: 100%;
-    height: 150px;
-    background: #fff;
-  }
-  .col-md-12 .row .col-md-3 .card-header .images img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .col-md-12 .row .col-md-3 .card-body {
-    background: #fff;
-    padding: 5px;
-  }
-  .col-md-12 .row .col-md-3 .card-body ul {
-    padding: 0;
-    margin: 0;
-  }
-  .col-md-12 .row .col-md-3 .card-body li {
-    list-style: none;
-  } */
 }
 </style>

@@ -130,6 +130,7 @@ import { fb, db } from "../../firebase";
 export default {
   data() {
     return {
+      showModal:false,
       sliders: [],
       slider: {
         name: "",

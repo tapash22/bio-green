@@ -1,10 +1,14 @@
 <template>
   <Carousel :items-to-show="3" :autoplay="2000" :wrap-around="true">
     <Slide v-for="slide in products" :key="slide.id">
+       
       <div class="card">
+        <router-link :to="slide.url">
         <img :src="slide.img" />
-        <p>{{ slide.url }}</p>
+        </router-link>
+        <p>{{ slide.title }}</p>
       </div>
+       
     </Slide>
     <template #addons>
       <Navigation />
@@ -24,38 +28,38 @@ export default {
         {
           id: 1,
           title: "Poultry",
-          img: "https://i.postimg.cc/3ryHCSbC/a.jpg",
-          url: "poultry",
+          img: "https://i.postimg.cc/g0cHy9Z9/poltry.jpg",
+          url: "/poultry",
         },
         {
           id: 2,
           title: "Ruminent",
-          img: "https://i.postimg.cc/BvZr8MKF/b.jpg",
-          url: "ruminent",
+          img: "https://i.postimg.cc/gk9ySLZH/runinent.jpg",
+          url: "/ruminent",
         },
         {
           id: 3,
           title: "AQua",
-          img: "https://i.postimg.cc/JhyQdXwg/c.jpg",
-          url: "aqua",
+          img: "https://i.postimg.cc/YC7JZQXN/zhengtao-tang-V7-SKRh-Xskv8-unsplash.jpg",
+          url: "/aqua",
         },
         {
           id: 4,
-          title: "Pet-Animal",
-          img: "https://i.postimg.cc/8cbdrBWF/d.jpg",
-          url: "petanimal",
+          title: "Ruminent",
+          img: "https://i.postimg.cc/gk9ySLZH/runinent.jpg",
+          url: "/ruminent",
         },
-        {
+         {
           id: 5,
-          title: "Vet Clinic",
-          img: "https://i.postimg.cc/pX2JM4bK/e.jpg",
-          url: "vetClinic",
+          title: "AQua",
+          img: "https://i.postimg.cc/YC7JZQXN/zhengtao-tang-V7-SKRh-Xskv8-unsplash.jpg",
+          url: "/aqua",
         },
         {
           id: 6,
-          title: "Others",
-          img: "https://i.postimg.cc/NjF85X0M/f.jpg",
-          url: "others",
+          title: "Poultry",
+          img: "https://i.postimg.cc/g0cHy9Z9/poltry.jpg",
+          url: "/poultry",
         },
       ],
     };
@@ -71,20 +75,22 @@ export default {
 <style scoped>
 .card {
   width: 300px;
-  height: 200px;
+  height: 300px;
   padding: 0;
   background: blue;
+  border: 2px solid green;
 }
 .card img{
   width: 100%;
-  height: 100%;
+  height: 300px;
   background-position: center;
 }
 .card p{
+  height:50px;
   font-size: 2rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
-  color:#fff;
+  color:#000;
   text-align: center;
   margin-top: -20%;
   z-index: 1;

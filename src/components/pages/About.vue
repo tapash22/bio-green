@@ -6,10 +6,20 @@
     <div class="container">
       <div class="row">
         <h3>About us</h3>
-        <div class="col-md-6 pt-5">
+        <div
+          class="col-md-6 pt-5"
+          data-aos="fade-left"
+          data-aos-delay="500"
+          data-aos-once="false"
+        >
           <img src="../../assets/image/sid.jpg" />
         </div>
-        <div class="col-md-6 text">
+        <div
+          class="col-md-6 text"
+          data-aos="fade-left"
+          data-aos-delay="500"
+          data-aos-once="false"
+        >
           <h4>WHAT WE DO</h4>
           <p class="wrap">
             We are the sole importer & sourcing partner for world class
@@ -29,7 +39,9 @@
             your livestock & poultry business operation.
           </p>
         </div>
-        <div class="col-md-6 text">
+        <div class="col-md-6 text" data-aos="fade-right"
+          data-aos-delay="500"
+          data-aos-once="false">
           <h4>WHAT WE DO</h4>
           <p class="wrap">
             We are the sole importer & sourcing partner for world class
@@ -49,31 +61,22 @@
             your livestock & poultry business operation.
           </p>
         </div>
-        <div class="col-md-6 pt-5">
+        <div class="col-md-6 pt-5" data-aos="fade-right"
+          data-aos-delay="500"
+          data-aos-once="false">
           <img src="../../assets/image/sid.jpg" />
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h3>MEET OUR TEEM MEMBER</h3>
-          <hr />
-          <div class="row">
-            <div class="col-md-3" v-for="member in members" :key="member.img">
-              <div class="card">
-                <div class="card-header">
-                  <div class="image">
-                    <img :src="member.img" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <ul>
-                    <li>{{ member.name }}</li>
-                    <li>{{ member.text }}</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="row" data-aos="flip-up"
+          data-aos-delay="500"
+          data-aos-once="false">
+        <h3>MEET OUR TEEM MEMBER</h3>
+        <hr />
+        <div
+          class="col-md-12"
+          style="width: 100%; height: 100%; margin-bottom: 50px"
+        >
+          <Teammember />
         </div>
       </div>
     </div>
@@ -81,33 +84,12 @@
 </template>
 
 <script>
+import Teammember from "../../services/Teammember.vue";
 export default {
-  data() {
-    return {
-      members: [
-        {
-          img: "https://i.postimg.cc/wTGshrF4/1.jpg",
-          name: "Name",
-          text: "Desicnation",
-        },
-        {
-          img: "https://i.postimg.cc/wTGshrF4/1.jpg",
-          name: "Name",
-          text: "Desicnation",
-        },
-        {
-          img: "https://i.postimg.cc/wTGshrF4/1.jpg",
-          name: "Name",
-          text: "Desicnation",
-        },
-        {
-          img: "https://i.postimg.cc/wTGshrF4/1.jpg",
-          name: "Name",
-          text: "Desicnation",
-        },
-      ],
-    };
+  components: {
+    Teammember,
   },
+
   mounted() {
     window.scrollTo(0, 0);
   },
@@ -187,7 +169,7 @@ export default {
 }
 hr {
   height: 2px;
-  color: #000;
+  color: green;
 }
 .col-md-12 {
   background: #fff;
@@ -197,57 +179,12 @@ hr {
 .col-md-12 .row {
   background: #fff;
   padding-top: 50px;
-  padding-bottom: 30px;
   display: flex;
   justify-content: space-evenly;
   padding: 0;
   margin: 0;
-}
-.col-md-12 .row .col-md-3 {
-  padding: 30px;
-}
-.col-md-12 .row .col-md-3 .card {
-  width: 200px;
-}
-.card .card-header {
-  padding: 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  border: none;
-  background: #fff;
-}
-.card-header .image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 2px solid green;
-  padding: 2px;
-  background: yellow;
-  margin-top: -10%;
-}
-.card-header .image img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background-position: center;
-}
-.card-body {
-  border: none;
-  background: #fff;
-  padding: 10px;
-}
-.card-body ul {
-  display: flex;
-  flex-direction: column;
-}
-ul li {
-  list-style: none;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  font-family: "Oswald", sans-serif;
-  letter-spacing: 1px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -304,55 +241,6 @@ ul li {
     padding-bottom: 30px;
     padding: 0;
     margin: 0;
-  }
-  .col-md-12 .row .col-md-3 {
-    padding: 20px;
-    margin: 0;
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  .col-md-12 .row .col-md-3 .card {
-    width: 200px;
-  }
-  .card .card-header {
-    padding: 0;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    border: none;
-    background: #fff;
-  }
-  .card-header .image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid green;
-    padding: 2px;
-    background: yellow;
-    margin-top: -10%;
-  }
-  .card-header .image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-position: center;
-  }
-  .card-body {
-    border: none;
-    background: #fff;
-    padding: 10px;
-  }
-  .card-body ul {
-    display: flex;
-    flex-direction: column;
-  }
-  ul li {
-    list-style: none;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 1px;
   }
 }
 </style>

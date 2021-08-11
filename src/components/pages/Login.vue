@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-6">
           <h3>Login Form</h3>
-          <form @submit.prevent="onLogin">
+          <form>
             <div class="from-group">
               <label>Email</label>
               <input type="text" class="form-control" v-model.trim="email" />
@@ -18,7 +18,7 @@
               />
             </div>
             <div class="my-3">
-              <button class="btn btn-primary" type="submit">LogIn</button>
+              <button class="btn btn-primary" @click.prevent="onLogin">LogIn</button>
             </div>
           </form>
         </div>

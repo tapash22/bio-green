@@ -5,13 +5,8 @@
     </div>
     <div class="container">
       <div class="row">
-        <h3>Our Partner</h3>
-        <div
-          class="col-md-6"
-          data-aos="fade-right"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
+        <h3>Global Partner</h3>
+        <div class="col-md-6">
           <div class="left">
             <img src="../../assets/image/company.jpg" />
           </div>
@@ -29,12 +24,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-left"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
+        <div class="col-md-6">
           <div class="left">
             <img src="../../assets/image/company.jpg" />
           </div>
@@ -52,12 +42,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-up"
-           data-aos-delay="500"
-          data-aos-anchor-placement="top-bottom"
-        >
+        <div class="col-md-6">
           <div class="left">
             <img src="../../assets/image/company.jpg" />
           </div>
@@ -75,12 +60,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-up"
-          data-aos-delay="500"
-          data-aos-anchor-placement="top-bottom"
-        >
+        <div class="col-md-6">
           <div class="left">
             <img src="../../assets/image/company.jpg" />
           </div>
@@ -139,12 +119,12 @@ export default {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.col-md-6 {
+.col-md-6{
   padding: 0;
   margin: 10px;
   width: 500px;
@@ -152,39 +132,39 @@ export default {
   display: flex;
   border: 1px solid green;
 }
-.col-md-6 .left {
+.col-md-6 .left{
   width: 100%;
   height: 300px;
   padding: 0;
   margin: 0;
 }
-.left img {
+.left img{
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
-.right {
+.right{
   width: 100%;
   height: 300px;
   padding: 0;
   margin: 0;
   background: black;
 }
-.right h4 {
+.right h4{
   color: #fff;
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
   padding: 5px;
 }
-.right ul {
+.right ul{
   display: block;
   padding: 0;
   margin: 0;
   background: rgb(2, 17, 59);
 }
-.right ul li {
+.right ul li{
   list-style: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -192,24 +172,11 @@ export default {
   text-align: center;
   text-transform: uppercase;
 }
-.right p {
+.right p{
   padding: 5px;
   text-align: left;
   font-size: 1rem;
   font-weight: 400;
   color: #fff;
-}
-
-@media only screen and (max-width: 767px) {
-  .image {
-  width: 100%;
-  height: 300px;
-}
-.image img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-}
 }
 </style>
