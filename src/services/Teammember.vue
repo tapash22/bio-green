@@ -78,7 +78,53 @@ export default {
 .card-header .image {
   width: 100%;
   height: 200px;
-  padding: 5px;
+ 
+  background: black;
+}
+.card-header .image img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+.card-body {
+  height: 80px;
+  border: none;
+  background: green;
+  padding: 0;
+}
+.card-body ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color:#fff;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 767px) {
+  .card {
+  width: 250px;
+  height: 220px;
+  padding: 0;
+}
+.card .card-header {
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+   border: 0px solid green;
+}
+.card-header .image {
+  width: 100%;
+  height: 150px;
+ 
   background: black;
 }
 .card-header .image img {
@@ -100,14 +146,12 @@ export default {
 ul li {
   list-style: none;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   color:#fff;
   font-family: "Oswald", sans-serif;
-  letter-spacing: 1px;
+  letter-spacing:0;
+  padding: 0;
 }
-
-@media only screen and (max-width: 767px) {
-
 }
 </style>

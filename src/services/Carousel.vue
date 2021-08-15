@@ -27,40 +27,35 @@ export default {
       products: [
         {
           id: 1,
-          title: "Poultry",
-          img: "https://i.postimg.cc/g0cHy9Z9/poltry.jpg",
+          title: "Enzymes",
+          img: "https://i.postimg.cc/pXbjhct3/en.jpg",
           url: "/poultry",
         },
         {
           id: 2,
-          title: "Ruminent",
-          img: "https://i.postimg.cc/gk9ySLZH/runinent.jpg",
+          title: "Essensial Oil",
+          img: "https://i.postimg.cc/KjnRDFyw/en2.jpg",
           url: "/ruminent",
         },
         {
           id: 3,
-          title: "AQua",
-          img: "https://i.postimg.cc/YC7JZQXN/zhengtao-tang-V7-SKRh-Xskv8-unsplash.jpg",
+          title: "Feed Sanitizer",
+          img: "https://i.postimg.cc/pXbjhct3/en.jpg",
           url: "/aqua",
         },
         {
           id: 4,
-          title: "Ruminent",
-          img: "https://i.postimg.cc/gk9ySLZH/runinent.jpg",
+          title: "Probiotic",
+          img: "https://i.postimg.cc/KjnRDFyw/en2.jpg",
           url: "/ruminent",
         },
          {
           id: 5,
-          title: "AQua",
-          img: "https://i.postimg.cc/YC7JZQXN/zhengtao-tang-V7-SKRh-Xskv8-unsplash.jpg",
+          title: "Organic Minarels",
+          img: "https://i.postimg.cc/pXbjhct3/en.jpg",
           url: "/aqua",
         },
-        {
-          id: 6,
-          title: "Poultry",
-          img: "https://i.postimg.cc/g0cHy9Z9/poltry.jpg",
-          url: "/poultry",
-        },
+
       ],
     };
   },
@@ -77,22 +72,22 @@ export default {
   width: 300px;
   height: 300px;
   padding: 0;
-  background: blue;
+  background: #fff;
   border: 2px solid green;
 }
 .card img{
   width: 100%;
-  height: 300px;
+  height: 270px;
   background-position: center;
 }
 .card p{
   height:50px;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
   color:#000;
   text-align: center;
-  margin-top: -20%;
+
   z-index: 1;
   text-transform: uppercase;
 }
@@ -100,7 +95,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .card {
   width: 100%;
-  height: 200px;
+  height: 100px;
   padding: 0;
   background: #fff;
 }

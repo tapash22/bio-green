@@ -3,31 +3,16 @@
     <nav>
       <div class="brand">
         <div>
-          <img src="../assets/image/logo.png" />
-        </div>
-        <div>
-          <ul>
-            <li><i class="fa fa-clock-o" aria-hidden="true"></i></li>
-            <li>Sunday – Thursday</li>
-            <li>10 AM – 7 PM</li>
-          </ul>
-        </div>
-        <div class="login">
-          <ul>
-            <li>
-              <i class="fa fa-phone" aria-hidden="true"></i>+8801810084300
-            </li>
-            <li>
-              <router-link to="/login"
-                ><i class="fa fa-sign-in" aria-hidden="true"></i
-                >login</router-link
-              >
-            </li>
-          </ul>
+          <router-link to="/home">
+          <img src="../assets/image/log.png" />
+          </router-link>
         </div>
       </div>
       <div class="navbar">
-        <ul>
+        <div class="login">
+          <p><i class="fa fa-phone" aria-hidden="true"></i>+8801810084300</p>
+        </div>
+        <ul class="ul">
           <li><router-link to="/home">Home</router-link></li>
           <li><router-link to="/about">About</router-link></li>
           <li>
@@ -40,59 +25,78 @@
             ></router-link>
             <ul>
               <li>
-                <router-link to="/poultry">Poultry</router-link
-                ><i
+                <router-link to="#">Poultry<i
                   class="fa fa-angle-right"
                   style="
-                    padding-right: 5px;
+                    margin-left:15px;
                     padding-top: 10px;
                     font-size: 1.5rem;
                   "
                   aria-hidden="true"
-                ></i>
+                ></i></router-link
+                >
                 <ul>
-                  <li><router-link to="/nonAntibiotic">Non-Antibiotic Growth Promoters </router-link></li>
-                  <li><router-link to="/emulsifire">Feed Emulsifire</router-link></li>
-                  <li><router-link to="/enzymes">Enzymes</router-link></li>
-                  <li><router-link to="/antioxident">Antioxident anti stress</router-link></li>
-                  <li><router-link to="/renal">Renal Disorders</router-link></li>
+                   <li><router-link to="/enzymes">Enzymes</router-link></li>
+                  <li>
+                    <router-link to="/essensialoil">Essensial Oil</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/organicminarels"
+                      >Organic Minarels
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/feedsanitizer">Feed Sanitizer</router-link>
+                  </li>
+
+                  <li>
+                    <router-link to="/probiotics">Probiotic</router-link>
+                  </li>
                 </ul>
               </li>
               <li>
-                <router-link to="/ruminent">Ruminent</router-link
-                ><i
+                <router-link to="#">Cattle<i
                   class="fa fa-angle-right"
                   style="
-                    padding-right: 5px;
+                    margin-left:27px;
                     padding-top: 10px;
                     font-size: 1.5rem;
                   "
                   aria-hidden="true"
-                ></i>
-                 <ul>
-                  <li><router-link to="/ruminal">Ruminal Disorders</router-link></li>
-                  <li><router-link to="/uterin">Uterin Cleancer</router-link></li>
-                  <li><router-link to="/udder">Udder Support</router-link></li>
-                  <li><router-link to="/nutrisonal">Nutrisonal Disorders</router-link></li>
+                ></i></router-link
+                >
+                <ul>
+                  <li>
+                    <router-link to="/prebioticsc">Prebiotic</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/organicminarelsc">Organic Minerals</router-link>
+                  </li>
                 </ul>
               </li>
               <li>
-                <router-link to="/aqua">Aquaculture</router-link
-                ><i
+                <router-link to="#">Aqua<i
                   class="fa fa-angle-right"
                   style="
-                    padding-right: 5px;
+                    margin-left:33px;
                     padding-top: 10px;
                     font-size: 1.5rem;
                   "
                   aria-hidden="true"
-                ></i>
-                 <ul>
-                   <li><router-link to="/probiotics">Probiotics</router-link></li>
-                  <li><router-link to="/planton">Planton promoters</router-link></li>
-                  <li><router-link to="/immunostimulants">Immunostimulants</router-link></li>
-                  <li><router-link to="/amonia">Amonia Reducer</router-link></li>
-                  <li><router-link to="/feed">Feed Binding Gel</router-link></li>
+                ></i></router-link
+                >
+                <ul>
+                  <li>
+                    <router-link to="/probioticsa">Probiotics</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/organicminarelsa">Organic Minerals</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/essensialoila"
+                      >Essential Oil</router-link
+                    >
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -100,23 +104,12 @@
           <li><router-link to="/Gallery">Gallery</router-link></li>
           <li><router-link to="/blog">Blog</router-link></li>
           <li>
-            <router-link to="/partners"
-              >Partners<i
-                class="fa fa-angle-down"
-                style="padding-left: 5px; padding-top: 5px"
-                aria-hidden="true"
-              ></i
-            ></router-link>
-            <ul>
-              <li>
-                <router-link to="/localpartner">Local partners</router-link>
-              </li>
-              <li>
-                <router-link to="/globalpartner">Global partners</router-link>
-              </li>
-            </ul>
+            <router-link to="/partners">Partners</router-link>
           </li>
           <li><router-link to="/contact">ContactUs</router-link></li>
+          <li>
+            <router-link to="/login">Login</router-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -137,75 +130,28 @@ export default {};
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nav.jpg");
+  background-image: url("../assets/image/nav1.jpg");
   background-position: center;
   background-size: cover;
 }
 nav {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
 }
 
 nav .brand {
-  display: flex;
-  justify-content: space-between;
+  width: 25%;
+  height: 100%;
+  display: block;
   /* padding-left: 150px; */
-  
 }
 .brand img {
   width: 300px;
-  height: 55px;
-  padding-top: 10px;
+  height: 90px;
   margin-top: 15px;
   margin-left: 50px;
-}
-.brand ul {
-  display: flex;
-  padding-top: 30px;
-}
-.brand ul li {
-  list-style: none;
-  padding: 5px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #fff;
-}
-.brand ul li i {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-}
-.brand .login {
-  margin-right: 100px;
-  padding: 5px;
-}
-.brand .login ul {
-  display: flex;
-  flex-direction: column;
-  padding-top: 5px;
-}
-.brand .login ul li {
-  font-size: 16px;
-  font-weight: 500;
-  list-style: none;
-  padding-top: 5px;
-}
-.brand .login ul li a {
-  font-size: 20px;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-.brand .login ul li i {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #fff;
-  padding-right: 5px;
-}
-.brand .login ul li a i {
-  font-size: 2rem;
-  font-weight: 700;
 }
 nav::after {
   content: " ";
@@ -213,45 +159,70 @@ nav::after {
   display: table;
 }
 .navbar {
-  background: #b2afda1f;
-  box-shadow: 2px 2px 3px rgb(59, 161, 59);
+  display: flex;
+  flex-direction: column;
+  width: 75%;
 }
-.navbar ul {
+.navbar .login {
+  padding: 0;
+  position: relative;
+  justify-content: right;
+  margin-left: 70%;
+}
+.navbar .login p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: right;
+}
+.navbar .login p i {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 5px;
+}
+.navbar .ul {
   float: left;
   margin-left: 100px;
   margin-right: 0;
   position: relative;
 }
-.navbar ul li {
+.navbar .ul li {
   display: inline-block;
   margin: 0 5px;
   list-style: none;
+  
 }
-.navbar ul li a {
+.navbar .ul li a {
   color: #fff;
   text-decoration: none;
   line-height: 30px;
   font-size: 20px;
   font-weight: 500;
   font-family: "Oswald", sans-serif;
-  padding: 8px 15px;
+  padding: 20px 15px;
+  
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.router-link-active {
-  color: #000;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+.navbar .ul li a:hover,
+.navbar .ul li a.router-link-active {
+  color: #fff;
+  background: rgba(14, 2, 83, 0.39);
 }
-.navbar ul ul li a {
+.navbar .ul ul{
+  background: rgba(0, 0, 0, 0.603);
+}
+
+.navbar .ul li ul li a {
   font-size: 1.5rem;
   font-weight: 500;
+  box-shadow:none;
 }
-.navbar ul ul li a:hover {
-  color: black;
+.navbar .ul ul li a:hover {
+  color: #fff;
   box-shadow: none;
 }
-.navbar ul ul {
+.navbar .ul ul {
   position: absolute;
   opacity: 0;
   visibility: hidden;
@@ -263,66 +234,45 @@ nav::after {
   padding: 0;
   margin: 0;
 }
-.navbar ul li:hover > ul {
+.navbar .ul li:hover > ul {
   transform: translateY(15px);
   opacity: 1;
   visibility: visible;
 }
-.navbar ul ul li {
+.navbar .ul ul li {
   margin: 0;
   padding: 0;
   float: none;
   display: list-item;
-  border-bottom: 1px solid #fff;
   line-height: 40px;
   display: flex;
   justify-content: space-between;
 }
-.navbar ul ul ul{
+.navbar .ul ul li:hover{
+  background:rgba(8, 8, 8, 0.678);
+  color: #fff;
+}
+.navbar .ul ul ul {
   position: absolute;
   opacity: 0;
   visibility: hidden;
   transform: translateY(0);
   transition: all 0.3s;
-  margin-left: 173px;
+  margin-left: 130px;
   z-index: 1;
   background: #0e7a0e9c;
-  width: 350px;
+  width: 180px;
   padding: 0;
 }
-.navbar ul ul ul li{
+.navbar .ul ul ul li {
   padding: 0;
   justify-content: center;
 }
-.navbar ul ul ul li a{
+.navbar .ul ul ul li a {
   font-size: 1.2rem;
   text-align: center;
+  color: #fff;
 }
-/* <div class="brand">
-        <div>
-          <img src="../assets/image/logo.png" />
-        </div>
-        <div>
-          <ul>
-            <li><i class="fa fa-clock-o" aria-hidden="true"></i></li>
-            <li>Sunday – Thursday</li>
-            <li>10 AM – 7 PM</li>
-          </ul>
-        </div>
-        <div class="login">
-          <ul>
-            <li>
-              <i class="fa fa-phone" aria-hidden="true"></i>+8801810084300
-            </li>
-            <li>
-              <router-link to="/login"
-                ><i class="fa fa-sign-in" aria-hidden="true"></i
-                >login</router-link
-              >
-            </li>
-          </ul>
-        </div>
-      </div> */
 
 @media only screen and (max-width: 767px) {
  .navigation {
@@ -334,70 +284,29 @@ nav::after {
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nav.jpg");
+  background-image: url("../assets/image/nav1.jpg");
   background-position: center;
   background-size: cover;
+  visibility: hidden;
 }
 nav {
   width: 100%;
+  display: flex;
+ flex-direction: column;
+  box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
 }
 
 nav .brand {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  /* padding-left: 150px; */
-  width: 100%;
+  width: 25%;
   height: 100%;
-  background: #000;
-}
-.brand div{
-  width: 100%;
-  position: relative;
-  justify-content: center;
+  display: block;
+  /* padding-left: 150px; */
 }
 .brand img {
-  width: 100%;
-  height: 55px;
-  padding-top: 10px;
-  margin-top: 10px;
-  margin-left: 5px;
-}
-.brand ul {
- display: none;
-} 
-.brand .login {
-  padding: 5px;
-}
-.brand .login ul {
-  display: flex;
-  flex-direction: column;
-  padding-top: 5px;
-}
-.brand .login ul li {
-  font-size: 16px;
-  font-weight: 500;
-  list-style: none;
-  padding-top: 5px;
-  text-align: center;
-}
-.brand .login ul li a {
-  font-size: 20px;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-.brand .login ul li i {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #fff;
-  padding-right: 5px;
-}
-.brand .login ul li a i {
-  font-size: 2rem;
-  font-weight: 700;
+  width: 300px;
+  height: 90px;
+  margin-top: 15px;
+  margin-left: 50px;
 }
 nav::after {
   content: " ";
@@ -405,55 +314,58 @@ nav::after {
   display: table;
 }
 .navbar {
-  background: #b2afda1f;
-  box-shadow: 2px 2px 3px rgb(59, 161, 59);
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  display: none;
 }
-.navbar ul {
-  float: left;
+.navbar .login {
+  padding: 0;
+  position: relative;
+  justify-content: right;
   margin-left: 0;
+  display: none;
+}
+.navbar .ul {
+  float: left;
   margin-right: 0;
   position: relative;
   display: flex;
   flex-direction: column;
 }
-.navbar ul li {
-  display: inline-block;
+.navbar .ul li {
+  position: relative;
+  display: block;
   margin: 0 5px;
   list-style: none;
-  position: relative;
-
 }
-.navbar ul li a {
+.navbar .ul li a {
   color: #fff;
   text-decoration: none;
   line-height: 30px;
   font-size: 20px;
   font-weight: 500;
   font-family: "Oswald", sans-serif;
-  padding: 8px 15px;
+  padding: 5px 5px;
+  
 }
 
-.navbar ul li a:hover,
-.navbar ul li a.router-link-active {
-  color: #000;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+.navbar .ul li a:hover,
+.navbar .ul li a.router-link-active {
+  color: #fff;
+  background: rgba(14, 2, 83, 0.39);
 }
-.navbar ul ul li a {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-.navbar ul ul li a:hover {
-  color: black;
-  box-shadow: none;
-}
-.navbar ul ul {
+/* .navbar .ul ul{
+  position: relative;
+  background: rgba(0, 0, 0, 0.603);
+} */
+
+.navbar .ul ul {
   position: relative;
   opacity: 0;
+  overflow-y: hidden;
   visibility: hidden;
-  overflow: hidden;
-  transform: translateY(-30px);
+  transform: translateY(0);
   transition: all 0.3s;
   margin-left: 0;
   z-index: 1;
@@ -461,40 +373,53 @@ nav::after {
   padding: 0;
   margin: 0;
 }
-.navbar ul li:hover > ul {
-  transform: translateY(15px);
+
+.navbar .ul li ul li a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow:none;
+}
+.navbar .ul ul li a:hover {
+  color: #fff;
+  box-shadow: none;
+}
+
+.navbar .ul li:hover > ul {
   opacity: 1;
   visibility: visible;
 }
-.navbar ul ul li {
+.navbar .ul ul li {
   margin: 0;
   padding: 0;
   float: none;
   display: list-item;
-  border-bottom: 1px solid #fff;
-  line-height: 40px;
+  line-height: 10px;
   display: flex;
   justify-content: space-between;
 }
-.navbar ul ul ul{
-  position: absolute;
+.navbar .ul ul li:hover{
+  background:rgba(8, 8, 8, 0.678);
+  color: #fff;
+}
+.navbar .ul ul ul {
+  position: relative;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(0);
   transition: all 0.3s;
-  margin-left: 173px;
+  margin-left: 0;
   z-index: 1;
   background: #0e7a0e9c;
-  width: 350px;
+  width: 140px;
   padding: 0;
 }
-.navbar ul ul ul li{
+.navbar .ul ul ul li {
   padding: 0;
   justify-content: center;
 }
-.navbar ul ul ul li a{
+.navbar .ul ul ul li a {
   font-size: 1.2rem;
   text-align: center;
+  color: #fff;
 }
 }
 </style>

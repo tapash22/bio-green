@@ -27,7 +27,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 170px;
+  margin-top: 122px;
 }
 .row {
   display: flex;
@@ -46,6 +46,13 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
+  .photos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: -50px;
+}
   .row {
     display: flex;
     justify-content: space-around;

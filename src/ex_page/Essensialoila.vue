@@ -2,7 +2,8 @@
   <div class="products">
     <div class="container">
       <div class="row">
-        <h3>Renal</h3>
+        <h3>Essensial Oil</h3>
+   
         <div class="col-md-4">
           <div class="card">
             <img src="../assets/image/tt.jpg" />
@@ -13,35 +14,7 @@
               </div>
             </div>
             <div class="name">
-              <p>Renal</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Renal</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Renal</p>
+              <p>Minarel 360 poultry BD</p>
             </div>
           </div>
         </div>
@@ -130,5 +103,15 @@ export default {};
   font-weight: 500;
   color: #000;
   text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .products {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 100px;
+}
 }
 </style>

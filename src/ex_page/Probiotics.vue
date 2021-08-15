@@ -131,4 +131,14 @@ export default {};
   color: #000;
   text-align: center;
 }
+
+@media only screen and (max-width: 767px) {
+  .products {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 100px;
+}
+}
 </style>

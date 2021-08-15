@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-4">
         <nav>
-          <div class="brand"><img src="../../assets/image/logo.png" /></div>
+          <div class="brand"><img src="../../assets/image/log.png" /></div>
           <ul>
             <li><router-link to="/admin/dashboard">Dashboard</router-link></li>
             <li><router-link to="/admin/user">Add User</router-link></li>
@@ -27,7 +27,7 @@
         <div class="main">
           <div class="row head-bar">
             <div class="col-md-12">
-              <div class="brand"><img src="../../assets/image/logo.png" /></div>
+              <div class="brand"><img src="../../assets/image/log.png" /></div>
               <div class="header">
                 <img src="../../assets/image/1.jpg" />
                 <h5>Name</h5>

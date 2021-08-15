@@ -75,18 +75,22 @@
   background: #1b1b1b;
   width: 100%;
   height: 100%;
+      background-image: url(../assets/image/foot.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container {
   width: 100%;
   height: 100%;
   padding: 0;
+
 }
 .row {
   position: relative;
   display: flex;
   justify-content: space-evenly;
   padding-top: 10px;
-  background: #1b1b1b;
+  
 }
 .row .col-md-4 {
   text-align: center;
@@ -105,20 +109,28 @@ strong {
 p {
   text-align: left;
 }
+
+/* }
 ul li {
   list-style: none;
 }
 ul li a {
   color: #fff;
   text-decoration: none;
-}
+} */
 .link {
   text-align: center;
 }
+.link ul{
+display: flex;
+flex-direction: column;
+text-align: center;
+}
 
-.link li{
+.link ul li{
   padding: 2px;
     text-align: center;
+    list-style: none;
 }
 .link a {
   text-decoration: none;
@@ -139,7 +151,7 @@ ul li a {
 }
 .bottom {
   background: #000;
-  opacity: 0.7;
+
   padding-top: 10px;
   padding: 0;
 }

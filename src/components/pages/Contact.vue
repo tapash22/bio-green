@@ -76,7 +76,7 @@ export default {
 .contact {
   width: 100%;
   height: 100%;
-  margin-top: 160px;
+  margin-top: 122px;
   padding: 0;
 }
 .image {

@@ -55,7 +55,7 @@
         <div
           class="col-md-6"
           data-aos="fade-up"
-           data-aos-delay="500"
+          data-aos-delay="500"
           data-aos-anchor-placement="top-bottom"
         >
           <div class="left">
@@ -117,7 +117,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 160px;
+  margin-top: 122px;
 }
 .image {
   width: 100%;
@@ -201,15 +201,22 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
-  .image {
-  width: 100%;
-  height: 300px;
-}
-.image img {
+  .partners {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
+  padding: 0;
+  margin-top: 100px;
 }
+  .image {
+    width: 100%;
+    height: 300px;
+  }
+  .image img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
 }
 </style>

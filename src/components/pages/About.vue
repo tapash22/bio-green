@@ -100,7 +100,7 @@ export default {
 .about {
   width: 100%;
   height: 100%;
-  margin-top: 160px;
+  margin-top: 122px;
   padding: 0;
 }
 .image {
@@ -189,7 +189,7 @@ hr {
 
 @media only screen and (max-width: 767px) {
   .about {
-    margin-top: 300px;
+    margin-top: 100px;
   }
   .about .row h3 {
     text-align: center;

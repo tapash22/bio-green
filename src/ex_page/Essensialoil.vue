@@ -2,7 +2,7 @@
   <div class="products">
     <div class="container">
       <div class="row">
-        <h3>Feed</h3>
+        <h3>Essensial Oil</h3>
         <div class="col-md-4">
           <div class="card">
             <img src="../assets/image/tt.jpg" />
@@ -13,11 +13,11 @@
               </div>
             </div>
             <div class="name">
-              <p>Feed</p>
+              <p>NuqoNex</p>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <div class="card">
             <img src="../assets/image/tt.jpg" />
             <div class="btn">
@@ -27,11 +27,11 @@
               </div>
             </div>
             <div class="name">
-              <p>Feed</p>
+              <p>Amonia</p>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
+        </div> -->
+        <!-- <div class="col-md-4">
           <div class="card">
             <img src="../assets/image/tt.jpg" />
             <div class="btn">
@@ -41,10 +41,10 @@
               </div>
             </div>
             <div class="name">
-              <p>Feed</p>
+              <p>Amonia</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -60,12 +60,12 @@ export default {};
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 170px;
+  margin-top: 122px;
 }
 .row {
   display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 20px;
+  justify-content: center;
+
   margin: 0;
 }
 .row h3 {
@@ -78,7 +78,8 @@ export default {};
   padding-bottom: 10px;
 }
 .row .col-md-4 {
-  padding: 10px;
+  padding: 0;
+  margin: 0;
 }
 .col-md-4 .card {
   padding: 0;
@@ -130,5 +131,15 @@ export default {};
   font-weight: 500;
   color: #000;
   text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .products {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 100px;
+}
 }
 </style>

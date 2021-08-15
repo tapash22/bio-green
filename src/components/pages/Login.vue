@@ -71,7 +71,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 160px;
+  margin-top: 122px;
 }
 .row {
   width: 100%;
@@ -106,6 +106,13 @@ label {
 }
 
 @media only screen and (max-width: 767px) {
+  .login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top:100px;
+}
   .row {
     display: flex;
     justify-content: space-around;
@@ -118,7 +125,7 @@ label {
     font-weight: 700;
     font-family: "MonteCarlo", cursive;
     color: #000;
-    padding-top: 150px;
+    padding-top: 30px;
     padding-bottom: 10px;
   }
 }

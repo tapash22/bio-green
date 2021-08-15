@@ -2,7 +2,7 @@
   <div class="products">
     <div class="container">
       <div class="row">
-        <h3>Emulsifire</h3>
+        <h3>Feedsanitizer</h3>
         <div class="col-md-4">
           <div class="card">
             <img src="../assets/image/tt.jpg" />
@@ -130,5 +130,15 @@ export default {};
   font-weight: 500;
   color: #000;
   text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .products {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 100px;
+}
 }
 </style>

@@ -8,31 +8,21 @@ import Blog from './components/pages/Blog.vue';
 import Gallery from './components/pages/Gallery.vue';
 import Contact from './components/pages/Contact.vue';
 import Login from './components/pages/Login.vue';
-import Globalpartner from './components/sub_page/Globalpartner.vue';
-import Localpartner from './components/sub_page/Localpartner.vue';
-import Poultry from './components/sub_page/Poultry.vue';
-import Ruminent from './components/sub_page/Ruminent.vue';
-import Aqua from './components/sub_page/Aqua.vue';
+import Pdfshow from './components/pages/Pdfshow.vue';
 
-import NonAntibiotic from './ex_page/NonAntibiotic.vue';
-import Emulsifire from './ex_page/Emulsifire.vue';
+
+import Organicminarels from './ex_page/Organicminarels.vue';
+import Feedsanitizer from './ex_page/Feedsanitizer.vue';
 import Enzymes from './ex_page/Enzymes.vue';
-import Antioxident from './ex_page/Antioxident.vue';
-import Renal from './ex_page/Renal.vue';
-
-import Amonia from './ex_page/Amonia.vue';
-import Immunostimulants from './ex_page/Immunostimulants.vue';
-import Planton from './ex_page/Planton.vue';
+import Essensialoil from './ex_page/Essensialoil.vue';
 import Probiotics from './ex_page/Probiotics.vue';
-import Feed from './ex_page/Feed.vue';
 
-import Ruminal from './ex_page/Ruminal.vue';
-import Udder from './ex_page/Udder.vue';
-import Uterin from './ex_page/Uterin.vue';
-import Nutrisonal from './ex_page/Nutrisonal.vue';
+import Prebioticsc from './ex_page/Prebioticsc.vue';
+import Organicminarelsc from './ex_page/Organicminarelsc.vue';
 
-
-
+import Essensialoila from './ex_page/Essensialoila.vue';
+import Probioticsa from './ex_page/Probioticsa.vue';
+import Organicminarelsa from './ex_page/Organicminarelsa.vue';
 
 
 import Admin from './components/pages/Admin.vue';
@@ -43,6 +33,7 @@ import Partner from './components/admin/Partner.vue';
 import Photo from './components/admin/Photo.vue';
 import Slider from './components/admin/Slider.vue';
 import Events from './components/admin/Events.vue';
+import Enzyme  from './components/admin/Enzyme.vue';
 import { fb } from './firebase';
 
 
@@ -59,28 +50,21 @@ const routes = [
             { path: 'gallery', component: Gallery,},
             { path: 'contact', component: Contact, },
             { path: 'login', component: Login, },
-            { path: 'globalpartner', component: Globalpartner, },
-            { path: 'localpartner', component: Localpartner, },
-            { path: 'poultry' , component: Poultry },
-            { path: 'ruminent' , component: Ruminent },
-            { path: 'aqua' , component: Aqua },
+            { path: 'pdfshow', component: Pdfshow, },
 
-            { path: 'nonAntibiotic' , component: NonAntibiotic },
-            { path: 'emulsifire' , component: Emulsifire },
-            { path: 'enzymes' , component: Enzymes },
-            { path: 'antioxident' , component: Antioxident },
-            { path: 'renal' , component: Renal },
-           
+            { path: 'essensialoil' , component: Essensialoil },
+            { path: 'organicminarels' , component: Organicminarels },
+            { path: 'feedsanitizer' , component: Feedsanitizer },
             { path: 'probiotics' , component: Probiotics },
-            { path: 'planton' , component: Planton },
-            { path: 'immunostimulants' , component: Immunostimulants },
-            { path: 'amonia' , component: Amonia },
-            { path: 'feed' , component: Feed },
+            { path: 'enzymes' , component: Enzymes },
 
-            { path: 'ruminal' , component: Ruminal },
-            { path: 'uterin' , component: Uterin },
-            { path: 'udder' , component: Udder },
-            { path: 'nutrisonal' , component: Nutrisonal },
+            { path: 'prebioticsc' , component: Prebioticsc },
+            { path: 'organicminarelsc' , component: Organicminarelsc },
+
+            { path: 'essensialoila' , component: Essensialoila },
+            { path: 'probioticsa' , component: Probioticsa },
+            { path: 'organicminarelsa' , component: Organicminarelsa },
+
         ]
     },
 
@@ -94,6 +78,7 @@ const routes = [
             { path: 'photo', component: Photo },
             { path: 'slider', component: Slider },
             { path: 'events', component: Events},
+            { path: 'enzyme', component: Enzyme },
         ]   
     }
 ];

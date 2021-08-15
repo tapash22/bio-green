@@ -10,16 +10,9 @@
               <input
                 class="form-control"
                 type="text"
-                placeholder="Event Name .."
-                v-model="product.product_name"
+                placeholder="product name.."
+                v-model="product.name"
               />
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="product.description"
-              ></textarea>
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Pdf</label>
@@ -50,27 +43,25 @@
             <thead>
               <tr>
                 <th>Product name</th>
-                <th>Description</th>
                 <th>Image</th>
                 <th>PDF</th>
                 <th>Modify</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="product in products" :key="product.id">
-                <td>{{ product.data().product_name }}</td>
-                <td>{{ product.data().description }}</td>
-                <td>{{ product.data().image }}</td>
-                <td>{{ product.data().pdf }}</td>
+              <tr v-for="enzyme in enzymes" :key="enzyme.id">
+                <td>{{ enzyme.data().name }}</td>
+                <td>{{ enzyme.data().image }}</td>
+                <td>{{ enzyme.data().pdf }}</td>
                 <td>
                   <button
-                    @click.prevent="editProduct(product)"
+                    @click.prevent="editProduct(enzyme)"
                     class="btn btn-primary"
                   >
                     Edit
                   </button>
                   <button
-                    @click="deleteProduct(product.id)"
+                    @click="deleteProduct(enzyme.id)"
                     class="btn btn-danger"
                   >
                     Delete
@@ -99,20 +90,13 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label>Product Name</label>
+              <label>Enzyme Name</label>
               <input
                 class="form-control"
                 type="text"
                 placeholder="Event Name .."
-                v-model="product.product_name"
+                v-model="enzyme.name"
               />
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="product.description"
-              ></textarea>
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Pdf</label>
@@ -154,10 +138,9 @@ export default {
   data() {
     return {
       showModal: false,
-      products: [],
-      product: {
-        product_name: "",
-        description: "",
+      enzymes: [],
+      enzyme: {
+         name: "",
         image: "",
         pdf: "",
       },
@@ -178,7 +161,7 @@ export default {
     uploadImage(e) {
       if (e.target.files[0]) {
         let file = e.target.files[0];
-        var storageRef = fb.storage().ref("products/" + file.name);
+        var storageRef = fb.storage().ref("enzymes/" + file.name);
         let uploadTask = storageRef.put(file);
 
         uploadTask.on(
@@ -191,7 +174,7 @@ export default {
             // Handle successful uploads on complete
             // For instance, get the download URL: https://firebasestorage.googleapis.com/...
             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.product.image = downloadURL;
+              this.enzyme.image = downloadURL;
               console.log("File available at", downloadURL);
             });
           }
@@ -228,18 +211,18 @@ export default {
     },
 
     watcher() {
-      db.collection("products").onSnapshot((querySnapshot) => {
+      db.collection("enzymes").onSnapshot((querySnapshot) => {
         this.products = [];
         querySnapshot.forEach((doc) => {
-          this.products.push(doc);
+          this.enzymes.push(doc);
         });
       });
     },
 
     updateProduct() {
-      db.collection("products")
+      db.collection("enzymes")
         .doc(this.active_item)
-        .update(this.product)
+        .update(this.enzyme)
         .then(() => {
           this.showModal = false;
           this.watcher();
@@ -251,15 +234,15 @@ export default {
         });
     },
 
-    editProduct(product) {
+    editProduct(enzyme) {
       this.showModal = true;
-      this.product = product.data();
-      this.active_item = product.id;
+      this.enzyme = enzyme.data();
+      this.active_item = enzyme.id;
     },
 
     deleteProduct(doc) {
       if (confirm("Are you sure?")) {
-        db.collection("products")
+        db.collection("enzymes")
           .doc(doc)
           .delete()
           .then(() => {
@@ -273,27 +256,26 @@ export default {
     },
 
     readData() {
-      db.collection("products")
+      db.collection("enzymes")
         .get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
-            this.products.push(doc);
+            this.enzymes.push(doc);
           });
         });
     },
     reset() {
-      this.product = {
-        product_name: "",
-        description: "",
+      this.enzyme = {
+        name: "",
         image: "",
         pdf: "",
       };
     },
 
     saveData() {
-      db.collection("products")
-        .add(this.product)
+      db.collection("enzymes")
+        .add(this.enzyme)
         .then((docRef) => {
           this.reset();
           this.readData();

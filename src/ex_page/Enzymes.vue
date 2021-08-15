@@ -5,35 +5,35 @@
         <h3>Enzymes</h3>
         <div class="col-md-4">
           <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
+            <img src="../assets/image/en.jpg" />
+            <div class="btn" @click.prevent="onPdf()">
               <div>view</div>
               <div>
                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
               </div>
             </div>
             <div class="name">
-              <p>Enzymes</p>
+              <p>Enza Pro</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
+            <img src="../assets/image/en2.jpg" />
+            <div class="btn" >
               <div>view</div>
               <div>
                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
               </div>
             </div>
             <div class="name">
-              <p>Enzymes</p>
+              <p>Xylamax</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card">
-            <img src="../assets/image/tt.jpg" />
+            <img src="../assets/image/en.jpg" />
             <div class="btn">
               <div>view</div>
               <div>
@@ -41,17 +41,37 @@
               </div>
             </div>
             <div class="name">
-              <p>Enzymes</p>
+              <p>Phytamax</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div v-if="showPdf">
+      <pdf-viewer></pdf-viewer>
+    </div>
   </div>
 </template>
         
 <script>
-export default {};
+
+export default {
+  data(){
+    return{
+      showPdf:false,
+    }
+  },
+  components:{
+ 
+  },
+
+  methods:{
+    onPdf(){
+      this.showPdf = true;
+    }
+  }
+};
 </script>
         
 <style scoped>
@@ -60,7 +80,7 @@ export default {};
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 170px;
+  margin-top: 122px;
 }
 .row {
   display: flex;

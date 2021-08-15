@@ -2,6 +2,7 @@
   <div class="sld">
     <div class="sd" v-for="i in [currentIndex]" :key="i">
       <img :src="currentImg" />
+     
     </div>
 
     <a class="prev" @click="prev" href="#">&#10094; </a>
@@ -14,10 +15,13 @@ export default {
   data() {
     return {
       images: [
-        "https://i.postimg.cc/857fbbNQ/224681503-497296784901975-1300258797412440655-n.jpg",
-        "https://i.postimg.cc/4ytKDNYW/226554823-877059902932524-6833740814339133011-n.jpg",
-        "https://i.postimg.cc/T3Tysxfc/221181460-1431401593910316-1021560237896693314-n.jpg",
-        "https://i.postimg.cc/gjqzywXb/225502893-513780176581529-7235155694314969814-n.jpg",
+        "https://i.postimg.cc/QC5zpRzr/sven-mieke-olon-Uw-Urm-Qk-unsplash.jpg",
+        "https://i.postimg.cc/QdjzTYkR/sticker-mule-q-Nhst-Taw-Qr-I-unsplash.jpg",
+        "https://i.postimg.cc/Xvz1tjSb/daniel-tuttle-IHUF0j-Iey4-unsplash.jpg",
+        "https://i.postimg.cc/j2VgdMS3/benigno-hoyuela-jrk1j7i96-HI-unsplash.jpg",
+        "https://i.postimg.cc/02SHq48Q/s1.jpg",
+        "https://i.postimg.cc/K8rq1g3h/s2.jpg",
+
       ],
       timer: null,
       currentIndex: 0,
@@ -30,7 +34,7 @@ export default {
 
   methods: {
     startSlide() {
-      this.timer = setInterval(this.next, 3000);
+      this.timer = setInterval(this.next, 5000);
     },
 
     next() {
@@ -64,7 +68,7 @@ export default {
   height: 100%;
 }
 img {
-  height: 400px;
+  height: 500px;
   width: 100%;
   opacity: 1;
   filter: brightness(90%);

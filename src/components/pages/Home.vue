@@ -7,91 +7,16 @@
         <p>We deliver performances rather just a product to your business</p>
         <div class="col-md-12" style="width: 100%; height: 100%">
           <Carousel />
-        </div>   
+        </div>
       </div>
-      
+
       <!-- event -->
-      <div class="row event my-5">
-        <h3>Event List</h3>
-        <div
-          class="col-md-6"
-          data-aos="fade-right"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
-          <div class="event-list">
-            <img src="../../assets/image/event.jpg" />
-            <p>Event name <br />Event Data</p>
-          </div>
-        </div>
-        <div
-          class="col-md-6 event-item"
-          data-aos="fade-left"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
-          <div class="box">
-            <div class="box-h">
-              <img src="../../assets/image/event.jpg" />
-            </div>
-            <div class="box-b">
-              <p>
-                31-july-2021<br />
-                Bio-green Annual Excursion: 2020 <br />
-                by Bio-green Resources Limited,at Dream Square Resort, Gazipur.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-h">
-              <img src="../../assets/image/event.jpg" />
-            </div>
-            <div class="box-b">
-              <p>
-                31-july-2021<br />
-                Bio-green Annual Excursion: 2020 <br />
-                by Bio-green Resources Limited,at Dream Square Resort, Gazipur.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-h">
-              <img src="../../assets/image/event.jpg" />
-            </div>
-            <div class="box-b">
-              <p>
-                31-july-2021<br />
-                Bio-green Annual Excursion: 2020 <br />
-                by Bio-green Resources Limited,at Dream Square Resort, Gazipur.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-h">
-              <img src="../../assets/image/event.jpg" />
-            </div>
-            <div class="box-b">
-              <p>
-                31-july-2021<br />
-                Bio-green Annual Excursion: 2020 <br />
-                by Bio-green Resources Limited,at Dream Square Resort, Gazipur.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-h">
-              <img src="../../assets/image/event.jpg" />
-            </div>
-            <div class="box-b">
-              <p>
-                31-july-2021<br />
-                Bio-green Annual Excursion: 2020 <br />
-                by Bio-green Resources Limited,at Dream Square Resort, Gazipur.
-              </p>
-            </div>
-          </div>
-        </div>
+    <div class="row">
+      <h3>Event List</h3>
+      <div class="col-md-12" style="width: 100%; height: 100%">
+        <EventList />
       </div>
+    </div>
 
       <!-- blog -->
       <div class="row blog my-3">
@@ -119,12 +44,12 @@
         </div>
       </div>
     </div>
-    
+
     <!-- <div class="row">
     <div class="image"></div>
     </div> -->
 
-<!-- about -->
+    <!-- about -->
     <div class="about">
       <h3>Our Plan</h3>
       <div class="container">
@@ -156,14 +81,24 @@
 <script>
 import Slider from "../../services/Slider.vue";
 import Carousel from "../../services/Carousel.vue";
+import EventList from '../../services/EventsList.vue';
+
 
 export default {
   components: {
     Slider,
     Carousel,
+    EventList,
   },
   data() {
     return {
+      occations: [],
+      occation: {
+        name: "",
+        place:"",
+        image: "",
+      },
+
       blogs: [
         {
           id: "1",
@@ -222,7 +157,7 @@ export default {
 
 <style scoped>
 .home {
-  margin-top: 160px;
+  margin-top: 122px;
 }
 
 .row {
@@ -331,7 +266,7 @@ export default {
 }
 
 /* blog */
-.blog{
+.blog {
   background: #fff;
 }
 .blog .col-md-4 .card {
@@ -433,10 +368,9 @@ export default {
   text-align: center;
 }
 
-
 @media only screen and (max-width: 767px) {
   .home {
-    margin-top: 300px;
+    margin-top: 100px;
   }
   .row2 {
     margin-top: 30px;
@@ -516,6 +450,60 @@ export default {
     font-family: "Oswald", sans-serif;
     color: #000;
     text-align: left;
+  }
+  .about {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/image/about_h.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .about h3 {
+    padding: 20px;
+    color: #fff;
+  }
+  .about .row {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .about .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+  }
+  .about .col-md-4 .round {
+    display: block;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(117, 10, 103, 0.699);
+    margin-left: 45%;
+  }
+  .about .col-md-4 .round p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+  .about .col-md-4 .box {
+    padding: 0;
+    margin: 10px;
+    width: 350px;
+    border-radius: 10%;
+    background: rgba(14, 13, 13, 0.397);
+  }
+  .about .col-md-4 .box p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
   }
 }
 </style>
