@@ -32,7 +32,7 @@ export default {
         {
           id: 2,
           title: "Essensial Oil",
-          img: "https://i.postimg.cc/KjnRDFyw/en2.jpg",
+          img: "https://i.postimg.cc/x1yZ5Fzk/essen.jpg",
           url: "/essensialoil",
         },
         {
@@ -44,13 +44,13 @@ export default {
         {
           id: 4,
           title: "Probiotic",
-          img: "https://i.postimg.cc/KjnRDFyw/en2.jpg",
+          img: "https://i.postimg.cc/WpFfC4Zc/probio.jpg",
           url: "/probiotics",
         },
         {
           id: 5,
           title: "Organic Minarels",
-          img: "https://i.postimg.cc/pXbjhct3/en.jpg",
+          img: "https://i.postimg.cc/hjrPq06h/organic.jpg",
           url: "/organicminarels",
         },
       ],

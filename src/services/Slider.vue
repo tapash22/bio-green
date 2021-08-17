@@ -15,13 +15,14 @@ export default {
   data() {
     return {
       images: [
-        "https://i.postimg.cc/QC5zpRzr/sven-mieke-olon-Uw-Urm-Qk-unsplash.jpg",
-        "https://i.postimg.cc/QdjzTYkR/sticker-mule-q-Nhst-Taw-Qr-I-unsplash.jpg",
-        "https://i.postimg.cc/Xvz1tjSb/daniel-tuttle-IHUF0j-Iey4-unsplash.jpg",
-        "https://i.postimg.cc/j2VgdMS3/benigno-hoyuela-jrk1j7i96-HI-unsplash.jpg",
-        "https://i.postimg.cc/02SHq48Q/s1.jpg",
-        "https://i.postimg.cc/K8rq1g3h/s2.jpg",
-
+        "https://i.postimg.cc/vTgQh5hD/1.jpg",
+        "https://i.postimg.cc/BvS4yrpr/2.jpg",
+        "https://i.postimg.cc/853G7jGG/3.jpg",
+        "https://i.postimg.cc/SQBX5KMH/4.jpg",
+        "https://i.postimg.cc/6373bs59/5.jpg",
+        "https://i.postimg.cc/k5HMbjNL/6.jpg",
+        "https://i.postimg.cc/1XGybyxZ/7.jpg",
+        "https://i.postimg.cc/Gm7dWMf9/8.jpg",
       ],
       timer: null,
       currentIndex: 0,

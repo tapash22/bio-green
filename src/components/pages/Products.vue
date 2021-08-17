@@ -41,19 +41,19 @@ export default {
         {
           id: 1,
           title: "Poultry",
-          img: "https://i.postimg.cc/g0cHy9Z9/poltry.jpg",
+          img: "https://i.postimg.cc/RZF42Spw/239020602-548316853262866-8205688915792121368-n.jpg",
           url: "/poultry",
         },
         {
           id: 2,
           title: "Ruminent",
-          img: "https://i.postimg.cc/gk9ySLZH/runinent.jpg",
+          img: "https://i.postimg.cc/XYz4bRtm/239055660-561869864942902-8732590383673099750-n.jpg",
           url: "/ruminent",
         },
         {
           id: 3,
           title: "AQua",
-          img: "https://i.postimg.cc/qMtYnKdc/aqua.jpg",
+          img: "https://i.postimg.cc/LXkcnw0H/239363573-567311807755963-1020352780872672881-n.jpg",
           url: "/aqua",
         },
       ],

@@ -2,49 +2,17 @@
   <div class="products">
     <div class="container">
       <div class="row">
-        <h3>Essensial Oil</h3>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>NuqoNex</p>
-            </div>
-          </div>
+        <h3>Essensialoils</h3>
+        <div
+          class="col-md-4"
+          v-for="Essensialoil in Essensialoils"
+          :key="Essensialoil.id"
+        >
+        <div class="card">
+          <img :src="Essensialoil.img" />
+          <p>{{ Essensialoil.title }}</p>
         </div>
-        <!-- <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Amonia</p>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Amonia</p>
-            </div>
-          </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -52,6 +20,27 @@
         
 <script>
 export default {
+  data() {
+    return {
+      Essensialoils: [
+        {
+          id: "1",
+          title: "Essensialoil",
+          img: "https://i.postimg.cc/x1yZ5Fzk/essen.jpg",
+        },
+        {
+          id: "2",
+          title: "Essensialoil",
+          img: "https://i.postimg.cc/x1yZ5Fzk/essen.jpg",
+        },
+        {
+          id: "3",
+          title: "Essensialoil",
+          img: "https://i.postimg.cc/x1yZ5Fzk/essen.jpg",
+        },
+      ],
+    };
+  },
   mounted() {
     window.scrollTo(0, 0);
   },
@@ -64,12 +53,12 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 122px;
+  margin-top: 120px;
 }
 .row {
   display: flex;
-  justify-content: center;
-
+  justify-content: space-evenly;
+  padding-bottom: 20px;
   margin: 0;
 }
 .row h3 {
@@ -82,8 +71,7 @@ export default {
   padding-bottom: 10px;
 }
 .row .col-md-4 {
-  padding: 0;
-  margin: 0;
+  padding: 10px;
 }
 .col-md-4 .card {
   padding: 0;
@@ -98,38 +86,8 @@ export default {
   background-position: center;
   background-size: cover;
 }
-.col-md-4 .card .btn {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  bottom: 90px;
-  right: -50px;
-  width: 120px;
-  height: 40px;
-  background: #1ebbf0;
-  border-radius: 20%/50%;
-  padding: 0;
-}
-.col-md-4 .card .btn div {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  padding: 4px;
-}
-.col-md-4 .card .btn div i {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-}
-/* .col-md-4 .card .btn div i:hover {
-  transform: translateX(0);
-} */
-.col-md-4 .card .name {
-  position: relative;
-  padding: 10px;
-}
-.col-md-4 .card .name p {
+
+.col-md-4 .card p {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;

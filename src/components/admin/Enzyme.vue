@@ -149,7 +149,14 @@ export default {
   },
 
   created() {
-    this.readData();
+      db.collection("enzymes")
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            this.enzymes.push(doc);
+          });
+        });
   },
 
   mounted() {
@@ -255,16 +262,6 @@ export default {
       }
     },
 
-    readData() {
-      db.collection("enzymes")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            this.enzymes.push(doc);
-          });
-        });
-    },
     reset() {
       this.enzyme = {
         name: "",
@@ -278,7 +275,6 @@ export default {
         .add(this.enzyme)
         .then((docRef) => {
           this.reset();
-          this.readData();
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {

@@ -64,7 +64,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 170px;
+  margin-top: 120px;
 }
 .row {
   display: flex;

@@ -48,9 +48,9 @@
       </div>
     </div>
 
-    <div v-if="showPdf">
+    <!-- <div v-if="showPdf">
       <pdf-viewer></pdf-viewer>
-    </div>
+    </div> -->
   </div>
 </template>
         
@@ -65,11 +65,11 @@ export default {
     window.scrollTo(0, 0);
   },
 
-  methods: {
-    onPdf() {
-      this.showPdf = true;
-    },
-  },
+  // methods: {
+  //   onPdf() {
+  //     this.showPdf = true;
+  //   },
+  // },
 };
 </script>
         

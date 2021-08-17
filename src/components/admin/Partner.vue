@@ -191,7 +191,14 @@ export default {
   },
 
   created() {
-    this.readData();
+    db.collection("partners")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.partners.push(doc);
+        });
+      });
   },
 
   mounted() {
@@ -269,17 +276,6 @@ export default {
       }
     },
 
-    readData() {
-      db.collection("partners")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            this.partners.push(doc);
-          });
-        });
-    },
-
     reset() {
       this.product = {
         partner_name: "",
@@ -294,7 +290,6 @@ export default {
       db.collection("partners")
         .add(this.partner)
         .then((docRef) => {
-          this.readData();
           this.reset();
           console.log("Document written with ID: ", docRef.id);
         })

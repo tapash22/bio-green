@@ -166,7 +166,14 @@ export default {
   },
 
   created() {
-    this.readData();
+    db.collection("products")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.products.push(doc);
+        });
+      });
   },
 
   mounted() {
@@ -272,16 +279,6 @@ export default {
       }
     },
 
-    readData() {
-      db.collection("products")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            this.products.push(doc);
-          });
-        });
-    },
     reset() {
       this.product = {
         product_name: "",
@@ -296,7 +293,6 @@ export default {
         .add(this.product)
         .then((docRef) => {
           this.reset();
-          this.readData();
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {

@@ -136,7 +136,7 @@ import { fb, db } from "../../firebase";
 export default {
   data() {
     return {
-       showModal: false,
+      showModal: false,
       occations: [],
       occation: {
         name: "",
@@ -148,7 +148,14 @@ export default {
   },
 
   created() {
-    this.readData();
+    db.collection("occations")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.occations.push(doc);
+        });
+      });
   },
 
   mounted() {
@@ -227,17 +234,6 @@ export default {
       }
     },
 
-    readData() {
-      db.collection("occations")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            this.occations.push(doc);
-          });
-        });
-    },
-
     reset() {
       this.occation = {
         name: "",
@@ -251,7 +247,7 @@ export default {
         .add(this.occation)
         .then((docRef) => {
           this.reset();
-          this.readData();
+
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {

@@ -5,7 +5,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <h3>Our Partner</h3>
+        <h3>Our Partners</h3>
         <div
           class="col-md-6"
           data-aos="fade-right"

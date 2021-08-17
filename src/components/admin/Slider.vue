@@ -23,7 +23,9 @@
               </div>
             </div>
             <div class="my-3">
-              <button class="btn btn-primary" @click.prevent="saveData">Add Slider</button>
+              <button class="btn btn-primary" @click.prevent="saveData">
+                Add Slider
+              </button>
             </div>
           </form>
         </div>
@@ -130,7 +132,7 @@ import { fb, db } from "../../firebase";
 export default {
   data() {
     return {
-      showModal:false,
+      showModal: false,
       sliders: [],
       slider: {
         name: "",
@@ -142,10 +144,17 @@ export default {
   },
 
   created() {
-    this.readData();
+    db.collection("sliders")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.sliders.push(doc);
+        });
+      });
   },
 
-   mounted() {
+  mounted() {
     window.scrollTo(0, 0);
   },
   methods: {
@@ -222,16 +231,6 @@ export default {
       }
     },
 
-    readData() {
-      db.collection("sliders")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            this.sliders.push(doc);
-          });
-        });
-    },
     reset() {
       this.slider = {
         name: "",
@@ -244,7 +243,6 @@ export default {
         .add(this.slider)
         .then((docRef) => {
           this.reset();
-          this.readData();
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {

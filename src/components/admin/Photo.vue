@@ -5,36 +5,36 @@
         <div class="form">
           <h3>Add Event</h3>
           <form>
-          <div class="form-group">
-            <label>Occation Name</label>
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Event Name .."
-              v-model="gallery.occation_name"
-            />
-          </div>
-           <div class="form-group">
-            <label>Description</label>
-            <textarea
-              class="form-control"
-              v-model="gallery.description"
-            ></textarea>
-          </div>
-          <div class="form-group my-4 upload">
-            <label>Upload Image</label>
-            <input class="form-control" type="file" @change="uploadImage" />
-          </div>
+            <div class="form-group">
+              <label>Occation Name</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Event Name .."
+                v-model="gallery.occation_name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea
+                class="form-control"
+                v-model="gallery.description"
+              ></textarea>
+            </div>
+            <div class="form-group my-4 upload">
+              <label>Upload Image</label>
+              <input class="form-control" type="file" @change="uploadImage" />
+            </div>
             <div class="form-group">
               <div class="p-1">
-                 <img :src="gallery.image" style="width:80px;height:50px;">
+                <img :src="gallery.image" style="width: 80px; height: 50px" />
               </div>
             </div>
-          <div class="btn">
-            <button class="btn btn-primary" @click.prevent="saveData">
-              Add Gallary
-            </button>
-          </div>
+            <div class="btn">
+              <button class="btn btn-primary" @click.prevent="saveData">
+                Add Gallary
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -43,7 +43,7 @@
       <div class="col-md-12">
         <div class="table">
           <table class="table table-striped">
-             <thead>
+            <thead>
               <tr>
                 <th>Event name</th>
                 <th>Description</th>
@@ -101,7 +101,7 @@
                 v-model="gallery.occation_name"
               />
             </div>
-                 <div class="form-group">
+            <div class="form-group">
               <label>Description</label>
               <textarea
                 class="form-control"
@@ -114,8 +114,8 @@
             </div>
             <div class="form-group">
               <div class="p-1">
-                 <img :src="gallery.image" style="width:80px;height:50px;">
-                 <span class="delete-img" @click="deleteImage(image)">X</span>
+                <img :src="gallery.image" style="width: 80px; height: 50px" />
+                <span class="delete-img" @click="deleteImage(image)">X</span>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@
 </template>
 
 <script>
-import { fb,db } from "../../firebase";
+import { fb, db } from "../../firebase";
 export default {
   name: "Gallery",
   data() {
@@ -147,52 +147,52 @@ export default {
       gallerys: [],
       gallery: {
         occation_name: "",
-        description:"",
-        image:"",
+        description: "",
+        image: "",
       },
       active_item: null,
     };
   },
 
-    created() {
-          db.collection("gallerys")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            this.gallerys.push(doc);
-          });
+  created() {
+    db.collection("gallerys")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.gallerys.push(doc);
         });
-    },
+      });
+  },
 
- mounted() {
+  mounted() {
     window.scrollTo(0, 0);
   },
   methods: {
-    deleteImage(){},
+    deleteImage() {},
 
-    uploadImage(e){
-    if(e.target.files[0]){
+    uploadImage(e) {
+      if (e.target.files[0]) {
         let file = e.target.files[0];
-      var storageRef = fb.storage().ref('gallerys/' +file.name);
-      let uploadTask = storageRef.put(file);
-      
-      uploadTask.on('state_changed', 
-        () => {
-     
-        }, 
-        () => {
-          // Handle unsuccessful uploads
-        }, 
-        () => {
-          // Handle successful uploads on complete
-          // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            this.gallery.image = downloadURL;
-            console.log('File available at', downloadURL);
-          });
-        }
-      );
-    }
+        var storageRef = fb.storage().ref("gallerys/" + file.name);
+        let uploadTask = storageRef.put(file);
+
+        uploadTask.on(
+          "state_changed",
+          () => {},
+          () => {
+            // Handle unsuccessful uploads
+          },
+          () => {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              this.gallery.image = downloadURL;
+              console.log("File available at", downloadURL);
+            });
+          }
+        );
+      }
     },
 
     inClose() {
@@ -200,14 +200,12 @@ export default {
     },
 
     watcher() {
-      db.collection("gallerys")
-        .onSnapshot((querySnapshot) => {
-          this.gallarys = [];
-          querySnapshot.forEach((doc) => {
-            this.gallerys.push(doc);
-          });
-         
+      db.collection("gallerys").onSnapshot((querySnapshot) => {
+        this.gallarys = [];
+        querySnapshot.forEach((doc) => {
+          this.gallerys.push(doc);
         });
+      });
     },
 
     updateProduct() {
@@ -215,8 +213,8 @@ export default {
         .doc(this.active_item)
         .update(this.gallery)
         .then(() => {
-           this.showModal = false;
-           this.watcher();
+          this.showModal = false;
+          this.watcher();
           console.log("Document successfully updated!");
         })
         .catch((error) => {
@@ -246,22 +244,12 @@ export default {
       }
     },
 
-    readData() {
-      db.collection("gallerys")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            this.gallerys.push(doc);
-          });
-        });
-    },
-    reset(){
-      this.gallery={
+    reset() {
+      this.gallery = {
         gallery_name: "",
-        description:"",
-        image:null,
-      }
+        description: "",
+        image: null,
+      };
     },
 
     saveData() {
@@ -269,7 +257,6 @@ export default {
         .add(this.gallery)
         .then((docRef) => {
           this.reset();
-           this.readData();
           console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {
@@ -333,15 +320,14 @@ label {
   width: 100%;
   margin: 5px;
   background: #fff;
-    overflow-y: scroll;
+  overflow-y: scroll;
   border: 2px solid blue;
 }
 .col-md-12 .table {
   padding: 10px;
   margin: 10px;
-
 }
-.modal{
+.modal {
   display: block;
 }
 </style>
