@@ -7,9 +7,10 @@
       data-aos-once="false"
     >
       <div class="event-list">
-        <img src="" />
-        <p><br />
-        
+        <img :src="occation.image" />
+        <p>
+          {{ occation.name }}<br />
+          {{ occation.place }}
         </p>
       </div>
     </div>
@@ -19,18 +20,20 @@
       data-aos-delay="500"
       data-aos-once="false"
     >
-      <div class="box" v-for="occation in occations" :key="occation.name">
+      <div class="box" v-for="occation in occations" :key="occation.id">
         <div class="box-h">
           <img :src="occation.data().image" />
         </div>
-       
-          <div class="box-b">
-            <p>
-              {{ occation.data().name }}<br />
-              {{ occation.data().place }}
-            </p>
-            <button class="btn btn-primary" @click.prevent="onClick($event)">View</button>
-          </div>
+
+        <div class="box-b">
+          <p>
+            {{ occation.data().name }}<br />
+            {{ occation.data().place }}
+          </p>
+          <button class="btn btn-primary" @click.prevent="onClick(occation)">
+            View
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -63,8 +66,9 @@ export default {
   },
 
   methods: {
-    onClick(e) {
-      console.log(e);
+    onClick(occation) {
+      this.occation = occation.data();
+      this.active_item = occation.id;
     },
   },
 };

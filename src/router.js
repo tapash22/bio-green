@@ -62,6 +62,7 @@ const routes = [
             { path: 'organicminarelsc' , component: Organicminarelsc },
 
             { path: 'essensialoila' , component: Essensialoila },
+            
             { path: 'probioticsa' , component: Probioticsa },
             { path: 'organicminarelsa' , component: Organicminarelsa },
 

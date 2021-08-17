@@ -169,8 +169,10 @@ text-align: center;
 .bottom .col-md-4 ul {
   display: flex;
   float: right;
-
   padding: 10px;
+}
+.bottom .col-md-4 li{
+  list-style: none;
 }
 .bottom .col-md-4 li i {
   font-size: 1.5rem;

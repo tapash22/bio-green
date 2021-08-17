@@ -20,7 +20,7 @@
         <div class="col-md-4">
           <div class="card">
             <img src="../assets/image/en2.jpg" />
-            <div class="btn" >
+            <div class="btn">
               <div>view</div>
               <div>
                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
@@ -55,22 +55,21 @@
 </template>
         
 <script>
-
 export default {
-  data(){
-    return{
-      showPdf:false,
-    }
+  data() {
+    return {
+      showPdf: false,
+    };
   },
-  components:{
- 
+  mounted() {
+    window.scrollTo(0, 0);
   },
 
-  methods:{
-    onPdf(){
+  methods: {
+    onPdf() {
       this.showPdf = true;
-    }
-  }
+    },
+  },
 };
 </script>
         
@@ -122,7 +121,7 @@ export default {
   width: 120px;
   height: 40px;
   background: #1ebbf0;
-   border-radius: 20%/50%;
+  border-radius: 20%/50%;
   padding: 0;
 }
 .col-md-4 .card .btn div {

@@ -29,10 +29,8 @@
             <div class="col-md-12">
               <div class="brand"><img src="../../assets/image/log.png" /></div>
               <div class="header">
-                <img src="../../assets/image/1.jpg" />
-                <h5>Name</h5>
+               
                 <ul>
-                  <li><a href="#">Profile</a></li>
                   <li><a href="#" @click.prevent="onLogout()">LogOut</a></li>
                 </ul>
               </div>
@@ -192,7 +190,7 @@ nav {
   display: flex;
   float: right;
 }
-.main .head-bar .header img {
+/* .main .head-bar .header img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -204,7 +202,7 @@ nav {
   color: #fff;
   font-family: "Oswald", sans-serif;
   padding-top: 35px;
-}
+} */
 .main .head-bar .header ul {
   display: flex;
 }
@@ -214,12 +212,12 @@ nav {
   text-align: center;
   list-style: none;
    padding-top: 30px;
+   padding-left: 200px;
 }
 .main .head-bar .header ul li a {
   font-size: 1.5rem;
   font-weight: 500px;
   font-family: "Oswald", sans-serif;
-
   color: #fff;
   text-decoration: none;
 }

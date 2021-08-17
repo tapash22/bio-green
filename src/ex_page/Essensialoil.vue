@@ -51,7 +51,11 @@
 </template>
         
 <script>
-export default {};
+export default {
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+};
 </script>
         
 <style scoped>
@@ -103,7 +107,7 @@ export default {};
   width: 120px;
   height: 40px;
   background: #1ebbf0;
-   border-radius: 20%/50%;
+  border-radius: 20%/50%;
   padding: 0;
 }
 .col-md-4 .card .btn div {
@@ -135,11 +139,11 @@ export default {};
 
 @media only screen and (max-width: 767px) {
   .products {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-top: 100px;
-}
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 100px;
+  }
 }
 </style>
