@@ -1,14 +1,12 @@
 <template>
   <Carousel :items-to-show="3" :autoplay="2000" :wrap-around="true">
     <Slide v-for="slide in products" :key="slide.id">
-       
       <div class="card">
         <router-link :to="slide.url">
-        <img :src="slide.img" />
+          <img :src="slide.img" />
         </router-link>
         <p>{{ slide.title }}</p>
       </div>
-       
     </Slide>
     <template #addons>
       <Navigation />
@@ -29,33 +27,32 @@ export default {
           id: 1,
           title: "Enzymes",
           img: "https://i.postimg.cc/pXbjhct3/en.jpg",
-          url: "/poultry",
+          url: "/enzymes",
         },
         {
           id: 2,
           title: "Essensial Oil",
           img: "https://i.postimg.cc/KjnRDFyw/en2.jpg",
-          url: "/ruminent",
+          url: "/essensialoil",
         },
         {
           id: 3,
           title: "Feed Sanitizer",
           img: "https://i.postimg.cc/pXbjhct3/en.jpg",
-          url: "/aqua",
+          url: "/feedsanitizer",
         },
         {
           id: 4,
           title: "Probiotic",
           img: "https://i.postimg.cc/KjnRDFyw/en2.jpg",
-          url: "/ruminent",
+          url: "/probiotics",
         },
-         {
+        {
           id: 5,
           title: "Organic Minarels",
           img: "https://i.postimg.cc/pXbjhct3/en.jpg",
-          url: "/aqua",
+          url: "/organicminarels",
         },
-
       ],
     };
   },
@@ -75,45 +72,43 @@ export default {
   background: #fff;
   border: 2px solid green;
 }
-.card img{
+.card img {
   width: 100%;
   height: 270px;
   background-position: center;
 }
-.card p{
-  height:50px;
+.card p {
+  height: 50px;
   font-size: 1.2rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
-  color:#000;
+  color: #000;
   text-align: center;
-
   z-index: 1;
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 767px) {
   .card {
-  width: 100%;
-  height: 100px;
-  padding: 0;
-  background: #fff;
-}
-.card img{
-  width: 100%;
-  height: 100%;
-  background-position: center;
-}
-.card p{
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: "Oswald", sans-serif;
-  color:#fff;
-  text-align: center;
-  margin-top: -20%;
-  z-index: 1;
-  text-transform: uppercase;
-}
-
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    background: #fff;
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+  }
+  .card p {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: -20%;
+    z-index: 1;
+    text-transform: uppercase;
+  }
 }
 </style>
