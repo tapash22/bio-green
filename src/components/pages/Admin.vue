@@ -18,6 +18,9 @@
               <router-link to="/admin/slider">Add Slider</router-link>
             </li>
              <li>
+              <router-link to="/admin/blog">Blog</router-link>
+            </li>
+              <li>
               <router-link to="/admin/events">Add Event</router-link>
             </li>
           </ul>
@@ -116,7 +119,7 @@ nav {
   margin: 0;
 }
 .col-md-4 ul li {
-  height: 70px;
+  height: 60px;
   list-style: none;
   padding: 0;
   margin: 0;

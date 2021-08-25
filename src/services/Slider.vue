@@ -1,158 +1,66 @@
 <template>
-  <div class="sld">
-    <div class="sd" v-for="i in [currentIndex]" :key="i">
-      <img :src="currentImg" />
-     
-    </div>
+  <carousel :autoplay="4000" :wrap-around="true">
+    <slide v-for="slider in sliders" :key="slider.id">
+      <img :src="slider.data().image" />
+    </slide>
 
-    <a class="prev" @click="prev" href="#">&#10094; </a>
-    <a class="next" @click="next" href="#">&#10095; </a>
-  </div>
+    <template #addons>
+      <pagination />
+    </template>
+  </carousel>
 </template>
+
 <script>
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
+import { db } from "../firebase";
 export default {
-  name: "Slider",
   data() {
     return {
-      images: [
-        "https://i.postimg.cc/vTgQh5hD/1.jpg",
-        "https://i.postimg.cc/BvS4yrpr/2.jpg",
-        "https://i.postimg.cc/853G7jGG/3.jpg",
-        "https://i.postimg.cc/SQBX5KMH/4.jpg",
-        "https://i.postimg.cc/6373bs59/5.jpg",
-        "https://i.postimg.cc/k5HMbjNL/6.jpg",
-        "https://i.postimg.cc/1XGybyxZ/7.jpg",
-        "https://i.postimg.cc/Gm7dWMf9/8.jpg",
-      ],
-      timer: null,
-      currentIndex: 0,
+      sliders: [],
+      slider: {
+        name: "",
+        des: "",
+        image: "",
+      },
+      active_item: null,
     };
   },
+  components: {
+    Carousel,
+    Slide,
 
-  mounted() {
-    this.startSlide();
+    Pagination,
   },
 
-  methods: {
-    startSlide() {
-      this.timer = setInterval(this.next, 5000);
-    },
-
-    next() {
-      this.currentIndex += 1;
-    },
-    prev() {
-      this.currentIndex -= 1;
-    },
-  },
-
-  computed: {
-    currentImg() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];
-    },
+  created() {
+    db.collection("sliders")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.sliders.push(doc);
+        });
+      });
   },
 };
 </script>
 
 <style scoped>
-.sld {
-    width: 100%;
-  height: 100%;
-  position: relative;
-  justify-content: center;
+.row {
+  padding: 10px;
+  margin: 10px;
 }
-
-.sd {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+.col-md-12 {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 img {
-  height: 500px;
   width: 100%;
-  opacity: 1;
-  filter: brightness(90%);
-}
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  color: #fff;
-  font-weight: bold;
-  font-size: 2.5rem;
-  font-weight: 500;
-  transition: 0.7s ease;
-  border-radius: 0 4px 4px 0;
-  text-decoration: none;
-  user-select: none;
-}
-
-.next {
-  right: 20px;
-}
-
-.prev {
-  left: 20px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.9s ease;
-  overflow: hidden;
-  visibility: visible;
-  position: absolute;
-  width: 100%;
-  opacity: 1;
-}
-
-.fade-enter,
-.fade-leave-to {
-  visibility: hidden;
-  width: 100%;
-  opacity: 0;
-}
-@media screen and (max-width: 759px) {
-  .sld {
-  width: 100%;
-  height: 100%;
-}
-
-.sd {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-  img {
-    height: 300px;
-    width: 100%;
-    opacity: 1;
-    filter: brightness(90%);
-  }
-
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    color: green;
-    font-weight: bold;
-    font-size: 2rem;
-    font-weight: 500;
-    transition: 0.7s ease;
-    border-radius: 0 4px 4px 0;
-    text-decoration: none;
-    user-select: none;
-  }
-  .next {
-    right: 25px;
-  }
-  .prev {
-    left: 10px;
-  }
+  height: 480px;
+  background-size: cover;
+  background-position: center;
 }
 </style>
+

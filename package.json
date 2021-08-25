@@ -19,6 +19,7 @@
     "vue-easy-lightbox": "^1.2.1",
     "vue-pdf": "^4.3.0",
     "vue-router": "^4.0.8",
+    "vue-silentbox": "^2.4.5",
     "vue3-apexcharts": "^1.4.1",
     "vue3-carousel": "^0.1.24",
     "vuex": "^4.0.2"

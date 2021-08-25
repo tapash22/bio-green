@@ -11,12 +11,12 @@
       </div>
 
       <!-- event -->
-    <div class="row">
-      <h3>Event List</h3>
-      <div class="col-md-12" style="width: 100%; height: 100%">
-        <EventList />
+      <div class="row">
+        <h3>Event List</h3>
+        <div class="col-md-12" style="width: 100%; height: 100%">
+          <EventList />
+        </div>
       </div>
-    </div>
 
       <!-- blog -->
       <div class="row blog my-3">
@@ -81,8 +81,7 @@
 <script>
 import Slider from "../../services/Slider.vue";
 import Carousel from "../../services/Carousel.vue";
-import EventList from '../../services/EventsList.vue';
-
+import EventList from "../../services/EventsList.vue";
 
 export default {
   components: {
@@ -95,7 +94,7 @@ export default {
       occations: [],
       occation: {
         name: "",
-        place:"",
+        place: "",
         image: "",
       },
 
@@ -190,7 +189,6 @@ export default {
 .row2 .col-md-4 {
   padding: 10px;
 }
-
 
 /* blog */
 .blog {
@@ -297,7 +295,7 @@ export default {
 
 @media only screen and (max-width: 767px) {
   .home {
-    margin-top: 100px;
+    margin-top: 0;
   }
   .row2 {
     margin-top: 30px;

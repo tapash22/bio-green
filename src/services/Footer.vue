@@ -42,8 +42,8 @@
     </div>
     <div class="bottom">
       <div class="container">
-        <div class="col-md-8">
-          <p>All right reserved in &copy;UltraWave</p>
+        <div class="col-md-8" style="display:flex;">
+          <p>All right reserved in &copy;Bio-Green</p>&nbsp;<img src="../assets/image/uv.png" style="wight:30px;height:30px;margin-top:10px;"/>
         </div>
         <div class="col-md-4">
           <ul>
@@ -58,7 +58,10 @@
                 ><i class="fa fa-linkedin" aria-hidden="true"></i
               ></a>
             </li>
-            <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+            <li> <a
+                href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
+                ><i class="fa fa-twitter" aria-hidden="true"></i>
+                </a></li>
           </ul>
         </div>
       </div>

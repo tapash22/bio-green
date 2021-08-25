@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <h3>Event Gallery</h3>
-        <Lightbox />
+        <lightbox></lightbox>
       </div>
     </div>
   </div>
@@ -11,10 +11,25 @@
 
 <script>
 import Lightbox from "../../services/Lightbox.vue";
+// import VueSilentbox from 'vue-silentbox';
 export default {
   components: {
     Lightbox,
   },
+  data() {
+    return{
+        images: [
+            {
+                src: 'images/image001.jpg',
+                description: 'Sunken dreams II. by Arbebuk',
+            },
+            {
+                src: 'images/image002.jpg',
+                description: 'Tunnel View Sunrise by Porbital',
+            }
+        ]
+    }
+    },
   mounted() {
     window.scrollTo(0, 0);
   },

@@ -67,7 +67,7 @@
           <img src="../../assets/image/sid.jpg" />
         </div>
       </div>
-      <div class="row" data-aos="flip-up"
+      <!-- <div class="row" data-aos="flip-up"
           data-aos-delay="500"
           data-aos-once="false">
         <h3>MEET OUR TEEM MEMBER</h3>
@@ -78,16 +78,16 @@
         >
           <Teammember />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import Teammember from "../../services/Teammember.vue";
+// import Teammember from "../../services/Teammember.vue";
 export default {
   components: {
-    Teammember,
+    // Teammember,
   },
 
   mounted() {

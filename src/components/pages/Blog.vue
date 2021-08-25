@@ -13,14 +13,20 @@
         >
           <div class="card">
             <div class="card-header">
-              <img :src="blog.img" />
+              <img :src="blog.data().image" />
             </div>
             <div class="card-body">
               <ul>
-                <li style="padding-left:10px;padding-right:10px;">{{ blog.text1 }}</li>
-                <li style="padding-left:10px;padding-right:10px;">{{ blog.text }}</li>
+                <li style="padding-left: 10px; padding-right: 10px">
+                  
+                  {{ blog.data().title }}
+                </li>
+                <li style="padding-left: 10px; padding-right: 10px">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  {{ blog.data().author }}
+                </li>
                 <li>
-                  <button class="btn btn-primary" @click.prevent="onClick">
+                  <button class="btn btn-primary" @click.prevent="onClick(blog)">
                     Read more
                   </button>
                 </li>
@@ -48,44 +54,19 @@
           </div>
           <div class="modal-body">
             <div class="img">
-              <img src="../../assets/image/blog.jpg" />
+              <img :src="blog.image" />
             </div>
             <div class="text">
-              <h4>The way you treat the animals around</h4>
+              <h4>{{ blog.title }}</h4>
               <p>
                 <i class="fa fa-user" aria-hidden="true"></i>Author name:
-                Bio-green<br />
-                <i class="fa fa-calendar" aria-hidden="true"></i>Publist Data:
-                31-07-2021
+                {{ blog.author }}<br />
+                <!-- <i class="fa fa-calendar" aria-hidden="true"></i>Publist Data:
+                31-07-2021 -->
               </p>
 
               <p class="wrap pt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                tempora aliquid ipsum? Minus sequi sint magnam necessitatibus,
-                aut debitis provident ab neque sit natus alias commodi vero rem
-                ad velit.<br><br>
-                Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Nobis in similique delectus? Perspiciatis at facere soluta
-                beatae nostrum molestiae. Officia tempore quam sapiente quos
-                incidunt ex doloremque aspernatur libero sequi? <br><br>
-
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quam facilis animi tempore minus illum tempora velit 
-                necessitatibus maiores officiis, mollitia sapiente? Mollitia 
-                dolor iure nisi repudiandae porro aut esse molestias.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                tempora aliquid ipsum? Minus sequi sint magnam necessitatibus,
-                aut debitis provident ab neque sit natus alias commodi vero rem
-                ad velit.<br><br>
-                Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Nobis in similique delectus? Perspiciatis at facere soluta
-                beatae nostrum molestiae. Officia tempore quam sapiente quos
-                incidunt ex doloremque aspernatur libero sequi? <br><br>
-                
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quam facilis animi tempore minus illum tempora velit 
-                necessitatibus maiores officiis, mollitia sapiente? Mollitia 
-                dolor iure nisi repudiandae porro aut esse molestias.
+                {{ blog.description }}
               </p>
             </div>
           </div>
@@ -101,80 +82,55 @@
 </template>
 
 <script>
+import { db } from "../../firebase";
 export default {
   data() {
     return {
       showModal: false,
-      blogs: [
-        {
-          id: "1",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/9XGbSKsS/pawel-czerwinski-qlno-Ayck9-Zc-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "2",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/9FCbj1hf/david-clode-Jd-Nixbs-Lw-S8-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "3",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/rwp9DmzX/gabor-szuts-m-KKRN7p2j-Os-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "4",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/rwp9DmzX/gabor-szuts-m-KKRN7p2j-Os-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "5",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/rwp9DmzX/gabor-szuts-m-KKRN7p2j-Os-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "6",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/rwp9DmzX/gabor-szuts-m-KKRN7p2j-Os-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-      ],
+      blogs: [],
+      blog: {
+        title: "",
+        author: "",
+        description: "",
+        image: "",
+      },
+      active_item: null,
     };
+  },
+
+  created() {
+    db.collection("blogs")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.blogs.push(doc);
+        });
+      });
   },
   mounted() {
     window.scrollTo(0, 0);
   },
 
   methods: {
-    onClick() {
+    onClick(blog) {
       this.showModal = true;
+      this.blog = blog.data();
+      this.active_item = blog.id;
     },
     inClose() {
       this.showModal = false;
     },
   },
+
+  // methods: {
+  //   onClick() {
+  //     this.showModal = true;
+  //   },
+  //   inClose() {
+  //     this.showModal = false;
+  //   },
+  // },
 };
 </script>
 
@@ -209,7 +165,7 @@ export default {
 
 .col-md-4 .card {
   width: 300px;
-  height: 100%;
+  height: 300px;
   padding: 0;
   margin: 5px;
   background: #fff;
@@ -228,10 +184,10 @@ export default {
 }
 .col-md-4 .card-body {
   width: 100%;
-  height: 100%;
+  height: 100px;
   padding: 0;
   margin: 0;
-  background:#fff;
+  background: #fff;
 }
 .card-body ul {
   display: flex;
@@ -245,6 +201,8 @@ export default {
   font-weight: 500;
   color: #000;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .card-body ul li button {
   width: 100%;
@@ -275,7 +233,7 @@ export default {
 .modal .modal-body .img {
   width: 100%;
   height: 200px;
-  padding:0;
+  padding: 0;
   margin: 0;
   border: 3px solid rgba(22, 11, 117, 0.822);
 }
@@ -291,10 +249,10 @@ export default {
   padding: 20px;
   margin: 0;
 }
-.modal .modal-body .text h4{
+.modal .modal-body .text h4 {
   font-size: 1.5rem;
   font-weight: 700;
-   font-family: "Oswald", sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 .modal .modal-body .text p {
   font-size: 1rem;
@@ -314,12 +272,12 @@ export default {
 
 @media only screen and (max-width: 767px) {
   .blog {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-top: -50px;
-}
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: -50px;
+  }
   .row {
     display: flex;
     justify-content: space-around;

@@ -34,6 +34,7 @@ import Photo from './components/admin/Photo.vue';
 import Slider from './components/admin/Slider.vue';
 import Events from './components/admin/Events.vue';
 import Enzyme  from './components/admin/Enzyme.vue';
+import Blogs from './components/admin/Blog.vue';
 import { fb } from './firebase';
 
 
@@ -41,6 +42,7 @@ const routes = [
     {
         path: '/',
         component: Client,
+        redirect:'home',
         children: [
             { path: 'home', component: Home },
             { path: 'about', component: About,},
@@ -80,6 +82,7 @@ const routes = [
             { path: 'slider', component: Slider },
             { path: 'events', component: Events},
             { path: 'enzyme', component: Enzyme },
+            { path: 'blog', component: Blogs },
         ]   
     }
 ];
@@ -90,6 +93,10 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+    // const link = this.$router.path('/');
+    // if(link){
+    //     next('/home');
+    // }
     const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
     const currentUser = fb.auth().currentUser;
     if (requiresAuth && !currentUser) {

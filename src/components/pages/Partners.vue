@@ -11,90 +11,20 @@
           data-aos="fade-right"
           data-aos-delay="500"
           data-aos-once="false"
+          v-for="partner in partners"
+          :key="partner.id"
         >
           <div class="left">
-            <img src="../../assets/image/company.jpg" />
+            <img :src="partner.data().image" />
           </div>
           <div class="right">
-            <h4>Company name</h4>
+            <h4>{{partner.data().partner_name}}</h4>
             <ul>
-              <li>from</li>
-              <li>type</li>
+              <li>{{partner.data().country_name}}</li>
+              <li>{{partner.data().product_list}}</li>
             </ul>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              quibusdam suscipit at dolor nihil enim a consectetur assumenda,
-              aperiam, ipsa dolore voluptatem fuga odio obcaecati odit velit
-              corrupti beatae eos
-            </p>
-          </div>
-        </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-left"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
-          <div class="left">
-            <img src="../../assets/image/company.jpg" />
-          </div>
-          <div class="right">
-            <h4>Company name</h4>
-            <ul>
-              <li>from</li>
-              <li>type</li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              quibusdam suscipit at dolor nihil enim a consectetur assumenda,
-              aperiam, ipsa dolore voluptatem fuga odio obcaecati odit velit
-              corrupti beatae eos
-            </p>
-          </div>
-        </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-up"
-          data-aos-delay="500"
-          data-aos-anchor-placement="top-bottom"
-        >
-          <div class="left">
-            <img src="../../assets/image/company.jpg" />
-          </div>
-          <div class="right">
-            <h4>Company name</h4>
-            <ul>
-              <li>from</li>
-              <li>type</li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              quibusdam suscipit at dolor nihil enim a consectetur assumenda,
-              aperiam, ipsa dolore voluptatem fuga odio obcaecati odit velit
-              corrupti beatae eos
-            </p>
-          </div>
-        </div>
-        <div
-          class="col-md-6"
-          data-aos="fade-up"
-          data-aos-delay="500"
-          data-aos-anchor-placement="top-bottom"
-        >
-          <div class="left">
-            <img src="../../assets/image/company.jpg" />
-          </div>
-          <div class="right">
-            <h4>Company name</h4>
-            <ul>
-              <li>from</li>
-              <li>type</li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              quibusdam suscipit at dolor nihil enim a consectetur assumenda,
-              aperiam, ipsa dolore voluptatem fuga odio obcaecati odit velit
-              corrupti beatae eos
+              {{partner.data().description}}
             </p>
           </div>
         </div>
@@ -104,7 +34,34 @@
 </template>
 
 <script>
+import { db } from "../../firebase";
+
 export default {
+  data() {
+    return {
+      partners: [],
+      partner: {
+        partner_name: "",
+        country_name: "",
+        product_list: "",
+        description: "",
+        image: "",
+      },
+      active_item: null,
+    };
+  },
+
+  created() {
+    db.collection("partners")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.partners.push(doc);
+        });
+      });
+  },
+
   mounted() {
     window.scrollTo(0, 0);
   },
@@ -202,12 +159,12 @@ export default {
 
 @media only screen and (max-width: 767px) {
   .partners {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-top: 100px;
-}
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 100px;
+  }
   .image {
     width: 100%;
     height: 300px;
