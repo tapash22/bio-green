@@ -4,7 +4,7 @@
       <div class="brand">
         <div class="logo">
           <router-link to="/home">
-            <img src="../assets/image/log.png" />
+            <!-- <img src="../assets/image/log.png" /> -->
           </router-link>
         </div>
         <div class="icon" @click="showNav = !showNav">
@@ -154,7 +154,7 @@ export default {
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nav1.jpg");
+  background-image: url("../assets/image/hh.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -163,6 +163,7 @@ nav {
   display: flex;
   justify-content: space-between;
   box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
+  padding-bottom: 1px;
 }
 
 nav .brand {
@@ -175,7 +176,7 @@ nav .brand {
 .brand img {
   width: 300px;
   height: 90px;
-  margin-top: 15px;
+  margin-top: 30px;
   margin-left: 50px;
 }
 .brand .icon {
@@ -203,6 +204,7 @@ nav::after {
   font-weight: 500;
   color: #fff;
   text-align: right;
+  margin-top: 10px;
 }
 .navbar .login p i {
   font-size: 2rem;
@@ -228,7 +230,7 @@ nav::after {
   font-size: 20px;
   font-weight: 500;
   font-family: "Oswald", sans-serif;
-  padding: 20px 15px;
+  padding: 10px 15px;
 }
 
 .navbar .ul li a:hover,

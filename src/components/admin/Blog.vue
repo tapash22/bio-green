@@ -24,6 +24,15 @@
               />
             </div>
             <div class="form-group">
+              <label>Date</label>
+              <input
+                class="form-control"
+                type="date"
+                placeholder="05/09/2019"
+                v-model="blog.mydate"
+              />
+            </div>
+            <div class="form-group">
               <label>Description</label>
               <textarea
                 class="form-control"
@@ -64,7 +73,8 @@
             <tbody>
               <tr v-for="blog in blogs" :key="blog.id">
                 <td>{{ blog.data().title }}</td>
-                <td>{{ blog.data().author }}</td>
+                <td>{{ blog.data().author}}</td>
+                <td>{{ blog.data().mydate}}</td>
                 <td>{{ blog.data().description }}</td>
                 <td>{{ blog.data().image }}</td>
                 <td>
@@ -122,6 +132,15 @@
               />
             </div>
             <div class="form-group">
+              <label>Date</label>
+              <input
+                class="form-control"
+                type="date"
+                placeholder="05/09/2019"
+                v-model="blog.mydate"
+              />
+            </div>
+            <div class="form-group">
               <label>Description</label>
               <textarea
                 class="form-control"
@@ -134,7 +153,7 @@
             </div>
             <div class="form-group">
               <div class="p-1">
-                <img :src="product.image" style="width: 80px; height: 50px" />
+                <img :src="blog.image" style="width: 80px; height: 50px" />
               </div>
             </div>
           </div>
@@ -166,9 +185,10 @@ export default {
       blogs: [],
       blog: {
         title: "",
-        author:"",
+        author: "",
         description: "",
         image: "",
+        mydate: "",
       },
       active_item: null,
     };
@@ -266,8 +286,8 @@ export default {
 
     reset() {
       this.blog = {
-       title: "",
-       author:"",
+        title: "",
+        author: "",
         description: "",
         image: "",
       };

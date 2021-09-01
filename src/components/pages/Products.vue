@@ -25,11 +25,17 @@
             </div>
             <div class="card-footer">
               <p>{{ product.data().product_name }}</p>
+              <button @click.prevent="downloadFile()">
+                {{ product.data().pdf }}
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- <div class="row" style="background:#000;">
+      <Pdf />
+    </div> -->
 
     <div
       class="modal"
@@ -60,7 +66,7 @@
             <div class="text">
               <h4>Product Name: {{ product.product_name }}</h4>
               <p class="wrap pt-3">
-               <strong> Details:</strong>
+                <strong> Details:</strong>
                 {{ product.description }}
               </p>
             </div>
@@ -78,18 +84,28 @@
 
 <script>
 import { db } from "../../firebase";
+import { storageRef } from "firebase/storage";
+// import Pdf from "./Pdfshow.vue";
+// import PdfViewer from '../../services/PdfViewer.vue';
 export default {
   data() {
     return {
+      //   name: 'my-pdf-file.pdf',
+      // path: 'lib/pdfjs-2.3.200-dist/web/demo.pdf',
       showModal: false,
       products: [],
       product: {
         product_name: "",
         description: "",
         image: "",
+        pdf:"",
       },
       active_item: null,
     };
+  },
+
+  components:{
+    // Pdf,
   },
 
   created() {
@@ -113,6 +129,39 @@ export default {
     inClose() {
       this.showModal = false;
     },
+    downloadFile(){ 
+     // Create a reference to the file we want to download
+var starsRef = storageRef.child(`products/`);
+
+// Get the download URL
+starsRef.getDownloadURL()
+.then((url) => {
+  // Insert url into an <img> tag to "download"
+  console.log(url);
+})
+.catch((error) => {
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+  switch (error.code) {
+    case 'storage/object-not-found':
+      // File doesn't exist
+      break;
+    case 'storage/unauthorized':
+      // User doesn't have permission to access the object
+      break;
+    case 'storage/canceled':
+      // User canceled the upload
+      break;
+
+    // ...
+
+    case 'storage/unknown':
+      // Unknown error occurred, inspect the server response
+      break;
+  }
+});
+                 
+      }
   },
 
   mounted() {
@@ -127,7 +176,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 122px;
+  margin-top: 142px;
 }
 .row {
   display: flex;
@@ -216,7 +265,7 @@ export default {
   margin-left: 97%;
   background: rgba(22, 11, 117, 0.822);
 }
-.modal .modal-header .close span{
+.modal .modal-header .close span {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 700;

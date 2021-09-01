@@ -71,7 +71,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 122px;
+  margin-top: 142px;
 }
 .row {
   width: 100%;

@@ -3,7 +3,7 @@
     <Slider />
     <div class="container">
       <div class="row">
-        <h3>Our products</h3>
+        <h3>Our<strong> products </strong></h3>
         <p>We deliver performances rather just a product to your business</p>
         <div class="col-md-12" style="width: 100%; height: 100%">
           <Carousel />
@@ -12,7 +12,7 @@
 
       <!-- event -->
       <div class="row">
-        <h3>Event List</h3>
+        <h3>Event <strong>List</strong></h3>
         <div class="col-md-12" style="width: 100%; height: 100%">
           <EventList />
         </div>
@@ -20,7 +20,7 @@
 
       <!-- blog -->
       <div class="row blog my-3">
-        <h3>Bio-Green Blog</h3>
+        <h3>Bio-Green <strong>Blog</strong></h3>
         <div
           class="col-md-4"
           v-for="blog in blogs"
@@ -51,7 +51,7 @@
 
     <!-- about -->
     <div class="about">
-      <h3>Our Plan</h3>
+      <h3>Our <strong> Plan</strong></h3>
       <div class="container">
         <div class="row">
           <div class="col-md-4" v-for="about in abouts" :key="about.id">
@@ -155,8 +155,9 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 .home {
-  margin-top: 122px;
+  margin-top: 130px;
 }
 
 .row {
@@ -166,19 +167,26 @@ export default {
 }
 .row h3 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
-  font-family: "Oswald", sans-serif;
+font-family: 'Roboto', sans-serif;
   color: #000;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+}
+.row h3 strong{
+  color:  rgba(31, 15, 105, 0.849);
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
 }
 .row p {
   text-align: center;
   font-size: 1.1rem;
   font-weight: 500;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #000;
+  margin-top: -5px;
 }
 .row2 {
   margin-top: 30px;

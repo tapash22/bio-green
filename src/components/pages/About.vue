@@ -100,7 +100,7 @@ export default {
 .about {
   width: 100%;
   height: 100%;
-  margin-top: 122px;
+  margin-top: 142px;
   padding: 0;
 }
 .image {

@@ -64,6 +64,10 @@
                 <!-- <i class="fa fa-calendar" aria-hidden="true"></i>Publist Data:
                 31-07-2021 -->
               </p>
+              <p>
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                {{ blog.mydate}}
+              </p>
 
               <p class="wrap pt-3">
                 {{ blog.description }}
@@ -91,6 +95,7 @@ export default {
       blog: {
         title: "",
         author: "",
+        mydate:"",
         description: "",
         image: "",
       },
@@ -123,14 +128,6 @@ export default {
     },
   },
 
-  // methods: {
-  //   onClick() {
-  //     this.showModal = true;
-  //   },
-  //   inClose() {
-  //     this.showModal = false;
-  //   },
-  // },
 };
 </script>
 
@@ -140,7 +137,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 122px;
+  margin-top: 142px;
 }
 .row {
   display: flex;
