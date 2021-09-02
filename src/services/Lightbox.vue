@@ -1,15 +1,14 @@
-
 <template>
   <div class="light">
     <div class="row">
       <div
         class="col-md-4"
-        v-for="(gallery, index) in gallerys"
-        :key="index"
+        v-for="(src, index) in imgs"
+        :key="index" 
         @click="() => showImg(index)"
       >
         <div class="card">
-          <img :src="gallery.data().image" />
+          <img :src="src" />
         </div>
       </div>
       <!-- v-for="(src, index) in imgs"
@@ -17,7 +16,7 @@
       <!-- all props & events -->
       <vue-easy-lightbox 
         :visible="visible"
-        :gallery="gallery"
+        :imgs="imgs"
         :index="index"
         @hide="handleHide"
       ></vue-easy-lightbox>
@@ -52,14 +51,14 @@ export default {
       //     { src: 'https://via.placeholder.com/450.png/', title: 'this is title' }
       //   ]
       // default: 0
-      // imgs: [
-      //   "https://i.postimg.cc/ZYgNpczH/1.jpg",
-      //   "https://i.postimg.cc/4N9959Jg/2.jpg",
-      //   "https://i.postimg.cc/W1mJRcFY/1d.jpg",
-      //   "https://i.postimg.cc/xjWRnY89/2d.jpg",
-      //   "https://i.postimg.cc/y8zmfD0w/company.jpg",
-      //   "https://i.postimg.cc/FR13f3QJ/partner.png",
-      // ],
+      imgs: [
+        "https://i.postimg.cc/ZYgNpczH/1.jpg",
+        "https://i.postimg.cc/4N9959Jg/2.jpg",
+        "https://i.postimg.cc/W1mJRcFY/1d.jpg",
+        "https://i.postimg.cc/xjWRnY89/2d.jpg",
+        "https://i.postimg.cc/y8zmfD0w/company.jpg",
+        "https://i.postimg.cc/FR13f3QJ/partner.png",
+      ],
     };
   },
   created() {
