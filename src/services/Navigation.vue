@@ -236,7 +236,7 @@ nav::after {
 .navbar .ul li a:hover,
 .navbar .ul li a.router-link-active {
   color: #fff;
-  background: rgba(14, 2, 83, 0.39);
+  background: rgba(11, 60, 133, 0.719);
 }
 /* .navbar .ul ul {
   background: rgba(0, 0, 0, 0.603);
@@ -259,8 +259,8 @@ nav::after {
   transition: all 0.3s;
   margin-left: -30px;
   z-index: 1;
-  width: 120px;
-  padding: 0;
+  width: 100%;
+  padding: 10px;
   margin: 0;
 }
 .navbar .ul li:hover > ul {

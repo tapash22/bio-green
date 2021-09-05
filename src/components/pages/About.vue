@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="image">
-      <img src="../../assets/image/about.jpg" />
+      <img src="../../assets/image/about.jpg"/>
     </div>
     <div class="container">
       <div class="row">
@@ -39,9 +39,12 @@
             your livestock & poultry business operation.
           </p>
         </div>
-        <div class="col-md-6 text" data-aos="fade-right"
+        <div
+          class="col-md-6 text"
+          data-aos="fade-right"
           data-aos-delay="500"
-          data-aos-once="false">
+          data-aos-once="false"
+        >
           <h4>WHAT WE DO</h4>
           <p class="wrap">
             We are the sole importer & sourcing partner for world class
@@ -61,24 +64,15 @@
             your livestock & poultry business operation.
           </p>
         </div>
-        <div class="col-md-6 pt-5" data-aos="fade-right"
+        <div
+          class="col-md-6 pt-5"
+          data-aos="fade-right"
           data-aos-delay="500"
-          data-aos-once="false">
+          data-aos-once="false"
+        >
           <img src="../../assets/image/sid.jpg" />
         </div>
       </div>
-      <!-- <div class="row" data-aos="flip-up"
-          data-aos-delay="500"
-          data-aos-once="false">
-        <h3>MEET OUR TEEM MEMBER</h3>
-        <hr />
-        <div
-          class="col-md-12"
-          style="width: 100%; height: 100%; margin-bottom: 50px"
-        >
-          <Teammember />
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -100,18 +94,23 @@ export default {
 .about {
   width: 100%;
   height: 100%;
-  margin-top: 142px;
+  margin-top: 0;
   padding: 0;
 }
-.image {
-  width: 100%;
-  height: 300px;
+
+.about .image {
+  min-height: 500px;
+  padding: 0;
+  margin: 0;
+  background: #000;
 }
-.image img {
-  width: 100%;
-  height: 100%;
+.about .image img {
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 400px;
 }
 
 .about .row {

@@ -76,16 +76,16 @@ export default {
 .contact {
   width: 100%;
   height: 100%;
-  margin-top: 142px;
+  margin-top: 140px;
   padding: 0;
 }
 .image {
   width: 100%;
-  height: 400px;
+   min-height: 350px;
 }
 .image img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+  height: 350px;
   background-position: center;
   background-size: cover;
 }
