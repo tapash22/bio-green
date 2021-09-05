@@ -44,11 +44,7 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="row">
-    <div class="image"></div>
-    </div> -->
-
+    
     <!-- about -->
     <div class="about">
       <h3>Our <strong> Plan</strong></h3>

@@ -1,7 +1,7 @@
 <template>
   <div class="partners">
     <div class="image">
-      <img src="../../assets/image/partner.jpg" />
+      <img src="../../assets/image/partners.png" />
     </div>
     <div class="container">
       <div class="row">
@@ -79,10 +79,13 @@ export default {
 .image {
   width: 100%;
   height: 300px;
+  background: linear-gradient(#e66465, #9198e5);
+  display: flex;
+  justify-content: center;
 }
 .image img {
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 400px;
   background-position: center;
   background-size: cover;
 }
@@ -110,19 +113,22 @@ export default {
   border: 1px solid green;
 }
 .col-md-6 .left {
-  width: 100%;
+  width: 300px;
   height: 300px;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #fff;
 }
 .left img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
+  padding:10px;
 }
 .right {
-  width: 100%;
+  width: 200px;
   height: 300px;
   padding: 0;
   margin: 0;

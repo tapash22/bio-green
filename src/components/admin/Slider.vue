@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form">
-          <h3>Add User</h3>
+          <h3>Add Slider</h3>
           <form>
             <div class="form-group">
               <label>Slider Name</label>
