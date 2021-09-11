@@ -78,7 +78,7 @@
   background: #1b1b1b;
   width: 100%;
   height: 100%;
-      background-image: url(../assets/image/foot.jpg);
+      background-image: url(../assets/image/foot1.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -100,17 +100,22 @@
   padding: 10px;
 }
 h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+
 }
 strong {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
+
 }
 p {
   text-align: left;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* }

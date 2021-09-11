@@ -6,7 +6,7 @@
       data-aos-delay="500"
       data-aos-once="false"
     >
-      <div class="event-list">
+      <div class="event-list" v-if="occationHappen">
         <img :src="occation.image" />
         <p>
           {{ occation.name }}<br />
@@ -45,6 +45,7 @@ import { db } from "../firebase";
 export default {
   data() {
     return {
+      occationHappen:false,
       occations: [],
       occation: {
         name: "",

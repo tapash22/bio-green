@@ -9,6 +9,7 @@ import Gallery from './components/pages/Gallery.vue';
 import Contact from './components/pages/Contact.vue';
 import Login from './components/pages/Login.vue';
 import Pdfshow from './components/pages/Pdfshow.vue';
+import NotFound from './components/pages/NotFound.vue';
 
 
 import Organicminarels from './ex_page/Organicminarels.vue';
@@ -53,6 +54,7 @@ const routes = [
             { path: 'contact', component: Contact, },
             { path: 'login', component: Login, },
             { path: 'pdfshow', component: Pdfshow, },
+            { path:'/:NotFound(.*)*', component: NotFound },
 
             { path: 'essensialoil' , component: Essensialoil },
             { path: 'organicminarels' , component: Organicminarels },

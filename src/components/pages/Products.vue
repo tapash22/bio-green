@@ -16,7 +16,7 @@
             data-aos-delay="1000"
             data-aos-once="false"
           >
-            <div class="card-body">
+            <div class="card-body" v-if="product_n">
               <a href="#" @click.prevent="editProduct(product)">
                 <div class="img">
                   <img :src="product.data().image" />
@@ -25,9 +25,6 @@
             </div>
             <div class="card-footer">
               <p>{{ product.data().product_name }}</p>
-              <!-- <button @click.prevent="downloadFile()">
-                {{ product.data().pdf }}
-              </button> -->
             </div>
           </div>
         </div>
@@ -35,6 +32,9 @@
     </div>
     <!-- <div class="row" style="background:#000;">
       <Pdf />
+    </div> -->
+    <!-- <div class="row">
+      <WebViewer initialDoc="https://docs.google.com/file/d/0B21HoBq6u9TsUHhqS3JIUmFuamc/view?resourcekey=0-MYlet9RIjEukd6CvLEHUbw" />
     </div> -->
 
     <div
@@ -70,6 +70,12 @@
                 {{ product.description }}
               </p>
             </div>
+            <div>
+              {{product.pdf}}
+            </div>
+            <div>
+              <a :to='product.pdf' class="btn"  @click.prevent="downloadResumePdf()">Download this file</a>
+            </div>
           </div>
           <!-- <div class="modal-footer">
             <button type="button" class="btn btn-secondary">
@@ -83,32 +89,32 @@
 </template>
 
 <script>
-import { db } from "../../firebase";
-// import { storageRef } from "firebase/storage";
-// import Pdf from "./Pdfshow.vue";
-// import PdfViewer from '../../services/PdfViewer.vue';
+import { fb,db } from "../../firebase";
+
+// import WebViewer from '../WebViewer.vue';
+
 export default {
   data() {
     return {
-      //   name: 'my-pdf-file.pdf',
-      // path: 'lib/pdfjs-2.3.200-dist/web/demo.pdf',
+      product_n:"poultry",
       showModal: false,
       products: [],
-      product: {
-        product_name: "",
-        description: "",
-        image: "",
-        pdf:"",
-      },
+      // pdfLink: require('@/assets/image/pdf.pdf'),
+      // product: {
+      //   product_name: "",
+      //   description: "",
+      //   image: "",
+      //   pdf: "",
+      // },
       active_item: null,
     };
   },
 
-  components:{
-    // Pdf,
+  components: {
+    // WebViewer,
   },
 
-  created() {
+ created() {
     db.collection("products")
       .get()
       .then((querySnapshot) => {
@@ -117,6 +123,7 @@ export default {
           this.products.push(doc);
         });
       });
+
   },
 
   methods: {
@@ -130,39 +137,36 @@ export default {
       this.showModal = false;
     },
 
-//     downloadFile(){ 
-//      // Create a reference to the file we want to download
-// var starsRef = storageRef.child(`products/`);
+   downloadResumePdf(){
+      var storageRef = fb.storage().ref("pdf/book.pdf");
+      storageRef.getDownloadURL().then((url)=>{
+          const xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+  
+    xhr.open('GET', url);
+    xhr.send();
+      }).catch((error) => {
+  // A full list of error codes is available at
+  // https://firebase.google.com/docs/storage/web/handle-errors
+      switch (error.code) {
+        case 'storage/object-not-found':
+          // File doesn't exist
+          break;
+        case 'storage/unauthorized':
+          // User doesn't have permission to access the object
+          break;
+        case 'storage/canceled':
+          // User canceled the upload
+          break;
 
-// // Get the download URL
-// starsRef.getDownloadURL()
-// .then((url) => {
-//   // Insert url into an <img> tag to "download"
-//   console.log(url);
-// })
-// .catch((error) => {
-//   // A full list of error codes is available at
-//   // https://firebase.google.com/docs/storage/web/handle-errors
-//   switch (error.code) {
-//     case 'storage/object-not-found':
-//       // File doesn't exist
-//       break;
-//     case 'storage/unauthorized':
-//       // User doesn't have permission to access the object
-//       break;
-//     case 'storage/canceled':
-//       // User canceled the upload
-//       break;
+        // ...
 
-//     // ...
-
-//     case 'storage/unknown':
-//       // Unknown error occurred, inspect the server response
-//       break;
-//   }
-// });
-                 
-//       }
+        case 'storage/unknown':
+          // Unknown error occurred, inspect the server response
+          break;
+      }
+    });
+   }
   },
 
   mounted() {

@@ -41,6 +41,7 @@ export default {
 .row {
   padding: 0;
   margin: 0;
+  background: rgb(223, 219, 219); 
 }
 .col-md-12 {
   padding: 0;

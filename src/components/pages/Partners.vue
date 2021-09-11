@@ -15,7 +15,9 @@
           :key="partner.id"
         >
           <div class="left">
+            <a :href="partner.data().product_link">
             <img :src="partner.data().image" />
+            </a>
           </div>
           <div class="right">
             <h4>{{partner.data().partner_name}}</h4>
@@ -44,6 +46,7 @@ export default {
         partner_name: "",
         country_name: "",
         product_list: "",
+        product_link:"",
         description: "",
         image: "",
       },

@@ -4,7 +4,7 @@
       <div class="brand">
         <div class="logo">
           <router-link to="/home">
-            <img src="../assets/image/log.png" />
+            <img src="../assets/image/logo1.png" />
           </router-link>
         </div>
         <div class="icon" @click="showNav = !showNav">
@@ -51,7 +51,7 @@
                     </li>
                     <li>
                       <router-link to="/organicminarels"
-                        >Organic Minarels
+                        >Organic Minerals
                       </router-link>
                     </li>
                     <li>
@@ -61,7 +61,7 @@
                     </li>
 
                     <li>
-                      <router-link to="/probiotics">Probiotic</router-link>
+                      <router-link to="/probiotics">Prbiotic</router-link>
                     </li>
                   </ul>
                 </li>
@@ -72,8 +72,7 @@
                       style="
                         padding-left: 10px;
                         padding-top: 10px;
-                        font-size: 1rem;
-                      "
+                        font-size: 1rem;"
                       aria-hidden="true"
                     ></i
                   ></router-link>
@@ -154,9 +153,10 @@ export default {
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/navf.jpg");
+  background-image: url("../assets/image/nav1.jpg");
   background-position: center;
   background-size: cover;
+  /* opacity: 0.6; */
 }
 nav {
   width: 100%;
@@ -205,6 +205,7 @@ nav::after {
   color: #fff;
   text-align: right;
   margin-top: 10px;
+  margin-right: 80px;
 }
 .navbar .login p i {
   font-size: 2rem;
@@ -217,6 +218,7 @@ nav::after {
   margin-left: 100px;
   margin-right: 0;
   position: relative;
+  width: 100%;
 }
 .navbar .ul li {
   display: inline-block;
@@ -241,35 +243,18 @@ nav::after {
 /* .navbar .ul ul {
   background: rgba(0, 0, 0, 0.603);
 } */
-
-.navbar .ul li ul li a {
-  font-size: 1.5rem;
-  font-weight: 500;
-  box-shadow: none;
-}
-.navbar .ul ul li a:hover {
-  color: #fff;
-  box-shadow: none;
-}
 .navbar .ul ul {
   position: absolute;
   opacity: 0;
   visibility: hidden;
   transform: translateY(30px);
   transition: all 0.3s;
-  margin-left: -30px;
-  z-index: 1;
-  width: 100%;
-  padding: 10px;
+  width: 180px;
   margin: 0;
-}
-.navbar .ul li:hover > ul {
-  transform: translateY(15px);
-  opacity: 1;
-  visibility: visible;
+  padding: 10px;
 }
 .navbar .ul ul li {
-  width: 100%;
+  width: 140px;
   margin: 0;
   padding: 0;
   float: none;
@@ -278,10 +263,28 @@ nav::after {
   display: flex;
   justify-content: space-between;
 }
+.navbar .ul li ul li a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  box-shadow: none;
+  text-align: center;
+}
 .navbar .ul ul li:hover {
   background: rgba(8, 8, 8, 0.678);
   color: #fff;
 }
+
+.navbar .ul ul li a:hover {
+  color: #fff;
+  box-shadow: none;
+}
+
+.navbar .ul li:hover > ul {
+  transform: translateY(15px);
+  opacity: 1;
+  visibility: visible;
+}
+
 .navbar .ul ul ul {
   position: absolute;
   opacity: 0;
@@ -296,7 +299,9 @@ nav::after {
 }
 .navbar .ul ul ul li {
   padding: 0;
+  margin: 0;
   justify-content: center;
+  display: flex;
 }
 .navbar .ul ul ul li a {
   font-size: 1.2rem;

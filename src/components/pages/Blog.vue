@@ -92,13 +92,13 @@ export default {
     return {
       showModal: false,
       blogs: [],
-      blog: {
-        title: "",
-        author: "",
-        mydate:"",
-        description: "",
-        image: "",
-      },
+      // blog: {
+      //   title: "",
+      //   author: "",
+      //   mydate:"",
+      //   description: "",
+      //   image: "",
+      // },
       active_item: null,
     };
   },

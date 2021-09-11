@@ -4,50 +4,55 @@
       <img src="../../assets/image/contact.jpg" />
     </div>
     <div class="container">
+      <!-- <h3>Contact Us</h3> -->
       <div class="row">
-        <h3>Contact Us</h3>
         <div
           class="col-md-6 text"
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
-          <h4>
-            <i class="fa fa-map-marker" aria-hidden="true"></i>Our Address
-          </h4>
-          <hr />
-          <address>
-            HOUSE NO: 27 (2nd Floor), ROAD NO: 05,<br />
-            Nikunja 02, Khilkhet, Dhaka-1229, Bangladesh.
-          </address>
-
-          <h4 class="pt-3">Contact Info</h4>
-          <hr />
-          <address>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            info@biogreenint.com,<br />
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <a href="https://www.facebook.com/profile.php?id=100050555396675"
-              >&nbsp; Bio-green</a
-            >,<br />
-            <i class="fa fa-linkedin" aria-hidden="true"></i>
-            <a
-              href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
-              >Bio-green</a
-            >,<br />
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-            twitter/bio-green<br />
-            <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; +8801810084300
-          </address>
-
-          <h4 class="pt-3">
-            <i class="fa fa-home" aria-hidden="true"></i>Ware House
-          </h4>
-          <hr />
-          <address>
-            Lotif Super Market, Borua Bazar,<br />
-            Khilkhet, Dhaka 1229
-          </address>
+          <div>
+            <h4>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>Our Address
+            </h4>
+            <hr />
+            <address>
+              HOUSE NO: 27 (2nd Floor), <br/>ROAD NO: 05,
+              Nikunja 02,<br /> Khilkhet, Dhaka-1229, Bangladesh.
+            </address>
+          </div>
+          <div>
+            <h4 class="pt-3">Contact Info</h4>
+            <hr />
+            <address>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              info@biogreenint.com<br />
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <a href="https://www.facebook.com/profile.php?id=100050555396675"
+                >&nbsp; Bio-green</a
+              >,<br />
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <a
+                href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
+                >Bio-green</a
+              >,<br />
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              twitter/bio-green<br />
+              <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;
+              +8801810084300
+            </address>
+          </div>
+          <div>
+            <h4 class="pt-3">
+              <i class="fa fa-home" aria-hidden="true"></i>Ware House
+            </h4>
+            <hr />
+            <address>
+              Lotif Super Market, Borua Bazar,<br />
+              Khilkhet, Dhaka 1229
+            </address>
+          </div>
         </div>
         <div
           class="col-md-6"
@@ -81,20 +86,15 @@ export default {
 }
 .image {
   width: 100%;
-   min-height: 350px;
+  min-height: 350px;
 }
 .image img {
-    width: 100%;
+  width: 100%;
   height: 350px;
   background-position: center;
   background-size: cover;
 }
-
-.contact .row {
-  display: flex;
-  justify-content: space-around;
-}
-.contact .row h3 {
+h3 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
@@ -103,14 +103,25 @@ export default {
   padding-top: 10px;
   padding-bottom: 5px;
 }
+
+.contact .row {
+  display: flex;
+  flex-direction: column;
+}
+
 .col-md-6 {
-  padding-top: 10px;
+  padding-top: 20px;
   display: block;
-  width: 50%;
+  width: 100%;
   padding-bottom: 10px;
 }
 .text {
-  padding-left: 50px;
+   margin-left: 90px;
+  display: flex;
+}
+.text div{
+  width: 33%;
+  justify-content: center;
 }
 
 .text hr {
@@ -132,7 +143,7 @@ export default {
   color: green;
 }
 .text address {
-  padding: 5px;
+  padding: 10px;
   font-size: 1.1rem;
   font-weight: 500px;
   font-family: "Oswald", sans-serif;
@@ -171,6 +182,5 @@ export default {
     width: 100%;
     padding-bottom: 10px;
   }
-  
 }
 </style>

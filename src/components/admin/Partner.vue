@@ -30,6 +30,14 @@
               />
             </div>
             <div class="form-group">
+              <label>company Link</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.product_link"
+              />
+            </div>
+            <div class="form-group">
               <label>Description</label>
               <textarea
                 class="form-control"
@@ -73,6 +81,7 @@
                 <td>{{ partner.data().partner_name }}</td>
                 <td>{{ partner.data().country_name }}</td>
                 <td>{{ partner.data().product_list }}</td>
+                <td>{{ partner.data().product_link }}</td>
                 <td>{{ partner.data().description }}</td>
                 <td>{{ partner.data().image }}</td>
                 <td>
@@ -136,6 +145,14 @@
               />
             </div>
             <div class="form-group">
+              <label>company Link</label>
+              <input
+                class="form-control"
+                type="text"
+                v-model="partner.product_list"
+              />
+            </div>
+            <div class="form-group">
               <label>Description</label>
               <textarea
                 class="form-control"
@@ -183,6 +200,7 @@ export default {
         partner_name: "",
         country_name: "",
         product_list: "",
+        product_link:"",
         description: "",
         image: "",
       },
@@ -281,6 +299,7 @@ export default {
         partner_name: "",
         country_name: "",
         product_list: "",
+        product_link:"",
         description: "",
         image: "",
       };

@@ -76,13 +76,14 @@ export default {
 .row {
   width: 100%;
   height: 100%;
-  background: #fff;
+  /* background: #fff; */
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 .col-md-6 {
   box-shadow: 2px 2px 3px blue;
+  background: #fff;
 }
 .col-md-6 h3 {
   text-align: center;

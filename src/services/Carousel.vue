@@ -1,5 +1,5 @@
 <template>
-  <Carousel :items-to-show="3" :autoplay="2000" :wrap-around="true">
+  <Carousel :items-to-show="3" :autoplay="4000" :wrap-around="true">
     <Slide v-for="slide in products" :key="slide.id">
       <div class="card">
         <router-link :to="slide.url">
@@ -43,13 +43,13 @@ export default {
         },
         {
           id: 4,
-          title: "Probiotic",
+          title: "Prebiotic",
           img: "https://i.postimg.cc/WpFfC4Zc/probio.jpg",
           url: "/probiotics",
         },
         {
           id: 5,
-          title: "Organic Minarels",
+          title: "Organic Minerals",
           img: "https://i.postimg.cc/hjrPq06h/organic.jpg",
           url: "/organicminarels",
         },
