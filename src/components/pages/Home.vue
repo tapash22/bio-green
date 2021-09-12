@@ -2,16 +2,16 @@
   <div class="home">
     <Slider />
     <div class="container">
-      <div class="row">
+      <div class="row blog my-3">
         <h3>Our<strong> products </strong></h3>
         <p>We deliver performances rather just a product to your business</p>
-        <div class="col-md-12" style="width: 100%; height: 100%">
+        <div class="col-md-12" >
           <Carousel />
         </div>
       </div>
 
       <!-- event -->
-      <div class="row">
+      <div class="row blog my-3">
         <h3>Event <strong>List</strong></h3>
         <div class="col-md-12" style="width: 100%; height: 100%">
           <EventList />
@@ -46,7 +46,7 @@
     </div>
     
     <!-- about -->
-    <div class="about">
+    <!-- <div class="about">
       <h3>Our <strong> Plan</strong></h3>
       <div class="container">
         <div class="row">
@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -197,6 +197,7 @@ font-family: 'Roboto', sans-serif;
 /* blog */
 .blog {
   background: #fff;
+  padding: 30px;
 }
 .blog .col-md-4 .card {
   width: 300px;

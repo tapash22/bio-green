@@ -1,12 +1,13 @@
 <template>
   <Carousel :items-to-show="3" :autoplay="4000" :wrap-around="true">
     <Slide v-for="slide in products" :key="slide.id">
-      <div class="card">
-        <router-link :to="slide.url">
+      <router-link :to="slide.url">
+        <div class="card">
           <img :src="slide.img" />
-        </router-link>
-        <p>{{ slide.title }}</p>
-      </div>
+
+          <p>{{ slide.title }}</p>
+        </div>
+      </router-link>
     </Slide>
     <template #addons>
       <Navigation />
@@ -70,7 +71,6 @@ export default {
   height: 300px;
   padding: 0;
   background: #fff;
-  border: 2px solid green;
 }
 .card img {
   width: 100%;
