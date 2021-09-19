@@ -69,14 +69,9 @@
                 <strong> Details:</strong>
                 {{ product.description }}
               </p>
-               <a :to='product.pdf' class="btn"  @click.prevent="downloadResumePdf()">Download this file</a>
+               <a :href='product.pdf' class="btn"  @click.prevent="downloadResumePdf(product)">Download this file</a>
             </div>
           </div>
-          <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary">
-              Close
-            </button>
-          </div> -->
         </div>
       </div>
     </div>
@@ -85,30 +80,14 @@
 
 <script>
 import { db } from "../../firebase";
-// import { getStorage, ref, getDownloadURL } from "firebase/storage";
-
-// import WebViewer from '../WebViewer.vue';
 
 export default {
   data() {
     return {
-      
       showModal: false,
       products: [],
-      name:'enzyme',
-      // pdfLink: require('@/assets/image/pdf.pdf'),
-      // product: {
-      //   product_name: "",
-      //   description: "",
-      //   image: "",
-      //   pdf: "",
-      // },
       active_item: null,
     };
-  },
-
-  components: {
-    // WebViewer,
   },
 
  created() {
@@ -116,12 +95,10 @@ export default {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
           this.products.push(doc);
         });
       });
-  //  const doc = db.collection("products").where("product_name", "in", ["poultry","aqua" ]);
-  //  this.products.push(doc);
+
 
   },
 
@@ -135,47 +112,18 @@ export default {
     inClose() {
       this.showModal = false;
     },
+    downloadResumePdf(url ,label){
+       db.collection('products').get(url, { responseType: 'blob' })
+      .then(response => {
+        const blob = new Blob([response.data], { type: 'application/pdf' })
+        const link = document.createElement('a')
+        link.href = URL.createObjectURL(blob)
+        link.download = label
+        link.click()
+        URL.revokeObjectURL(link.href)
+      }).catch(console.error)
+    }
 
-//    downloadResumePdf(){
-//  const storage = getStorage();
-// getDownloadURL(ref(storage, 'product/pdf'))
-//   .then((url) => {
-//     // `url` is the download URL for 'images/stars.jpg'
-
-//     // This can be downloaded directly:
-//     const xhr = new XMLHttpRequest();
-//     xhr.responseType = 'blob';
-//     xhr.onload = (event) => {
-//       const blob = xhr.response;
-//     };
-//     xhr.open('GET', url);
-//     xhr.send();
-
-//     // Or inserted into an <img> element
-//     const img = document.getElementById('myimg');
-//     img.setAttribute('src', url);
-//   })
-//   .catch((error) => {
-//       switch (error.code) {
-//     case 'storage/object-not-found':
-//       // File doesn't exist
-//       break;
-//     case 'storage/unauthorized':
-//       // User doesn't have permission to access the object
-//       break;
-//     case 'storage/canceled':
-//       // User canceled the upload
-//       break;
-
-//     // ...
-
-//     case 'storage/unknown':
-//       // Unknown error occurred, inspect the server response
-//       break;
-//   }
-//     // Handle any errors
-//   });
-//    }
   },
 
   mounted() {
