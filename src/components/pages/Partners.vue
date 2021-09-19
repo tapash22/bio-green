@@ -1,8 +1,8 @@
 <template>
   <div class="partners">
-    <div class="image">
+    <!-- <div class="image">
       <img src="../../assets/image/partners.png" />
-    </div>
+    </div> -->
     <div class="container">
       <div class="row">
         <h3>Our Partners</h3>
@@ -77,7 +77,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 0;
+  margin-top: 130px;
 }
 .image {
   min-height: 500px;
@@ -167,22 +167,98 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
-  .partners {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin-top: 100px;
-  }
-  .image {
-    width: 100%;
-    height: 300px;
-  }
-  .image img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
+ .partners {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 130px;
+}
+.image {
+  min-height: 500px;
+  background: linear-gradient(#e66465, #9198e5);
+  display: flex;
+  justify-content: center;
+}
+.image img {
+  width: 600px;
+  margin-top: 180px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  margin: 0;
+}
+.row h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.col-md-6 {
+  padding: 0;
+  margin: 10px;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  border: 1px solid green;
+}
+.col-md-6 .left {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #fff;
+}
+.left img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  padding:10px;
+}
+.right {
+  width: 200px;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+.right h4 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 5px;
+}
+.right ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: rgb(2, 17, 59);
+}
+.right ul li {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.right p {
+  padding: 5px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="contact">
-    <div class="image">
+    <!-- <div class="image">
       <img src="../../assets/image/contact.jpg" />
-    </div>
+    </div> -->
     <div class="container">
-      <!-- <h3>Contact Us</h3> -->
+      <h3>Contact Us</h3>
       <div class="row">
         <div
           class="col-md-6 text"
@@ -37,8 +37,6 @@
                 href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
                 >Bio-green</a
               >,<br />
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-              twitter/bio-green<br />
               <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;
               +8801810084300
             </address>
@@ -54,7 +52,7 @@
             </address>
           </div>
         </div>
-        <div
+        <!-- <div
           class="col-md-6"
           data-aos="fade-left"
           data-aos-offset="300"
@@ -63,7 +61,7 @@
           <div class="main">
             <img src="../../assets/image/contact_8a.jpg" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -83,6 +81,7 @@ export default {
   height: 100%;
   margin-top: 140px;
   padding: 0;
+
 }
 .image {
   width: 100%;
@@ -94,6 +93,7 @@ export default {
   background-position: center;
   background-size: cover;
 }
+
 h3 {
   text-align: center;
   font-size: 2.2rem;
@@ -107,6 +107,7 @@ h3 {
 .contact .row {
   display: flex;
   flex-direction: column;
+  background: #fff;
 }
 
 .col-md-6 {
@@ -172,15 +173,101 @@ h3 {
 }
 
 @media only screen and (max-width: 767px) {
-  .contact .row {
-    display: flex;
-    flex-direction: column;
-  }
-  .col-md-6 {
-    padding-top: 10px;
-    display: block;
-    width: 100%;
-    padding-bottom: 10px;
-  }
+ .contact {
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+  padding: 0;
+}
+.image {
+  width: 100%;
+  min-height: 350px;
+}
+.image img {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.contact .row {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-md-6 {
+  padding-top: 20px;
+  display: block;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.text {
+   margin-left: 90px;
+  display: flex;
+  flex-direction: column;
+}
+.text div{
+  width: 100%;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.text hr {
+  width: 180px;
+  height: 3px;
+  color: green;
+}
+.text h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  text-align: left;
+}
+.text h4 i {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 5px;
+  color: green;
+}
+.text address {
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 500px;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  text-align: left;
+}
+.text address i {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 5px;
+  color: green;
+}
+.text address a {
+  color: #000;
+  text-decoration: none;
+}
+.col-md-6 main {
+  width: 100%;
+  height: 100%;
+}
+.col-md-6 .main img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 }
 </style>

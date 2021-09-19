@@ -1,17 +1,20 @@
 <template>
-  <div class="row event my-5">
+  <div class="row event my-2">
     <div
       class="col-md-6"
       data-aos="fade-right"
       data-aos-delay="500"
       data-aos-once="false"
     >
-      <div class="event-list" >
+      <div class="event-list" v-if="active_item" >
         <img :src="occation.image" />
         <p>
           {{ occation.name }}<br />
           {{ occation.place }}
         </p>
+      </div>
+      <div v-else>
+        <img src="../assets/image/event.jpg"/>
       </div>
     </div>
     <div
@@ -75,23 +78,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped> 
 .event {
   padding: 0;
   margin: 10px;
   width: 100%;
   height: 500px;
   background: #fff;
+  /* display:flex;
+  flex-direction: row; */
 }
-.event h3 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+
 .event .col-md-6 {
   width: 50%;
   height: 100%;
@@ -99,11 +96,11 @@ export default {
 }
 .event .event-list {
   width: 100%;
-  height: 400px;
+  height: 100%;
 }
 .event .event-list img {
   width: 100%;
-  height: 100%;
+  height: 400px;
   background-position: center;
   background-size: cover;
 }
@@ -114,6 +111,7 @@ export default {
   color: #000;
   text-align: left;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 .event .event-item {
   width: 50%;
@@ -151,5 +149,77 @@ export default {
   font-family: "Oswald", sans-serif;
   color: #000;
   text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+.event {
+  padding: 0;
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: block;
+}
+.event .col-md-6 {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+}
+.event .event-list {
+  width: 100%;
+  height: 400px;
+}
+.event .event-list img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.event .event-list p {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  text-align: left;
+  padding-top: 10px;
+}
+.event .event-item {
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+}
+.event .event-item .box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 10px;
+  width: 100%;
+}
+.event .box .box-h {
+  width: 100px;
+  height: 100px;
+}
+.event .box a {
+  text-decoration: none;
+}
+.event .box .box-h img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+.event .box .box-b {
+  width: 300px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+.event .box .box-b p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  text-align: left;
+}
+  
 }
 </style>

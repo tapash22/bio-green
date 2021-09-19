@@ -7,12 +7,12 @@
       <div class="row">
         <h3>About us</h3>
         <div
-          class="col-md-6 pt-5"
+          class="col-md-6 pt-2"
           data-aos="fade-left"
           data-aos-delay="500"
           data-aos-once="false"
         >
-          <img src="../../assets/image/sid.jpg" />
+          <img src="../../assets/image/1.png" />
         </div>
         <div
           class="col-md-6 text"
@@ -25,12 +25,12 @@
             We are the sole importer & sourcing partner for world class
             additives for making feed for livestock & poultry with a focus to
             ensure safe human health, environment & nature on its turn. Since
-            2016, our presence with Quality, performance, reliability & best
+            2016, our presence with quality, performance, reliability & best
             rate makes us trustworthy supplier in Bangladesh feed additive
-            marketing & source. Our objective is to distribute performance
+            marketing & sourcing. Our objective is to distribute performance
             rather just products to your door. Quality products with enduring
             service & competitive rates we are always aware in protecting the
-            clients interests. We believe in long term partnerships &
+            clients interest. We believe in long term partnership &
             cooperative approach towards all clients, supplier & employees. Our
             core strengths lie on quality warehouse, rapid delivery,
             distribution efficiency, priorities to customer’s needs & evolving
@@ -40,7 +40,7 @@
           </p>
         </div>
       </div>
-      <div class="row my-3" v-for="about in abouts" :key="about.text">
+      <div class="row my-3 wrap" v-for="about in abouts" :key="about.text">
         <div class="col-md-3">
           <div class="title">
             <h2>{{about.text}}</h2>
@@ -65,8 +65,9 @@ export default {
   data(){
     return{
       abouts:[
-        { text:'The Mission', text1:'Our mission is to provied quality products and services on competitive terms.' },
-        { text:'The Vission', text1:'BioGreen has a vision of becoming the preferred and trustworthy business partner to livestock feed producer in Bangladesh.'}
+        { text:'The Mission',  text1:'Our holistic approach is to ensure best performing feed products at an affordable price. We view ourselves as partners with the feed producers, feed nutritionist, farmers, livestock professionals & all other customers.'},
+         { text:'The Vission',text1:'Our Vission is to provied quality products, innovation and tecnical solution for poultry, fish and livestock'},
+       
       ]
     };
   },
@@ -166,7 +167,7 @@ hr {
   padding: 0;
   margin: 0;
 }
-.col-md-12 .row {
+.col-md-12 .wrap {
   background: #fff;
   padding-top: 50px;
   display: flex;
@@ -176,13 +177,13 @@ hr {
   width: 100%;
   height: 100%;
 }
-.row .col-md-3 {
+.wrap .col-md-3 {
   width: 30%;
   height: 100%;
   padding: 20px;
   margin: 0;
 }
-.row .col-md-3 .title {
+.wrap .col-md-3 .title {
   padding: 5px;
   margin: 0;
   background: #fff;
@@ -213,11 +214,11 @@ hr {
 
 @media only screen and (max-width: 767px) {
   .about {
-    margin-top: 100px;
+    margin-top: 80px;
   }
   .about .row h3 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     font-family: "Oswald", sans-serif;
     color: #000;
@@ -227,7 +228,7 @@ hr {
   .col-md-6 {
     background: #fff;
     width: 100%;
-    height: 450px;
+    height: 300px;
     padding: 5px;
   }
   .col-md-6 img {
@@ -259,12 +260,49 @@ hr {
     padding: 0;
     margin: 0;
   }
-  .col-md-12 .row {
-    background: #fff;
-    padding-top: 50px;
-    padding-bottom: 30px;
-    padding: 0;
-    margin: 0;
-  }
+  .col-md-12 .wrap {
+  background: #fff;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.wrap .col-md-3 {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
+}
+.wrap .col-md-3 .title {
+  padding: 5px;
+  margin: 0;
+  background: #fff;
+}
+.col-md-3 .title h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+.col-md-9{
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  margin: 0;
+}
+.col-md-9 .text1{
+  padding: 5px;
+  margin: 0;
+}
+.col-md-9 .text1 p{
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
 }
 </style>

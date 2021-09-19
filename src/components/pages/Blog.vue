@@ -26,9 +26,7 @@
                   {{ blog.data().author }}
                 </li>
                 <li>
-                  <button class="btn btn-primary" @click.prevent="onClick(blog)">
-                    Read more
-                  </button>
+                  <router-link :to="{ name: 'BlogItem', params: { id: blog.id } }">show details</router-link>
                 </li>
               </ul>
             </div>
@@ -49,9 +47,9 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <!-- <div class="modal-header">
             <h5 class="modal-title" id="editLabel">Bio-green</h5>
-          </div>
+          </div> -->
           <div class="modal-body">
             <div class="img">
               <img :src="blog.image" />

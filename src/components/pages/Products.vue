@@ -16,7 +16,7 @@
             data-aos-delay="1000"
             data-aos-once="false"
           >
-            <div class="card-body" v-if="product_n">
+            <div class="card-body">
               <a href="#" @click.prevent="editProduct(product)">
                 <div class="img">
                   <img :src="product.data().image" />
@@ -69,12 +69,7 @@
                 <strong> Details:</strong>
                 {{ product.description }}
               </p>
-            </div>
-            <div>
-              {{product.pdf}}
-            </div>
-            <div>
-              <a :to='product.pdf' class="btn"  @click.prevent="downloadResumePdf()">Download this file</a>
+               <a :to='product.pdf' class="btn"  @click.prevent="downloadResumePdf()">Download this file</a>
             </div>
           </div>
           <!-- <div class="modal-footer">
@@ -89,16 +84,18 @@
 </template>
 
 <script>
-import { fb,db } from "../../firebase";
+import { db } from "../../firebase";
+// import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 // import WebViewer from '../WebViewer.vue';
 
 export default {
   data() {
     return {
-      product_n:"poultry",
+      
       showModal: false,
       products: [],
+      name:'enzyme',
       // pdfLink: require('@/assets/image/pdf.pdf'),
       // product: {
       //   product_name: "",
@@ -115,7 +112,7 @@ export default {
   },
 
  created() {
-    db.collection("products")
+    db.collection("products").where("product_name", "==", "poultry")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -123,6 +120,8 @@ export default {
           this.products.push(doc);
         });
       });
+  //  const doc = db.collection("products").where("product_name", "in", ["poultry","aqua" ]);
+  //  this.products.push(doc);
 
   },
 
@@ -137,36 +136,46 @@ export default {
       this.showModal = false;
     },
 
-   downloadResumePdf(){
-      var storageRef = fb.storage().ref("pdf/book.pdf");
-      storageRef.getDownloadURL().then((url)=>{
-          const xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-  
-    xhr.open('GET', url);
-    xhr.send();
-      }).catch((error) => {
-  // A full list of error codes is available at
-  // https://firebase.google.com/docs/storage/web/handle-errors
-      switch (error.code) {
-        case 'storage/object-not-found':
-          // File doesn't exist
-          break;
-        case 'storage/unauthorized':
-          // User doesn't have permission to access the object
-          break;
-        case 'storage/canceled':
-          // User canceled the upload
-          break;
+//    downloadResumePdf(){
+//  const storage = getStorage();
+// getDownloadURL(ref(storage, 'product/pdf'))
+//   .then((url) => {
+//     // `url` is the download URL for 'images/stars.jpg'
 
-        // ...
+//     // This can be downloaded directly:
+//     const xhr = new XMLHttpRequest();
+//     xhr.responseType = 'blob';
+//     xhr.onload = (event) => {
+//       const blob = xhr.response;
+//     };
+//     xhr.open('GET', url);
+//     xhr.send();
 
-        case 'storage/unknown':
-          // Unknown error occurred, inspect the server response
-          break;
-      }
-    });
-   }
+//     // Or inserted into an <img> element
+//     const img = document.getElementById('myimg');
+//     img.setAttribute('src', url);
+//   })
+//   .catch((error) => {
+//       switch (error.code) {
+//     case 'storage/object-not-found':
+//       // File doesn't exist
+//       break;
+//     case 'storage/unauthorized':
+//       // User doesn't have permission to access the object
+//       break;
+//     case 'storage/canceled':
+//       // User canceled the upload
+//       break;
+
+//     // ...
+
+//     case 'storage/unknown':
+//       // Unknown error occurred, inspect the server response
+//       break;
+//   }
+//     // Handle any errors
+//   });
+//    }
   },
 
   mounted() {
@@ -302,7 +311,7 @@ export default {
   margin: 0;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 .modal .modal-body .text h4 {
   font-size: 1.5rem;

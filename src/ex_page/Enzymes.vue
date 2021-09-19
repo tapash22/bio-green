@@ -3,23 +3,10 @@
     <div class="container">
       <div class="row">
         <h3>Enzymes</h3>
-        <div class="col-md-4">
+
+        <div class="col-md-4" v-for="item in datos" :key="item">
           <div class="card">
-            <img src="../assets/image/en.jpg" />
-            <div class="btn" @click.prevent="onPdf()">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Enza Pro</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/en2.jpg" />
+            <img :src="item.image" />
             <div class="btn">
               <div>view</div>
               <div>
@@ -27,40 +14,46 @@
               </div>
             </div>
             <div class="name">
-              <p>Xylamax</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/en.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Phytamax</p>
+              <p>{{ item.product_name }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div v-if="showPdf">
-      <pdf-viewer></pdf-viewer>
-    </div> -->
   </div>
 </template>
         
 <script>
+// import { collection, query, where, getDocs } from "firebase/firestore";
+// import { db } from "../firebase";
 export default {
   data() {
     return {
-      showPdf: false,
+      searchQuery: "enzyme",
+      products: [],
+      datos: [],
     };
   },
+  created() {
+    // const q = query(
+    //   collection(db, "products"),
+    //   where("product_name", "==", "enzyme")
+    // );
+    // const querySnapshot = getDocs(q);
+    // querySnapshot.forEach((doc) => {
+    //   this.products.push(doc);
+    // });
+
+    // db.collection("products")
+    //   .get()
+    //   .then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //       // doc.data() is never undefined for query doc snapshots
+    //       this.products.push(doc);
+    //     });
+    //   });
+  },
+
   mounted() {
     window.scrollTo(0, 0);
   },

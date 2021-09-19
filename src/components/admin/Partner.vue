@@ -149,7 +149,7 @@
               <input
                 class="form-control"
                 type="text"
-                v-model="partner.product_list"
+                v-model="partner.product_link"
               />
             </div>
             <div class="form-group">

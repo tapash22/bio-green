@@ -4,7 +4,7 @@
       <div class="brand">
         <div class="logo">
           <router-link to="/home">
-            <img src="../assets/image/logo1.png" />
+            <img src="../assets/image/logo3.png" />
           </router-link>
         </div>
         <div class="icon" @click="showNav = !showNav">
@@ -46,7 +46,7 @@
                     </li>
                     <li>
                       <router-link to="/essensialoil"
-                        >Essensial oil</router-link
+                        >Essential oil</router-link
                       >
                     </li>
                     <li>
@@ -61,7 +61,7 @@
                     </li>
 
                     <li>
-                      <router-link to="/probiotics">Prbiotic</router-link>
+                      <router-link to="/probiotics">Prebiotic</router-link>
                     </li>
                   </ul>
                 </li>
@@ -101,7 +101,7 @@
                   ></router-link>
                   <ul>
                     <li>
-                      <router-link to="/probioticsa">Probiotics</router-link>
+                      <router-link to="/probioticsa">Prebiotic</router-link>
                     </li>
                     <li>
                       <router-link to="/organicminarelsa"
@@ -122,7 +122,7 @@
             <li>
               <router-link to="/partners">Partners</router-link>
             </li>
-            <li><router-link to="/contact">ContactUs</router-link></li>
+            <li><router-link to="/contact">Contact Us</router-link></li>
             <li>
               <router-link to="/login">Login</router-link>
             </li>
@@ -146,14 +146,14 @@ export default {
 <style scoped>
 .navigation {
   width: 100%;
-  background: #fff;
+  /* background: #fff; */
   color: #fff;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nav1.jpg");
+  background-image: url("../assets/image/nav3.jpg");
   background-position: center;
   background-size: cover;
   /* opacity: 0.6; */
@@ -175,8 +175,8 @@ nav .brand {
 
 .brand img {
   width: 300px;
-  height: 90px;
-  margin-top: 30px;
+  height: 60px;
+  margin-top: 50px;
   margin-left: 50px;
 }
 .brand .icon {
@@ -202,7 +202,7 @@ nav::after {
 .navbar .login p {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #fff;
+  color: #000;
   text-align: right;
   margin-top: 10px;
   margin-right: 80px;
@@ -210,7 +210,7 @@ nav::after {
 .navbar .login p i {
   font-size: 2rem;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   padding: 5px;
 }
 .navbar .ul {
@@ -226,23 +226,21 @@ nav::after {
   list-style: none;
 }
 .navbar .ul li a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
   line-height: 30px;
   font-size: 20px;
   font-weight: 500;
   font-family: "Oswald", sans-serif;
   padding: 10px 15px;
+  border-bottom: 2px none #fff;
 }
 
 .navbar .ul li a:hover,
 .navbar .ul li a.router-link-active {
-  color: #fff;
-  background: rgba(11, 60, 133, 0.719);
+ 
+  border-bottom: 2px solid greenyellow;
 }
-/* .navbar .ul ul {
-  background: rgba(0, 0, 0, 0.603);
-} */
 .navbar .ul ul {
   position: absolute;
   opacity: 0;

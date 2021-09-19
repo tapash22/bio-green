@@ -8,8 +8,8 @@ import Blog from './components/pages/Blog.vue';
 import Gallery from './components/pages/Gallery.vue';
 import Contact from './components/pages/Contact.vue';
 import Login from './components/pages/Login.vue';
-import Pdfshow from './components/pages/Pdfshow.vue';
 import NotFound from './components/pages/NotFound.vue';
+import BlogItem from './services/BlogItem.vue';
 
 
 import Organicminarels from './ex_page/Organicminarels.vue';
@@ -50,10 +50,10 @@ const routes = [
             { path: 'products', component: Products, },
             { path: 'partners', component: Partners, },
             { path: 'blog', component: Blog, },
+            { path: 'blog/:id',name:'BlogItem', component: BlogItem },
             { path: 'gallery', component: Gallery,},
             { path: 'contact', component: Contact, },
             { path: 'login', component: Login, },
-            { path: 'pdfshow', component: Pdfshow, },
             { path:'/:NotFound(.*)*', component: NotFound },
 
             { path: 'essensialoil' , component: Essensialoil },

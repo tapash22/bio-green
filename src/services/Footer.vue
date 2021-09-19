@@ -5,11 +5,10 @@
         <div class="col-md-4 text">
           <h3>We <strong>are</strong></h3>
           <p>
-            Bio-green international Limited is a World Class Animal Health Care
+            BioGreen International Limited is a World Class Animal Health Care
             Solution provider committed to deal with a wide range of world
             renowned products to market inside the Country through its own
-            Distribution Network.inside the Country through its own Distribution
-            Network.inside the Country through its own Distribution Network.
+            Distribution Network.
           </p>
         </div>
         <div class="col-md-4 link">
@@ -71,14 +70,14 @@
 
 <style scoped>
 .footer {
-  color: #fff;
+  color: #000;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   background: #1b1b1b;
   width: 100%;
   height: 100%;
-      background-image: url(../assets/image/foot1.jpg);
+  background-image: url("../assets/image/foot3.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -86,7 +85,6 @@
   width: 100%;
   height: 100%;
   padding: 0;
-
 }
 .row {
   position: relative;
@@ -117,15 +115,6 @@ p {
   font-size: 1rem;
   font-weight: 600;
 }
-
-/* }
-ul li {
-  list-style: none;
-}
-ul li a {
-  color: #fff;
-  text-decoration: none;
-} */
 .link {
   text-align: center;
 }
@@ -139,14 +128,15 @@ text-align: center;
   padding: 2px;
     text-align: center;
     list-style: none;
+    margin-left: 0;
 }
 .link a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
-  border-bottom: 3px solid green;
+  border-bottom: 2px solid green;
 }
 .add address {
   text-align: left;
@@ -195,9 +185,11 @@ text-align: center;
     text-align: left;
     padding: 20px;
   }
-.link li{
+.link ul li{
   padding: 2px;
     text-align: left;
+    list-style: none;
+    margin-left: 50px;
 }
 .link a {
   text-decoration: none;
@@ -205,7 +197,7 @@ text-align: center;
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
-  border-bottom: 3px solid green;
+  border-bottom: 2px solid green;
   text-align: left;
 }
 }

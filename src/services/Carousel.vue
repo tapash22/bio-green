@@ -32,14 +32,14 @@ export default {
         },
         {
           id: 2,
-          title: "Essensial Oil",
+          title: "Essential Oil",
           img: "https://i.postimg.cc/x1yZ5Fzk/essen.jpg",
           url: "/essensialoil",
         },
         {
           id: 3,
           title: "Feed Sanitizer",
-          img: "https://i.postimg.cc/pXbjhct3/en.jpg",
+          img: "https://i.postimg.cc/3JrnzDdX/feed.jpg",
           url: "/feedsanitizer",
         },
         {
@@ -49,7 +49,7 @@ export default {
           url: "/probiotics",
         },
         {
-          id: 5,
+          id: 5, 
           title: "Organic Minerals",
           img: "https://i.postimg.cc/hjrPq06h/organic.jpg",
           url: "/organicminarels",
