@@ -24,8 +24,8 @@
 </template>
         
 <script>
-// import { collection, query, where, getDocs } from "firebase/firestore";
-// import { db } from "../firebase";
+
+import { db } from "../firebase";
 export default {
   data() {
     return {
@@ -34,35 +34,21 @@ export default {
       datos: [],
     };
   },
-  created() {
-    // const q = query(
-    //   collection(db, "products"),
-    //   where("product_name", "==", "enzyme")
-    // );
-    // const querySnapshot = getDocs(q);
-    // querySnapshot.forEach((doc) => {
-    //   this.products.push(doc);
-    // });
-
-    // db.collection("products")
-    //   .get()
-    //   .then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //       // doc.data() is never undefined for query doc snapshots
-    //       this.products.push(doc);
-    //     });
-    //   });
+  
+ created() {
+    db.collection("products").where("product_name", "==", "Enzyme")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.products.push(doc);
+        });
+      });
   },
 
   mounted() {
     window.scrollTo(0, 0);
   },
 
-  // methods: {
-  //   onPdf() {
-  //     this.showPdf = true;
-  //   },
-  // },
 };
 </script>
         

@@ -4,6 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Celebration</h3>
+           <p style="text-align:center;color:blue;">Use 500px/400px Picture</p>
           <form>
             <div class="form-group">
               <label>Occation Name</label>
@@ -23,7 +24,7 @@
             </div>
             <div class="form-group">
               <div class="p-3">
-                <img :src="occation.image" style="width: 80px; height: 50px" />
+                <img :src="occation.image" style="width: 80px; height: 50px" placeholder=" Use 500px/400px Picture"/>
               </div>
             </div>
             <div class="my-3">
@@ -103,7 +104,7 @@
             </div>
             <div class="form-group my-2 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" />
+              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 500px/400px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-1">

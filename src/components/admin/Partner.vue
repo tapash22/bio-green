@@ -4,6 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Partner</h3>
+           <p style="text-align:center;color:blue;">Use 300px/250px Picture</p>
           <form>
             <div class="form-group">
               <label>Company Name</label>
@@ -46,7 +47,7 @@
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" />
+              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 300px/250px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-1">
@@ -161,7 +162,7 @@
             </div>
             <div class="form-group my-2 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" />
+              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 300px/250px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-1">

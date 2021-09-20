@@ -4,6 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Event</h3>
+          <p style="text-align:center;color:blue;">Use 900px/400px Picture</p>
           <form>
             <div class="form-group">
               <label>Occation Name</label>
@@ -23,7 +24,7 @@
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" />
+              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 900px/400px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-1">
@@ -110,7 +111,7 @@
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input type="file" @change="uploadImage" />
+              <input type="file" @change="uploadImage" placeholder=" Use 900px/400px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-1">

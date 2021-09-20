@@ -19,6 +19,8 @@
 </template>
         
 <script>
+import { db } from '../firebase';
+
 export default {
   data() {
     return {
@@ -41,6 +43,17 @@ export default {
       ],
     };
   },
+
+     created() {
+    db.collection("products").where("product_name", "==", "Essensialoila")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.products.push(doc);
+        });
+      });
+  },
+
   mounted() {
     window.scrollTo(0, 0);
   },

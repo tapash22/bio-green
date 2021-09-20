@@ -27,25 +27,25 @@ export default {
         {
           id: 1,
           title: "Enzymes",
-          img: "https://i.postimg.cc/pXbjhct3/en.jpg",
+          img: "https://i.postimg.cc/wjkHGb6Q/en.jpg",
           url: "/enzymes",
         },
         {
           id: 2,
           title: "Essential Oil",
-          img: "https://i.postimg.cc/x1yZ5Fzk/essen.jpg",
+          img: "https://i.postimg.cc/DzZVYvp7/e.jpg",
           url: "/essensialoil",
         },
         {
           id: 3,
           title: "Feed Sanitizer",
-          img: "https://i.postimg.cc/3JrnzDdX/feed.jpg",
+          img: "https://i.postimg.cc/c4wdQL2j/f.jpg",
           url: "/feedsanitizer",
         },
         {
           id: 4,
           title: "Prebiotic",
-          img: "https://i.postimg.cc/WpFfC4Zc/probio.jpg",
+          img: "https://i.postimg.cc/sD9tjQtV/p.jpg",
           url: "/probiotics",
         },
         {
@@ -66,11 +66,14 @@ export default {
 };
 </script>
 <style scoped>
+a{
+  text-decoration: none;
+}
 .card {
   width: 300px;
   height: 300px;
-  padding: 0;
-  background: #fff;
+  padding: 10px;
+  background: rgb(5, 19, 82);
 }
 .card img {
   width: 100%;
@@ -78,14 +81,15 @@ export default {
   background-position: center;
 }
 .card p {
-  height: 50px;
+  height: 30px;
   font-size: 1.2rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
-  color: #000;
+  color: #fff;
   text-align: center;
   z-index: 1;
   text-transform: uppercase;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 767px) {

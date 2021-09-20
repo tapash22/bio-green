@@ -8,10 +8,10 @@
           v-for="Organicminarel in Organicminarels"
           :key="Organicminarel.id"
         >
-        <div class="card">
-          <img :src="Organicminarel.img" />
-          <p>{{ Organicminarel.title }}</p>
-        </div>
+          <div class="card">
+            <img :src="Organicminarel.img" />
+            <p>{{ Organicminarel.title }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -19,6 +19,8 @@
 </template>
         
 <script>
+import { db } from "../firebase";
+
 export default {
   data() {
     return {
@@ -41,6 +43,18 @@ export default {
       ],
     };
   },
+
+  created() {
+    db.collection("products")
+      .where("product_name", "==", "Organicminarelsc")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.products.push(doc);
+        });
+      });
+  },
+
   mounted() {
     window.scrollTo(0, 0);
   },

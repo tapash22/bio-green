@@ -3,9 +3,9 @@
     <div class="container">
       <div class="row">
         <h3>Feedsanitizer</h3>
-        <div class="col-md-4">
+        <div class="col-md-4" v-for="product in products" :key="product">
           <div class="card">
-            <img src="../assets/image/tt.jpg" />
+            <img :src="product.image" />
             <div class="btn">
               <div>view</div>
               <div>
@@ -13,35 +13,7 @@
               </div>
             </div>
             <div class="name">
-              <p>Emulsifire</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Emulsifire</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../assets/image/tt.jpg" />
-            <div class="btn">
-              <div>view</div>
-              <div>
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-              </div>
-            </div>
-            <div class="name">
-              <p>Emulsifire</p>
+              <p>{{ product.product_name }}</p>
             </div>
           </div>
         </div>
@@ -51,7 +23,26 @@
 </template>
         
 <script>
+import { db } from "../firebase";
+
 export default {
+  data() {
+    return {
+      products: [],
+    };
+  },
+
+  created() {
+    db.collection("products")
+      .where("product_name", "==", "Essensialoila")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.products.push(doc);
+        });
+      });
+  },
+
   mounted() {
     window.scrollTo(0, 0);
   },

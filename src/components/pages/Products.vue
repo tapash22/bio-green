@@ -30,12 +30,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row" style="background:#000;">
-      <Pdf />
-    </div> -->
-    <!-- <div class="row">
-      <WebViewer initialDoc="https://docs.google.com/file/d/0B21HoBq6u9TsUHhqS3JIUmFuamc/view?resourcekey=0-MYlet9RIjEukd6CvLEHUbw" />
-    </div> -->
 
     <div
       class="modal"
@@ -69,7 +63,7 @@
                 <strong> Details:</strong>
                 {{ product.description }}
               </p>
-               <a :href='product.pdf' class="btn"  @click.prevent="downloadResumePdf(product)">Download this file</a>
+               <a :href='product.pdf'  @click.prevent="downloadResumePdf(product)">Download this file</a>
             </div>
           </div>
         </div>
@@ -98,8 +92,6 @@ export default {
           this.products.push(doc);
         });
       });
-
-
   },
 
   methods: {
@@ -112,8 +104,8 @@ export default {
     inClose() {
       this.showModal = false;
     },
-    downloadResumePdf(url ,label){
-       db.collection('products').get(url, { responseType: 'blob' })
+    downloadResumePdf(pdf ,label){
+       db.collection('products').get(pdf, { responseType: 'blob' })
       .then(response => {
         const blob = new Blob([response.data], { type: 'application/pdf' })
         const link = document.createElement('a')

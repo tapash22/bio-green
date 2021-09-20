@@ -4,6 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Product</h3>
+           <p style="text-align:center;color:blue;">Use 300px/250px Picture</p>
           <form>
             <div class="form-group">
               <label>Product Name</label>
@@ -31,7 +32,7 @@
             </div>
             <div class="form-group">
               <div class="p-1">
-                <img :src="product.image" style="width: 80px; height: 50px" />
+                <img :src="product.image" style="width: 80px; height: 50px"  placeholder=" Use 300px/250px Picture" />
               </div>
             </div>
             <div class="btn">
@@ -124,7 +125,7 @@
             </div>
             <div class="form-group">
               <div class="p-1">
-                <img :src="product.image" style="width: 80px; height: 50px" />
+                <img :src="product.image" style="width: 80px; height: 50px" placeholder=" Use 300px/250px Picture" />
                 <span class="delete-img" @click="deleteImage(image)">X</span>
               </div>
             </div>

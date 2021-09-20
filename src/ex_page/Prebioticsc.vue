@@ -5,12 +5,12 @@
         <h3>Probiotics</h3>
         <div
           class="col-md-4"
-          v-for="probiotic in probiotics"
-          :key="probiotic.id"
+          v-for="product in products"
+          :key="product.id"
         >
         <div class="card">
-          <img :src="probiotic.img" />
-          <p>{{ probiotic.title }}</p>
+          <img :src="product.img" />
+          <p>{{ product.title }}</p>
         </div>
         </div>
       </div>
@@ -19,28 +19,25 @@
 </template>
         
 <script>
+import { db } from '../firebase';
+
 export default {
   data() {
     return {
-      probiotics: [
-        {
-          id: "1",
-          title: "probiotoc",
-          img: "https://i.postimg.cc/WpFfC4Zc/probio.jpg",
-        },
-        {
-          id: "2",
-          title: "probiotoc1",
-          img: "https://i.postimg.cc/WpFfC4Zc/probio.jpg",
-        },
-        {
-          id: "3",
-          title: "probiotoc2",
-          img: "https://i.postimg.cc/WpFfC4Zc/probio.jpg",
-        },
-      ],
+      products:[],
     };
   },
+
+    created() {
+    db.collection("products").where("product_name", "==", "Prebioticsc")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.products.push(doc);
+        });
+      });
+  },
+
   mounted() {
     window.scrollTo(0, 0);
   },

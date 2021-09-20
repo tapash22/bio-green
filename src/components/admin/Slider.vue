@@ -4,6 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Slider</h3>
+          <p style="text-align:center;color:blue;">Use 1360px/500px Picture</p>
           <form>
             <div class="form-group">
               <label>Slider Name</label>
@@ -15,7 +16,7 @@
             </div>
             <div class="form-group">
               <label>Upload Image</label>
-              <input type="file" class="form-control" @change="uploadImage" />
+              <input type="file" class="form-control" @change="uploadImage"  placeholder=" Use 1360px/500px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-3">
@@ -99,7 +100,7 @@
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input type="file" @change="uploadImage" />
+              <input type="file" @change="uploadImage"  placeholder=" Use 1360px/500px Picture"/>
             </div>
             <div class="form-group">
               <div class="p-1">

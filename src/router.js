@@ -34,7 +34,6 @@ import Partner from './components/admin/Partner.vue';
 import Photo from './components/admin/Photo.vue';
 import Slider from './components/admin/Slider.vue';
 import Events from './components/admin/Events.vue';
-import Enzyme  from './components/admin/Enzyme.vue';
 import Blogs from './components/admin/Blog.vue';
 import { fb } from './firebase';
 
@@ -83,7 +82,6 @@ const routes = [
             { path: 'photo', component: Photo },
             { path: 'slider', component: Slider },
             { path: 'events', component: Events},
-            { path: 'enzyme', component: Enzyme },
             { path: 'blog', component: Blogs },
         ]   
     }

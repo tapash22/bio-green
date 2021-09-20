@@ -38,7 +38,6 @@ export default {
       if (doc.exists) {
         this.blog = doc.data();
       } else {
-        // doc.data() will be undefined in this case
         console.log("No such document!");
       }
     });

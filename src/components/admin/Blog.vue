@@ -4,6 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Blogs</h3>
+          <p style="text-align:center;color:blue;">Use 800px/400px Picture</p>
           <form>
             <div class="form-group">
               <label>Blog Title</label>

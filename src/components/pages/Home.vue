@@ -37,7 +37,7 @@
               <ul>
                 <li>{{ blog.text1 }}</li>
                 <li>{{ blog.text }}</li>
-                <li><button class="btn btn-primary">Read more</button></li>
+                <li><router-link to="/blog" ><button class="btn btn-primary">Read more</button></router-link></li>
               </ul>
             </div>
           </div>

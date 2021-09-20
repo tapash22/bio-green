@@ -146,17 +146,15 @@ export default {
 <style scoped>
 .navigation {
   width: 100%;
-  /* background: #fff; */
   color: #fff;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nav3.jpg");
+  background-image: url("../assets/image/nn.jpg");
   background-position: center;
   background-size: cover;
-  /* opacity: 0.6; */
 }
 nav {
   width: 100%;
@@ -176,7 +174,7 @@ nav .brand {
 .brand img {
   width: 300px;
   height: 60px;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-left: 50px;
 }
 .brand .icon {

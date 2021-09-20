@@ -26,8 +26,8 @@
         <div class="col-md-4 add">
           <h3>Get in <strong>touch</strong></h3>
           <address>
-            House No: 27 (2nd Floor)<br />
-            Road No: 05, Nikunja 02, Khilkhet,<br>Dhaka-1229, Bangladesh
+            <strong> House No:</strong> 27 (2nd Floor)<br />
+            <strong> Road No: </strong>, Nikunja 02, Khilkhet,<br>Dhaka-1229, Bangladesh
           </address>
           <address>
             <strong> Email :</strong> info@biogreenint.com<br />
@@ -77,7 +77,7 @@
   background: #1b1b1b;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/image/foot3.jpg");
+  background-image: url("../assets/image/ff.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -136,12 +136,14 @@ text-align: center;
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
-  border-bottom: 2px solid green;
+  /* border-bottom: 2px solid green; */
 }
 .add address {
   text-align: left;
   padding: 0;
   margin-left: 50px;
+  font-size: 0.8;
+  font-weight: 400;
 }
 .add strong {
   font-size: 18px;
@@ -157,11 +159,13 @@ text-align: center;
   padding: 0;
   display: flex;
   justify-content: space-around;
-  background: #000;
+
 }
 
 .bottom .col-md-8 p {
   padding-top: 10px;
+  color: #fff;
+  z-index: 1;
 }
 
 .bottom .col-md-4 ul {
