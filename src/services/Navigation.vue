@@ -94,8 +94,7 @@
                       style="
                         padding-left: 10px;
                         padding-top: 10px;
-                        font-size: 1rem;
-                      "
+                        font-size: 1rem;"
                       aria-hidden="true"
                     ></i
                   ></router-link>
