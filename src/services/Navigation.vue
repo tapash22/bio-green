@@ -158,6 +158,7 @@ export default {
 }
 nav {
   width: 100%;
+  height: 150px;
   display: flex;
   justify-content: space-between;
   box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
@@ -173,8 +174,8 @@ nav .brand {
 
 .brand img {
   width: 300px;
-  height: 60px;
-  margin-top: 40px;
+  height: 70px;
+  margin-top: 50px;
   margin-left: 50px;
 }
 .brand .icon {
@@ -237,7 +238,7 @@ nav::after {
 .navbar .ul li a:hover,
 .navbar .ul li a.router-link-active {
  
-  border-bottom: 2px solid greenyellow;
+  border-bottom: 2px solid #000;
 }
 .navbar .ul ul {
   position: absolute;

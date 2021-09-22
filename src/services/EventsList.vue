@@ -84,7 +84,7 @@ export default {
   margin: 10px;
   width: 100%;
   height: 500px;
-  background: #fff;
+ 
   /* display:flex;
   flex-direction: row; */
 }
@@ -157,7 +157,7 @@ export default {
   margin: 10px;
   width: 100%;
   height: 100%;
-  background: #fff;
+
   display: block;
 }
 .event .col-md-6 {

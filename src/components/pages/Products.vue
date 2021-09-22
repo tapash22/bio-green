@@ -64,7 +64,7 @@
                 {{ product.description }}
               </p>
             
-              <a :href="product.pdf" 
+              <a :href="product.pdf" @click="downloadPdf"
                 >Download this file</a
               >
             </div>
@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { db } from "../../firebase";
+import { fb,db } from "../../firebase";
 
 export default {
   data() {
@@ -108,12 +108,12 @@ export default {
     inClose() {
       this.showModal = false;
     },
-    // downloadResumePdf() {
-    //    storage.ref("products").child('product.pdf').getDownloadURL()
-    //       .then((url) => {
-    //         setUrl(url);
-    //       })
-    // },
+
+    downloadPdf(e){
+         let file = e.target.files[0];
+        var storageRef = fb.storage().ref("products/" + file.name);
+        storageRef.getDownloadURL()
+    }
   },
 
   mounted() {

@@ -1,4 +1,5 @@
 <template>
+
   <carousel :autoplay="2000" :wrap-around="true">
     <slide v-for="slider in sliders" :key="slider.id">
       <img :src="slider.data().image" />
@@ -8,6 +9,7 @@
       <pagination />
     </template>
   </carousel>
+
 </template>
 
 <script>
@@ -48,17 +50,10 @@ export default {
 </script>
 
 <style scoped>
-.row {
-  padding: 10px;
-  margin: 10px;
-}
-.col-md-12 {
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 img {
   width: 100%;
-  height: 480px;
+  height: 700px;
   background-size: cover;
   background-position: center;
 }

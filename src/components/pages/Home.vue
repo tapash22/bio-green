@@ -196,7 +196,9 @@ font-family: 'Roboto', sans-serif;
 
 /* blog */
 .blog {
-  background: #fff;
+  background-image: url(../../assets/image/back.jpg);
+  background-position: center;
+  background-size: cover;
   padding: 30px;
 }
 .blog .col-md-4 .card {
