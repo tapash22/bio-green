@@ -63,7 +63,10 @@
                 <strong> Details:</strong>
                 {{ product.description }}
               </p>
-               <a :href='product.pdf'  @click.prevent="downloadResumePdf(product)">Download this file</a>
+            
+              <a :href="product.pdf" @
+                >Download this file</a
+              >
             </div>
           </div>
         </div>
@@ -84,8 +87,9 @@ export default {
     };
   },
 
- created() {
-    db.collection("products").where("product_name", "==", "poultry")
+  created() {
+    db.collection("products")
+      .where("product_name", "==", "poultry")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -104,18 +108,12 @@ export default {
     inClose() {
       this.showModal = false;
     },
-    downloadResumePdf(pdf ,label){
-       db.collection('products').get(pdf, { responseType: 'blob' })
-      .then(response => {
-        const blob = new Blob([response.data], { type: 'application/pdf' })
-        const link = document.createElement('a')
-        link.href = URL.createObjectURL(blob)
-        link.download = label
-        link.click()
-        URL.revokeObjectURL(link.href)
-      }).catch(console.error)
-    }
-
+    // downloadResumePdf() {
+    //    storage.ref("products").child('product.pdf').getDownloadURL()
+    //       .then((url) => {
+    //         setUrl(url);
+    //       })
+    // },
   },
 
   mounted() {
@@ -138,6 +136,7 @@ export default {
   padding-bottom: 20px;
   margin: 0;
 }
+
 .row h3 {
   text-align: center;
   font-size: 2.2rem;
