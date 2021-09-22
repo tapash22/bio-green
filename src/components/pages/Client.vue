@@ -42,6 +42,8 @@ export default {
   padding: 0;
   margin: 0;
   background-image: url(../../assets/image/footer.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .col-md-12 {
   padding: 0;
