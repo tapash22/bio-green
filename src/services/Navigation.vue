@@ -4,7 +4,7 @@
       <div class="brand">
         <div class="logo">
           <router-link to="/home">
-            <img src="../assets/image/logo3.png" />
+            <img src="../assets/logo4.png" />
           </router-link>
         </div>
         <div class="icon" @click="showNav = !showNav">
@@ -152,7 +152,7 @@ export default {
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nave.jpg");
+  background-image: url("../assets/image/back2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -176,7 +176,7 @@ nav .brand {
   width: 300px;
   height: 70px;
   margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 60px;
 }
 .brand .icon {
   visibility: hidden;
