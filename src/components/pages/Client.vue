@@ -41,7 +41,7 @@ export default {
 .row {
   padding: 0;
   margin: 0;
-  background-image: url(../../assets/image/footer.jpg);
+  background-image: url(../../assets/image/back2.jpg);
   background-position: center;
   background-size: cover;
 }

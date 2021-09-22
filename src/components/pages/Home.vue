@@ -202,12 +202,12 @@ export default {
 
 /* blog */
 .blog {
-  background-image: url(../../assets/image/back1.jpg);
+  background-image: url(../../assets/image/footer.jpg);
   background-position: center;
   background-size: cover;
   padding: 30px;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 .blog .col-md-4 .card {
   width: 300px;
