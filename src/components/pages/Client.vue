@@ -41,7 +41,7 @@ export default {
 .row {
   padding: 0;
   margin: 0;
-  background: rgb(223, 219, 219); 
+  background-image: url(../../assets/image/footer.jpg);
 }
 .col-md-12 {
   padding: 0;
