@@ -152,7 +152,7 @@ export default {
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/nn.jpg");
+  background-image: url("../assets/image/c1.jpg");
   background-position: center;
   background-size: cover;
 }

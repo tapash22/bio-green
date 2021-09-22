@@ -64,7 +64,7 @@
                 {{ product.description }}
               </p>
             
-              <a :href="product.pdf" @
+              <a :href="product.pdf" 
                 >Download this file</a
               >
             </div>

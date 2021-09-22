@@ -77,7 +77,7 @@
   background: #1b1b1b;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/image/ff.jpg");
+  background-image: url("../assets/image/c2.jpg");
   background-position: center;
   background-size: cover;
 }
