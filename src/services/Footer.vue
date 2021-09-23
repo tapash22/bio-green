@@ -77,7 +77,7 @@
   background: #1b1b1b;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/image/back.jpg");
+  background-image: url("../assets/image/footer.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -90,23 +90,22 @@
   position: relative;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 10px;
-  
+  padding-top: 9px;
 }
 .row .col-md-4 {
   text-align: center;
   padding: 10px;
 }
 h3 {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 
 }
 strong {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
 
 }
 p {

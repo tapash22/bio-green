@@ -4,7 +4,7 @@
       <div class="brand">
         <div class="logo">
           <router-link to="/home">
-            <img src="../assets/logo4.png" />
+            <img src="../assets/image/logo4.png" />
           </router-link>
         </div>
         <div class="icon" @click="showNav = !showNav">
@@ -123,7 +123,7 @@
             </li>
             <li><router-link to="/contact">Contact Us</router-link></li>
             <li>
-              <router-link to="/login">Login</router-link>
+              <router-link to="/login ">Login</router-link>
             </li>
           <!-- </transition-group> -->
         </ul>
@@ -151,7 +151,7 @@ export default {
   box-sizing: border-box;
   z-index: 1;
   position: fixed;
-  background-image: url("../assets/image/back2.jpg");
+  background-image: url("../assets/image/nave.jpg");
   background-position: center;
   background-size: cover;
 }

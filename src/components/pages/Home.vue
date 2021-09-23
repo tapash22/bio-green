@@ -20,7 +20,7 @@
 
     <!-- blog -->
     <div class="row blog my-3">
-      <h3>Bio-Green <strong>Blog</strong></h3>
+      <h3>BioGreen <strong>Blog</strong></h3>
       <div
         class="col-md-4"
         v-for="blog in blogs"
@@ -172,29 +172,29 @@ export default {
   font-size: 2.5rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
-  color: #000;
+  color: #fff;
   padding-top: 10px;
   padding-bottom: 0;
   text-transform: uppercase;
 }
 .row h3 strong {
-  color: rgba(31, 15, 105, 0.849);
+  color: green;
   font-weight: 900;
   font-family: "Roboto", sans-serif;
 }
 .row p {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
-  color: #000;
+  color: #fff;
   margin-top: -5px;
 }
 .row2 {
   margin-top: 30px;
   background: #fff;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .row2 .col-md-4 {
   padding: 10px;
@@ -202,9 +202,7 @@ export default {
 
 /* blog */
 .blog {
-  background-image: url(../../assets/image/footer.jpg);
-  background-position: center;
-  background-size: cover;
+  background: rgba(0, 0, 0, 0.2);
   padding: 30px;
   margin-left: 120px;
   margin-right: 120px;
