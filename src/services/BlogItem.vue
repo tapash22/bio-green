@@ -1,6 +1,5 @@
 <template>
   <div class="blogpost">
-    <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="box">
@@ -19,7 +18,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -47,17 +45,17 @@ export default {
 
 <style scoped>
 .blogpost{
-  margin-top: 130px;
+  margin-top: 120px;
   width: 100%;
-  height: 100%;
   padding: 0;
+
 }
 .row{
-  padding: 0;
-  margin: 0;
+    margin-left: 100px;
+  margin-right: 100px;
   widows: 100%;
   height: 100%;
-  background: #fff;
+   background: rgba(5, 19, 82, 0.596);
 }
 .row .col-md-12{
   padding: 0;
@@ -72,6 +70,7 @@ h3{
   font-weight: 600;
   letter-spacing: 1px;
   padding: 10px;
+  color:#fff;
 }
 .image{
   width: 800px;
@@ -93,7 +92,7 @@ h3{
 .text p{
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 .text p strong{
   font-size: 1.6rem;
@@ -104,7 +103,7 @@ h3{
   font-size: 1.6rem;
   font-weight: 700;
   padding: 5px;
-  color: rgb(30, 146, 15);
+  color: #fff;
 }
 .des{
   width: 100%;
@@ -115,6 +114,7 @@ h3{
 .des p{
   font-size: 1rem;
   font-weight: 400;
+  color: #fff;
 
 }
 </style>

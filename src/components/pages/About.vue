@@ -1,11 +1,12 @@
 <template>
   <div class="about">
     <div class="image">
-      <img src="../../assets/image/about.jpg" />
+      <img src="../../assets/image/about_h.jpg" />
     </div>
     <div class="container">
+       <h3>About us</h3>
       <div class="row">
-        <h3>About us</h3>
+       
         <div
           class="col-md-6 pt-2"
           data-aos="fade-left"
@@ -15,13 +16,14 @@
           <img src="../../assets/image/1.png" />
         </div>
         <div
-          class="col-md-6 text"
+          class="col-md-6"
           data-aos="fade-left"
           data-aos-delay="500"
           data-aos-once="false"
         >
+        <div class="text">
           <h4>WHAT WE DO</h4>
-          <p class="wrap">
+          <p >
             We are the sole importer & sourcing partner for world class
             additives for making feed for livestock & poultry with a focus to
             ensure safe human health, environment & nature on its turn. Since
@@ -38,6 +40,7 @@
             professional, knowledge driven & reliable to be a trusted partner to
             your livestock & poultry business operation.
           </p>
+        </div>
         </div>
       </div>
       <div class="row my-3 wrap" v-for="about in abouts" :key="about.text">
@@ -88,6 +91,10 @@ export default {
   height: 100%;
   margin-top: 0;
   padding: 0;
+  /* background-image: url(../../assets/image/back.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .about .image {
@@ -104,27 +111,29 @@ export default {
   width: 100%;
   height: 500px;
 }
-
-.about .row {
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-  margin: 0;
-}
-.about .row h3 {
+.about .container h3 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.about .row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .col-md-6 {
-  background: #fff;
+  /* background: #fff; */
   width: 50%;
-  height: 400px;
-  padding: 5px;
+  height: 435px;
+  padding: 10px;
 }
 .col-md-6 img {
   width: 100%;
@@ -134,33 +143,22 @@ export default {
 }
 .text {
   padding-left: 20px;
-  margin-top: 30px;
+  background: #ffa6006c;
 }
 .text h4 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Oswald", sans-serif;
   color: #000;
   text-align: center;
+  padding: 5px;
 }
 .text p {
   font-size: 16px;
   font-weight: 500;
   padding: 5px;
-}
-.col-md-12 {
-  background: #fff;
-  padding: 10px;
-}
-.col-md-12 h3 {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 500;
-  font-family: "MonteCarlo", cursive;
-}
-hr {
-  height: 2px;
-  color: green;
+  color: #000;
+   /* background:rgba(0, 0, 0, 0.2); */
 }
 .col-md-12 {
   background: #fff;
@@ -168,30 +166,32 @@ hr {
   margin: 0;
 }
 .col-md-12 .wrap {
-  background: #fff;
   padding-top: 50px;
   display: flex;
   justify-content: space-evenly;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   width: 100%;
   height: 100%;
+  color: #000;
+  background:#ffa6006c;
 }
 .wrap .col-md-3 {
   width: 30%;
   height: 100%;
   padding: 20px;
   margin: 0;
+  /* background: rgba(5, 19, 82, 0.596); */
 }
 .wrap .col-md-3 .title {
-  padding: 5px;
+  padding: 25px;
   margin: 0;
-  background: #fff;
+
 }
 
 .col-md-3 .title h2 {
-  font-size: 2.5rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   color: #000;
   font-family: 'Oswald', sans-serif;
 }

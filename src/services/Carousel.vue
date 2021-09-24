@@ -27,13 +27,13 @@ export default {
         {
           id: 1,
           title: "Enzymes",
-          img: "https://i.postimg.cc/wjkHGb6Q/en.jpg",
+          img: require('../assets/image/pd1.jpg'),
           url: "/enzymes",
         },
         {
           id: 2,
           title: "Essential Oil",
-          img: "https://i.postimg.cc/DzZVYvp7/e.jpg",
+          img: require('../assets/image/pd2.jpg'),
           url: "/essensialoil",
         },
         {
@@ -44,14 +44,14 @@ export default {
         },
         {
           id: 4,
-          title: "Prebiotic",
-          img: "https://i.postimg.cc/sD9tjQtV/p.jpg",
+          title: "Postbiotic",
+          img: require('../assets/image/pd4.jpg'),
           url: "/probiotics",
         },
         {
           id: 5, 
           title: "Organic Minerals",
-          img: "https://i.postimg.cc/hjrPq06h/organic.jpg",
+          img: require('../assets/image/pd3.jpg'),
           url: "/organicminarels",
         },
       ],

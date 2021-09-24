@@ -1,5 +1,8 @@
 <template>
   <div class="products">
+    <div class="image">
+      <img src="../../assets/image/p_page.jpg" />
+    </div>
     <div class="container">
       <div class="row">
         <h3
@@ -7,7 +10,7 @@
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
-          Our Products
+          Products
         </h3>
         <div class="col-md-4" v-for="product in products" :key="product.id">
           <div
@@ -128,7 +131,17 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 142px;
+  margin-top: 120px;
+}
+.image {
+  width: 100%;
+  min-height: 400px;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 .row {
   display: flex;
@@ -145,6 +158,7 @@ export default {
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
+  text-transform: uppercase;
 }
 .row .col-md-4 {
   padding: 10px;
@@ -154,12 +168,12 @@ export default {
   margin: 0;
   width: 300px;
   height: 300px;
+  background: #ffa6006c;
 }
 .col-md-4 .card a {
   text-decoration: none;
 }
 .card-body {
-  background: rgb(240, 237, 237);
   position: relative;
   display: flex;
   justify-content: center;
@@ -183,16 +197,17 @@ export default {
   padding: 0;
   margin: 0;
   border: none;
-  background: rgb(240, 237, 237);
+    background: rgb(5, 19, 82);
   display: flex;
   flex-direction: column;
 }
 .card-footer p {
   text-align: center;
   padding: 0;
-  color: #000;
+  color: #fff;
   font-size: 1.2rem;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .modal {

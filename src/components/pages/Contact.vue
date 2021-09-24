@@ -1,8 +1,8 @@
 <template>
   <div class="contact">
-    <!-- <div class="image">
+    <div class="image">
       <img src="../../assets/image/contact.jpg" />
-    </div> -->
+    </div>
     <div class="container">
       <h3>Contact Us</h3>
       <div class="row">
@@ -52,16 +52,6 @@
             </address>
           </div>
         </div>
-        <!-- <div
-          class="col-md-6"
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
-          <div class="main">
-            <img src="../../assets/image/contact_8a.jpg" />
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -79,17 +69,17 @@ export default {
 .contact {
   width: 100%;
   height: 100%;
-  margin-top: 140px;
+  margin-top: 120px;
   padding: 0;
-
+  /* background:rgba(5, 19, 82, 0.596); */
 }
 .image {
   width: 100%;
-  min-height: 350px;
+  min-height: 400px;
 }
 .image img {
   width: 100%;
-  height: 350px;
+  height: 100%;
   background-position: center;
   background-size: cover;
 }
@@ -107,7 +97,7 @@ h3 {
 .contact .row {
   display: flex;
   flex-direction: column;
-  background: #fff;
+   background:#ffa6006c;
 }
 
 .col-md-6 {
@@ -141,7 +131,8 @@ h3 {
   font-size: 2rem;
   font-weight: 700;
   padding: 5px;
-  color: green;
+ 
+  color: #000;
 }
 .text address {
   padding: 10px;
@@ -155,7 +146,7 @@ h3 {
   font-size: 1.5rem;
   font-weight: 500;
   padding: 5px;
-  color: green;
+  color: #000;
 }
 .text address a {
   color: #000;

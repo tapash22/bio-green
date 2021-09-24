@@ -1,5 +1,8 @@
 <template>
   <div class="blog">
+     <div class="image">
+      <img src="../../assets/image/blog.jpg" />
+    </div>
     <div class="container">
       <div class="row">
         <h3>Blog</h3>
@@ -17,16 +20,18 @@
             </div>
             <div class="card-body">
               <ul>
-                <li style="padding-left: 10px; padding-right: 10px">
-                  
+                <li style="">
                   {{ blog.data().title }}
                 </li>
-                <li style="padding-left: 10px; padding-right: 10px">
+                <li >
                   <i class="fa fa-user" aria-hidden="true"></i>
                   {{ blog.data().author }}
                 </li>
                 <li>
-                  <router-link :to="{ name: 'BlogItem', params: { id: blog.id } }">show details</router-link>
+                  <router-link
+                    :to="{ name: 'BlogItem', params: { id: blog.id } }"
+                    >show details</router-link
+                  >
                 </li>
               </ul>
             </div>
@@ -64,7 +69,7 @@
               </p>
               <p>
                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                {{ blog.mydate}}
+                {{ blog.mydate }}
               </p>
 
               <p class="wrap pt-3">
@@ -125,24 +130,38 @@ export default {
       this.showModal = false;
     },
   },
-
 };
 </script>
 
 <style scoped>
 .blog {
-  position: relative;
   width: 100%;
   height: 100%;
+  margin-top: 0;
   padding: 0;
-  margin-top: 142px;
+    margin-top: 120px;
+  padding: 0;
+  /* background-image: url(../../assets/image/back.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
+}
+.image {
+  width: 100%;
+  min-height: 400px;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .row {
   display: flex;
   padding: 0;
   margin-bottom: 50px;
   width: 100%;
-  background: #fff;
 }
 .row h3 {
   text-align: center;
@@ -163,7 +182,7 @@ export default {
   height: 300px;
   padding: 0;
   margin: 5px;
-  background: #fff;
+  background: rgba(5, 19, 82, 0.671);
 }
 .col-md-4 .card .card-header {
   width: 100%;
@@ -182,7 +201,7 @@ export default {
   height: 100px;
   padding: 0;
   margin: 0;
-  background: #fff;
+  background: #FFA500;
 }
 .card-body ul {
   display: flex;
@@ -196,11 +215,24 @@ export default {
   font-weight: 500;
   color: #000;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding-left: 10px;
+   padding-right: 10px
 }
-.card-body ul li button {
-  width: 100%;
+.card-body ul li i{
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 5px;
+}
+.card-body ul li a{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(5, 19, 82);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 .modal {
   display: block;

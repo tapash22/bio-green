@@ -3,7 +3,7 @@
     <Slider />
     <!-- <div class="container"> -->
     <div class="row blog my-3">
-      <h3>Our<strong> products </strong></h3>
+      <h3>products</h3>
       <p>We deliver performances rather just a product to your business</p>
       <div class="col-md-12">
         <Carousel />
@@ -12,7 +12,7 @@
 
     <!-- event -->
     <div class="row blog my-3">
-      <h3>Event <strong>List</strong></h3>
+      <h3>Events</h3>
       <div class="col-md-12" style="width: 100%; height: 100%">
         <EventList />
       </div>
@@ -20,7 +20,7 @@
 
     <!-- blog -->
     <div class="row blog my-3">
-      <h3>BioGreen <strong>Blog</strong></h3>
+      <h3>Blog</h3>
       <div
         class="col-md-4"
         v-for="blog in blogs"
@@ -51,33 +51,6 @@
     </div>
   </div>
 
-  <!-- about -->
-  <!-- <div class="about">
-      <h3>Our <strong> Plan</strong></h3>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4" v-for="about in abouts" :key="about.id">
-            <div
-              class="round"
-              data-aos="zoom-in"
-              data-aos-delay="500"
-              data-aos-once="false"
-            >
-              <p>{{ about.text }}</p>
-            </div>
-            <div
-              class="box"
-              data-aos="fade-down"
-              data-aos-easing="linear"
-              data-aos-duration="1000"
-            >
-              <p>{{ about.name }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-  <!-- </div> -->
 </template>
 
 <script>
@@ -130,23 +103,6 @@ export default {
         },
       ],
 
-      abouts: [
-        {
-          id: "1",
-          name: "We deliver performances rather just a product to your business We deliver performances rather just a product to your business ",
-          text: "A",
-        },
-        {
-          id: "2",
-          name: "We deliver performances rather just a product to your businessWe deliver performances rather just a product to your business",
-          text: "B",
-        },
-        {
-          id: "3",
-          name: "We deliver performances rather just a product to your business We deliver performances rather just a product to your business",
-          text: "C",
-        },
-      ],
     };
   },
 
@@ -159,7 +115,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 .home {
-  margin-top: 130px;
+  margin-top: 120px;
 }
 
 .row {
@@ -169,25 +125,21 @@ export default {
 }
 .row h3 {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 900;
   font-family: "Roboto", sans-serif;
-  color: #fff;
+  color: #000;
   padding-top: 10px;
   padding-bottom: 0;
   text-transform: uppercase;
 }
-.row h3 strong {
-  color: green;
-  font-weight: 900;
-  font-family: "Roboto", sans-serif;
-}
+
 .row p {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
-  color: #fff;
+  color: #000;
   margin-top: -5px;
 }
 .row2 {
@@ -202,7 +154,7 @@ export default {
 
 /* blog */
 .blog {
-  background: rgba(0, 0, 0, 0.2);
+  background: #ffa6004f;
   padding: 30px;
   margin-left: 120px;
   margin-right: 120px;
@@ -248,6 +200,9 @@ export default {
 .blog .card-body ul li button {
   width: 100%;
   margin-top: 5px;
+}
+.blog .card-body ul li .btn{
+  background: rgb(5, 19, 82);
 }
 
 /* about */

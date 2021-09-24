@@ -30,7 +30,7 @@
         <div class="main">
           <div class="row head-bar">
             <div class="col-md-12">
-              <div class="brand"><img src="../../assets/image/log.png" /></div>
+              <div class="brand"><img src="../../assets/image/logo4.png" /></div>
               <div class="header">
                
                 <ul>
@@ -193,19 +193,7 @@ nav {
   display: flex;
   float: right;
 }
-/* .main .head-bar .header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  padding: 10px;
-}
-.main .head-bar .header h5 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #fff;
-  font-family: "Oswald", sans-serif;
-  padding-top: 35px;
-} */
+
 .main .head-bar .header ul {
   display: flex;
 }

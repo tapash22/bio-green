@@ -28,9 +28,10 @@
 </template>
 
 <script>
-// import SignupValidation from '../../validation/SignupValidation';
 import { fb } from "../../firebase";
+
 export default {
+  name:'Login',
   data() {
     return {
       email: "",

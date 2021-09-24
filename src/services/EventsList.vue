@@ -150,6 +150,9 @@ export default {
   color: #000;
   text-align: left;
 }
+.event .box .box-b .btn{
+  background: rgb(5, 19, 82);
+}
 
 @media only screen and (max-width: 767px) {
 .event {

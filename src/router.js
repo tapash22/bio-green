@@ -52,8 +52,8 @@ const routes = [
             { path: 'blog/:id',name:'BlogItem', component: BlogItem },
             { path: 'gallery', component: Gallery,},
             { path: 'contact', component: Contact, },
-            { path: 'login', component: Login, },
-            { path:'/:NotFound(.*)*', component: NotFound },
+            { path: 'login',name:'Login', component: Login, },
+            { path:'/:NotFound(.*)*', component: NotFound, },
 
             { path: 'essensialoil' , component: Essensialoil },
             { path: 'organicminarels' , component: Organicminarels },
