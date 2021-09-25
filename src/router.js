@@ -93,10 +93,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    // const link = this.$router.path('/');
-    // if(link){
-    //     next('/home');
-    // }
     const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
     const currentUser = fb.auth().currentUser;
     if (requiresAuth && !currentUser) {

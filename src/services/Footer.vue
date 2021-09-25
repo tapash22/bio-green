@@ -21,6 +21,7 @@
             <li><router-link to="/blog">Blog</router-link></li>
             <li><router-link to="/partners">Partners</router-link></li>
             <li><router-link to="/contact">Contact</router-link></li>
+            <li><router-link to="/login">Login</router-link></li>
           </ul>
         </div>
         <div class="col-md-4 add">
@@ -44,23 +45,24 @@
     <div class="bottom">
       <div class="container">
         <div class="brand">
-        <div class="col-md-8" style="display: flex">
-          <p>All right reserved in &copy;BioGreen</p>
-          &nbsp;<img src="../assets/image/uv.png" style="" />
-        </div>
-        <div class="col-md-4">
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/profile.php?id=100050555396675"
-                ><i class="fa fa-facebook" aria-hidden="true"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
-                ><i class="fa fa-linkedin" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
+          <div class="col-md-8" style="display: flex">
+            <p>All right reserved in &copy;BioGreen</p>
+            &nbsp;<img src="../assets/image/uv.png" style="" />
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100050555396675"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
+                  ><i class="fa fa-linkedin" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -152,32 +154,32 @@ p {
   padding: 0;
   position: relative;
 }
-.bottom .container .brand{
+.bottom .container .brand {
   padding: 0;
   margin: 0;
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
 }
-.bottom .container .brand .col-md-8{
-  padding:5px;
+.bottom .container .brand .col-md-8 {
+  padding: 5px;
   margin: 5px;
 }
-.bottom .container .brand .col-md-8 p{
+.bottom .container .brand .col-md-8 p {
   text-align: left;
   font-size: 0.9rem;
   font-weight: 500;
   color: rgb(119, 48, 15);
 }
-.bottom .container .brand .col-md-8 img{
+.bottom .container .brand .col-md-8 img {
   width: 150px;
   height: 50px;
   margin-top: -10px;
 }
-.bottom .container .brand .col-md-4{
+.bottom .container .brand .col-md-4 {
   padding: 5px;
   margin: 5px;
 }
-.bottom .container .brand .col-md-4 ul{
+.bottom .container .brand .col-md-4 ul {
   padding: 5px;
   margin: 0;
   display: flex;
@@ -187,21 +189,20 @@ p {
   list-style: none;
   text-align: right;
 }
-.bottom .container .brand .col-md-4 li a{
+.bottom .container .brand .col-md-4 li a {
   text-decoration: none;
 }
-.bottom .container .brand .col-md-4 li a i{
+.bottom .container .brand .col-md-4 li a i {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
   padding-left: 10px;
   padding-right: 10px;
 }
-.bottom .container .brand .col-md-4 li a i:hover{
+.bottom .container .brand .col-md-4 li a i:hover {
   cursor: pointer;
   color: #fff;
 }
-
 
 @media only screen and (max-width: 767px) {
   p {

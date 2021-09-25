@@ -49,7 +49,7 @@
                       </li>
 
                       <li>
-                        <router-link to="/probiotics">Prebiotic</router-link>
+                        <router-link to="/probiotics">Postbiotic</router-link>
                       </li>
                     </ul>
                   </li>
@@ -59,7 +59,7 @@
                     ></router-link>
                     <ul class="two">
                       <li>
-                        <router-link to="/prebioticsc">Prebiotic</router-link>
+                        <router-link to="/prebioticsc">Postbiotic</router-link>
                       </li>
                       <li>
                         <router-link to="/organicminarelsc"
@@ -74,7 +74,7 @@
                     ></router-link>
                     <ul class="two">
                       <li>
-                        <router-link to="/probioticsa">Prebiotic</router-link>
+                        <router-link to="/probioticsa">Postbiotic</router-link>
                       </li>
                       <li>
                         <router-link to="/organicminarelsa"
@@ -96,9 +96,6 @@
                 <router-link to="/partners">Partners</router-link>
               </li>
               <li><router-link to="/contact">Contact Us</router-link></li>
-              <li>
-                <router-link to="/login ">Login</router-link>
-              </li>
             </ul>
           </div>
         </div>
@@ -181,7 +178,7 @@ nav .row {
 }
 .link .ul {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
@@ -192,7 +189,7 @@ nav .row {
 .link .ul li a {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #000;
+  color: rgb(22, 4, 54);
   text-decoration: none;
   padding: 5px;
   border-bottom: 3px none #fff;

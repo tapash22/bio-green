@@ -2,7 +2,7 @@
   <div class="products">
     <div class="container">
       <div class="row">
-        <h3>Probiotics</h3>
+        <h3>Postbiotics</h3>
         <div
           class="col-md-4"
           v-for="product in products"

@@ -20,56 +20,14 @@
             data-aos-once="false"
           >
             <div class="card-body">
-              <a href="#" @click.prevent="editProduct(product)">
+              <a :href="product.url">
                 <div class="img">
-                  <img :src="product.data().image" />
+                  <img :src="product.img" />
                 </div>
               </a>
             </div>
             <div class="card-footer">
-              <p>{{ product.data().product_name }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal"
-      id="edit"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="editLabel"
-      aria-hidden="true"
-      v-if="showModal"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              @click="inClose()"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="img">
-              <img :src="product.image" />
-            </div>
-            <div class="text">
-              <h4>Product Name: {{ product.product_name }}</h4>
-              <p class="wrap pt-3">
-                <strong> Details:</strong>
-                {{ product.description }}
-              </p>
-            
-              <a :href="product.pdf" @click="downloadPdf"
-                >Download this file</a
-              >
+              <p>{{ product.title }}</p>
             </div>
           </div>
         </div>
@@ -79,44 +37,31 @@
 </template>
 
 <script>
-import { fb,db } from "../../firebase";
 
 export default {
   data() {
     return {
-      showModal: false,
-      products: [],
-      active_item: null,
+       products: [
+        {
+          id: 1,
+          title: "POULTRY",
+          img: require('../../assets/image/po.jpg'),
+          url: "/enzymes",
+        },
+        {
+          id: 2,
+          title: "AQUA",
+          img: require('../../assets/image/co.jpg'),
+          url: "/prebioticsc",
+        },
+        {
+          id: 3,
+          title: "CATTLE",
+          img: require('../../assets/image/fish.jpg'),
+          url: "/essensialoilar",
+        },
+      ],
     };
-  },
-
-  created() {
-    db.collection("products")
-      .where("product_name", "==", "poultry")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          this.products.push(doc);
-        });
-      });
-  },
-
-  methods: {
-    editProduct(product) {
-      this.showModal = true;
-      this.product = product.data();
-      this.active_item = product.id;
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    downloadPdf(e){
-         let file = e.target.files[0];
-        var storageRef = fb.storage().ref("products/" + file.name);
-        storageRef.getDownloadURL()
-    }
   },
 
   mounted() {

@@ -13,7 +13,7 @@
           data-aos-delay="500"
           data-aos-once="false"
         >
-          <img src="../../assets/image/1.png" />
+          <img src="../../assets/image/about.jpg" />
         </div>
         <div
           class="col-md-6"

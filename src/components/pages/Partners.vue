@@ -142,7 +142,7 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
- .partners {
+  .partners {
   position: relative;
   width: 100%;
   height: 100%;
