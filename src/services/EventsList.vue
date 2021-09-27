@@ -13,7 +13,7 @@
           {{ occation.place }}
         </p>
       </div>
-      <div v-else>
+      <div  v-else>
         <img src="../assets/image/event.jpg"/>
       </div>
     </div>
@@ -169,8 +169,8 @@ export default {
   padding: 10px;
 }
 .event .event-list {
-  width: 100%;
-  height: 400px;
+  width: 350px;
+  height: 250px;
 }
 .event .event-list img {
   width: 100%;

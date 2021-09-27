@@ -2,7 +2,7 @@
   <div class="photos">
     <div class="container">
       <div class="row">
-        <h3>Event Gallery</h3>
+        <h3>Gallery</h3>
         <lightbox></lightbox>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="partners">
       <div class="row">
-        <h3>Our Partners</h3>
+        <h3>Partners</h3>
         <div
           class="col-md-12"
           data-aos="fade-right"
@@ -16,13 +16,13 @@
             </a>
           </div>
           <div class="right">
-            <h4>{{partner.data().partner_name}}</h4>
+            <h4>Partner Name: {{partner.data().partner_name}}</h4>
             <ul>
-              <li>{{partner.data().country_name}}</li>
-              <li>{{partner.data().product_list}}</li>
+              <li>Country Name: {{partner.data().country_name}}</li>
+              <li>Product List: {{partner.data().product_list}}</li>
             </ul>
             <p>
-              {{partner.data().description}}
+              Description: {{partner.data().description}}
             </p>
           </div>
         </div>
@@ -142,98 +142,78 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
-  .partners {
+ .partners {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 130px;
+  margin-top: 120px;
 }
-.image {
-  min-height: 500px;
-  background: linear-gradient(#e66465, #9198e5);
-  display: flex;
-  justify-content: center;
-}
-.image img {
-  width: 600px;
-  margin-top: 180px;
-  height: 300px;
-  background-position: center;
-  background-size: cover;
-}
+
 .row {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 20px;
-  margin: 0;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .row h3 {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.col-md-6 {
-  padding: 0;
-  margin: 10px;
-  width: 500px;
-  height: 100%;
-  display: flex;
-  border: 1px solid green;
-}
-.col-md-6 .left {
-  width: 300px;
-  height: 300px;
+.col-md-12 {
   padding: 10px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background: #fff;
+  margin: 5px;
+  width: 100%;
+  height: 280px;
+  display: flex;
+   background:#ffa6006c;
 }
-.left img {
+.col-md-12 .left{
+  width: 40%;
+  height: 260px;
+  padding: 10px;
+}
+.col-md-12 .left img{
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
-  padding:10px;
-}
-.right {
-  width: 200px;
-  height: 300px;
-  padding: 0;
-  margin: 0;
-  background: black;
-}
-.right h4 {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 500;
-  text-align: center;
   padding: 5px;
 }
-.right ul {
-  display: block;
-  padding: 0;
-  margin: 0;
-  background: rgb(2, 17, 59);
+.col-md-12 .right{
+  width: 60%;
+  height: 260px;
+  padding: 10px;
 }
-.right ul li {
-  list-style: none;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #fff;
+.col-md-12 .right h4{
   text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 5px;
   text-transform: uppercase;
 }
-.right p {
+.col-md-12 .right ul{
   padding: 5px;
-  text-align: left;
+  margin: 0;
+  display: block;
+}
+.col-md-12 .right ul li{
+  list-style: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  color: #000;
+}
+
+.col-md-12 .right p{
   font-size: 1rem;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 500;
+  color:#000;
+  text-align: justify;
 }
 }
 </style>

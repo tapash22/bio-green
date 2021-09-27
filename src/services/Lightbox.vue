@@ -44,13 +44,6 @@ export default {
         image: "",
       },
       active_item: null,
-      // imgs: [
-      //      {src:'https://via.placeholder.com/450.png/', title: 'this is title' },
-      //      {src:'https://via.placeholder.com/300.png/', title: 'this is title' },
-      //      {src:'https://via.placeholder.com/150.png/', title: 'this is title' },
-      //     { src: 'https://via.placeholder.com/450.png/', title: 'this is title' }
-      //   ]
-      // default: 0
       imgs: [
         "https://i.postimg.cc/ZYgNpczH/1.jpg",
         "https://i.postimg.cc/4N9959Jg/2.jpg",
@@ -148,7 +141,7 @@ export default {
     border: 1px solid blue;
   }
   .col-md-4 .card {
-    width: 300px;
+    width: 95%;
     height: 200px;
     padding: 10px;
     margin: 10px;

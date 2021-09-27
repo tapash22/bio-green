@@ -12,7 +12,7 @@
 
     <!-- event -->
     <div class="row blog my-3">
-      <h3>Events</h3>
+      <h3>Event's</h3>
       <div class="col-md-12" style="width: 100%; height: 100%">
         <EventList />
       </div>
