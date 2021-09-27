@@ -98,7 +98,7 @@ export default {
 }
 
 .about .image {
-  min-height: 500px;
+  min-height: 700px;
   padding: 0;
   margin: 0;
   background: #000;
@@ -109,7 +109,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 .about .container h3 {
   text-align: center;
@@ -220,7 +220,7 @@ export default {
 }
 
 .about .image {
-  min-height: 500px;
+  min-height: 700px;
   padding: 0;
   margin: 0;
   background: #000;
@@ -231,7 +231,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 .about .container h3 {
   text-align: center;

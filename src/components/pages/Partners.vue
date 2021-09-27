@@ -1,5 +1,8 @@
 <template>
   <div class="partners">
+        <div class="image">
+      <img src="../../assets/image/partner.jpg" />
+    </div>
       <div class="row">
         <h3>Partners</h3>
         <div
@@ -73,6 +76,20 @@ export default {
   height: 100%;
   padding: 0;
   margin-top: 120px;
+}
+.partners .image {
+  min-height: 700px;
+  padding: 0;
+  margin: 0;
+  background: #000;
+}
+.partners .image img {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
 }
 
 .row {
