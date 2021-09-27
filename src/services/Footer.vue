@@ -47,7 +47,9 @@
         <div class="brand">
           <div class="col-md-8" style="display: flex">
             <p>All right reserved in &copy;BioGreen</p>
-            &nbsp;<img src="../assets/image/uv.png" style="" />
+            &nbsp;
+            <p>Developed by</p>
+            <p style="color: rgb(161, 57, 9)">#ULTRAWAVE COMMUNICATION</p>
           </div>
           <div class="col-md-4">
             <ul>
@@ -163,18 +165,15 @@ p {
 .bottom .container .brand .col-md-8 {
   padding: 5px;
   margin: 5px;
+  display: flex;
 }
 .bottom .container .brand .col-md-8 p {
   text-align: left;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgb(119, 48, 15);
+  color: rgb(161, 57, 9);
 }
-.bottom .container .brand .col-md-8 img {
-  width: 150px;
-  height: 50px;
-  margin-top: -10px;
-}
+
 .bottom .container .brand .col-md-4 {
   padding: 5px;
   margin: 5px;
@@ -195,13 +194,9 @@ p {
 .bottom .container .brand .col-md-4 li a i {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   padding-left: 10px;
   padding-right: 10px;
-}
-.bottom .container .brand .col-md-4 li a i:hover {
-  cursor: pointer;
-  color: #fff;
 }
 
 @media only screen and (max-width: 767px) {
@@ -223,6 +218,28 @@ p {
     font-weight: 500;
     border-bottom: 2px solid green;
     text-align: left;
+  }
+  .bottom .container .brand .col-md-8 {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom .container .brand .col-md-8 p {
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(161, 57, 9);
+    padding: 0;
+    margin: 0;
+  }
+  .bottom .container .brand .col-md-4 li a i {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 25px;
   }
 }
 </style>
