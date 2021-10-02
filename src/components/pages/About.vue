@@ -3,7 +3,7 @@
     <div class="image">
       <img src="../../assets/image/about_h.jpg" />
     </div>
-    <div class="container">
+
       <h3>About us</h3>
       <div class="row">
         <div
@@ -57,7 +57,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script>
@@ -113,7 +113,7 @@ export default {
   width: 100%;
   height: 500px;
 }
-.about .container h3 {
+.about h3 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
@@ -125,11 +125,10 @@ export default {
 
 .about .row {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 100%;
+  justify-content: space-evenly;
   padding: 0;
-  margin: 0;
+    margin-left: 100px;
+  margin-right: 100px;
 }
 
 .col-md-6 {
@@ -172,8 +171,9 @@ export default {
   justify-content: space-evenly;
   padding: 10px;
   margin-top: 10px;
-  width: 100%;
-  height: 100%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
   color: #000;
   background: #ffa6006c;
 }
@@ -216,129 +216,127 @@ export default {
 
 @media only screen and (max-width: 767px) {
   .about {
-    width: 100%;
-    height: 100%;
-    margin-top: 100px;
-    padding: 0;
-    /* background-image: url(../../assets/image/back.jpg); */
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-  }
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+  padding: 0;
+}
 
-  .about .image {
-    width: 100%;
-    height: 300px;
-    padding: 0;
-    margin: 0;
-    background: #000;
-  }
-  .about .image img {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  .about .container h3 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: "Roboto", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+.about .image {
+  width: 100%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+  background: #000;
+}
+.about .image img {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+.about h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-  .about .row {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin-bottom: 0;
-  }
+.about .row {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+    margin-left: 10px;
+  margin-right: 10px;
+}
 
-  .col-md-6 {
-    /* background: #fff; */
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-  }
-  .col-md-6 img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .text {
-    padding-left: 20px;
-    background: #ffa6006c;
-    height: 100%;
-  }
-  .text h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    text-align: center;
-    padding: 5px;
-  }
-  .text p {
-    font-size: 14px;
-    font-weight: 500;
-    padding: 5px;
-    color: #000;
+.col-md-6 {
+  /* background: #fff; */
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.col-md-6 img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.col-md-6 .text {
+  padding: 20px;
+  background: #ffa6006c;
+  width: 100%;
+  height: 100%;
+}
+.text h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  
+}
+.text p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-align: justify;
+}
 
-  }
+.wrap {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #000;
+  background: #ffa6006c;
+}
+.wrap .col-md-3 {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  margin: 0;
+  /* background: rgba(5, 19, 82, 0.596); */
+}
+.wrap .col-md-3 .title {
+  padding: 15px;
+  margin: 0;
+}
 
-  .wrap {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    height: 100%;
-    color: #000;
-    background: #ffa6006c;
-  }
-  .wrap .col-md-3 {
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    margin: 0;
-    /* background: rgba(5, 19, 82, 0.596); */
-  }
-  .wrap .col-md-3 .title {
-    padding: 5px;
-    margin: 0;
-  }
-
-  .col-md-3 .title h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #000;
-    font-family: "Oswald", sans-serif;
-    text-align: center;
-  }
-  .col-md-9 {
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    margin: 0;
-  }
-  .col-md-9 .text1 {
-    padding: 0;
-    margin: 0;
-  }
-  .col-md-9 .text1 p {
-    padding: 0;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: "Roboto", sans-serif;
-    padding-left: 20px;
-  }
+.col-md-3 .title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+.col-md-9 {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  margin: 0;
+}
+.col-md-9 .text1 {
+  padding: 5px;
+  margin: 5px;
+}
+.col-md-9 .text1 p {
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  
+}
 }
 </style>

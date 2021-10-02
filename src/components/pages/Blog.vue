@@ -3,7 +3,6 @@
     <div class="image">
       <img src="../../assets/image/blog.png" />
     </div>
-    <div class="container">
       <div class="row">
         <h3>Blog</h3>
         <div
@@ -39,7 +38,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -105,7 +103,8 @@ export default {
   display: flex;
   padding: 0;
   margin-bottom: 50px;
-  width: 100%;
+ margin-left: 110px;
+ margin-right: 110px;
 }
 .row h3 {
   text-align: center;
@@ -180,103 +179,105 @@ export default {
 }
 
 @media only screen and (max-width: 767px) {
-  .blog {
-    width: 100%;
-    height: 100%;
-    margin-top: 0;
+ .blog {
+   position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 100px;
+}
+.image {
+  width: 100%;
+  height: 300px;
     padding: 0;
-    margin-top: 100px;
-    padding: 0;
-  }
-  .image {
-    width: 100%;
-    height: 300px;
-  }
-  .image img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .row {
-    display: flex;
-    padding: 0;
-    margin-bottom: 50px;
-    width: 100%;
-  }
-  .row h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .col-md-4 {
-    width: 100%;
-    margin: 10px;
-    padding-left: 30px;
-    display: block;
-  }
+  margin: 0;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.row {
+  display: flex;
+  padding: 0;
+  margin-bottom: 50px;
+ margin-left: 10px;
+ margin-right: 10px;
+}
+.row h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.col-md-4 {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
 
-  .col-md-4 .card {
-    width: 300px;
-    height: 300px;
-    padding: 0;
-    margin: 5px;
-    background: rgba(5, 19, 82, 0.671);
-  }
-  .col-md-4 .card .card-header {
-    width: 100%;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-  }
-  .col-md-4 .card-header img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .col-md-4 .card-body {
-    width: 100%;
-    height: 100px;
-    padding: 0;
-    margin: 0;
-    background: #ffa500;
-  }
-  .card-body ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  .card-body ul li {
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #000;
-    list-style: none;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .card-body ul li i {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 5px;
-  }
-  .card-body ul li a {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: rgb(5, 19, 82);
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-  }
+.col-md-4 .card {
+  width: 300px;
+  height: 300px;
+  padding: 0;
+  margin: 5px;
+  background: rgba(5, 19, 82, 0.671);
+}
+.col-md-4 .card .card-header {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+}
+.col-md-4 .card-header img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.col-md-4 .card-body {
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  background: #ffa500;
+}
+.card-body ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.card-body ul li {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  list-style: none;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.card-body ul li i {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 5px;
+}
+.card-body ul li a {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(5, 19, 82);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
 }
 </style>

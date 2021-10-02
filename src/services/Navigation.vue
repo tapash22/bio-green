@@ -353,10 +353,11 @@ nav .row {
     padding: 10px;
     margin: 5px;
     display: flex;
+    width: 100%;
     /* justify-content: space-between; */
   }
   .col-md-3 .brand img {
-    width: 250px;
+    width: 200px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -372,7 +373,7 @@ nav .row {
     font-weight: 700;
     color: #000;
     margin-top: 10px;
-    margin-right: 30px;
+    margin-right: 50px;
     right: 0;
     display: flex;
     justify-content: right;
@@ -424,7 +425,7 @@ nav .row {
     margin: 0;
     background: #ffa600;
     margin-top: 0;
-    margin-left: 100px;
+    margin-left: 80px;
   }
   .link .ul li ul li {
     padding: 10px;
@@ -462,7 +463,7 @@ nav .row {
     position: absolute;
     display: none;
     padding: 0;
-    margin-left: 115px;
+    margin-left: 95px;
     background: #ffa600;
     margin-top: -30px;
   }

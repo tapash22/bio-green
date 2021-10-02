@@ -206,4 +206,92 @@ export default {
 .modal {
   display: block;
 }
+
+@media only screen and (max-width: 767px) {
+  .products {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 122px;
+  }
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+  .row h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .row .col-md-4 {
+    padding: 10px;
+  }
+  .col-md-4 .card {
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    height: 300px;
+    background: #ffa6006c;
+  }
+
+  .card-body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    height: 270px;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body .img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  .img img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+  }
+  .card-footer {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: rgb(5, 19, 82);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-footer p {
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .card-footer .btn {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
+    background: #ffa600f5;
+  }
+  .modal {
+    display: block;
+    margin-top: 150px;
+    width: 350px;
+    height: 100%;
+  }
+}
 </style>

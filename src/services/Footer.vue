@@ -25,11 +25,14 @@
           </ul>
         </div>
         <div class="col-md-4 add">
-          <h3>Get in <strong style="font-size:24px;font-weight: 700;">touch</strong></h3>
+          <h3>
+            Get in
+            <strong style="font-size: 24px; font-weight: 700">touch</strong>
+          </h3>
           <h5>BioGreen International Limited</h5>
           <address>
             <strong> House No:</strong> 27 (2nd Floor)<br />
-            <strong> Road No: </strong>, Nikunja 02, Khilkhet,<br />Dhaka-1229,
+            <strong> Road No: </strong>05, Nikunja 02, Khilkhet,<br />Dhaka-1229,
             Bangladesh
           </address>
           <address>
@@ -41,17 +44,18 @@
             Khilkhet, Dhaka 1229
           </address>
           <div class="logo">
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/profile.php?id=100050555396675"
-                ><i class="fa fa-facebook" aria-hidden="true"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
-                ><i class="fa fa-linkedin" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100050555396675"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
+                  ><i class="fa fa-linkedin" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -60,9 +64,9 @@
       <div class="container">
         <div class="brand">
           <div class="col-md-12" style="display: flex">
-            <p>All right reserved in &copy;BioGreen</p>
+            <p class="logos">&copy;BioGreen International Ltd</p>
             &nbsp;
-            <p>Developed by</p>
+            <p class="toto">Developed by</p>
             <p style="color: rgb(161, 57, 9)">&nbsp;ULTRAWAVE COMMUNICATIONS</p>
           </div>
         </div>
@@ -150,7 +154,7 @@ p {
   font-size: 18px;
   font-weight: 500;
 }
-.add .logo{
+.add .logo {
   display: flex;
   justify-content: left;
   margin-left: 30px;
@@ -195,12 +199,11 @@ p {
 }
 .bottom .container .brand .col-md-12 p {
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   color: rgb(161, 57, 9);
   text-align: center;
 }
-
 
 @media only screen and (max-width: 767px) {
   p {
@@ -222,27 +225,45 @@ p {
     border-bottom: 2px solid green;
     text-align: left;
   }
-  .bottom .container .brand .col-md-8 {
+  .add h5 {
+    margin-left: -40px;
+  }
+  .bottom {
+    background: rgb(20, 1, 44);
+    padding-top: 10px;
+    margin-left: -60px;
+    padding: 0;
+    position: relative;
+  }
+  .bottom .container .brand {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .bottom .container .brand .col-md-12 {
     padding: 5px;
     margin: 5px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
-  .bottom .container .brand .col-md-8 p {
+  .bottom .container .brand .col-md-12 p {
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     color: rgb(161, 57, 9);
+    text-align: center;
     padding: 0;
     margin: 0;
   }
-  .bottom .container .brand .col-md-4 li a i {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 25px;
+  .bottom .container .brand .col-md-12 .logos {
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+  }
+  .bottom .container .brand .col-md-12 .toto {
+    margin-top: -20px;
   }
 }
 </style>

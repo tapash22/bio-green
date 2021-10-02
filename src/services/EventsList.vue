@@ -185,19 +185,18 @@ export default {
 @media only screen and (max-width: 767px) {
   .event {
     padding: 0;
-    margin: 10px;
+    margin: 0;
     width: 100%;
     height: 100%;
-
     display: block;
   }
   .event .col-md-6 {
     width: 100%;
     height: 400px;
-    padding: 10px;
+    padding: 0;
   }
   .event .event-list {
-    width: 350px;
+    width: 300px;
     height: 250px;
   }
   .event .event-list img {
@@ -222,14 +221,14 @@ export default {
   margin: 0;
 }
 .col-md-6 .ex {
-  width: 400px;
+  width: 350px;
   height: 450px;
   padding: 0;
   margin: 0;
   overflow-y: hidden;
 }
 .col-md-6 .ex img {
-  width: 400px;
+  width: 350px;
   height: 300px;
   padding: 5px;
   margin: 0;
