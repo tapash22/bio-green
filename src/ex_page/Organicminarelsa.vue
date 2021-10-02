@@ -79,8 +79,8 @@ export default {
 
   created() {
     db.collection("products")
-      .where("p_category", "==", "poultry")
-      .where("sub_category", "==", "Enzymes")
+      .where("p_category", "==", "aqua")
+      .where("sub_category", "==", "Organic Minerals")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -234,9 +234,9 @@ export default {
     padding: 10px;
   }
   .col-md-4 .card {
-    padding: 0;
+ padding: 0;
     margin: 0;
-    width: 300px;
+    width: 250px;
     height: 300px;
     background: #ffa6006c;
   }

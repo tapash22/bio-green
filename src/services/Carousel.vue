@@ -1,5 +1,5 @@
 <template>
-  <Carousel :items-to-show="3" :autoplay="6000" :wrap-around="true">
+  <Carousel :items-to-show="3" :autoplay="4000" :wrap-around="true" class="full">
     <Slide v-for="slide in products" :key="slide.id">
       <router-link :to="slide.url">
         <div class="card">
@@ -13,10 +13,23 @@
       <Navigation />
     </template>
   </Carousel>
-</template>
+    <Carousel :items-to-show="1" :autoplay="4000" :wrap-around="true" class="res">
+    <Slide v-for="slide in products" :key="slide.id">
+      <router-link :to="slide.url">
+        <div class="card">
+          <img :src="slide.img" />
 
+          <p>{{ slide.title }}</p>
+        </div>
+      </router-link>
+    </Slide>
+    <!-- <template #addons>
+      <Navigation />
+    </template> -->
+  </Carousel>
+</template>
 <script>
-import { Carousel, Navigation, Slide } from "vue3-carousel";
+import { Carousel, Slide } from "vue3-carousel";
 
 import "vue3-carousel/dist/carousel.css";
 
@@ -61,11 +74,17 @@ export default {
   components: {
     Carousel,
     Slide,
-    Navigation,
+    // Navigation,
   },
 };
 </script>
 <style scoped>
+.full{
+  display: block;
+}
+.res{
+  display: none;
+}
 a{
   text-decoration: none;
 }
@@ -93,11 +112,20 @@ a{
 }
 
 @media only screen and (max-width: 767px) {
+  .full{
+    display: none;
+  }
+  .res{
+    display: block;
+    margin-left: 10px;
+  }
   .card {
-    width: 100%;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     padding: 0;
-    background: #fff;
+   background: rgb(5, 19, 82);
+   margin-left: -90px;
+ 
   }
   .card img {
     width: 100%;
@@ -105,12 +133,12 @@ a{
     background-position: center;
   }
   .card p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     font-family: "Oswald", sans-serif;
     color: #fff;
     text-align: center;
-    margin-top: -20%;
+    margin-top: -3%;
     z-index: 1;
     text-transform: uppercase;
   }

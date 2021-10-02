@@ -47,7 +47,6 @@ export default {
     return {
       showModal: false,
       blogs: [],
-
       active_item: null,
     };
   },

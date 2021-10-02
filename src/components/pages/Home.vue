@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Slider />
-    <!-- <div class="container"> -->
+    <div class="container">
     <div class="row blog my-3">
       <h3>products</h3>
       <p>We deliver performances rather just a product to your business</p>
@@ -31,17 +31,20 @@
       >
         <div class="card">
           <div class="card-header">
-            <img :src="blog.img" />
+            <img :src="blog.data().image" />
           </div>
           <div class="card-body">
             <ul>
-              <li>{{ blog.text1 }}</li>
-              <li>{{ blog.text }}</li>
+              <li style="">
+                {{ blog.data().title }}
+              </li>
               <li>
-                <router-link to="/blog"
-                  ><button class="btn btn-primary">
-                    Read more
-                  </button></router-link
+                <i class="fa fa-user" aria-hidden="true"></i>
+                {{ blog.data().author }}
+              </li>
+              <li>
+                <router-link :to="{ name: 'BlogItem', params: { id: blog.id } }"
+                  >show details</router-link
                 >
               </li>
             </ul>
@@ -50,13 +53,14 @@
       </div>
     </div>
   </div>
-
+  </div>
 </template>
 
 <script>
 import Slider from "../../services/Slider.vue";
 import Carousel from "../../services/Carousel.vue";
 import EventList from "../../services/EventsList.vue";
+import { db } from "../../firebase";
 
 export default {
   components: {
@@ -72,38 +76,20 @@ export default {
         place: "",
         image: "",
       },
+       blogs: [],
 
-      blogs: [
-        {
-          id: "1",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/9XGbSKsS/pawel-czerwinski-qlno-Ayck9-Zc-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "2",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/9FCbj1hf/david-clode-Jd-Nixbs-Lw-S8-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-        {
-          id: "3",
-          name: "The way you treat the animals around",
-          img: "https://i.postimg.cc/rwp9DmzX/gabor-szuts-m-KKRN7p2j-Os-unsplash.jpg",
-          text1: "The way you treat the animals around",
-          text: "author name",
-          description:
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est vitae, voluptatibus dolorum quis reiciendis, alias autem earum doloribus cum repellat fugiat, quae nisi dignissimos mollitia architecto fuga itaque. Sequi, maxime.",
-        },
-      ],
-
+     
     };
+  },
+    created() {
+    db.collection("blogs")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.blogs.push(doc);
+        });
+      });
   },
 
   mounted() {
@@ -120,7 +106,7 @@ export default {
 
 .row {
   padding: 0;
-  margin: 0;
+ 
   position: relative;
 }
 .row h3 {
@@ -153,56 +139,66 @@ export default {
 }
 
 /* blog */
-.blog {
-  background: #ffa6004f;
-  padding: 30px;
-  margin-left: 120px;
-  margin-right: 120px;
+.blog .col-md-4 {
+  width: 30%;
+  margin: 10px;
 }
-.blog .col-md-4 .card {
+.col-md-4 .card {
   width: 300px;
-  height: 100%;
+  height: 300px;
   padding: 0;
   margin: 5px;
-  background: #fff;
+  background: rgba(5, 19, 82, 0.671);
 }
-.blog .col-md-4 .card .card-header {
+.col-md-4 .card .card-header {
   width: 100%;
   height: 200px;
   padding: 0;
   margin: 0;
 }
-.blog .col-md-4 .card-header img {
+.col-md-4 .card-header img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
-.blog .col-md-4 .card-body {
+.col-md-4 .card-body {
   width: 100%;
-  height: 100%;
+  height: 100px;
   padding: 0;
   margin: 0;
+  background: #ffa500;
 }
-.blog .card-body ul {
+.card-body ul {
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
 }
-.blog .card-body ul li {
+.card-body ul li {
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #000;
   list-style: none;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.blog .card-body ul li button {
-  width: 100%;
-  margin-top: 5px;
+.card-body ul li i {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 5px;
 }
-.blog .card-body ul li .btn{
-  background: rgb(5, 19, 82);
+.card-body ul li a {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(5, 19, 82);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 /* about */
@@ -263,16 +259,16 @@ export default {
 
 @media only screen and (max-width: 767px) {
   .home {
-    margin-top: 80px;
+    margin-top: 100px;
   }
-
   .row {
     padding: 0;
     margin: 0;
     position: relative;
+    margin-left: -5px;
   }
   .row h3 {
-    text-align: center;
+    text-align: left;
     font-size: 1.8rem;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
@@ -280,6 +276,7 @@ export default {
     padding-top: 10px;
     padding-bottom: 0;
     text-transform: uppercase;
+    margin-left: 80px;
   }
   .row h3 strong {
     color: rgba(12, 82, 15, 0.849);
@@ -288,11 +285,14 @@ export default {
   }
   .row p {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
     color: #000;
     margin-top: -5px;
+    margin-left: -40px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .row2 {
     margin-top: 30px;
@@ -305,52 +305,71 @@ export default {
   }
 
   /* blog */
-  .blog {
-    background: #fff;
-    padding: 30px;
-  }
-  .blog .col-md-4 .card {
-    width: 300px;
-    height: 100%;
-    padding: 0;
-    margin: 5px;
-    background: #fff;
-  }
-  .blog .col-md-4 .card .card-header {
-    width: 100%;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-  }
-  .blog .col-md-4 .card-header img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .blog .col-md-4 .card-body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  .blog .card-body ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  .blog .card-body ul li {
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #000;
-    list-style: none;
-  }
-  .blog .card-body ul li button {
-    width: 100%;
-    margin-top: 5px;
-  }
+   .blog{
+     width: 100%;
+   }
+  .blog .col-md-4 {
+  width: 100%;
+  margin: 10px;
+}
+.col-md-4 .card {
+  width: 220px;
+  height: 300px;
+  padding: 0;
+  margin: 5px;
+  background: rgba(5, 19, 82, 0.671);
+}
+.col-md-4 .card .card-header {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+}
+.col-md-4 .card-header img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.col-md-4 .card-body {
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  background: #ffa500;
+}
+.card-body ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.card-body ul li {
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  list-style: none;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.card-body ul li i {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 5px;
+}
+.card-body ul li a {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(5, 19, 82);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
 
   /* about */
   .about {

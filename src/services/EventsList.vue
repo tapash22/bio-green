@@ -185,7 +185,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .event {
     padding: 0;
-    margin: 0;
+    margin: 10px;
     width: 100%;
     height: 100%;
     display: block;
@@ -193,11 +193,11 @@ export default {
   .event .col-md-6 {
     width: 100%;
     height: 400px;
-    padding: 0;
+    padding: 10px;
   }
   .event .event-list {
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 300px;
   }
   .event .event-list img {
     width: 100%;
@@ -214,21 +214,21 @@ export default {
     padding-top: 10px;
   }
   .col-md-6 .tt {
-  width: 400px;
-  height: 450px;
+  width: 250px;
+  height: 300px;
   overflow-y: hidden;
   padding: 0;
   margin: 0;
 }
 .col-md-6 .ex {
-  width: 350px;
-  height: 450px;
+  width: 250px;
+  height: 300px;
   padding: 0;
   margin: 0;
   overflow-y: hidden;
 }
 .col-md-6 .ex img {
-  width: 350px;
+  width: 250px;
   height: 300px;
   padding: 5px;
   margin: 0;

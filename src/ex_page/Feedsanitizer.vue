@@ -234,9 +234,9 @@ export default {
     padding: 10px;
   }
   .col-md-4 .card {
-    padding: 0;
+ padding: 0;
     margin: 0;
-    width: 300px;
+    width: 250px;
     height: 300px;
     background: #ffa6006c;
   }
