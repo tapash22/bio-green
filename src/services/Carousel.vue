@@ -1,5 +1,5 @@
 <template>
-  <Carousel :items-to-show="3" :autoplay="4000" :wrap-around="true">
+  <Carousel :items-to-show="3" :autoplay="6000" :wrap-around="true">
     <Slide v-for="slide in products" :key="slide.id">
       <router-link :to="slide.url">
         <div class="card">
