@@ -373,7 +373,7 @@ nav .row {
     font-weight: 700;
     color: #000;
     margin-top: 10px;
-    margin-right: 50px;
+    margin-right: 70px;
     right: 0;
     display: flex;
     justify-content: right;
