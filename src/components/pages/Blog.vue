@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <div class="image">
-      <img src="../../assets/image/blog.jpg" />
+      <img src="../../assets/image/blog.png" />
     </div>
     <div class="container">
       <div class="row">
@@ -92,7 +92,7 @@ export default {
 }
 .image {
   width: 100%;
-  min-height: 400px;
+  height: 500px;
 }
 .image img {
   width: 100%;
@@ -185,12 +185,12 @@ export default {
     height: 100%;
     margin-top: 0;
     padding: 0;
-    margin-top: 120px;
+    margin-top: 100px;
     padding: 0;
   }
   .image {
     width: 100%;
-    min-height: 400px;
+    height: 300px;
   }
   .image img {
     width: 100%;
@@ -201,8 +201,6 @@ export default {
   }
   .row {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 0;
     margin-bottom: 50px;
     width: 100%;
@@ -219,7 +217,8 @@ export default {
   .col-md-4 {
     width: 100%;
     margin: 10px;
-    margin-left: 60px;
+    padding-left: 30px;
+    display: block;
   }
 
   .col-md-4 .card {

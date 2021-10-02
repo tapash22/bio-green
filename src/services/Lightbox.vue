@@ -3,23 +3,54 @@
     <div class="row">
       <div
         class="col-md-4"
-        v-for="(src, index) in imgs"
-        :key="index" 
+        v-for="gallery in gallerys"
+        :key="gallery"
         @click="() => showImg(index)"
       >
         <div class="card">
-          <img :src="src" />
+          <a @click.prevent="showImg(gallery)">
+            <img :src="gallery.data().image" />
+          </a>
         </div>
       </div>
       <!-- v-for="(src, index) in imgs"
         :key="index" -->
       <!-- all props & events -->
-      <vue-easy-lightbox 
+      <!-- <vue-easy-lightbox 
         :visible="visible"
         :imgs="imgs"
         :index="index"
         @hide="handleHide"
-      ></vue-easy-lightbox>
+      ></vue-easy-lightbox> -->
+    </div>
+    <!-- <div class="showpic" v-if="visible">
+      <div class="image">
+        <img :src="gallery.image"/>
+      </div>
+    </div> -->
+        <div class="modal" tabindex="-1" role="dialog" v-if="visible" @click="handleHide()">
+      <!-- <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Pdrduct Detail</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              @click="inClose()"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+          <div class="modal-body">
+            <div class="image">
+              <img :src="gallery.image" />
+            </div>
+
+          </div>
+        <!-- </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -27,11 +58,11 @@
 <script>
 // If VueApp is already registered with VueEasyLightbox, there is no need to register it here.
 import { db } from "../firebase";
-import VueEasyLightbox from "vue-easy-lightbox";
+// import VueEasyLightbox from "vue-easy-lightbox";
 
 export default {
   components: {
-    VueEasyLightbox,
+    // VueEasyLightbox,
   },
   data() {
     return {
@@ -44,18 +75,10 @@ export default {
         image: "",
       },
       active_item: null,
-      imgs: [
-        "https://i.postimg.cc/ZYgNpczH/1.jpg",
-        "https://i.postimg.cc/4N9959Jg/2.jpg",
-        "https://i.postimg.cc/W1mJRcFY/1d.jpg",
-        "https://i.postimg.cc/xjWRnY89/2d.jpg",
-        "https://i.postimg.cc/y8zmfD0w/company.jpg",
-        "https://i.postimg.cc/FR13f3QJ/partner.png",
-      ],
     };
   },
   created() {
-    db.collection("gallerys")
+    db.collection("gallerys", "image")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -65,11 +88,10 @@ export default {
       });
   },
   methods: {
-    showImg(index) {
-      this.index = index;
+    showImg(gallery) {
       this.visible = true;
-         this.occation = index.data();
-      this.active_item = index.id;
+      this.gallery = gallery.data();
+      this.active_item = gallery.id;
     },
     handleHide() {
       this.visible = false;
@@ -111,14 +133,42 @@ export default {
   height: 100%;
   background-position: center;
 }
-.card p{
+.card p {
   z-index: 1;
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
   color: black;
 }
+.showpic{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+  display: block;
+}
 
+.modal {
+  display: block;
+  background: rgba(0,0,0,0.8);
+
+}
+.modal  .image{
+  padding: 10px;
+  margin: 20px;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+}
+.modal .image img{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
 @media only screen and (max-width: 767px) {
   .light {
     width: 100%;

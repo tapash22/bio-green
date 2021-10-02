@@ -4,9 +4,8 @@
       <img src="../../assets/image/about_h.jpg" />
     </div>
     <div class="container">
-       <h3>About us</h3>
+      <h3>About us</h3>
       <div class="row">
-       
         <div
           class="col-md-6 pt-2"
           data-aos="fade-left"
@@ -21,38 +20,38 @@
           data-aos-delay="500"
           data-aos-once="false"
         >
-        <div class="text">
-          <h4>WHAT WE DO</h4>
-          <p >
-            We are the sole importer & sourcing partner for world class
-            additives for making feed for livestock & poultry with a focus to
-            ensure safe human health, environment & nature on its turn. Since
-            2016, our presence with quality, performance, reliability & best
-            rate makes us trustworthy supplier in Bangladesh feed additive
-            marketing & sourcing. Our objective is to distribute performance
-            rather just products to your door. Quality products with enduring
-            service & competitive rates we are always aware in protecting the
-            clients interest. We believe in long term partnership &
-            cooperative approach towards all clients, supplier & employees. Our
-            core strengths lie on quality warehouse, rapid delivery,
-            distribution efficiency, priorities to customer’s needs & evolving
-            win-win solutions with clients. Our aspiration is to be
-            professional, knowledge driven & reliable to be a trusted partner to
-            your livestock & poultry business operation.
-          </p>
-        </div>
+          <div class="text">
+            <h4>WHAT WE DO</h4>
+            <p>
+              ‘We are the sole importer & sourcing partner for world class
+              additives for making feed for livestock & poultry with a focus to
+              ensure safe human health, environment & nature on its turn. Since
+              2016, our presence with quality, performance, reliability & best
+              rate makes us trustworthy supplier in Bangladesh feed additive
+              marketing & sourcing. Our objective is to distribute performance
+              rather just products to your door. Quality products with enduring
+              service & competitive rates we are always aware in protecting the
+              clients interest. We believe in long term partnership &
+              cooperative approach towards all clients, supplier & employees.
+              Our core strengths lie on quality warehouse, rapid delivery,
+              distribution efficiency, priorities to customer’s needs & evolving
+              win-win solutions with clients. Our aspiration is to be
+              professional, knowledge driven & reliable to be a trusted partner
+              to your livestock & poultry business operation.’
+            </p>
+          </div>
         </div>
       </div>
-      <div class="  wrap" v-for="about in abouts" :key="about.text">
+      <div class="wrap" v-for="about in abouts" :key="about.text">
         <div class="col-md-3">
           <div class="title">
-            <h2>{{about.text}}</h2>
+            <h2>{{ about.text }}</h2>
           </div>
         </div>
         <div class="col-md-9">
           <div class="text1">
             <p>
-              {{about.text1}}
+              {{ about.text1 }}
             </p>
           </div>
         </div>
@@ -62,16 +61,22 @@
 </template>
 
 <script>
-
 // import Teammember from "../../services/Teammember.vue";
 export default {
-  data(){
-    return{
-      abouts:[
-        { text:'The Mission',  text1:'Our holistic approach is to ensure best performing feed products at an affordable price. We view ourselves as partners with the feed producers, feed nutritionist, farmers, livestock professionals & all other customers.'},
-         { text:'The Vission',text1:'Our Vission is to provied quality products, innovation and tecnical solution for poultry, fish and livestock'},
-       
-      ]
+  data() {
+    return {
+      abouts: [
+        {
+          text: "The Mission",
+          text1:
+            "Our holistic approach is to ensure best performing feed products at an affordable price. We view ourselves as partners with the feed producers, feed nutritionist, farmers, livestock professionals & all other customers.",
+        },
+        {
+          text: "The Vission",
+          text1:
+            "Our Vission is to provied quality products, innovation and tecnical solution for poultry, fish and livestock",
+        },
+      ],
     };
   },
 
@@ -89,16 +94,13 @@ export default {
 .about {
   width: 100%;
   height: 100%;
-  margin-top: 0;
+  margin-top: 120px;
   padding: 0;
-  /* background-image: url(../../assets/image/back.jpg); */
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .about .image {
-  min-height: 700px;
+  width: 100%;
+  height: 500px;
   padding: 0;
   margin: 0;
   background: #000;
@@ -109,7 +111,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 700px;
+  height: 500px;
 }
 .about .container h3 {
   text-align: center;
@@ -124,7 +126,8 @@ export default {
 .about .row {
   display: flex;
   justify-content: space-around;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -132,7 +135,7 @@ export default {
 .col-md-6 {
   /* background: #fff; */
   width: 50%;
-  height: 435px;
+  height: 480px;
   padding: 10px;
 }
 .col-md-6 img {
@@ -141,9 +144,11 @@ export default {
   background-position: center;
   background-size: cover;
 }
-.text {
-  padding-left: 20px;
+.col-md-6 .text {
+  padding: 20px;
   background: #ffa6006c;
+  width: 100%;
+  height: 100%;
 }
 .text h4 {
   font-size: 1.5rem;
@@ -151,25 +156,26 @@ export default {
   font-family: "Oswald", sans-serif;
   color: #000;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
+  
 }
 .text p {
   font-size: 16px;
   font-weight: 500;
-  padding: 5px;
   color: #000;
+  text-align: justify;
 }
- 
-  .wrap {
+
+.wrap {
   padding-top: 50px;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
-  margin: 0;
+  margin-top: 10px;
   width: 100%;
   height: 100%;
   color: #000;
-  background:#ffa6006c;
+  background: #ffa6006c;
 }
 .wrap .col-md-3 {
   width: 30%;
@@ -181,152 +187,158 @@ export default {
 .wrap .col-md-3 .title {
   padding: 25px;
   margin: 0;
-
 }
 
 .col-md-3 .title h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
-.col-md-9{
+.col-md-9 {
   width: 70%;
   height: 100%;
   padding: 10px;
   margin: 0;
 }
-.col-md-9 .text1{
+.col-md-9 .text1 {
   padding: 5px;
   margin: 10px;
 }
-.col-md-9 .text1 p{
+.col-md-9 .text1 p {
   padding: 5px;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  
 }
 
 @media only screen and (max-width: 767px) {
   .about {
-  width: 100%;
-  height: 100%;
-  margin-top: 0;
-  padding: 0;
-  /* background-image: url(../../assets/image/back.jpg); */
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    padding: 0;
+    /* background-image: url(../../assets/image/back.jpg); */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
-.about .image {
-  min-height: 700px;
-  padding: 0;
-  margin: 0;
-  background: #000;
-}
-.about .image img {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 700px;
-}
-.about .container h3 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  font-family: "Roboto", sans-serif;
-  color: #000;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+  .about .image {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    background: #000;
+  }
+  .about .image img {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .about .container h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-.about .row {
-  display: flex;
-  flex-direction: column;
-  width: 100%;height: 100%;
-  padding: 0;
-  margin-bottom: 100px;
-}
+  .about .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+  }
 
-.col-md-6 {
-  /* background: #fff; */
-  width: 100%;
-  height: 335px;
-  padding: 10px;
-}
-.col-md-6 img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-.text {
-  padding-left: 20px;
-  background: #ffa6006c;
-}
-.text h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  text-align: center;
-  padding: 5px;
-}
-.text p {
-  font-size: 14px;
-  font-weight: 500;
-  padding: 5px;
-  color: #000;
-}
- 
+  .col-md-6 {
+    /* background: #fff; */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  .col-md-6 img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .text {
+    padding-left: 20px;
+    background: #ffa6006c;
+    height: 100%;
+  }
+  .text h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    text-align: center;
+    padding: 5px;
+  }
+  .text p {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px;
+    color: #000;
+
+  }
+
   .wrap {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin-top: 10px;
-  width: 100%;
-  height: 100%;
-  color: #000;
-  background:#ffa6006c;
-}
-.wrap .col-md-3 {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-  margin: 0;
-  /* background: rgba(5, 19, 82, 0.596); */
-}
-.wrap .col-md-3 .title {
-  padding:5px;
-  margin: 0;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    background: #ffa6006c;
+  }
+  .wrap .col-md-3 {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin: 0;
+    /* background: rgba(5, 19, 82, 0.596); */
+  }
+  .wrap .col-md-3 .title {
+    padding: 5px;
+    margin: 0;
+  }
 
-}
-
-.col-md-3 .title h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #000;
-  font-family: 'Oswald', sans-serif; text-align: center;
-}
-.col-md-9{
-  width:100%;
-  height: 100%;
-  padding: 5px;
-  margin: 0;
-}
-.col-md-9 .text1{
-  padding: 0;
-  margin: 0;
-}
-.col-md-9 .text1 p{
-  padding: 0;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: 'Roboto', sans-serif;padding-left: 20px;
-}
+  .col-md-3 .title h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+  }
+  .col-md-9 {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin: 0;
+  }
+  .col-md-9 .text1 {
+    padding: 0;
+    margin: 0;
+  }
+  .col-md-9 .text1 p {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    padding-left: 20px;
+  }
 }
 </style>

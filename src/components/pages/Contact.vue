@@ -7,7 +7,7 @@
       <h3>Contact Us</h3>
       <div class="row">
         <div
-          class="col-md-6 text"
+          class="col-md-12 text"
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
@@ -30,13 +30,13 @@
               info@biogreenint.com<br />
               <i class="fa fa-facebook" aria-hidden="true"></i>
               <a href="https://www.facebook.com/profile.php?id=100050555396675"
-                >&nbsp; Bio-green</a
-              >,<br />
+                >&nbsp; BioGreen</a
+              ><br />
               <i class="fa fa-linkedin" aria-hidden="true"></i>
               <a
                 href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
-                >Bio-green</a
-              >,<br />
+                >BioGreen</a
+              ><br />
               <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;
               +8801810084300
             </address>
@@ -75,7 +75,7 @@ export default {
 }
 .image {
   width: 100%;
-  min-height: 400px;
+  height: 500px;
 }
 .image img {
   width: 100%;
@@ -100,7 +100,7 @@ h3 {
    background:#ffa6006c;
 }
 
-.col-md-6 {
+.col-md-12 {
   padding-top: 20px;
   display: block;
   width: 100%;
@@ -167,22 +167,24 @@ h3 {
  .contact {
   width: 100%;
   height: 100%;
-  margin-top: 80px;
+  margin-top: 100px;
   padding: 0;
+  /* background:rgba(5, 19, 82, 0.596); */
 }
 .image {
   width: 100%;
-  min-height: 350px;
+  height: 300px;
 }
 .image img {
   width: 100%;
-  height: 350px;
+  height: 100%;
   background-position: center;
   background-size: cover;
 }
+
 h3 {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
   color: #000;
@@ -193,24 +195,26 @@ h3 {
 .contact .row {
   display: flex;
   flex-direction: column;
+   
 }
 
-.col-md-6 {
+.col-md-12 {
   padding-top: 20px;
   display: block;
   width: 100%;
   padding-bottom: 10px;
 }
 .text {
-   margin-left: 90px;
+  width: 100%;
+   margin-left: 0;
   display: flex;
   flex-direction: column;
 }
 .text div{
   width: 100%;
   justify-content: center;
-  padding: 0;
-  margin: 0;
+  margin: 5px;
+  background:#ffa6006c;
 }
 
 .text hr {
@@ -229,7 +233,8 @@ h3 {
   font-size: 2rem;
   font-weight: 700;
   padding: 5px;
-  color: green;
+ 
+  color: #000;
 }
 .text address {
   padding: 10px;
@@ -243,7 +248,7 @@ h3 {
   font-size: 1.5rem;
   font-weight: 500;
   padding: 5px;
-  color: green;
+  color: #000;
 }
 .text address a {
   color: #000;

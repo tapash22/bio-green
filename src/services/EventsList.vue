@@ -6,15 +6,20 @@
       data-aos-delay="500"
       data-aos-once="false"
     >
-      <div class="event-list" v-if="active_item" >
+      <div class="event-list" v-if="active_item">
         <img :src="occation.image" />
         <p>
           {{ occation.name }}<br />
           {{ occation.place }}
         </p>
       </div>
-      <div  v-else>
-        <img src="../assets/image/event.jpg"/>
+      <div class="tt" v-else>
+        <div class="ex" v-for="occation in occations" :key="occation">
+          <img :src="occation.data().image" />
+          <p>
+            {{ occation.data().name }}
+         <br/>{{ occation.data().place }}</p>
+        </div>
       </div>
     </div>
     <div
@@ -30,9 +35,7 @@
 
         <div class="box-b">
           <p>
-            {{ occation.data().name }}<br />
-            {{ occation.data().place }}
-          </p>
+            {{ occation.data().name }}<br>{{ occation.data().place }}</p>
           <button class="btn btn-primary" @click.prevent="onClick(occation)">
             View
           </button>
@@ -48,7 +51,6 @@ import { db } from "../firebase";
 export default {
   data() {
     return {
-      
       occations: [],
       occation: {
         name: "",
@@ -78,13 +80,13 @@ export default {
 };
 </script>
 
-<style scoped> 
+<style scoped>
 .event {
   padding: 0;
   margin: 10px;
   width: 100%;
   height: 500px;
- 
+
   /* display:flex;
   flex-direction: row; */
 }
@@ -93,6 +95,32 @@ export default {
   width: 50%;
   height: 100%;
   padding: 10px;
+}
+.col-md-6 .tt {
+  width: 500px;
+  height: 450px;
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+}
+.col-md-6 .ex {
+  width: 500px;
+  height: 450px;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+}
+.col-md-6 .ex img {
+  width: 500px;
+  height: 400px;
+  padding: 5px;
+  margin: 0;
+}
+.col-md-6 .ex p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 5px;
+  margin: 0;
 }
 .event .event-list {
   width: 100%;
@@ -115,19 +143,19 @@ export default {
 }
 .event .event-item {
   width: 50%;
-  height: 400px;
+  height: 450px;
   overflow-y: scroll;
 }
 .event .event-item .box {
   display: flex;
   justify-content: space-evenly;
-  padding: 0;
+  padding: 10px;
   margin: 10px;
   width: 100%;
 }
 .event .box .box-h {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 115px;
 }
 .event .box a {
   text-decoration: none;
@@ -150,79 +178,104 @@ export default {
   color: #000;
   text-align: left;
 }
-.event .box .box-b .btn{
+.event .box .box-b .btn {
   background: rgb(5, 19, 82);
 }
 
 @media only screen and (max-width: 767px) {
-.event {
-  padding: 0;
-  margin: 10px;
-  width: 100%;
-  height: 100%;
+  .event {
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
 
-  display: block;
-}
-.event .col-md-6 {
-  width: 100%;
-  height: 400px;
-  padding: 10px;
-}
-.event .event-list {
-  width: 350px;
-  height: 250px;
-}
-.event .event-list img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-.event .event-list p {
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  text-align: left;
-  padding-top: 10px;
-}
-.event .event-item {
-  width: 100%;
-  height: 400px;
-  overflow-y: scroll;
-}
-.event .event-item .box {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0;
-  margin: 10px;
-  width: 100%;
-}
-.event .box .box-h {
-  width: 100px;
-  height: 100px;
-}
-.event .box a {
-  text-decoration: none;
-}
-.event .box .box-h img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-}
-.event .box .box-b {
-  width: 300px;
-  height: 100px;
+    display: block;
+  }
+  .event .col-md-6 {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+  }
+  .event .event-list {
+    width: 350px;
+    height: 250px;
+  }
+  .event .event-list img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .event .event-list p {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    text-align: left;
+    padding-top: 10px;
+  }
+  .col-md-6 .tt {
+  width: 400px;
+  height: 450px;
+  overflow-y: hidden;
   padding: 0;
   margin: 0;
 }
-.event .box .box-b p {
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  text-align: left;
+.col-md-6 .ex {
+  width: 400px;
+  height: 450px;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
 }
-  
+.col-md-6 .ex img {
+  width: 400px;
+  height: 300px;
+  padding: 5px;
+  margin: 0;
+}
+.col-md-6 .ex p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 5px;
+  margin: 0;
+}
+  .event .event-item {
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+  }
+  .event .event-item .box {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+  }
+  .event .box .box-h {
+    width: 100px;
+    height: 100px;
+  }
+  .event .box a {
+    text-decoration: none;
+  }
+  .event .box .box-h img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+  }
+  .event .box .box-b {
+    width: 300px;
+    height: 100px;
+    padding-left: 15px;
+    margin: 0;
+  }
+  .event .box .box-b p {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    text-align: left;
+  }
 }
 </style>

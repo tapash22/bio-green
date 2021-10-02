@@ -1,7 +1,7 @@
 <template>
   <div class="partners">
         <div class="image">
-      <img src="../../assets/image/partner.jpg" />
+      <img src="../../assets/image/partner.png" />
     </div>
       <div class="row">
         <h3>Partners</h3>
@@ -14,19 +14,15 @@
           :key="partner.id"
         >
           <div class="left">
-            <a :href="partner.data().product_link">
+           
             <img :src="partner.data().image" />
-            </a>
+          
           </div>
           <div class="right">
-            <h4>Partner Name: {{partner.data().partner_name}}</h4>
-            <ul>
-              <li>Country Name: {{partner.data().country_name}}</li>
-              <li>Product List: {{partner.data().product_list}}</li>
-            </ul>
             <p>
-              Description: {{partner.data().description}}
+             <strong> Description:</strong>  {{partner.data().description}}
             </p>
+            <a :href="partner.data().product_link">{{partner.data().product_link}}</a>
           </div>
         </div>
       </div>
@@ -78,7 +74,7 @@ export default {
   margin-top: 120px;
 }
 .partners .image {
-  min-height: 700px;
+  min-height: 500px;
   padding: 0;
   margin: 0;
   background: #000;
@@ -89,15 +85,15 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 700px;
+  height: 500px;
 }
 
 .row {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 130px;
+  margin-right: 130px;
 }
 .row h3 {
   text-align: center;
@@ -117,7 +113,7 @@ export default {
    background:#ffa6006c;
 }
 .col-md-12 .left{
-  width: 40%;
+  width: 350px;
   height: 260px;
   padding: 10px;
 }
@@ -130,25 +126,7 @@ export default {
   width: 60%;
   height: 260px;
   padding: 10px;
-}
-.col-md-12 .right h4{
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 5px;
-  text-transform: uppercase;
-}
-.col-md-12 .right ul{
-  padding: 5px;
-  margin: 0;
-  display: block;
-}
-.col-md-12 .right ul li{
-  list-style: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-  text-align: center;
-  color: #000;
+  margin-top: 20px;
 }
 
 .col-md-12 .right p{
@@ -156,6 +134,21 @@ export default {
   font-weight: 500;
   color:#000;
   text-align: justify;
+  align-items: center;
+}
+.col-md-12 .right p strong{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: blue;
+}
+.col-md-12 .right a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: blue;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 767px) {
@@ -164,15 +157,29 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 120px;
+  margin-top: 100px;
+}
+.partners .image {
+  min-height: 300px;
+  padding: 0;
+  margin: 0;
+  background: #000;
+}
+.partners .image img {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
 }
 
 .row {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   padding-bottom: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .row h3 {
   text-align: center;
@@ -187,13 +194,14 @@ export default {
   padding: 10px;
   margin: 5px;
   width: 100%;
-  height: 280px;
+  height: 100%;
   display: flex;
+  flex-direction: column;
    background:#ffa6006c;
 }
 .col-md-12 .left{
-  width: 40%;
-  height: 260px;
+  width: 100%;
+  height: 200px;
   padding: 10px;
 }
 .col-md-12 .left img{
@@ -202,28 +210,10 @@ export default {
   padding: 5px;
 }
 .col-md-12 .right{
-  width: 60%;
-  height: 260px;
+  width: 100%;
+  height: 100%;
   padding: 10px;
-}
-.col-md-12 .right h4{
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 5px;
-  text-transform: uppercase;
-}
-.col-md-12 .right ul{
-  padding: 5px;
-  margin: 0;
-  display: block;
-}
-.col-md-12 .right ul li{
-  list-style: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-  text-align: center;
-  color: #000;
+  margin-top: 0;
 }
 
 .col-md-12 .right p{
@@ -231,6 +221,22 @@ export default {
   font-weight: 500;
   color:#000;
   text-align: justify;
+  align-items: center;
 }
+.col-md-12 .right p strong{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: blue;
+}
+.col-md-12 .right a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: blue;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 }
 </style>

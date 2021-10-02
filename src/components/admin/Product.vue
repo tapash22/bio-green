@@ -4,16 +4,38 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Product</h3>
-           <p style="text-align:center;color:blue;">Use 300px/250px Picture</p>
+          <p style="text-align: center; color: blue">Use 300px/250px Picture</p>
           <form>
             <div class="form-group">
               <label>Product Name</label>
               <input
                 class="form-control"
                 type="text"
-                placeholder="Event Name .."
+                placeholder="Product Name .."
                 v-model="product.product_name"
               />
+            </div>
+            <div class="form-group my-3">
+              <select v-model="product.p_category" style="width:100%;height:40px;">
+                <option disabled value="">
+                  Please click and select Category
+                </option>
+                <option>poultry</option>
+                <option>cattle</option>
+                <option>aqua</option>
+              </select>
+            </div>
+            <div class="form-groupmy-3">
+              <select v-model="product.sub_category" style="width:100%;height:40px;">
+                <option disabled value="">
+                  Please click and select Sub-Category
+                </option>
+                <option>Enzymes</option>
+                <option>Essential oil</option>
+                <option>Organic Minerals</option>
+                <option>Feed Sanitizer</option>
+                <option>Postbiotic</option>
+              </select>
             </div>
             <div class="form-group">
               <label>Description</label>
@@ -32,7 +54,11 @@
             </div>
             <div class="form-group">
               <div class="p-1">
-                <img :src="product.image" style="width: 80px; height: 50px"  placeholder=" Use 300px/250px Picture" />
+                <img
+                  :src="product.image"
+                  style="width: 80px; height: 50px"
+                  placeholder=" Use 300px/250px Picture"
+                />
               </div>
             </div>
             <div class="btn">
@@ -51,6 +77,8 @@
             <thead>
               <tr>
                 <th>Product name</th>
+                <th>Category</th>
+                <th>Sub-category</th>
                 <th>Description</th>
                 <th>Image</th>
                 <th>PDF</th>
@@ -60,6 +88,8 @@
             <tbody>
               <tr v-for="product in products" :key="product.id">
                 <td>{{ product.data().product_name }}</td>
+                <td>{{ product.data().p_category }}</td>
+                <td>{{ product.data().sub_category }}</td>
                 <td>{{ product.data().description }}</td>
                 <td>{{ product.data().image }}</td>
                 <td>{{ product.data().pdf }}</td>
@@ -108,6 +138,24 @@
                 v-model="product.product_name"
               />
             </div>
+            <div class="form-group my-3">
+              <select v-model="product.p_category" style="width:100%;height:40px;">
+                <option disabled value="">Please select Category</option>
+                <option>poultry</option>
+                <option>cattle</option>
+                <option>aqua</option>
+              </select>
+            </div>
+            <div class="form-group my-3">
+              <select v-model="product.sub_category" style="width:100%;height:40px;">
+                <option disabled value="">Please select Sub-Category</option>
+                <option>Enzymes</option>
+                <option>Essential oil</option>
+                <option>Organic Minerals</option>
+                <option>Feed Sanitizer</option>
+                <option>Postbiotic</option>
+              </select>
+            </div>
             <div class="form-group">
               <label>Description</label>
               <textarea
@@ -125,7 +173,11 @@
             </div>
             <div class="form-group">
               <div class="p-1">
-                <img :src="product.image" style="width: 80px; height: 50px" placeholder=" Use 300px/250px Picture" />
+                <img
+                  :src="product.image"
+                  style="width: 80px; height: 50px"
+                  placeholder=" Use 300px/250px Picture"
+                />
                 <span class="delete-img" @click="deleteImage(image)">X</span>
               </div>
             </div>
@@ -158,6 +210,8 @@ export default {
       products: [],
       product: {
         product_name: "",
+        p_category: "",
+        sub_category: "",
         description: "",
         image: "",
         pdf: "",
@@ -283,6 +337,8 @@ export default {
     reset() {
       this.product = {
         product_name: "",
+        p_category: "",
+        sub_category: "",
         description: "",
         image: "",
         pdf: "",
@@ -314,7 +370,7 @@ export default {
 }
 .row {
   width: 100%;
-  height: 750px;
+  height: 800px;
   padding: 20px;
   margin-left: 25%;
   display: flex;
@@ -322,7 +378,7 @@ export default {
 .col-md-12 {
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 20px;
   background: #fff;
   box-shadow: 5px 3px 7px blue;
 }
@@ -361,6 +417,7 @@ label {
   padding: 10px;
   margin: 0;
 }
+
 .modal {
   display: block;
 }

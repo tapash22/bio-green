@@ -15,27 +15,20 @@
               />
             </div>
             <div class="form-group">
-              <label>Country Name</label>
+              <label>Website</label>
               <input
                 class="form-control"
                 type="text"
-                v-model="partner.country_name"
+                v-model="partner.company_site"
               />
             </div>
-            <div class="form-group">
-              <label>Product List</label>
-              <input
-                class="form-control"
-                type="text"
-                v-model="partner.product_list"
-              />
-            </div>
+
             <div class="form-group">
               <label>company Link</label>
               <input
                 class="form-control"
                 type="text"
-                v-model="partner.product_link"
+                v-model="partner.company_link"
               />
             </div>
             <div class="form-group">
@@ -71,8 +64,8 @@
             <thead>
               <tr>
                 <th>Company Name</th>
-                <th>Country Name</th>
-                <th>Product List</th>
+                <th>Company site</th>
+                <th>Company link</th>
                 <th>Detail</th>
                 <th>Image</th>
               </tr>
@@ -80,9 +73,8 @@
             <tbody>
               <tr v-for="partner in partners" :key="partner.id">
                 <td>{{ partner.data().partner_name }}</td>
-                <td>{{ partner.data().country_name }}</td>
-                <td>{{ partner.data().product_list }}</td>
-                <td>{{ partner.data().product_link }}</td>
+                <td>{{ partner.data().company_site }}</td>
+                <td>{{ partner.data().company_link }}</td>
                 <td>{{ partner.data().description }}</td>
                 <td>{{ partner.data().image }}</td>
                 <td>
@@ -129,28 +121,22 @@
                 v-model="partner.partner_name"
               />
             </div>
+        
             <div class="form-group">
-              <label>Country Name</label>
+              <label>Website</label>
               <input
                 class="form-control"
                 type="text"
-                v-model="partner.country_name"
+                v-model="partner.company_site"
               />
             </div>
-            <div class="form-group">
-              <label>Product List</label>
-              <input
-                class="form-control"
-                type="text"
-                v-model="partner.product_list"
-              />
-            </div>
+
             <div class="form-group">
               <label>company Link</label>
               <input
                 class="form-control"
                 type="text"
-                v-model="partner.product_link"
+                v-model="partner.company_link"
               />
             </div>
             <div class="form-group">
@@ -199,9 +185,8 @@ export default {
       partners: [],
       partner: {
         partner_name: "",
-        country_name: "",
-        product_list: "",
-        product_link:"",
+        company_site: "",
+        company_link:"",
         description: "",
         image: "",
       },
@@ -298,9 +283,8 @@ export default {
     reset() {
       this.product = {
         partner_name: "",
-        country_name: "",
-        product_list: "",
-        product_link:"",
+        company_site: "",
+        company_link:"",
         description: "",
         image: "",
       };

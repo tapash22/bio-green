@@ -1,23 +1,26 @@
 <template>
   <div class="blogpost">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <h3>{{blog.title}}</h3>
-            <div class="image">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <h3>{{ blog.title }}</h3>
+          <div class="image">
             <img :src="blog.image" />
-            </div>
-            <div class="text">
-            <p><strong>Author: </strong> {{ blog.author }}<br>
-            <i class="fa fa-calendar-check-o" aria-hidden="true"></i>{{ blog.mydate }}</p>
-            </div>
-            <div class="des">
+          </div>
+          <div class="text">
+            <p>
+              <strong>Author: </strong> {{ blog.author }}<br />
+              <i class="fa fa-calendar-check-o" aria-hidden="true"></i
+              >{{ blog.mydate }}
+            </p>
+          </div>
+          <div class="des">
             <p>{{ blog.description }}</p>
-            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -40,81 +43,159 @@ export default {
       }
     });
   },
+
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 };
 </script>
 
 <style scoped>
-.blogpost{
+.blogpost {
   margin-top: 120px;
   width: 100%;
   padding: 0;
-
 }
-.row{
-    margin-left: 100px;
+.row {
+  margin-left: 100px;
   margin-right: 100px;
   widows: 100%;
   height: 100%;
-   background: rgba(5, 19, 82, 0.596);
+  background: #ffa6004f;
 }
-.row .col-md-12{
+.row .col-md-12 {
   padding: 0;
   margin: 0;
 }
-.col-md-12 .box{
+.col-md-12 .box {
   padding: 10px;
   margin: 10px;
 }
-h3{
+h3 {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 1px;
   padding: 10px;
-  color:#fff;
+  color: #000;
 }
-.image{
-  width: 800px;
+.image {
+  width: 1100px;
   height: 400px;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
-.image img{
+.image img {
   width: 100%;
   height: 100%;
   padding: 10px;
 }
-.text{
+.text {
   width: 100%;
   height: 100px;
   padding: 10px;
   margin: 0;
 }
-.text p{
+.text p {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #fff;
+  color: #000;
 }
-.text p strong{
+.text p strong {
   font-size: 1.6rem;
   font-weight: 700;
   padding: 0;
 }
-.text p i{
+.text p i {
   font-size: 1.6rem;
   font-weight: 700;
   padding: 5px;
-  color: #fff;
+  color: #000;
 }
-.des{
+.des {
   width: 100%;
   height: 100%;
   padding: 5px;
   margin: 0;
 }
-.des p{
-  font-size: 1rem;
-  font-weight: 400;
-  color: #fff;
+.des p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+  text-align: justify;
+}
 
+@media only screen and (max-width: 767px) {
+  .blogpost {
+    margin-top: 100px;
+    width: 100%;
+    padding: 0;
+  }
+  .row {
+    margin-left: 10px;
+    margin-right: 10px;
+    widows: 100%;
+    height: 100%;
+    background: #ffa6004f;
+  }
+  .row .col-md-12 {
+    padding: 0;
+    margin: 0;
+  }
+  .col-md-12 .box {
+    padding: 10px;
+    margin: 10px;
+  }
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px;
+    color: #000;
+  }
+  .image {
+    width: 350px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+  }
+  .image img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  .text {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin: 0;
+  }
+  .text p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+  }
+  .text p strong {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0;
+  }
+  .text p i {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 5px;
+    color: #000;
+  }
+  .des {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin: 0;
+  }
+  .des p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000;
+    text-align: justify;
+  }
 }
 </style>

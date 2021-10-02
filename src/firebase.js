@@ -3,6 +3,7 @@ import "firebase/firestore";
 import "firebase/firebase-auth";
 import "firebase/storage";
 
+
 var firebaseConfig = {
     apiKey: "AIzaSyBFLLrjFen6tS4cTZrJv-m3YQuEfHvseYs",
     authDomain: "bio-green-899a4.firebaseapp.com",
@@ -16,5 +17,6 @@ var firebaseConfig = {
   // Initialize Firebase
   const fb = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
-  const storage = firebase.storage();
-  export { fb,db,storage };
+  // const storage = firebase.storage();
+
+  export { fb,db };

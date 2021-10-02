@@ -1,7 +1,7 @@
 <template>
   <div class="products">
     <div class="image">
-      <img src="../../assets/image/p_page.jpg" />
+      <img src="../../assets/image/product.png" />
     </div>
     <div class="container">
       <div class="row">
@@ -44,18 +44,19 @@ export default {
           img: require('../../assets/image/po.jpg'),
           url: "/enzymes",
         },
-        {
+         {
           id: 2,
-          title: "AQUA",
-          img: require('../../assets/image/co.jpg'),
-          url: "/prebioticsc",
-        },
-        {
-          id: 3,
           title: "CATTLE",
           img: require('../../assets/image/fish.jpg'),
           url: "/essensialoilar",
         },
+        {
+          id: 3,
+          title: "AQUA",
+          img: require('../../assets/image/co.jpg'),
+          url: "/prebioticsc",
+        },
+       
       ],
     };
   },
@@ -76,7 +77,7 @@ export default {
 }
 .image {
   width: 100%;
-  min-height: 400px;
+  height: 500px;
 }
 .image img {
   width: 100%;
@@ -159,11 +160,11 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 120px;
+  margin-top: 100px;
 }
 .image {
   width: 100%;
-  min-height: 400px;
+  height: 300px;
 }
 .image img {
   width: 100%;

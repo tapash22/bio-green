@@ -25,7 +25,8 @@
           </ul>
         </div>
         <div class="col-md-4 add">
-          <h3>Get in <strong>touch</strong></h3>
+          <h3>Get in <strong style="font-size:24px;font-weight: 700;">touch</strong></h3>
+          <h5>BioGreen International Limited</h5>
           <address>
             <strong> House No:</strong> 27 (2nd Floor)<br />
             <strong> Road No: </strong>, Nikunja 02, Khilkhet,<br />Dhaka-1229,
@@ -39,31 +40,30 @@
             Lotif Super Market, Borua Bazar,<br />
             Khilkhet, Dhaka 1229
           </address>
+          <div class="logo">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100050555396675"
+                ><i class="fa fa-facebook" aria-hidden="true"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
+                ><i class="fa fa-linkedin" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+          </div>
         </div>
       </div>
     </div>
     <div class="bottom">
       <div class="container">
         <div class="brand">
-          <div class="col-md-8" style="display: flex">
+          <div class="col-md-12" style="display: flex">
             <p>All right reserved in &copy;BioGreen</p>
             &nbsp;
             <p>Developed by</p>
-            <p style="color: rgb(161, 57, 9)">#ULTRAWAVE COMMUNICATION</p>
-          </div>
-          <div class="col-md-4">
-            <ul>
-              <li>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100050555396675"
-                  ><i class="fa fa-facebook" aria-hidden="true"></i
-                ></a>
-                <a
-                  href="https://www.linkedin.com/company/biogreen-international-limited/?viewAsMember=true"
-                  ><i class="fa fa-linkedin" aria-hidden="true"></i
-                ></a>
-              </li>
-            </ul>
+            <p style="color: rgb(161, 57, 9)">&nbsp;ULTRAWAVE COMMUNICATIONS</p>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ strong {
   font-weight: 700;
 }
 p {
-  text-align: left;
+  text-align: justify;
   color: #000;
   font-size: 1rem;
   font-weight: 600;
@@ -150,6 +150,31 @@ p {
   font-size: 18px;
   font-weight: 500;
 }
+.add .logo{
+  display: flex;
+  justify-content: left;
+  margin-left: 30px;
+}
+.logo ul {
+  padding: 5px;
+  margin: 0;
+  display: flex;
+  justify-content: right;
+}
+.logo ul li {
+  list-style: none;
+  text-align: right;
+}
+.logo li a {
+  text-decoration: none;
+}
+.logo li a i {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .bottom {
   background: rgb(20, 1, 44);
   padding-top: 10px;
@@ -160,44 +185,22 @@ p {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
-.bottom .container .brand .col-md-8 {
+.bottom .container .brand .col-md-12 {
   padding: 5px;
   margin: 5px;
   display: flex;
+  justify-content: center;
 }
-.bottom .container .brand .col-md-8 p {
+.bottom .container .brand .col-md-12 p {
   text-align: left;
   font-size: 0.9rem;
   font-weight: 500;
   color: rgb(161, 57, 9);
+  text-align: center;
 }
 
-.bottom .container .brand .col-md-4 {
-  padding: 5px;
-  margin: 5px;
-}
-.bottom .container .brand .col-md-4 ul {
-  padding: 5px;
-  margin: 0;
-  display: flex;
-  justify-content: right;
-}
-.bottom .container .brand .col-md-4 ul li {
-  list-style: none;
-  text-align: right;
-}
-.bottom .container .brand .col-md-4 li a {
-  text-decoration: none;
-}
-.bottom .container .brand .col-md-4 li a i {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
 @media only screen and (max-width: 767px) {
   p {
