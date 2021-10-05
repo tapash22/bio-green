@@ -47,13 +47,13 @@ export default {
          {
           id: 2,
           title: "CATTLE",
-          img: require('../../assets/image/fish.jpg'),
+          img: require('../../assets/image/co.jpg'),
           url: "/essensialoilar",
         },
         {
           id: 3,
           title: "AQUA",
-          img: require('../../assets/image/co.jpg'),
+          img: require('../../assets/image/fish.jpg'),
           url: "/prebioticsc",
         },
        

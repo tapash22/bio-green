@@ -1,4 +1,5 @@
 <template>
+<div class="client">
   <Navigation />
   <div class="row">
     <div class="col-md-12">
@@ -14,6 +15,7 @@
     </div>
   </div>
   <Footer />
+</div>
 </template>
 
 <script>

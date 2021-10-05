@@ -24,6 +24,7 @@ import Organicminarelsc from './ex_page/Organicminarelsc.vue';
 import Essensialoila from './ex_page/Essensialoila.vue';
 import Probioticsa from './ex_page/Probioticsa.vue';
 import Organicminarelsa from './ex_page/Organicminarelsa.vue';
+import EnzymesC from './ex_page/EnzymesC.vue';
 
 
 import Admin from './components/pages/Admin.vue';
@@ -68,6 +69,7 @@ const routes = [
             
             { path: 'probioticsa' , component: Probioticsa },
             { path: 'organicminarelsa' , component: Organicminarelsa },
+            { path: 'enzymesc', component: EnzymesC },
 
         ]
     },

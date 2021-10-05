@@ -80,7 +80,7 @@ export default {
   created() {
     db.collection("products")
       .where("p_category", "==", "poultry")
-      .where("sub_category", "==", "Enzymes")
+      .where("sub_category", "==", "Feed Sanitizer")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -234,8 +234,9 @@ export default {
     padding: 10px;
   }
   .col-md-4 .card {
- padding: 0;
-    margin: 0;
+  padding: 0;
+  margin-left: 40px;
+  margin-top: 5px;
     width: 250px;
     height: 300px;
     background: #ffa6006c;

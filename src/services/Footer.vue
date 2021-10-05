@@ -190,41 +190,60 @@ p {
   margin: 0;
   display: flex;
   justify-content: center;
+
 }
 .bottom .container .brand .col-md-12 {
   padding: 5px;
   margin: 5px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 .bottom .container .brand .col-md-12 p {
-  text-align: left;
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgb(161, 57, 9);
-  text-align: center;
-}
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(161, 57, 9);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  .bottom .container .brand .col-md-12 .logos {
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+  }
+  .bottom .container .brand .col-md-12 .toto {
+    margin-top: -20px;
+  }
 
 @media only screen and (max-width: 767px) {
   p {
-    text-align: left;
+    text-align: justify;
     padding: 20px;
   }
-  .link ul li {
-    padding: 2px;
-    text-align: left;
-    list-style: none;
-    margin-left: 50px;
-  }
-  .link a {
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 500;
-    border-bottom: 2px solid green;
-    text-align: left;
-  }
+.link {
+  text-align: center;
+}
+.link ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.link ul li {
+  padding: 2px;
+  text-align: center;
+  list-style: none;
+  margin-left: 0;
+}
+.link a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  /* border-bottom: 2px solid green; */
+}
   .add h5 {
     margin-left: -40px;
   }

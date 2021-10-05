@@ -151,7 +151,8 @@ export default {
 }
 .col-md-4 .card {
   padding: 0;
-  margin: 0;
+  margin-left: 40px;
+  margin-top: 5px;
   width: 300px;
   height: 300px;
   background: #ffa6006c;

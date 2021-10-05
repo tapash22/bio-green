@@ -51,7 +51,7 @@
             </div>
             <div class="btn">
               <button class="btn btn-primary" @click.prevent="saveData">
-                Add Product
+                Add Blog
               </button>
             </div>
           </form>

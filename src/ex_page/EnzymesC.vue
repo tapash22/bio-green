@@ -1,8 +1,8 @@
 <template>
   <div class="products">
     <div class="container">
-      <div class="row my-3">
-        <h3>Enzymes</h3>
+      <div class="row">
+        <h3>Enzyme</h3>
 
         <div class="col-md-4" v-for="product in products" :key="product">
           <div class="card">
@@ -40,9 +40,7 @@
               <img :src="product.image" />
             </div>
             <div class="text">
-              <h5 style="text-align: left; padding: 10px">
-                {{ product.product_name }}
-              </h5>
+              <h5 style="text-align:left;padding:10px;">{{ product.product_name }}</h5>
               <p>{{ product.description }}</p>
               <button
                 class="btn btn-primary"
@@ -81,7 +79,7 @@ export default {
 
   created() {
     db.collection("products")
-      .where("p_category", "==", "poultry")
+      .where("p_category", "==", "aqua")
       .where("sub_category", "==", "Enzymes")
       .get()
       .then((querySnapshot) => {
@@ -94,7 +92,7 @@ export default {
   methods: {
     downloadItem(e) {
       var file = e.target.value[0];
-      var storageRef = fb.storage().ref("pdf/" + file.name);
+      var storageRef = fb.storage().ref("pdf/"+file.name);
       storageRef
         .getDownloadURL(storageRef, { responseType: "blob" })
         .then((response) => {
@@ -136,11 +134,9 @@ export default {
 .row {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
-  height:450px;
-  margin:0;
-}
 
+  margin-bottom: 50px;
+}
 .row h3 {
   text-align: center;
   font-size: 2.2rem;
@@ -148,15 +144,14 @@ export default {
   font-family: "Oswald", sans-serif;
   color: #000;
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 .row .col-md-4 {
   padding: 10px;
-  margin: 0;
 }
 .col-md-4 .card {
   padding: 0;
-  margin: 5px;
+  margin: 0;
   width: 300px;
   height: 300px;
   background: #ffa6006c;
@@ -186,7 +181,7 @@ export default {
   padding: 0;
   margin: 0;
   border: none;
-  background: rgb(5, 19, 82);
+    background: rgb(5, 19, 82);
   display: flex;
   flex-direction: column;
 }
@@ -198,7 +193,7 @@ export default {
   font-weight: 500;
   text-transform: uppercase;
 }
-.card-footer .btn {
+.card-footer .btn{
   text-decoration: none;
   color: #000;
   font-size: 1.5rem;
@@ -240,8 +235,8 @@ export default {
   }
   .col-md-4 .card {
     padding: 0;
-    margin-left: 40px;
-    margin-top: 5px;
+  margin-left: 40px;
+  margin-top: 5px;
     width: 250px;
     height: 300px;
     background: #ffa6006c;

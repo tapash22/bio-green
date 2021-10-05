@@ -1,5 +1,5 @@
 <template>
-<div class="products">
+  <div class="products">
     <div class="container">
       <div class="row">
         <h3>Essensial oil</h3>
@@ -40,7 +40,9 @@
               <img :src="product.image" />
             </div>
             <div class="text">
-              <h5 style="text-align:left;padding:10px;">{{ product.product_name }}</h5>
+              <h5 style="text-align: left; padding: 10px">
+                {{ product.product_name }}
+              </h5>
               <p>{{ product.description }}</p>
               <button
                 class="btn btn-primary"
@@ -92,7 +94,7 @@ export default {
   methods: {
     downloadItem(e) {
       var file = e.target.value[0];
-      var storageRef = fb.storage().ref("pdf/"+file.name);
+      var storageRef = fb.storage().ref("pdf/" + file.name);
       storageRef
         .getDownloadURL(storageRef, { responseType: "blob" })
         .then((response) => {
@@ -181,7 +183,7 @@ export default {
   padding: 0;
   margin: 0;
   border: none;
-    background: rgb(5, 19, 82);
+  background: rgb(5, 19, 82);
   display: flex;
   flex-direction: column;
 }
@@ -193,7 +195,7 @@ export default {
   font-weight: 500;
   text-transform: uppercase;
 }
-.card-footer .btn{
+.card-footer .btn {
   text-decoration: none;
   color: #000;
   font-size: 1.5rem;
@@ -234,8 +236,9 @@ export default {
     padding: 10px;
   }
   .col-md-4 .card {
-   padding: 0;
-    margin: 0;
+    padding: 0;
+    margin-left: 40px;
+    margin-top: 5px;
     width: 250px;
     height: 300px;
     background: #ffa6006c;

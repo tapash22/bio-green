@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
               <ul>
-                <li style="">
+                <li>
                   {{ blog.data().title }}
                 </li>
                 <li>
@@ -121,14 +121,14 @@ export default {
 
 .col-md-4 .card {
   width: 300px;
-  height: 300px;
+  height: 400px;
   padding: 0;
   margin: 5px;
   background: rgba(5, 19, 82, 0.671);
 }
 .col-md-4 .card .card-header {
   width: 100%;
-  height: 200px;
+  height: 220px;
   padding: 0;
   margin: 0;
 }
@@ -140,7 +140,7 @@ export default {
 }
 .col-md-4 .card-body {
   width: 100%;
-  height: 100px;
+  height: 180px;
   padding: 0;
   margin: 0;
   background: #ffa500;
@@ -148,8 +148,8 @@ export default {
 .card-body ul {
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
+  padding:0;
+  margin-top: 10px;
 }
 .card-body ul li {
   text-align: left;
@@ -158,20 +158,20 @@ export default {
   color: #000;
   list-style: none;
   margin: 0;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 5px;
 }
 .card-body ul li i {
   font-size: 1.5rem;
   font-weight: 600;
-  padding: 5px;
+  padding: 10px;
+  color: green;
 }
 .card-body ul li a {
   font-size: 1.3rem;
   font-weight: 500;
   color: rgb(5, 19, 82);
   cursor: pointer;
-  text-align: center;
+  text-align: justify;
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -225,8 +225,10 @@ export default {
   width: 300px;
   height: 300px;
   padding: 0;
-  margin: 5px;
+  margin-left: 30px;
+  margin-top: 5px;
   background: rgba(5, 19, 82, 0.671);
+
 }
 .col-md-4 .card .card-header {
   width: 100%;
@@ -242,7 +244,7 @@ export default {
 }
 .col-md-4 .card-body {
   width: 100%;
-  height: 100px;
+  height:150px;
   padding: 0;
   margin: 0;
   background: #ffa500;

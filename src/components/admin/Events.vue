@@ -29,7 +29,7 @@
             </div>
             <div class="my-3">
               <button class="btn btn-primary" @click.prevent="saveData">
-                Add Slider
+                Save
               </button>
             </div>
           </form>

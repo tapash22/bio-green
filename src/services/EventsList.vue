@@ -10,14 +10,14 @@
         <img :src="occation.image" />
         <p>
           {{ occation.name }}<br />
-          {{ occation.place }}
+          <strong>{{ occation.place }}</strong>
         </p>
       </div>
       <div class="tt" v-else>
         <div class="ex" v-for="occation in occations" :key="occation">
           <img :src="occation.data().image" />
           <p>
-            {{ occation.data().name }}
+           <i> {{ occation.data().name }}</i>
          <br/>{{ occation.data().place }}</p>
         </div>
       </div>
@@ -35,7 +35,7 @@
 
         <div class="box-b">
           <p>
-            {{ occation.data().name }}<br>{{ occation.data().place }}</p>
+            <i>{{ occation.data().name }}</i><br><strong>{{ occation.data().place }}</strong></p>
           <button class="btn btn-primary" @click.prevent="onClick(occation)">
             View
           </button>
@@ -174,9 +174,9 @@ export default {
 .event .box .box-b p {
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: "Oswald", sans-serif;
   color: #000;
   text-align: left;
+  
 }
 .event .box .box-b .btn {
   background: rgb(5, 19, 82);
