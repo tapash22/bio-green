@@ -108,7 +108,7 @@ export default {
   padding: 10px;
   margin: 5px;
   width: 100%;
-  height: 280px;
+  height: 300px;
   display: flex;
    background:#ffa6006c;
 }

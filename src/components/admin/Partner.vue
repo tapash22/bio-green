@@ -15,7 +15,7 @@
               />
             </div>
             <div class="form-group">
-              <label>Website</label>
+              <label>Website text</label>
               <input
                 class="form-control"
                 type="text"
