@@ -29,7 +29,7 @@
                 <li>
                   <router-link
                     :to="{ name: 'BlogItem', params: { id: blog.id } }"
-                    >show details</router-link
+                    >Show Details</router-link
                   >
                 </li>
               </ul>

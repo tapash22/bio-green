@@ -200,7 +200,7 @@ p {
 }
 .bottom .container .brand .col-md-12 p {
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.6rem;
     font-weight: 500;
     color: rgb(161, 57, 9);
     text-align: center;
@@ -214,6 +214,7 @@ p {
   }
   .bottom .container .brand .col-md-12 .toto {
     margin-top: -20px;
+    font-size: 0.5rem;
   }
 
 @media only screen and (max-width: 767px) {

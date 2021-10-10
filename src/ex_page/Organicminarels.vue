@@ -42,13 +42,12 @@
             <div class="text">
               <h5 style="text-align:left;padding:10px;">{{ product.product_name }}</h5>
               <p>{{ product.description }}</p>
-              <button
-                class="btn btn-primary"
-                :href="product.pdf"
-                @click.prevent="downloadItem()"
+               <a
+                :href="product.pdf"  
+                target="_parent"
               >
-                Download Pdf
-              </button>
+                Read Pdf
+              </a>
             </div>
           </div>
         </div>
@@ -58,7 +57,7 @@
 </template>
         
 <script>
-import { fb, db } from "../firebase";
+import { db } from "../firebase";
 
 export default {
   data() {
@@ -90,21 +89,6 @@ export default {
   },
 
   methods: {
-    downloadItem(e) {
-      var file = e.target.value[0];
-      var storageRef = fb.storage().ref("pdf/"+file.name);
-      storageRef
-        .getDownloadURL(storageRef, { responseType: "blob" })
-        .then((response) => {
-          const blob = new Blob([response.data], { type: "application/pdf" });
-          const link = document.createElement("button");
-          link.href = URL.createObjectURL(blob);
-          link.download = storageRef;
-          link.click();
-          URL.revokeObjectURL(link.href);
-        })
-        .catch(console.error);
-    },
 
     inClose() {
       this.showModal = false;
@@ -205,6 +189,10 @@ export default {
 }
 .modal {
   display: block;
+  justify-content: center;
+}
+.modal .modal-body .text p{
+  text-align: justify;
 }
 
 @media only screen and (max-width: 767px) {
@@ -290,9 +278,10 @@ export default {
   }
   .modal {
     display: block;
-    margin-top: 150px;
+    margin-top: 80px;
     width: 350px;
-    height: 100%;
+    height: 500px;
+    margin-left: 30px;
   }
 }
 </style>
