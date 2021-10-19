@@ -48,7 +48,7 @@ export default {
           id: 2,
           title: "CATTLE",
           img: require('../../assets/image/co.jpg'),
-          url: "/essensialoila",
+          url: "/essensialoilar",
         },
         {
           id: 3,
