@@ -2,57 +2,58 @@
   <div class="home">
     <Slider />
     <div class="container">
-    <div class="row blog my-3">
-      <h3>products</h3>
-      <p>We deliver performances rather just a product to your business</p>
-      <div class="col-md-12">
-        <Carousel />
+      <div class="row blog my-3">
+        <h3>products</h3>
+        <p>We deliver performances rather just a product to your business</p>
+        <div class="col-md-12">
+          <Carousel />
+        </div>
       </div>
-    </div>
 
-    <!-- event -->
-    <div class="row blog my-3">
-      <h3>Events</h3>
-      <div class="col-md-12" style="width: 100%; height: 100%">
-        <EventList />
+      <!-- event -->
+      <div class="row blog my-1">
+        <h3>Events</h3>
+        <div class="col-md-12" style="width: 100%; height: 100%">
+          <EventList />
+        </div>
       </div>
-    </div>
 
-    <!-- blog -->
-    <div class="row blog my-3">
-      <h3>Blog</h3>
-      <div
-        class="col-md-4"
-        v-for="blog in blogs"
-        :key="blog.id"
-        data-aos="fade-left"
-        data-aos-delay="500"
-        data-aos-once="false"
-      >
-        <div class="card">
-          <div class="card-header">
-            <img :src="blog.data().image" />
-          </div>
-          <div class="card-body">
-            <ul>
-              <li style="">
-                {{ blog.data().title }}
-              </li>
-              <li>
-                <i class="fa fa-user" aria-hidden="true"></i>
-                {{ blog.data().author }}
-              </li>
-              <li>
-                <router-link :to="{ name: 'BlogItem', params: { id: blog.id } }"
-                  >Show Details</router-link
-                >
-              </li>
-            </ul>
+      <!-- blog -->
+      <div class="row blog my-1">
+        <h3>Blog</h3>
+        <div
+          class="col-md-4"
+          v-for="blog in blogs"
+          :key="blog.id"
+          data-aos="fade-left"
+          data-aos-delay="500"
+          data-aos-once="false"
+        >
+          <div class="card">
+            <div class="card-header">
+              <img :src="blog.data().image" />
+            </div>
+            <div class="card-body">
+              <ul>
+                <li style="">
+                  {{ blog.data().title }}
+                </li>
+                <li>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  {{ blog.data().author }}
+                </li>
+                <li>
+                  <router-link
+                    :to="{ name: 'BlogItem', params: { id: blog.id } }"
+                    >Show Details</router-link
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -76,13 +77,12 @@ export default {
         place: "",
         image: "",
       },
-       blogs: [],
-
-     
+      blogs: [],
     };
   },
-    created() {
-    db.collection("blogs").limit('3')
+  created() {
+    db.collection("blogs")
+      .limit("3")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -106,7 +106,7 @@ export default {
 
 .row {
   padding: 0;
-  
+
   position: relative;
 }
 .row h3 {
@@ -139,6 +139,12 @@ export default {
 }
 
 /* blog */
+.blog{
+  width: 100%;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
 .blog .col-md-4 {
   width: 30%;
   margin: 10px;
@@ -172,7 +178,7 @@ export default {
 .card-body ul {
   display: flex;
   flex-direction: column;
-  padding:0;
+  padding: 0;
   margin-top: 10px;
 }
 .card-body ul li {
@@ -202,7 +208,7 @@ export default {
 }
 
 /* about */
-.about {
+/* .about {
   width: 100%;
   height: 400px;
   background-image: url("../../assets/image/about_h.jpg");
@@ -255,7 +261,7 @@ export default {
   color: #fff;
   padding: 10px;
   text-align: center;
-}
+} */
 
 @media only screen and (max-width: 767px) {
   .home {
@@ -305,74 +311,81 @@ export default {
   }
 
   /* blog */
-   .blog{
-     width: 100%;
-   }
-  .blog .col-md-4 {
-  width: 100%;
-  margin: 10px;
-}
-.col-md-4 .card {
-  width: 220px;
-  height: 300px;
-  padding: 0;
-  margin: 5px;
-  background: rgba(5, 19, 82, 0.671);
-}
-.col-md-4 .card .card-header {
-  width: 100%;
-  height: 200px;
-  padding: 0;
-  margin: 0;
-}
-.col-md-4 .card-header img {
+.blog{
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
+  padding:0;
+  margin-left:5%;
 }
-.col-md-4 .card-body {
-  width: 100%;
-  height: 100px;
-  padding: 0;
-  margin: 0;
-  background: #ffa500;
+.blog h3{
+  margin-left: 22%;
 }
-.card-body ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-}
-.card-body ul li {
-  text-align: left;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #000;
-  list-style: none;
-  margin: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.card-body ul li i {
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 5px;
-}
-.card-body ul li a {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: rgb(5, 19, 82);
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-}
-
+  .blog .col-md-4 {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    padding: 5px;
+  }
+  .col-md-4 .card {
+    width: 80%;
+    height: 100%;
+    padding: 0;
+    /* margin-left: 5%; */
+    background: rgba(5, 19, 82, 0.671);
+  }
+  .col-md-4 .card .card-header {
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+  }
+  .col-md-4 .card-header img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .col-md-4 .card-body {
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    background: #ffa500;
+  }
+  .card-body ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul li {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #000;
+    list-style: none;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .card-body ul li i {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 5px;
+  }
+  .card-body ul li a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(5, 19, 82);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
 
   /* about */
-  .about {
+  /* .about {
     width: 100%;
     height: 400px;
     background-image: url("../../assets/image/about_h.jpg");
@@ -425,6 +438,6 @@ export default {
     color: #fff;
     padding: 10px;
     text-align: center;
-  }
+  } */
 }
 </style>

@@ -16,20 +16,6 @@ export default {
   components: {
     Lightbox,
   },
-  data() {
-    return{
-        images: [
-            {
-                src: 'images/image001.jpg',
-                description: 'Sunken dreams II. by Arbebuk',
-            },
-            {
-                src: 'images/image002.jpg',
-                description: 'Tunnel View Sunrise by Porbital',
-            }
-        ]
-    }
-    },
   mounted() {
     window.scrollTo(0, 0);
   },

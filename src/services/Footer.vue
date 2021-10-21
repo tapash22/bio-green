@@ -200,7 +200,7 @@ p {
 }
 .bottom .container .brand .col-md-12 p {
     text-align: left;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 500;
     color: rgb(161, 57, 9);
     text-align: center;
@@ -263,14 +263,14 @@ p {
   }
   .bottom .container .brand .col-md-12 {
     padding: 5px;
-    margin: 5px;
+    margin-left:10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .bottom .container .brand .col-md-12 p {
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: rgb(161, 57, 9);
     text-align: center;

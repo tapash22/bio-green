@@ -192,16 +192,16 @@ export default {
   }
   .event .col-md-6 {
     width: 100%;
-    height: 400px;
+    height: 350px;
     padding: 10px;
   }
   .event .event-list {
-    width: 250px;
+    width: 280px;
     height: 300px;
   }
   .event .event-list img {
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-position: center;
     background-size: cover;
   }
@@ -253,7 +253,7 @@ export default {
   }
   .event .box .box-h {
     width: 100px;
-    height: 100px;
+    height: 150px;
   }
   .event .box a {
     text-decoration: none;

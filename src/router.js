@@ -54,7 +54,7 @@ const routes = [
             { path: 'gallery', component: Gallery,},
             { path: 'contact', component: Contact, },
             { path: 'login',name:'Login', component: Login, },
-            { path:'/:NotFound(.*)*', component: NotFound, },
+            { path:'/:catchAll(.*)', component: NotFound, },
 
             { path: 'essensialoil' , component: Essensialoil },
             { path: 'organicminarels' , component: Organicminarels },

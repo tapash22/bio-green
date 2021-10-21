@@ -22,7 +22,7 @@
             <p>
              <strong> Description:</strong>  {{partner.data().description}}
             </p>
-            <a :href="partner.data().product_link">{{partner.data().product_link}}</a>
+            <a :href="partner.data().company_link">{{partner.data().company_site}}</a>
           </div>
         </div>
       </div>
@@ -38,9 +38,8 @@ export default {
       partners: [],
       partner: {
         partner_name: "",
-        country_name: "",
-        product_list: "",
-        product_link:"",
+        company_site: "",
+        company_link:"",
         description: "",
         image: "",
       },

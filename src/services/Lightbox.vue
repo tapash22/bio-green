@@ -13,44 +13,19 @@
           </a>
         </div>
       </div>
-      <!-- v-for="(src, index) in imgs"
-        :key="index" -->
-      <!-- all props & events -->
-      <!-- <vue-easy-lightbox 
-        :visible="visible"
-        :imgs="imgs"
-        :index="index"
-        @hide="handleHide"
-      ></vue-easy-lightbox> -->
     </div>
-    <!-- <div class="showpic" v-if="visible">
-      <div class="image">
-        <img :src="gallery.image"/>
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      v-if="visible"
+      @click="handleHide()"
+    >
+      <div class="modal-body">
+        <div class="image">
+          <img :src="gallery.image" />
+        </div>
       </div>
-    </div> -->
-        <div class="modal" tabindex="-1" role="dialog" v-if="visible" @click="handleHide()">
-      <!-- <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Pdrduct Detail</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              @click="inClose()"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> -->
-          <div class="modal-body">
-            <div class="image">
-              <img :src="gallery.image" />
-            </div>
-
-          </div>
-        <!-- </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -140,22 +115,21 @@ export default {
   text-align: center;
   color: black;
 }
-.showpic{
+.showpic {
   width: 100%;
   height: 100%;
   padding: 10px;
   margin: 10px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 99;
   display: block;
 }
 
 .modal {
   display: block;
-  background: rgba(0,0,0,0.8);
-
+  background: rgba(0, 0, 0, 0.8);
 }
-.modal  .image{
+.modal .image {
   padding: 10px;
   margin: 20px;
   width: 100%;
@@ -163,7 +137,7 @@ export default {
   display: flex;
   justify-content: center;
 }
-.modal .image img{
+.modal .image img {
   padding: 0;
   margin: 0;
   width: 100%;
