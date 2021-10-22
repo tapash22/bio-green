@@ -3,307 +3,293 @@
     <div class="navi">
       <nav>
         <div class="row">
-          <div class="col-md-3">
-            <div class="brand">
-              <router-link to="/home" style="text-decoration: none">
-                <img src="../assets/image/logo4.png" />
-              </router-link>
-              <div class="btn" @click="onClick()">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-              </div>
+          <!-- <div class="col-md-3"> -->
+          <div class="brand">
+            <router-link to="/home" style="text-decoration: none">
+              <img src="../assets/image/logo4.png" />
+            </router-link>
+            <div class="btn" @click="onClick()">
+              <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="col-md-7">
-            <div class="link">
-              <ul class="ul">
-                <transition-group name="slide-fade">
-                  <li v-if="show">
-                    <router-link to="/home">Home</router-link>
-                  </li>
-                  <li v-if="show">
-                    <router-link to="/about">About</router-link>
-                  </li>
-                  <li v-if="show">
-                    <router-link to="/products"
-                      >Products<i
-                        class="fa fa-angle-down"
-                        style="padding-left: 5px; padding-top: 5px"
-                        aria-hidden="true"
-                      ></i
-                    ></router-link>
-                    <!-- sub-category -->
-                    <ul>
-                      <li>
-                        <router-link to="#"
-                          >Poultry<i
-                            class="fa fa-angle-right"
-                            aria-hidden="true"
-                          ></i
-                        ></router-link>
-                        <ul class="two">
-                          <li>
-                            <router-link to="/enzymes">Enzymes</router-link>
-                          </li>
-                          <li>
-                            <router-link to="/essensialoil"
-                              >Essential Oil</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/organicminarels"
-                              >Organic Minerals
-                            </router-link>
-                          </li>
-                          <li>
-                            <router-link to="/feedsanitizer"
-                              >Feed Sanitizer</router-link
-                            >
-                          </li>
-
-                          <li>
-                            <router-link to="/probiotics"
-                              >Postbiotic</router-link
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <router-link to="#"
-                          >Cattle<i
-                            class="fa fa-angle-right"
-                            aria-hidden="true"
-                          ></i
-                        ></router-link>
-                        <!-- sub-category -->
-                        <ul class="two">
-                          <li>
-                            <router-link to="/prebioticsc"
-                              >Postbiotic</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/organicminarelsc"
-                              >Organic Minerals</router-link
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <router-link to="#"
-                          >Aqua<i
-                            class="fa fa-angle-right"
-                            aria-hidden="true"
-                          ></i
-                        ></router-link>
-                        <!-- sub-category -->
-                        <ul class="two">
-                           <li>
-                            <router-link to="/enzymesc"
-                              >Enzymes</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/probioticsa"
-                              >Postbiotic</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/organicminarelsa"
-                              >Organic Minerals</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/essensialoila"
-                              >Essential Oil</router-link
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li v-if="show">
-                    <router-link to="/Gallery">Gallery</router-link>
-                  </li>
-                  <li v-if="show">
-                    <router-link to="/blog">Blog</router-link>
-                  </li>
-                  <li v-if="show">
-                    <router-link to="/partners">Partners</router-link>
-                  </li>
-                  <li v-if="show">
-                    <router-link to="/contact">Contact Us</router-link>
-                  </li>
-                </transition-group>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="text">
-              <ul>
-                <li>
-                  <i class="fa fa-phone" aria-hidden="true"></i>+8801810084300
-                </li>
-                <li>
-                  <i class="fa fa-envelope-o" aria-hidden="true"
-                    >&nbsp;info@biogreenint.com</i
+          <!-- </div> -->
+          <!-- <div class="col-md-7"> -->
+          <div class="link">
+            <ul class="ul">
+              <transition-group name="slide-fade">
+                <li v-if="show">
+                  <router-link to="/home" @click.prevent="onClick()"
+                    >Home</router-link
                   >
                 </li>
-              </ul>
-            </div>
+                <li v-if="show">
+                  <router-link to="/about">About</router-link>
+                </li>
+                <li v-if="show">
+                  <router-link to="/products"
+                    >Products<i
+                      class="fa fa-angle-down"
+                      style="padding-left: 5px; padding-top: 5px"
+                      aria-hidden="true"
+                    ></i
+                  ></router-link>
+                  <!-- sub-category -->
+                  <ul>
+                    <li>
+                      <router-link to="/poultry"
+                        >Poultry<i
+                          class="fa fa-angle-right"
+                          aria-hidden="true"
+                        ></i
+                      ></router-link>
+                      <ul class="two">
+                        <li>
+                          <router-link to="/enzymes">Enzymes</router-link>
+                        </li>
+                        <li>
+                          <router-link to="/essensialoil"
+                            >Essential Oil</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/organicminarels"
+                            >Organic Minerals
+                          </router-link>
+                        </li>
+                        <li>
+                          <router-link to="/feedsanitizer"
+                            >Feed Sanitizer</router-link
+                          >
+                        </li>
+
+                        <li>
+                          <router-link to="/postbiotic">Postbiotic</router-link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <router-link to="/cattle"
+                        >Cattle<i
+                          class="fa fa-angle-right"
+                          aria-hidden="true"
+                        ></i
+                      ></router-link>
+                      <!-- sub-category -->
+                      <ul class="two">
+                        <li>
+                          <router-link to="/cpostbiotic"
+                            >Postbiotic</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/corganicminarels"
+                            >Organic Minerals</router-link
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <router-link to="/aqua"
+                        >Aqua<i class="fa fa-angle-right" aria-hidden="true"></i
+                      ></router-link>
+                      <!-- sub-category -->
+                      <ul class="two">
+                        <li>
+                          <router-link to="/aenzymes">Enzymes</router-link>
+                        </li>
+                        <li>
+                          <router-link to="/apostbiotic"
+                            >Postbiotic</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/aorganicminarels"
+                            >Organic Minerals</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/aessensialoil"
+                            >Essential Oil</router-link
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li v-if="show">
+                  <router-link to="/Gallery">Gallery</router-link>
+                </li>
+                <li v-if="show">
+                  <router-link to="/blog">Blog</router-link>
+                </li>
+                <li v-if="show">
+                  <router-link to="/partners">Partners</router-link>
+                </li>
+                <li v-if="show">
+                  <router-link to="/contact">Contact Us</router-link>
+                </li>
+              </transition-group>
+            </ul>
           </div>
+          <!-- </div> -->
+          <!-- <div class="col-md-2"> -->
+          <div class="text">
+            <ul>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>+8801810084300
+              </li>
+              <li>
+                <i class="fa fa-envelope-o" aria-hidden="true"
+                  >&nbsp;info@biogreenint.com</i
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- </div> -->
         </div>
       </nav>
     </div>
+
     <div class="mini">
       <nav>
         <div class="row">
-          <div class="col-md-3">
-            <div class="brand">
-              <router-link to="/home" style="text-decoration: none">
-                <img src="../assets/image/logo4.png" />
-              </router-link>
-              <div class="btn" @click="onClick()">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="link">
-              <ul class="ul">
-                <transition-group name="slide-fade">
-                  <li v-if="!show">
-                    <router-link to="/home">Home</router-link>
-                  </li>
-                  <li v-if="!show">
-                    <router-link to="/about">About</router-link>
-                  </li>
-                  <li v-if="!show">
-                    <router-link to="/products"
-                      >Products<i
-                        class="fa fa-angle-down"
-                        style="padding-left: 20px; padding-top: 5px"
-                        aria-hidden="true"
-                      ></i
-                    ></router-link>
-                    <!-- sub-category -->
-                    <ul>
-                      <li>
-                        <router-link to="#"
-                          >Poultry<i
-                            class="fa fa-angle-right"
-                            aria-hidden="true"
-                          ></i
-                        ></router-link>
-                        <ul class="two">
-                          <li>
-                            <router-link to="/enzymes">Enzymes</router-link>
-                          </li>
-                          <li>
-                            <router-link to="/essensialoil"
-                              >Essential Oil</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/organicminarels"
-                              >Organic Minerals
-                            </router-link>
-                          </li>
-                          <li>
-                            <router-link to="/feedsanitizer"
-                              >Feed Sanitizer</router-link
-                            >
-                          </li>
+          <div class="brand">
+            <router-link to="/home" style="text-decoration: none">
+              <img src="../assets/image/logo4.png" />
+            </router-link>
 
-                          <li>
-                            <router-link to="/probiotics"
-                              >Postbiotic</router-link
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <router-link to="#"
-                          >Cattle<i
-                            class="fa fa-angle-right"
-                            aria-hidden="true"
-                          ></i
-                        ></router-link>
-                        <!-- sub-category -->
-                        <ul class="two">
-                          <li>
-                            <router-link to="/prebioticsc"
-                              >Postbiotic</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/organicminarelsc"
-                              >Organic Minerals</router-link
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <router-link to="#"
-                          >Aqua<i
-                            class="fa fa-angle-right"
-                            aria-hidden="true"
-                          ></i
-                        ></router-link>
-                        <!-- sub-category -->
-                        <ul class="two">
-                            <li>
-                            <router-link to="/enzymesc"
-                              >Enzymes</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/probioticsa"
-                              >Postbiotic</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/organicminarelsa"
-                              >Organic Minerals</router-link
-                            >
-                          </li>
-                          <li>
-                            <router-link to="/essensialoila"
-                              >Essential Oil</router-link
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li v-if="!show">
-                    <router-link to="/Gallery">Gallery</router-link>
-                  </li>
-                  <li v-if="!show">
-                    <router-link to="/blog">Blog</router-link>
-                  </li>
-                  <li v-if="!show">
-                    <router-link to="/partners">Partners</router-link>
-                  </li>
-                  <li v-if="!show">
-                    <router-link to="/contact">Contact Us</router-link>
-                  </li>
-                </transition-group>
-              </ul>
+            <div class="btn" @click="onClick()">
+              <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="col-md-2">
-            <div class="text">
-              <ul>
-                <li>
-                  <i class="fa fa-phone" aria-hidden="true"></i>+8801810084300
+
+          <div class="link">
+            <ul class="ul">
+              <transition-group name="slide-fade">
+                <li v-if="!show">
+                  <router-link to="/home"  @click="onClick()">Home</router-link>
                 </li>
-                <li>
-                  <i class="fa fa-envelope-o" aria-hidden="true"
-                    >&nbsp;info@biogreenint.com</i
-                  >
+                <li v-if="!show">
+                  <router-link to="/about" @click="onClick()">About</router-link>
                 </li>
-              </ul>
-            </div>
+                <li v-if="!show">
+                  <router-link to="/products" 
+                    >Products<i
+                      class="fa fa-angle-down"
+                      style="padding-left: 20px; padding-top: 5px"
+                      aria-hidden="true"
+                    ></i
+                  ></router-link>
+                  <!-- sub-category -->
+                  <ul>
+                    <li>
+                      <router-link to="/poultry" 
+                        >Poultry<i
+                          class="fa fa-angle-right"
+                          aria-hidden="true"
+                        ></i
+                      ></router-link>
+                      <ul class="two">
+                        <li>
+                          <router-link to="/enzymes" @click="onClick()">Enzymes</router-link>
+                        </li>
+                        <li>
+                          <router-link to="/essensialoil" @click="onClick()"
+                            >Essential Oil</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/organicminarels" @click="onClick()"
+                            >Organic Minerals
+                          </router-link>
+                        </li>
+                        <li>
+                          <router-link to="/feedsanitizer" @click="onClick()"
+                            >Feed Sanitizer</router-link
+                          >
+                        </li>
+
+                        <li>
+                          <router-link to="/probiotics" @click="onClick()">Postbiotic</router-link>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <router-link to="/cattle" 
+                        >Cattle<i
+                          class="fa fa-angle-right"
+                          aria-hidden="true"
+                        ></i
+                      ></router-link>
+                      <!-- sub-category -->
+                      <ul class="two">
+                        <li>
+                          <router-link to="/prebioticsc" @click="onClick()"
+                            >Postbiotic</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/organicminarelsc" @click="onClick()"
+                            >Organic Minerals</router-link
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <router-link to="/aqua"
+                        >Aqua<i class="fa fa-angle-right" aria-hidden="true"></i
+                      ></router-link>
+                      <!-- sub-category -->
+                      <ul class="two">
+                        <li>
+                          <router-link to="/enzymesc" @click="onClick()">Enzymes</router-link>
+                        </li>
+                        <li>
+                          <router-link to="/probioticsa" @click="onClick()"
+                            >Postbiotic</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/organicminarelsa" @click="onClick()"
+                            >Organic Minerals</router-link
+                          >
+                        </li>
+                        <li>
+                          <router-link to="/essensialoila" @click="onClick()"
+                            >Essential Oil</router-link
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li v-if="!show">
+                  <router-link to="/Gallery" @click="onClick()">Gallery</router-link>
+                </li>
+                <li v-if="!show">
+                  <router-link to="/blog" @click="onClick()">Blog</router-link>
+                </li>
+                <li v-if="!show">
+                  <router-link to="/partners" @click="onClick()">Partners</router-link>
+                </li>
+                <li v-if="!show">
+                  <router-link to="/contact" @click="onClick()">Contact Us</router-link>
+                </li>
+              </transition-group>
+            </ul>
+          </div>
+
+          <div class="text">
+            <ul>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>+8801810084300
+              </li>
+              <li>
+                <i class="fa fa-envelope-o" aria-hidden="true"
+                  >&nbsp;info@biogreenint.com</i
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -318,6 +304,9 @@ export default {
       show: true,
     };
   },
+
+  created() {},
+
   methods: {
     onClick() {
       this.show = !this.show;
@@ -354,47 +343,55 @@ export default {
 }
 nav {
   width: 100%;
-  height: 120px;
+  height: 100%;
   box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
+  align-items: center;
 }
 nav .row {
-  padding: 10px;
+  padding: 0;
   margin: 0;
   width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
 }
-.nav .row .col-md-3 {
-  padding: 0;
-  margin: 0;
-}
-.row .col-md-3 .brand {
-  padding: 10px;
-  margin: 20px;
-}
-.col-md-3 .brand img {
-  width: 100%;
-  height: 100%;
+
+.row .brand {
+  width: 20%;
+  height: 80%;
+  padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.col-md-3 .brand .btn {
+
+.brand a img {
+  width: 280px;
+  height: auto;
+  padding: 10px;
+  margin-left: 40px;
+  align-content: center;
+  align-items: center;
+}
+.brand .btn {
   display: none;
 }
-.col-md-7 {
-  padding: 0;
-  margin: 0;
-}
-.col-md-7 .link {
+
+.link {
   padding-top: 40px;
   margin-top: 10px;
   position: relative;
+  width: 60%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 .link .ul {
   display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 .link .ul li {
   list-style: none;
@@ -471,46 +468,219 @@ nav .row {
   width: 200px;
 }
 
-.col-md-2 {
-  padding: 0;
-  margin: 0;
-}
-.col-md-2 .text {
-  padding-top: 5px;
+.text {
+  width: 20%;
+  padding: 20px;
   margin-top: 0;
   position: relative;
-  margin-left: -10px;
+  justify-content: center;
+  align-items: center;
 }
-.col-md-2 .text ul {
+.text ul {
   padding: 5px;
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: left;
+  width: 100%;
 }
-.col-md-2 .text ul li {
+.text ul li {
   padding: 2px;
   list-style: none;
 }
-.col-md-2 .text ul li {
+.text ul li {
   font-size: 1.2rem;
   font-weight: 600;
   color: #000;
 }
-.col-md-2 .text ul li i {
+.text ul li i {
   font-size: 1.3rem;
   font-weight: 700;
   color: #000;
   padding-right: 5px;
 }
-.col-md-2 .text ul li a {
+.text ul li a {
   padding: 10px;
 }
 .mini {
   display: none;
 }
+@media only screen and (max-width: 992px) {
+  .navigation {
+    width: 100%;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    position: fixed;
+  }
+  .navi {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .mini {
+    display: none;
+  }
+  nav {
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
+    align-items: center;
+  }
+  nav .row {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .row .brand {
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+  }
+  .brand a img {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .brand .btn {
+    width: 50%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+  }
+  .brand i {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin-top: 10px;
+    margin-left: 100px;
+    right: 0;
+    display: flex;
+    justify-content: right;
+  }
+  .link {
+    padding-top: 0;
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .link .ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .link .ul li {
+    list-style: none;
+    padding: 5px;
+  }
+  .link .ul li a {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(22, 4, 54);
+    text-decoration: none;
+    padding: 5px;
+    border-bottom: 3px none #000;
+    transition: 1s transform ease-out;
+  }
+  .link .ul li:hover ul {
+    display: block;
+  }
+  .link .ul li a:hover,
+  .link .ul li a.router-link-exact-active {
+    border-bottom: 2px solid rgb(255, 255, 255);
+  }
+  .link .ul li ul {
+    position: absolute;
+    display: none;
+    padding: 0;
+    margin: 0;
+    background: #ffa600;
+    margin-top: 5px;
+  }
+  .link .ul li ul li {
+    padding: 10px;
+    margin: 0;
+  }
+  .link .ul li ul li a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+  }
+  .link .ul li ul li a:hover,
+  .link .ul li ul li a.router-link-exact-active {
+    border-bottom: none;
+    color: #fff;
+  }
+  .link .ul li ul li a i {
+    padding-top: 5px;
+    padding-left: 15px;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .link .ul li ul li:hover {
+    background: rgba(0, 0, 0, 0.24);
+  }
+
+  .link .ul li ul li:hover .two {
+    display: block;
+  }
+
+  .link .ul li ul li .two {
+    position: absolute;
+    display: none;
+    padding: 0;
+    margin-left: 115px;
+    background: #ffa600;
+    margin-top: -30px;
+  }
+  .link .ul li ul li .two li {
+    padding: 10px;
+    margin: 0;
+    width: 200px;
+  }
+  .text {
+    display: none;
+    padding-top: 5px;
+    margin-top: 0;
+    position: relative;
+    margin-left: -10px;
+    width: 100%;
+  }
+}
 
 @media only screen and (max-width: 767px) {
+  .navigation {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    position: fixed;
+  }
   .navi {
     display: none;
   }
@@ -518,62 +688,61 @@ nav .row {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 100%;
-    display: block;
-  }
-  nav {
-    width: 100%;
-    height: 100px;
-    box-shadow: 2px 2px 3px rgba(14, 3, 77, 0.918);
-  }
-  nav .row {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    position: relative;
     display: flex;
   }
-  .nav .row .col-md-3 {
+  .mini nav {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mini nav .row {
     padding: 0;
     margin: 0;
     width: 100%;
+    height: auto;
+    position: fixed;
   }
-  .row .col-md-3 .brand {
+  .mini nav .row .brand {
+    width: 415px;
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    background-image: url("../assets/image/nave.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .mini nav .brand a img {
+    width: 250px;
+    height: auto;
     padding: 10px;
-    margin: 5px;
-    display: flex;
-    width: 100%;
-    /* justify-content: space-between; */
+    margin: 0;
   }
-  .col-md-3 .brand img {
-    width: 200px;
-    height: 50px;
+  .mini nav .brand .btn {
+    width: 100px;
+    height: 100%;
     display: flex;
     justify-content: center;
+    padding: 25px;
   }
-  .col-md-3 .brand .btn {
-    width: 150px;
-    height: 100%;
-    display: block;
-  }
-  .col-md-3 .brand i {
+  .mini nav .brand .btn i {
     font-size: 2rem;
     font-weight: 700;
     color: #000;
-    margin-top: 10px;
-    margin-right: 30px;
-    right: 0;
-    display: flex;
-    justify-content: right;
+    margin-right: 50px;
   }
-  .col-md-7 {
+
+  .link {
     padding: 0;
     margin: 0;
-  }
-  .col-md-7 .link {
-    padding-top: 5px;
-    margin-top: 0;
     position: relative;
+    width: 100%;
+    height: 100%;
+    align-items: center;
   }
   .link .ul {
     display: flex;
@@ -663,45 +832,41 @@ nav .row {
     width: 200px;
   }
 
-  .col-md-2 {
-    padding: 0;
-    margin: 0;
-    display: none;
-  }
-  .col-md-2 .text {
+  .text {
     padding-top: 5px;
     margin-top: 0;
     position: relative;
     margin-left: -10px;
+    width: 100%;
   }
-  .col-md-2 .text ul {
+  .text ul {
     padding: 5px;
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: left;
   }
-  .col-md-2 .text ul li {
+  .text ul li {
     padding: 2px;
     list-style: none;
   }
-  .col-md-2 .text ul li {
+  .text ul li {
     font-size: 1.2rem;
     font-weight: 600;
     color: #000;
   }
-  .col-md-2 .text ul li i {
+  .text ul li i {
     font-size: 1.3rem;
     font-weight: 700;
     color: #000;
     padding-right: 5px;
   }
-  .col-md-2 .text ul li a {
+  .text ul li a {
     padding: 10px;
   }
 
   .slide-fade-enter-active {
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in;
   }
 
   .slide-fade-leave-active {
@@ -710,7 +875,7 @@ nav .row {
 
   .slide-fade-enter-from,
   .slide-fade-leave-to {
-    transform: translateY(-100%);
+    transform: translateX(10%);
     opacity: 0;
   }
 }

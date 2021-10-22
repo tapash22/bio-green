@@ -127,6 +127,7 @@ p {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-left: -20px;
 }
 
 .link ul li {
@@ -235,14 +236,14 @@ p {
   padding: 2px;
   text-align: center;
   list-style: none;
-  margin-left: 0;
+  margin-left: -5px;
 }
 .link a {
   text-decoration: none;
-  color: #000;
+  color: rgb(8, 8, 255);
   cursor: pointer;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   /* border-bottom: 2px solid green; */
 }
   .add h5 {

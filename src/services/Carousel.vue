@@ -111,6 +111,40 @@ a{
   padding: 10px;
 }
 
+@media only screen and (max-width: 992px) {
+  .full{
+  display: block;
+}
+.res{
+  display: none;
+}
+a{
+  text-decoration: none;
+}
+.card {
+  width: 200px;
+  height: 300px;
+  padding: 10px;
+  background: rgb(5, 19, 82);
+}
+.card img {
+  width: 100%;
+  height: 250px;
+  background-position: center;
+}
+.card p {
+  height: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  text-transform: uppercase;
+  padding: 10px;
+}
+}
+
 @media only screen and (max-width: 767px) {
   .full{
     display: none;

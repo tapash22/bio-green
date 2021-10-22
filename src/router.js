@@ -26,6 +26,10 @@ import Probioticsa from './ex_page/Probioticsa.vue';
 import Organicminarelsa from './ex_page/Organicminarelsa.vue';
 import EnzymesC from './ex_page/EnzymesC.vue';
 
+import Poultry from './services/Poultry.vue';
+import Aqua from './services/Aqua.vue';
+import Cattle from './services/Cattle.vue';
+
 
 import Admin from './components/pages/Admin.vue';
 import Dashboard from './components/admin/Dashboard.vue';
@@ -59,17 +63,21 @@ const routes = [
             { path: 'essensialoil' , component: Essensialoil },
             { path: 'organicminarels' , component: Organicminarels },
             { path: 'feedsanitizer' , component: Feedsanitizer },
-            { path: 'probiotics' , component: Probiotics },
+            { path: 'postbiotic' , name:'Probiotics', component: Probiotics },
             { path: 'enzymes' , component: Enzymes },
 
-            { path: 'prebioticsc' , component: Prebioticsc },
-            { path: 'organicminarelsc' , component: Organicminarelsc },
+            { path: 'cpostbiotic' ,name:'Prebioticsc', component: Prebioticsc },
+            { path: 'corganicminarels' , component: Organicminarelsc },
 
-            { path: 'essensialoila' , component: Essensialoila },
+            { path: 'aessensialoil' , component: Essensialoila },
             
-            { path: 'probioticsa' , component: Probioticsa },
-            { path: 'organicminarelsa' , component: Organicminarelsa },
-            { path: 'enzymesc', component: EnzymesC },
+            { path: 'apostbiotic' ,name:'Probioticsa', component: Probioticsa },
+            { path: 'aorganicminarels' , component: Organicminarelsa },
+            { path: 'aenzymes', component: EnzymesC },
+
+            { path: 'poultry', component: Poultry },
+            { path: 'cattle', component: Cattle },
+            { path: 'aqua', component: Aqua },
 
         ]
     },

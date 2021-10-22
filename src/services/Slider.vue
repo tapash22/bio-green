@@ -57,5 +57,15 @@ img {
   background-size: cover;
   background-position: center;
 }
+
+@media only screen and (max-width: 767px) {
+  img{
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  
+  }
+}
 </style>
 

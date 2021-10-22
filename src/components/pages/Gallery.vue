@@ -1,12 +1,12 @@
 <template>
   <div class="photos">
-    <div class="container">
+
       <div class="row">
         <h3>Gallery</h3>
         <lightbox></lightbox>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script>
@@ -44,6 +44,30 @@ export default {
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+  .photos {
+    width: 100%;
+    height: 100%;
+     margin-top: -50px;
+    padding: 0;
+  }
+  .row {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+  .row h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 150px;
+    padding-bottom: 10px;
+  }
 }
 
 @media only screen and (max-width: 767px) {

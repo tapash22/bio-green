@@ -143,7 +143,8 @@ export default {
   width: 100%;
   height: 100%;
 }
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 992px) {
   .light {
     width: 100%;
     height: 100%;
@@ -166,6 +167,42 @@ export default {
   }
   .col-md-4 .card {
     width: 95%;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .col-md-4 .card img {
+    width: 100%;
+    height: 80%;
+    background-position: center;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .light {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 5px;
+  }
+  .row {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  .col-md-4 {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid blue;
+  }
+  .col-md-4 .card {
+    width: 95%;
     height: 200px;
     padding: 10px;
     margin: 10px;
@@ -176,5 +213,23 @@ export default {
     height: 100%;
     background-position: center;
   }
+  .modal {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+}
+.modal .image {
+  padding: 0;
+  margin: 10px;
+  width: 90%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+.modal .image img {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
 }
 </style>

@@ -17,8 +17,9 @@
         <div class="ex" v-for="occation in occations" :key="occation">
           <img :src="occation.data().image" />
           <p>
-           <i> {{ occation.data().name }}</i>
-         <br/>{{ occation.data().place }}</p>
+            <i> {{ occation.data().name }}</i>
+            <br />{{ occation.data().place }}
+          </p>
         </div>
       </div>
     </div>
@@ -35,7 +36,9 @@
 
         <div class="box-b">
           <p>
-            <i>{{ occation.data().name }}</i><br><strong>{{ occation.data().place }}</strong></p>
+            <i>{{ occation.data().name }}</i
+            ><br /><strong>{{ occation.data().place }}</strong>
+          </p>
           <button class="btn btn-primary" @click.prevent="onClick(occation)">
             View
           </button>
@@ -176,10 +179,112 @@ export default {
   font-weight: 600;
   color: #000;
   text-align: left;
-  
 }
 .event .box .box-b .btn {
   background: rgb(5, 19, 82);
+}
+
+@media only screen and (max-width: 992px) {
+  .event {
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .event .col-md-6 {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+  }
+  .event .event-list {
+    margin-left: 8%;
+    width: 500px;
+    height: 300px;
+  }
+  .event .event-list img {
+    width: 100%;
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+  }
+  .event .event-list p {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    text-align: left;
+    padding-top: 10px;
+  }
+  .col-md-6 .tt {
+    margin-left: 10%;
+    width: 500px;
+    height: 300px;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  .col-md-6 .ex {
+    
+    width: 450px;
+    height: 300px;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  .col-md-6 .ex img {
+    width: 100%;
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+  }
+  .col-md-6 .ex p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 5px;
+    margin: 0;
+  }
+  .event .event-item {
+   
+    width: 80%;
+    height: 400px;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+  }
+  .event .event-item .box {
+   
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+  }
+  .event .box .box-h {
+    width: 150px;
+    height: 150px;
+  }
+  .event .box a {
+    text-decoration: none;
+  }
+  .event .box .box-h img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+  }
+  .event .box .box-b {
+    width: 250px;
+    height: 100px;
+    padding-left: 15px;
+    margin: 0;
+  }
+  .event .box .box-b p {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    text-align: left;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -214,31 +319,31 @@ export default {
     padding-top: 10px;
   }
   .col-md-6 .tt {
-  width: 250px;
-  height: 300px;
-  overflow-y: hidden;
-  padding: 0;
-  margin: 0;
-}
-.col-md-6 .ex {
-  width: 250px;
-  height: 300px;
-  padding: 0;
-  margin: 0;
-  overflow-y: hidden;
-}
-.col-md-6 .ex img {
-  width: 250px;
-  height: 300px;
-  padding: 5px;
-  margin: 0;
-}
-.col-md-6 .ex p {
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 5px;
-  margin: 0;
-}
+    width: 250px;
+    height: 300px;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+  }
+  .col-md-6 .ex {
+    width: 250px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+  }
+  .col-md-6 .ex img {
+    width: 250px;
+    height: 300px;
+    padding: 5px;
+    margin: 0;
+  }
+  .col-md-6 .ex p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 5px;
+    margin: 0;
+  }
   .event .event-item {
     width: 100%;
     height: 400px;
