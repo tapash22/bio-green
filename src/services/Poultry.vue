@@ -5,11 +5,11 @@
           <h3>Poultry</h3>
         <div class="col-md-4 my-2" v-for="product in products" :key="product">
           <div class="card">
-            <a :href="product.url">
+            <router-link :to="product.url">
             <div class="image">
               <img :src="product.img" />
             </div>
-            </a>
+            </router-link>
             <p>{{product.title}}</p>
           </div>
         </div>
