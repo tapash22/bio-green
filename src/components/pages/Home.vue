@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <Slider />
+    <div class="slider">
+        <Slider />
+    </div>
+  
     <div class="container">
       <div class="row blog my-3">
         <h3>products</h3>
@@ -102,6 +105,12 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 .home {
   margin-top: 120px;
+}
+.home .slider{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background:rgba(0, 0, 0, 0.301);
 }
 
 .row {

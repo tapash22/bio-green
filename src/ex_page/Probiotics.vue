@@ -317,7 +317,7 @@ export default {
   }
   .col-md-4 .card {
     padding: 0;
-  margin-left: 40px;
+  margin-left: -50px;
   margin-top: 5px;
     width: 250px;
     height: 300px;
