@@ -210,7 +210,7 @@
                         </li>
 
                         <li>
-                          <router-link to="/probiotics" @click="onClick()">Postbiotic</router-link>
+                          <router-link to="/postbiotic" @click="onClick()">Postbiotic</router-link>
                         </li>
                       </ul>
                     </li>
@@ -224,12 +224,12 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/prebioticsc" @click="onClick()"
+                          <router-link to="/cpostbiotic" @click="onClick()"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminarelsc" @click="onClick()"
+                          <router-link to="/corganicminarels" @click="onClick()"
                             >Organic Minerals</router-link
                           >
                         </li>
@@ -242,20 +242,20 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/enzymesc" @click="onClick()">Enzymes</router-link>
+                          <router-link to="/aenzymes" @click="onClick()">Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/probioticsa" @click="onClick()"
+                          <router-link to="/apostbiotic" @click="onClick()"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminarelsa" @click="onClick()"
+                          <router-link to="/aorganicminarels" @click="onClick()"
                             >Organic Minerals</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/essensialoila" @click="onClick()"
+                          <router-link to="/aessensialoil" @click="onClick()"
                             >Essential Oil</router-link
                           >
                         </li>
