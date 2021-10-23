@@ -16,11 +16,11 @@
             data-aos-once="false"
           >
             <div class="card-body">
-              <a :href="product.url">
+              <router-link :to="product.url">
                 <div class="img">
                   <img :src="product.img" />
                 </div>
-              </a>
+              </router-link>
             </div>
             <div class="card-footer">
               <p>{{ product.title }}</p>

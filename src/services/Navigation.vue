@@ -723,17 +723,18 @@ nav .row {
     margin: 0;
   }
   .mini nav .brand .btn {
-    width: 100px;
+    width: 150px;
     height: 100%;
     display: flex;
     justify-content: center;
-    padding: 25px;
+    padding: 0;
   }
   .mini nav .brand .btn i {
     font-size: 2rem;
     font-weight: 700;
     color: #000;
-    margin-right: 50px;
+    margin-top: 30px;
+    margin-right: 60%;
   }
 
   .link {

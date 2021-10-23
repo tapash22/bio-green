@@ -355,9 +355,10 @@ export default {
     padding: 0;
     margin: 10px;
     width: 100%;
+    height: 200px;
   }
   .event .box .box-h {
-    width: 100px;
+    width: 150px;
     height: 150px;
   }
   .event .box a {

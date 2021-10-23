@@ -334,7 +334,7 @@ export default {
 
 @media only screen and (max-width: 767px) {
   .home {
-    margin-top: 100px;
+    margin-top: 90px;
   }
   .row {
     padding: 0;
