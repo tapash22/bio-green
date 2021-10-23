@@ -38,6 +38,10 @@ export default {
       ],
     };
   },
+
+    mounted() {
+    window.scrollTo(0, 0);
+  },
 };
 </script>
 
@@ -46,7 +50,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 120px;
+  margin-top: 100px;
 }
 .row {
   padding: 5px;
