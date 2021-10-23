@@ -734,7 +734,7 @@ nav .row {
     font-weight: 700;
     color: #000;
     margin-top: 30px;
-    margin-right: 60%;
+    margin-right: 70%;
   }
 
   .link {
