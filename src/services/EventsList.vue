@@ -358,8 +358,8 @@ export default {
     height: 200px;
   }
   .event .box .box-h {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 180px;
   }
   .event .box a {
     text-decoration: none;
