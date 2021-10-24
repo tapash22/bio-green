@@ -224,6 +224,14 @@ p {
     padding: 40px;
     margin-top: -10px;
   }
+  h3 {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(5, 19, 82);
+  margin-left: -40px;
+}
 .link {
   text-align: center;
 }
@@ -237,7 +245,7 @@ p {
   padding: 2px;
   text-align: center;
   list-style: none;
-  margin-left: -5px;
+  margin-left: -50px;
 }
 .link a {
   text-decoration: none;
@@ -250,6 +258,36 @@ p {
   .add h5 {
     margin-left: -40px;
   }
+  .add .logo {
+  display: flex;
+  justify-content: left;
+  margin-left: 30px;
+}
+.logo ul {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.logo ul li {
+  list-style: none;
+  text-align: center;
+  margin-left: -100px; 
+   
+}
+.logo li a {
+  text-decoration: none;
+  padding: 0;
+  margin: 2px;
+}
+.logo li a i {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  padding-left: 10px;
+  padding-right: 10px;
+}
   .bottom {
     background: rgb(20, 1, 44);
     padding-top: 10px;
