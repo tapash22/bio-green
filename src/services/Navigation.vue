@@ -18,7 +18,7 @@
             <ul class="ul">
               <transition-group name="slide-fade">
                 <li v-if="show">
-                  <router-link to="/home" @click.prevent="onClick()"
+                  <router-link to="/home"
                     >Home</router-link
                   >
                 </li>
@@ -44,26 +44,26 @@
                       ></router-link>
                       <ul class="two">
                         <li>
-                          <router-link to="/enzymes_poultry" @click="onClick()">Enzymes</router-link>
+                          <router-link to="/enzymes_poultry" >Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/essentialoil_poultry" @click="onClick()"
+                          <router-link to="/essentialoil_poultry"
                             >Essential Oil</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminerals_poultry" @click="onClick()"
+                          <router-link to="/organicminerals_poultry" 
                             >Organic Minerals
                           </router-link>
                         </li>
                         <li>
-                          <router-link to="/feedsanitizer_poultry" @click="onClick()"
+                          <router-link to="/feedsanitizer_poultry" 
                             >Feed Sanitizer</router-link
                           >
                         </li>
 
                         <li>
-                          <router-link to="/postbiotic_poultry" @click="onClick()">Postbiotic</router-link>
+                          <router-link to="/postbiotic_poultry" >Postbiotic</router-link>
                         </li>
                       </ul>
                     </li>
@@ -77,12 +77,12 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/postbiotic_cattle" @click="onClick()"
+                          <router-link to="/postbiotic_cattle" 
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminerals_cattle" @click="onClick()"
+                          <router-link to="/organicminerals_cattle" 
                             >Organic Minerals</router-link
                           >
                         </li>
@@ -95,20 +95,20 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/enzymes_aqua" @click="onClick()">Enzymes</router-link>
+                          <router-link to="/enzymes_aqua" >Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/postbiotic_aqua" @click="onClick()"
+                          <router-link to="/postbiotic_aqua"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminerals_aqua" @click="onClick()"
+                          <router-link to="/organicminerals_aqua" 
                             >Organic Minerals</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/essentialoil_aqua" @click="onClick()"
+                          <router-link to="/essentialoil_aqua"
                             >Essential Oil</router-link
                           >
                         </li>
