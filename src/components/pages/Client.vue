@@ -1,6 +1,7 @@
 <template>
 <div class="client">
   <Navigation />
+
   <div class="row">
     <div class="col-md-12">
       <router-view v-slot="{ Component }">
@@ -20,6 +21,7 @@
 
 <script>
 import Navigation from "../../services/Navigation.vue";
+
 import Footer from "../../services/Footer.vue";
 
 export default {
@@ -32,6 +34,7 @@ export default {
 
   components: {
     Navigation,
+
     Footer,
   },
   

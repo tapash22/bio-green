@@ -347,7 +347,7 @@ export default {
     margin: 0;
   }
   .event .event-item {
-    width: 350px;
+    width: 400px;
     height: 400px;
     overflow-y: scroll;
   }
@@ -372,7 +372,7 @@ export default {
     background-position: center;
   }
   .event .box .box-b {
-    width: 300px;
+    width: 180px;
     height: 100px;
     padding-left: 15px;
     margin: 0;
