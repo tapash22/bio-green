@@ -221,7 +221,8 @@ p {
 @media only screen and (max-width: 767px) {
   p {
     text-align: justify;
-    padding: 20px;
+    padding: 40px;
+    margin-top: -10px;
   }
 .link {
   text-align: center;

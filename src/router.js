@@ -60,20 +60,20 @@ const routes = [
             { path: 'login',name:'Login', component: Login, },
             { path:'/:catchAll(.*)', component: NotFound, },
 
-            { path: 'essensialoil' , component: Essensialoil },
-            { path: 'organicminarels' , component: Organicminarels },
-            { path: 'feedsanitizer' , component: Feedsanitizer },
-            { path: 'postbiotic' , name:'Probiotics', component: Probiotics },
-            { path: 'enzymes' , component: Enzymes },
+            { path: 'essentialoil_poultry' , component: Essensialoil },
+            { path: 'organicminerals_poultry' , component: Organicminarels },
+            { path: 'feedsanitizer_poultry' , component: Feedsanitizer },
+            { path: 'postbiotic_poultry' , name:'Probiotics', component: Probiotics },
+            { path: 'enzymes_poultry' , component: Enzymes },
 
-            { path: 'cpostbiotic' ,name:'Prebioticsc', component: Prebioticsc },
-            { path: 'corganicminarels' , component: Organicminarelsc },
+            { path: 'postbiotic_cattle' ,name:'Prebioticsc', component: Prebioticsc },
+            { path: 'organicminerals_cattle' , component: Organicminarelsc },
 
-            { path: 'aessensialoil' , component: Essensialoila },
+            { path: 'essentialoil_aqua' , component: Essensialoila },
             
-            { path: 'apostbiotic' ,name:'Probioticsa', component: Probioticsa },
-            { path: 'aorganicminarels' , component: Organicminarelsa },
-            { path: 'aenzymes', component: EnzymesC },
+            { path: 'postbiotic_aqua' ,name:'Probioticsa', component: Probioticsa },
+            { path: 'organicminerals_aqua' , component: Organicminarelsa },
+            { path: 'enzymes_aqua', component: EnzymesC },
 
             { path: 'poultry', component: Poultry },
             { path: 'cattle', component: Cattle },

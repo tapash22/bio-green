@@ -25,18 +25,18 @@
                 <li v-if="show">
                   <router-link to="/about">About</router-link>
                 </li>
-                <li v-if="show">
-                  <router-link to="/products"
+                 <li v-if="show">
+                  <router-link to="/products" 
                     >Products<i
                       class="fa fa-angle-down"
-                      style="padding-left: 5px; padding-top: 5px"
+                      style="padding-left: 20px; padding-top: 5px"
                       aria-hidden="true"
                     ></i
                   ></router-link>
                   <!-- sub-category -->
                   <ul>
                     <li>
-                      <router-link to="/poultry"
+                      <router-link to="/poultry" 
                         >Poultry<i
                           class="fa fa-angle-right"
                           aria-hidden="true"
@@ -44,31 +44,31 @@
                       ></router-link>
                       <ul class="two">
                         <li>
-                          <router-link to="/enzymes">Enzymes</router-link>
+                          <router-link to="/enzymes_poultry" @click="onClick()">Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/essensialoil"
+                          <router-link to="/essentialoil_poultry" @click="onClick()"
                             >Essential Oil</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminarels"
+                          <router-link to="/organicminerals_poultry" @click="onClick()"
                             >Organic Minerals
                           </router-link>
                         </li>
                         <li>
-                          <router-link to="/feedsanitizer"
+                          <router-link to="/feedsanitizer_poultry" @click="onClick()"
                             >Feed Sanitizer</router-link
                           >
                         </li>
 
                         <li>
-                          <router-link to="/postbiotic">Postbiotic</router-link>
+                          <router-link to="/postbiotic_poultry" @click="onClick()">Postbiotic</router-link>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <router-link to="/cattle"
+                      <router-link to="/cattle" 
                         >Cattle<i
                           class="fa fa-angle-right"
                           aria-hidden="true"
@@ -77,12 +77,12 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/cpostbiotic"
+                          <router-link to="/postbiotic_cattle" @click="onClick()"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/corganicminarels"
+                          <router-link to="/organicminerals_cattle" @click="onClick()"
                             >Organic Minerals</router-link
                           >
                         </li>
@@ -95,20 +95,20 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/aenzymes">Enzymes</router-link>
+                          <router-link to="/enzymes_aqua" @click="onClick()">Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/apostbiotic"
+                          <router-link to="/postbiotic_aqua" @click="onClick()"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/aorganicminarels"
+                          <router-link to="/organicminerals_aqua" @click="onClick()"
                             >Organic Minerals</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/aessensialoil"
+                          <router-link to="/essentialoil_aqua" @click="onClick()"
                             >Essential Oil</router-link
                           >
                         </li>
@@ -191,26 +191,26 @@
                       ></router-link>
                       <ul class="two">
                         <li>
-                          <router-link to="/enzymes" @click="onClick()">Enzymes</router-link>
+                          <router-link to="/enzymes_poultry" @click="onClick()">Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/essensialoil" @click="onClick()"
+                          <router-link to="/essentialoil_poultry" @click="onClick()"
                             >Essential Oil</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/organicminarels" @click="onClick()"
+                          <router-link to="/organicminerals_poultry" @click="onClick()"
                             >Organic Minerals
                           </router-link>
                         </li>
                         <li>
-                          <router-link to="/feedsanitizer" @click="onClick()"
+                          <router-link to="/feedsanitizer_poultry" @click="onClick()"
                             >Feed Sanitizer</router-link
                           >
                         </li>
 
                         <li>
-                          <router-link to="/postbiotic" @click="onClick()">Postbiotic</router-link>
+                          <router-link to="/postbiotic_poultry" @click="onClick()">Postbiotic</router-link>
                         </li>
                       </ul>
                     </li>
@@ -224,12 +224,12 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/cpostbiotic" @click="onClick()"
+                          <router-link to="/postbiotic_cattle" @click="onClick()"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/corganicminarels" @click="onClick()"
+                          <router-link to="/organicminerals_cattle" @click="onClick()"
                             >Organic Minerals</router-link
                           >
                         </li>
@@ -242,20 +242,20 @@
                       <!-- sub-category -->
                       <ul class="two">
                         <li>
-                          <router-link to="/aenzymes" @click="onClick()">Enzymes</router-link>
+                          <router-link to="/enzymes_aqua" @click="onClick()">Enzymes</router-link>
                         </li>
                         <li>
-                          <router-link to="/apostbiotic" @click="onClick()"
+                          <router-link to="/postbiotic_aqua" @click="onClick()"
                             >Postbiotic</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/aorganicminarels" @click="onClick()"
+                          <router-link to="/organicminerals_aqua" @click="onClick()"
                             >Organic Minerals</router-link
                           >
                         </li>
                         <li>
-                          <router-link to="/aessensialoil" @click="onClick()"
+                          <router-link to="/essentialoil_aqua" @click="onClick()"
                             >Essential Oil</router-link
                           >
                         </li>
@@ -774,7 +774,7 @@ nav .row {
     display: flexbox;
   }
   .link .ul li:hover {
-    background: rgba(0, 0, 0, 0.438);
+    background: #ffa600;
   }
   .link .ul li a:hover {
     border-bottom: none;

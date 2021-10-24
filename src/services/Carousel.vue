@@ -1,5 +1,10 @@
 <template>
-  <Carousel :items-to-show="3" :autoplay="4000" :wrap-around="true" class="full">
+  <Carousel
+    :items-to-show="3"
+    :autoplay="4000"
+    :wrap-around="true"
+    class="full"
+  >
     <Slide v-for="slide in products" :key="slide.id">
       <router-link :to="slide.url">
         <div class="card">
@@ -13,7 +18,7 @@
       <Navigation />
     </template>
   </Carousel>
-    <Carousel :items-to-show="1" :autoplay="4000" :wrap-around="true" class="res">
+  <Carousel :items-to-show="1" :autoplay="4000" :wrap-around="true" class="res">
     <Slide v-for="slide in products" :key="slide.id">
       <router-link :to="slide.url">
         <div class="card">
@@ -40,13 +45,13 @@ export default {
         {
           id: 1,
           title: "Enzymes",
-          img: require('../assets/image/pd1.jpg'),
+          img: require("../assets/image/pd1.jpg"),
           url: "/enzymes",
         },
         {
           id: 2,
           title: "Essential Oil",
-          img: require('../assets/image/pd2.jpg'),
+          img: require("../assets/image/pd2.jpg"),
           url: "/essensialoil",
         },
         {
@@ -58,13 +63,13 @@ export default {
         {
           id: 4,
           title: "Postbiotic",
-          img: require('../assets/image/pd4.jpg'),
+          img: require("../assets/image/pd4.jpg"),
           url: "/probiotics",
         },
         {
-          id: 5, 
+          id: 5,
           title: "Organic Minerals",
-          img: require('../assets/image/pd3.jpg'),
+          img: require("../assets/image/pd3.jpg"),
           url: "/organicminarels",
         },
       ],
@@ -79,13 +84,16 @@ export default {
 };
 </script>
 <style scoped>
-.full{
+.full {
   display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
-.res{
+.res {
   display: none;
 }
-a{
+a {
   text-decoration: none;
 }
 .card {
@@ -112,59 +120,66 @@ a{
 }
 
 @media only screen and (max-width: 992px) {
-  .full{
-  display: block;
-}
-.res{
-  display: none;
-}
-a{
-  text-decoration: none;
-}
-.card {
-  width: 200px;
-  height: 300px;
-  padding: 10px;
-  background: rgb(5, 19, 82);
-}
-.card img {
-  width: 100%;
-  height: 250px;
-  background-position: center;
-}
-.card p {
-  height: 30px;
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #fff;
-  text-align: center;
-  z-index: 1;
-  text-transform: uppercase;
-  padding: 10px;
-}
+  .full {
+    display: none;
+  }
+  .res {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .card {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    background: rgb(5, 19, 82);
+  }
+  .card img {
+    width: 100%;
+    height: 250px;
+    background-position: center;
+  }
+  .card p {
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    text-transform: uppercase;
+    padding: 10px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-  .full{
+  .full {
     display: none;
   }
-  .res{
+  .res {
     display: block;
-    margin-left: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-left: -20px;
   }
   .card {
-    width: 250px;
+    width: 350px;
     height: 250px;
     padding: 0;
-   background: rgb(5, 19, 82);
-   margin-left: -90px;
- 
+    margin: 0;
+    background: rgb(5, 19, 82);
   }
   .card img {
     width: 100%;
     height: 100%;
     background-position: center;
+    padding: 0;
+    margin: 0;
   }
   .card p {
     font-size: 1.2rem;

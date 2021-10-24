@@ -20,7 +20,7 @@
           </div>
           <div class="right">
             <p>
-             <strong> Description:</strong>  {{partner.data().description}}
+              {{partner.data().description}}
             </p>
             <a :href="partner.data().company_link">{{partner.data().company_site}}</a>
           </div>

@@ -27,13 +27,13 @@ export default {
           id: 4,
           title: "Postbiotic",
           img: require("../assets/image/pd4.jpg"),
-          url: "/cpostbiotic",
+          url: "/postbiotic_cattle",
         },
         {
           id: 5,
           title: "Organic Minerals",
           img: require("../assets/image/pd3.jpg"),
-          url: "/corganicminarels",
+          url: "/organicminerals_cattle",
         },
       ],
     };

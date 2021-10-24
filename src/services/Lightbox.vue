@@ -195,7 +195,7 @@ export default {
     display: flex;
   }
   .col-md-4 {
-    width: 100%;
+    width: 95%;
     height: 100%;
     padding: 0;
     margin: 0;
@@ -203,8 +203,8 @@ export default {
   }
   .col-md-4 .card {
     width: 95%;
-    height: 200px;
-    padding: 10px;
+    height: 170px;
+    padding: 0;
     margin: 10px;
   }
 
@@ -212,6 +212,8 @@ export default {
     width: 100%;
     height: 100%;
     background-position: center;
+    padding: 0;
+    margin: 0;
   }
   .modal {
   display: none;

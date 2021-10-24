@@ -198,7 +198,8 @@ export default {
     padding: 10px;
   }
   .event .event-list {
-    margin-left: 8%;
+    margin-left: 0;
+    padding: 0;
     width: 500px;
     height: 300px;
   }
@@ -226,15 +227,15 @@ export default {
   }
   .col-md-6 .ex {
     
-    width: 450px;
+    width: 500px;
     height: 300px;
     overflow-y: hidden;
     padding: 0;
     margin: 0;
   }
   .col-md-6 .ex img {
-    width: 100%;
-    height: 80%;
+    width: 500px;
+    height: 250px;
     background-position: center;
     background-size: cover;
   }
@@ -290,7 +291,7 @@ export default {
 @media only screen and (max-width: 767px) {
   .event {
     padding: 0;
-    margin: 10px;
+    margin: 0;
     width: 100%;
     height: 100%;
     display: block;
@@ -298,10 +299,11 @@ export default {
   .event .col-md-6 {
     width: 100%;
     height: 350px;
-    padding: 10px;
+    padding: 0;
+    margin-left: -10px;
   }
   .event .event-list {
-    width: 280px;
+    width: 350px;
     height: 300px;
   }
   .event .event-list img {
@@ -316,26 +318,26 @@ export default {
     font-family: "Oswald", sans-serif;
     color: #000;
     text-align: left;
-    padding-top: 10px;
+    padding-top: 5px;
   }
   .col-md-6 .tt {
-    width: 250px;
+    width: 350px;
     height: 300px;
     overflow-y: hidden;
     padding: 0;
     margin: 0;
   }
   .col-md-6 .ex {
-    width: 250px;
+    width: 350px;
     height: 300px;
     padding: 0;
     margin: 0;
     overflow-y: hidden;
   }
   .col-md-6 .ex img {
-    width: 250px;
+    width: 350px;
     height: 300px;
-    padding: 5px;
+    padding: 0;
     margin: 0;
   }
   .col-md-6 .ex p {
@@ -345,7 +347,7 @@ export default {
     margin: 0;
   }
   .event .event-item {
-    width: 100%;
+    width: 350px;
     height: 400px;
     overflow-y: scroll;
   }
@@ -353,13 +355,13 @@ export default {
     display: flex;
     justify-content: space-evenly;
     padding: 0;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
     height: 200px;
   }
   .event .box .box-h {
     width: 200px;
-    height: 180px;
+    height: 150px;
   }
   .event .box a {
     text-decoration: none;

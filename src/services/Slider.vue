@@ -2,7 +2,9 @@
 
   <carousel :autoplay="6000" :wrap-around="true">
     <slide v-for="slider in sliders" :key="slider.id">
+      <div class="image">
       <img :src="slider.data().image" />
+      </div>
     </slide>
 
     <template #addons>
@@ -50,21 +52,34 @@ export default {
 </script>
 
 <style scoped>
+.image{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 img {
   width: 100%;
   height: 500px;
   background-size: cover;
   background-position: center;
+  padding: 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 767px) {
+  .image{
+  width: 415px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
   img{
   width: 100%;
-  height: 400px;
+  height: 100%;
   background-size: cover;
-  background-position: center;
-  
+  background-position: center;  
   }
 }
 </style>

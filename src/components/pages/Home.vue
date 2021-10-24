@@ -16,7 +16,7 @@
       <!-- event -->
       <div class="row blog my-1">
         <h3>Events</h3>
-        <div class="col-md-12" style="width: 100%; height: 100%">
+        <div class="col-md-12" style="width: 100%; height: 100%;padding:0;margin:0;">
           <EventList />
         </div>
       </div>
@@ -344,6 +344,12 @@ export default {
 @media only screen and (max-width: 767px) {
   .home {
     margin-top: 90px;
+  }
+  .containr{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
   }
   .row {
     padding: 0;
