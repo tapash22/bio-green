@@ -1,9 +1,8 @@
 <template>
   <div class="home">
     <div class="slider">
-        <Slider />
+      <Slider />
     </div>
-  
     <div class="container">
       <div class="row blog my-3">
         <h3>products</h3>
@@ -16,7 +15,10 @@
       <!-- event -->
       <div class="row blog my-1">
         <h3>Events</h3>
-        <div class="col-md-12" style="width: 100%; height: 100%;padding:0;margin:0;">
+        <div
+          class="col-md-12"
+          style="width: 100%; height: 100%; padding: 0; margin: 0"
+        >
           <EventList />
         </div>
       </div>
@@ -106,11 +108,11 @@ export default {
 .home {
   margin-top: 120px;
 }
-.home .slider{
+.home .slider {
   width: 100%;
   padding: 0;
   margin: 0;
-  background:rgba(0, 0, 0, 0.301);
+  background: rgba(0, 0, 0, 0.301);
 }
 
 .row {
@@ -148,11 +150,11 @@ export default {
 }
 
 /* blog */
-.blog{
+.blog {
   width: 100%;
   height: 100%;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 .blog .col-md-4 {
   width: 30%;
@@ -266,15 +268,15 @@ export default {
   }
 
   /* blog */
-.blog{
-  width: 100%;
-  height: 100%;
-  padding:0;
-  margin-left:5%;
-}
-.blog h3{
-  margin-left: 35%;
-}
+  .blog {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-left: 5%;
+  }
+  .blog h3 {
+    margin-left: 35%;
+  }
   .blog .col-md-4 {
     width: 100%;
     height: 100%;
@@ -338,14 +340,13 @@ export default {
     display: flex;
     justify-content: center;
   }
-
 }
 
 @media only screen and (max-width: 767px) {
   .home {
     margin-top: 90px;
   }
-  .containr{
+  .containr {
     width: 100%;
     height: 100%;
     padding: 0;
@@ -395,15 +396,15 @@ export default {
   }
 
   /* blog */
-.blog{
-  width: 100%;
-  height: 100%;
-  padding:0;
-  margin-left:5%;
-}
-.blog h3{
-  margin-left: 25%;
-}
+  .blog {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-left: 5%;
+  }
+  .blog h3 {
+    margin-left: 25%;
+  }
   .blog .col-md-4 {
     width: 100%;
     height: 100%;
@@ -467,6 +468,5 @@ export default {
     display: flex;
     justify-content: center;
   }
-
 }
 </style>
