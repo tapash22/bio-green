@@ -144,6 +144,9 @@ p {
   font-weight: 500;
   /* border-bottom: 2px solid green; */
 }
+  .add h5 {
+    margin-left: 10px;
+  }
 .add address {
   text-align: left;
   padding: 0;

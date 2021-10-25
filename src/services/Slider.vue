@@ -1,5 +1,6 @@
 <template>
 
+  
   <carousel :autoplay="6000" :wrap-around="true">
     <slide v-for="slider in sliders" :key="slider.id">
       <div class="image">
@@ -12,12 +13,13 @@
     </template>
   </carousel>
 
+
 </template>
 
 <script>
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination } from "vue3-carousel";
+import { Carousel, Slide,  Pagination } from "vue3-carousel";
 import { db } from "../firebase";
 export default {
   data() {
@@ -52,11 +54,20 @@ export default {
 </script>
 
 <style scoped>
+.pic{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+}
 .image{
+  /* margin-top: -550px; */
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 0;
+  z-index: 1;
 }
 
 img {

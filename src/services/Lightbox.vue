@@ -97,15 +97,15 @@ export default {
   border: 1px solid blue;
 }
 .col-md-4 .card {
-  width: 300px;
+  width: 380px;
   height: 200px;
   padding: 10px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .col-md-4 .card img {
   width: 100%;
-  height: 100%;
+  height: 85%;
   background-position: center;
 }
 .card p {
@@ -166,7 +166,7 @@ export default {
     border: 1px solid blue;
   }
   .col-md-4 .card {
-    width: 95%;
+    width: 100%;
     height: 300px;
     padding: 10px;
     margin: 10px;
