@@ -257,9 +257,7 @@ p {
   font-weight: 700;
   /* border-bottom: 2px solid green; */
 }
-  /* .add  h5 {
-    margin-left: -40px;
-  } */
+
   .add .logo {
   display: flex;
   justify-content: left;
