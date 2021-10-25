@@ -29,8 +29,9 @@
             Get in
             <strong style="font-size: 24px; font-weight: 700">touch</strong>
           </h3>
-          <h5>BioGreen International Limited</h5>
+          
           <address>
+            <h5>BioGreen International Limited</h5>
             <strong> House No:</strong> 27 (2nd Floor)<br />
             <strong> Road No: </strong>05, Nikunja 02, Khilkhet,<br />Dhaka-1229,
             Bangladesh
@@ -144,9 +145,7 @@ p {
   font-weight: 500;
   /* border-bottom: 2px solid green; */
 }
-  .add h5 {
-    margin-left: -40px;
-  }
+
 .add address {
   text-align: left;
   padding: 0;
@@ -258,9 +257,9 @@ p {
   font-weight: 700;
   /* border-bottom: 2px solid green; */
 }
-  .add h5 {
+  /* .add  h5 {
     margin-left: -40px;
-  }
+  } */
   .add .logo {
   display: flex;
   justify-content: left;
