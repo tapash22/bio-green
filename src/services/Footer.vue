@@ -145,7 +145,7 @@ p {
   /* border-bottom: 2px solid green; */
 }
   .add h5 {
-    margin-left: -20px;
+    margin-left: -40px;
   }
 .add address {
   text-align: left;
