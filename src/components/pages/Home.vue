@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <div class="slider">
+     <div class="i" v-for="slider in sliders" :key="slider.id">
+       <img :src="slider.data().image"/>
+     </div>
+     <div class="s">
       <Slider />
+     </div>
     </div>
     <div class="container">
       <div class="row blog my-3">
@@ -76,6 +81,12 @@ export default {
   },
   data() {
     return {
+       sliders: [],
+      slider: {
+        name: "",
+        des: "",
+        image: "",
+      },
       occations: [],
       occation: {
         name: "",
@@ -93,6 +104,17 @@ export default {
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
           this.blogs.push(doc);
+        });
+      });
+
+
+       db.collection("sliders")
+      .limit("1")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          this.sliders.push(doc);
         });
       });
   },
@@ -113,6 +135,9 @@ export default {
   padding: 0;
   margin: 0;
   background: rgba(0, 0, 0, 0.301);
+}
+.slider .s{
+  margin-top: -500px;
 }
 
 .row {
@@ -346,6 +371,12 @@ export default {
   .home {
     margin-top: 90px;
   }
+  .slider .i{
+    display: none;
+  }
+  .slider .s{
+  margin-top: 0;
+}
   .containr {
     width: 100%;
     height: 100%;
