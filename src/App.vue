@@ -1,13 +1,22 @@
 <template>
-<div>
+<div id="app">
   <router-view />
 </div>
 </template>
 
 
 <style scoped>
-#app {
-  background: rgb(85, 85, 85); 
+#app{
+  width: 100%;
+  height: auto;
+
 }
+
+  @media only screen and (min-width: 436px) {
+    #app{
+    widows: 100%;
+    height: auto;
+    }
+  }
 
 </style>

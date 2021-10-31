@@ -5,6 +5,7 @@
     </div>
 
       <h3>About us</h3>
+      <div class="container">
       <div class="row">
         <div
           class="col-md-6 pt-2"
@@ -20,7 +21,7 @@
           data-aos-delay="500"
           data-aos-once="false"
         >
-          <div class="text">
+          <div class="info">
             <h4>WHAT WE DO</h4>
             <p>
               ‘We are the sole importer & sourcing partner for world class
@@ -55,6 +56,7 @@
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -103,15 +105,15 @@ export default {
 }
 .image img {
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 h3 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -121,15 +123,15 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   padding: 0;
-  margin-left: 100px;
-  margin-right: 100px;
+  widows: 100%;
+  height: 100%;
 }
 
 .col-md-6 {
   /* background: #fff; */
   width: 50%;
-  height: 480px;
   padding: 10px;
+  margin: 0;
 }
 .col-md-6 img {
   width: 100%;
@@ -137,13 +139,13 @@ h3 {
   background-position: center;
   background-size: cover;
 }
-.col-md-6 .text {
+.col-md-6 .info {
   padding: 20px;
   background: #ffa6006c;
   width: 100%;
   height: 100%;
 }
-.text h4 {
+.info h4 {
   font-size: 1.5rem;
   font-weight: 600;
   font-family: "Oswald", sans-serif;
@@ -151,7 +153,7 @@ h3 {
   text-align: center;
   padding: 10px;
 }
-.text p {
+.info p {
   font-size: 16px;
   font-weight: 500;
   color: #000;
@@ -164,8 +166,6 @@ h3 {
   justify-content: space-evenly;
   padding: 10px;
   margin-top: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
   margin-bottom: 10px;
   color: #000;
   background: #ffa6006c;
@@ -225,7 +225,7 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 500px;
+    height: 100%;
   }
   .about h3 {
     text-align: center;
@@ -241,8 +241,6 @@ h3 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .col-md-6 {
@@ -257,13 +255,13 @@ h3 {
     background-position: center;
     background-size: cover;
   }
-  .col-md-6 .text {
+  .col-md-6 .info {
     padding: 20px;
     background: #ffa6006c;
     width: 100%;
     height: 100%;
   }
-  .text h4 {
+  .info h4 {
     font-size: 1.5rem;
     font-weight: 600;
     font-family: "Oswald", sans-serif;
@@ -271,7 +269,7 @@ h3 {
     text-align: center;
     padding: 10px;
   }
-  .text p {
+  .info p {
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -328,64 +326,62 @@ h3 {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436x) {
   .about {
-    width: 100%;
-    height: 100%;
-    margin-top: 90px;
-    padding: 0;
-  }
+  width: 100%;
+  height: 100%;
+  margin-top: 120px;
+  padding: 0;
+}
+.image {
+  width: 100%;
+  height: 300px;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-  .image {
-    width: 100%;
-    height: 300px;
-    padding: 0;
-    margin: 0;
-    background: #000;
-  }
-  .image img {
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 300px;
-  }
-  .about h3 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: "Roboto", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+.about .row {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  widows: 100%;
+  height: 100%;
+  margin: 0;
+}
 
-  .about .row {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .col-md-6 {
-    /* background: #fff; */
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-  }
+.col-md-6 {
+  /* background: #fff; */
+  width: 50%;
+  padding: 0;
+  margin-right: 10px;
+}
   .col-md-6 img {
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
   }
-  .col-md-6 .text {
-    padding: 20px;
+  .col-md-6 .info {
+    padding: 0;
+    margin: 0;
     background: #ffa6006c;
     width: 100%;
     height: 100%;
   }
-  .text h4 {
+  .info h4 {
     font-size: 1.5rem;
     font-weight: 600;
     font-family: "Oswald", sans-serif;
@@ -393,7 +389,7 @@ h3 {
     text-align: center;
     padding: 10px;
   }
-  .text p {
+  .info p {
     font-size: 16px;
     font-weight: 500;
     color: #000;

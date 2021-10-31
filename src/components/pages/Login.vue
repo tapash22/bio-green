@@ -107,7 +107,7 @@ label {
   color: #000;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436px) {
   .login {
   position: relative;
   width: 100%;

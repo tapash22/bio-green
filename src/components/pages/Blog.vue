@@ -1,20 +1,17 @@
 <template>
   <div class="blog">
     <div class="image">
-      <img src="../../assets/image/blog.png" />
+      <img src="../../assets/image/blog.jpg" />
     </div>
- 
-     
-      <div class="row">
-         <h3>Blog</h3>
-        <div
-          class="col-md-4"
-          v-for="blog in blogs"
-          :key="blog.id"
-          data-aos="fade-left"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
+    <h3>Blog</h3>
+    <div class="container">
+      <div
+        class="row"
+        data-aos="fade-left"
+        data-aos-delay="500"
+        data-aos-once="false"
+      >
+        <div class="col-md-4" v-for="blog in blogs" :key="blog.id">
           <div class="card">
             <div class="card-header">
               <img :src="blog.data().image" />
@@ -40,7 +37,7 @@
         </div>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
@@ -84,31 +81,22 @@ export default {
 <style scoped>
 .blog {
   width: 100%;
-  height: 100%;
-  margin-top: 0;
   padding: 0;
   margin-top: 120px;
-  padding: 0;
 }
 .image {
   width: 100%;
   height: 500px;
+  padding: 0;
+  margin: 0;
 }
 .image img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
-.row {
-  display: flex;
-  padding: 0;
-  margin-bottom: 50px;
-  margin-left: 110px;
-  margin-right: 110px;
-}
-.row h3 {
+h3 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
@@ -117,176 +105,90 @@ export default {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.col-md-4 {
-  width: 30%;
-  margin: 10px;
-}
-
-.col-md-4 .card {
-  width: 300px;
-  height: 400px;
-  padding: 0;
-  margin: 5px;
-  background: rgba(5, 19, 82, 0.671);
-}
-.col-md-4 .card .card-header {
+.row {
   width: 100%;
-  height: 220px;
+  height: 100%;
+  display: flex;
   padding: 0;
   margin: 0;
 }
-.col-md-4 .card-header img {
+.col-md-4 {
+  width: 33%;
+  padding: 20px;
+  margin: 0;
+}
+.col-md-4 .card {
+  width: 100%;
+  height: 330px;
+  padding: 2px;
+  margin: 5px;
+  background: #fff;
+}
+.col-md-4 .card .card-header {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+}
+.card .card-header img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
-.col-md-4 .card-body {
+.card .card-body {
   width: 100%;
-  height: 180px;
+  height: 130px;
   padding: 0;
   margin: 0;
-  background: #ffa500;
 }
-.card-body ul {
+.card .card-body ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin-top: 10px;
+  background: #ffa500;
 }
-.card-body ul li {
-  text-align: left;
+.card .card-body ul li {
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #000;
-  list-style: none;
-  margin: 0;
+}
+.card .card-body ul li:first-child {
+  width: 100%;
+  height: 70px;
   padding: 5px;
 }
-.card-body ul li i {
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 10px;
-  color: green;
-}
-.card-body ul li a {
-  font-size: 1.3rem;
+.card .card-body ul li i {
+  font-size: 1.2rem;
   font-weight: 500;
-  color: rgb(5, 19, 82);
-  cursor: pointer;
-  text-align: justify;
-  text-decoration: none;
+  padding: 5px;
+  margin: 0;
+}
+.card .card-body ul li:last-child {
+  background: #fff;
   display: flex;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+.card .card-body ul li a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
 }
 
 @media only screen and (max-width: 992px) {
   .blog {
     width: 100%;
-    height: 100%;
-    margin-top: 80px;
-    padding: 0;
-  }
-  .image {
-    width: 100%;
-    height: 300px;
-    padding: 0;
-    margin: 0;
-  }
-  .image img {
-    width: 100%;
-    height: 300px;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .row {
-    display: flex;
-    padding: 0;
-    margin-bottom: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .row h3 {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .col-md-4 {
-    width: 100%;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .col-md-4 .card {
-    width: 300px;
-    height: 300px;
-    padding: 0;
-    margin-left: 30%;
-    margin-top: 5px;
-    background: rgba(5, 19, 82, 0.671);
-  }
-  .col-md-4 .card .card-header {
-    width: 100%;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-  }
-  .col-md-4 .card-header img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .col-md-4 .card-body {
-    width: 100%;
-    height: 150px;
-    padding: 0;
-    margin: 0;
-    background: #ffa500;
-  }
-  .card-body ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  .card-body ul li {
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #000;
-    list-style: none;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .card-body ul li i {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 5px;
-  }
-  .card-body ul li a {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: rgb(5, 19, 82);
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .blog {
-    width: 100%;
-    height: 100%;
     padding: 0;
     margin-top: 90px;
   }
@@ -298,19 +200,11 @@ export default {
   }
   .image img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
   }
-  .row {
-    display: flex;
-    padding: 0;
-    margin-bottom: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .row h3 {
+  h3 {
     text-align: center;
     font-size: 2.2rem;
     font-weight: 700;
@@ -319,70 +213,107 @@ export default {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .col-md-4 {
-    width: 100%;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-  }
 
-  .col-md-4 .card {
-    width: 300px;
-    height: 300px;
-    padding: 0;
-    margin-left: 30px;
-    margin-top: 5px;
-    background: rgba(5, 19, 82, 0.671);
-  }
-  .col-md-4 .card .card-header {
+}
+
+@media only screen and (max-width: 436px) {
+  .blog {
     width: 100%;
-    height: 200px;
+    padding: 0;
+    margin-top: 90px;
+  }
+  .image {
+    width: 100%;
+    height: 300px;
     padding: 0;
     margin: 0;
   }
-  .col-md-4 .card-header img {
+  .image img {
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
   }
-  .col-md-4 .card-body {
-    width: 100%;
-    height: 150px;
-    padding: 0;
-    margin: 0;
-    background: #ffa500;
+  h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-  .card-body ul {
+  .blog .row{
+    widows: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 5px;
     display: flex;
     flex-direction: column;
+  }
+  .row .col-md-4{
+    width: 90%;
+    height: 100%;
     padding: 0;
     margin: 0;
   }
-  .card-body ul li {
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #000;
-    list-style: none;
+  .col-md-4 .card{
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+    padding: 0;
+  }
+  .card .card-header{
+    width: 100%;
+    height: 60%;
+    padding: 0;
     margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
   }
-  .card-body ul li i {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 5px;
+  .card .card-header img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
   }
-  .card-body ul li a {
-    font-size: 1.3rem;
+  .card .card-body{
+    width: 100%;
+    height: 40%;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul{
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul li{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: rgb(5, 19, 82);
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
   }
+  .card-body ul li:first-child{
+    width: 100%;
+    height: 20%;
+    padding: 2px;
+    margin: 0;
+  }
+  .card-body ul li:last-child{
+    width: 100%;
+    height: 10%;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul li i{
+    font-size: 1rem;
+    padding: 2px;
+  }
+  .card-body ul li a{
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+  }
+  
 }
 </style>

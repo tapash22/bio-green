@@ -3,27 +3,20 @@
     <div class="image">
       <img src="../../assets/image/contact.jpg" />
     </div>
+    <h3>Contact Us</h3>
 
-    <div class="row">
-      <h3>Contact Us</h3>
-      <div
-        class="col-md-12 text"
-        data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
-      >
-        <div>
-          <h4>
-            <i class="fa fa-map-marker" aria-hidden="true"></i>Our Address
-          </h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Our Address</h4>
           <hr />
           <address>
-            HOUSE NO: 27 (2nd Floor), <br />ROAD NO: 05, Nikunja 02,<br />
+            House No: 27 (2nd Floor), <br />Road No: 05, Nikunja 02,<br />
             Khilkhet, Dhaka-1229, Bangladesh.
           </address>
         </div>
-        <div>
-          <h4 class="">Contact Info</h4>
+        <div class="col-md-4">
+          <h4>Contact Info</h4>
           <hr />
           <address>
             <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -40,10 +33,8 @@
             <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; +8801810084300
           </address>
         </div>
-        <div>
-          <h4 class="">
-            <i class="fa fa-home" aria-hidden="true"></i>Ware House
-          </h4>
+        <div class="col-md-4">
+          <h4>Ware House</h4>
           <hr />
           <address>
             Lotif Super Market, Borua Bazar,<br />
@@ -66,7 +57,7 @@ export default {
 <style scoped>
 .contact {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin-top: 120px;
   padding: 0;
   /* background:rgba(5, 19, 82, 0.596); */
@@ -74,6 +65,8 @@ export default {
 .image {
   width: 100%;
   height: 500px;
+  padding: 0;
+  margin: 0;
 }
 .image img {
   width: 100%;
@@ -92,190 +85,61 @@ h3 {
   padding-bottom: 5px;
 }
 
-.contact .row {
+.row {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 5px;
   display: flex;
-  flex-direction: column;
   background: #ffa6006c;
 }
-
-.col-md-12 {
-  padding-top: 20px;
-  display: block;
-  width: 100%;
-  padding-bottom: 10px;
-}
-h4{
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-.text {
-  margin-left: 90px;
-  display: flex;
-}
-.text div {
+.col-md-4 {
   width: 33%;
-  justify-content: center;
-}
-
-.text hr {
-  width: 180px;
-  height: 3px;
-  color: green;
-}
-.text h4 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #000;
-  font-family: "Oswald", sans-serif;
-  text-align: left;
-}
-.text h4 i {
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 5px;
-
-  color: #000;
-}
-.text address {
+  height: 100%;
   padding: 10px;
-  font-size: 1.1rem;
-  font-weight: 500px;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  text-align: left;
+  margin: 0;
 }
-.text address i {
-  font-size: 1.5rem;
+h4 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
   font-weight: 500;
   padding: 5px;
-  color: #000;
+  margin: 0;
+  text-align: center;
 }
-.text address a {
-  color: #000;
+address {
+  padding-left: 25%;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+}
+address i {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-right: 5px;
+}
+address a {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-left: 5px;
   text-decoration: none;
-}
-.col-md-6 main {
-  width: 100%;
-  height: 100%;
-}
-.col-md-6 .main img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
+  color: #000;
 }
 
 @media only screen and (max-width: 992px) {
   .contact {
     width: 100%;
-    height: 100%;
-    margin-top: 80px;
-    padding: 0;
-  }
-  .image {
-    width: 100%;
-    height: 300px;
-  }
-  .image img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-
-  h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 5px;
-  }
-
-  .contact .row {
-    display: flex;
-    flex-direction: column;
-  }
-  .col-md-12 {
-    padding-top: 20px;
-    display: block;
-    width: 100%;
-    padding-bottom: 10px;
-  }
-  .text {
-    width: 100%;
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .text div {
-    width: 100%;
-    justify-content: center;
-    margin: 5px;
-    background: #ffa6006c;
-  }
-
-  .text hr {
-    width: 180px;
-    height: 3px;
-    color: green;
-  }
-  .text h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #000;
-    font-family: "Oswald", sans-serif;
-    text-align: left;
-  }
-  .text h4 i {
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 5px;
-
-    color: #000;
-  }
-  .text address {
-    padding: 10px;
-    font-size: 1.1rem;
-    font-weight: 500px;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    text-align: left;
-  }
-  .text address i {
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 5px;
-    color: #000;
-  }
-  .text address a {
-    color: #000;
-    text-decoration: none;
-  }
-  .col-md-6 main {
-    width: 100%;
-    height: 100%;
-  }
-  .col-md-6 .main img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .contact {
-    width: 100%;
-    height: 100%;
+    height: auto;
     margin-top: 90px;
     padding: 0;
+    /* background:rgba(5, 19, 82, 0.596); */
   }
   .image {
     width: 100%;
     height: 300px;
+    padding: 0;
+    margin: 0;
   }
   .image img {
     width: 100%;
@@ -294,76 +158,98 @@ h4{
     padding-bottom: 5px;
   }
 
-  .contact .row {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .col-md-12 {
-    padding-top: 20px;
-    display: block;
+  .row {
     width: 100%;
-    padding-bottom: 10px;
-  }
-  .text {
-    width: 100%;
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .text div {
-    width: 100%;
-    justify-content: center;
+    height: 100%;
+    padding: 0;
     margin: 5px;
+    display: flex;
     background: #ffa6006c;
   }
-
-  .text hr {
-    width: 180px;
-    height: 3px;
-    color: green;
-  }
-  .text h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #000;
-    font-family: "Oswald", sans-serif;
-    text-align: left;
-  }
-  .text h4 i {
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 5px;
-
-    color: #000;
-  }
-  .text address {
+  .col-md-4 {
+    width: 33%;
+    height: 100%;
     padding: 10px;
-    font-size: 1.1rem;
-    font-weight: 500px;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    text-align: left;
+    margin: 0;
   }
-  .text address i {
-    font-size: 1.5rem;
+  h4 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
     font-weight: 500;
     padding: 5px;
-    color: #000;
+    margin: 0;
+    text-align: center;
   }
-  .text address a {
-    color: #000;
+  address {
+    padding-left: 25%;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: justify;
+  }
+  address i {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-right: 5px;
+  }
+  address a {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 5px;
     text-decoration: none;
+    color: #000;
   }
-  .col-md-6 main {
+}
+
+@media only screen and (max-width: 436px) {
+  .contact {
+    width: 100%;
+    height: auto;
+    margin-top: 90px;
+    padding: 0;
+    /* background:rgba(5, 19, 82, 0.596); */
+  }
+  .image {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+  }
+  .image img {
     width: 100%;
     height: 100%;
-  }
-  .col-md-6 .main img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+  .contact .row {
+    widows: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+  }
+  .row .col-md-4 {
+    width: 90%;
+    padding: 0;
+    margin: 5px;
+    background: #fff;
+  }
+  address {
+    padding-left: 15%;
   }
 }
 </style>

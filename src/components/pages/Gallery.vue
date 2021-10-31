@@ -1,12 +1,14 @@
 <template>
   <div class="photos">
-
+    <h3>Gallery</h3>
+    <div class="container">
       <div class="row">
-        <h3>Gallery</h3>
-        <lightbox></lightbox>
+        <div class="col-md-12">
+          <lightbox></lightbox>
+        </div>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
@@ -24,17 +26,16 @@ export default {
 
 <style scoped>
 .photos {
-  position: relative;
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 142px;
+  margin-top: 130px;
 }
 .row {
-  display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 20px;
-  margin: 0;
+  padding: 0;
+  margin: 5px;
+  width: 100%;
+  height: 100%;
 }
 .row h3 {
   text-align: center;
@@ -50,39 +51,14 @@ export default {
   .photos {
     width: 100%;
     height: 100%;
-     margin-top: -50px;
     padding: 0;
+    margin-top: 90px;
   }
   .row {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 20px;
-    margin: 0;
-  }
-  .row h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    padding-top: 150px;
-    padding-bottom: 10px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .photos {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-top: -50px;
-}
-  .row {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 20px;
-    margin: 0;
+    padding: 0;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
   }
   .row h3 {
     text-align: center;
@@ -90,7 +66,32 @@ export default {
     font-weight: 700;
     font-family: "Oswald", sans-serif;
     color: #000;
-    padding-top: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 436px) {
+  .photos {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 90px;
+    margin-bottom:20px;
+  }
+  .row {
+    padding: 0;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  .row h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
     padding-bottom: 10px;
   }
 }

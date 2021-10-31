@@ -1,5 +1,6 @@
 <template>
   <div class="blogpost">
+    <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="box">
@@ -7,7 +8,7 @@
           <div class="image">
             <img :src="blog.image" />
           </div>
-          <div class="text">
+          <div class="info">
             <p>
               <strong>Author: </strong> {{ blog.author }}<br />
               <i class="fa fa-calendar-check-o" aria-hidden="true"></i
@@ -19,6 +20,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -57,145 +59,156 @@ export default {
   padding: 0;
 }
 .row {
-  margin-left: 100px;
-  margin-right: 100px;
   widows: 100%;
   height: 100%;
   background: #ffa6004f;
-}
-.row .col-md-12 {
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
-.col-md-12 .box {
+.row .col-md-12 {
   padding: 10px;
-  margin: 10px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
-h3 {
+.col-md-12 .box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.box h3 {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 1px;
   padding: 10px;
   color: #000;
 }
-.image {
-  width: 1100px;
+.box .image {
+  width: 100%;
   height: 400px;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 .image img {
   width: 100%;
   height: 100%;
-  padding: 10px;
+  background-position: center;
+  background-size: cover;
 }
-.text {
+.info {
   width: 100%;
-  height: 100px;
-  padding: 10px;
-  margin: 0;
+  padding: 5px;
+  margin: 5px;
 }
-.text p {
-  font-size: 1.5rem;
-  font-weight: 600;
+.info p {
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #000;
 }
-.text p strong {
-  font-size: 1.6rem;
-  font-weight: 700;
+.info p strong {
+  font-size: 1.5rem;
+  font-weight: 500;
   padding: 0;
 }
-.text p i {
-  font-size: 1.6rem;
-  font-weight: 700;
+.info p i {
+  font-size: 1.5rem;
+  font-weight: 500;
   padding: 5px;
   color: #000;
 }
 .des {
   width: 100%;
   height: 100%;
-  padding: 5px;
+  padding: 10px;
   margin: 0;
 }
 .des p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #000;
   text-align: justify;
 }
 
-@media only screen and (max-width: 767px) {
-  .blogpost {
-    margin-top: 100px;
-    width: 100%;
-    padding: 0;
-  }
-  .row {
-    margin-left: 10px;
-    margin-right: 10px;
-    widows: 100%;
-    height: 100%;
-    background: #ffa6004f;
-  }
-  .row .col-md-12 {
-    padding: 0;
-    margin: 0;
-  }
-  .col-md-12 .box {
-    padding: 10px;
-    margin: 10px;
-  }
-  h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 10px;
-    color: #000;
-  }
-  .image {
-    width: 350px;
-    height: 300px;
-    padding: 0;
-    margin: 0;
-  }
-  .image img {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-  }
-  .text {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    margin: 0;
-  }
-  .text p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #000;
-  }
-  .text p strong {
-    font-size: 1.6rem;
-    font-weight: 700;
-    padding: 0;
-  }
-  .text p i {
-    font-size: 1.6rem;
-    font-weight: 700;
-    padding: 5px;
-    color: #000;
-  }
-  .des {
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    margin-top: 30px;
-  }
-  .des p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #000;
-    text-align: justify;
-  }
+@media only screen and (max-width: 436px) {
+.blogpost {
+  margin-top: 90px;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+.row {
+  widows: 100%;
+  height: 100%;
+  background: #ffa6004f;
+  padding: 0;
+  margin: 5px;
+}
+.row .col-md-12 {
+  padding: 0;
+  margin: 0;
+  width: 95%;
+  height: 100%;
+}
+.col-md-12 .box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.box h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 10px;
+  color: #000;
+  text-align: left;
+  width: 100%;
+}
+.box .image {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  margin: 0;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.info {
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+.info p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+}
+.info p strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0;
+}
+.info p i {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 5px;
+  color: #000;
+}
+.des {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
+}
+.des p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  text-align: justify;
+}
 }
 </style>

@@ -96,20 +96,25 @@ h3{
 }
 .card .image{
     width: 100%;
-    height: 80%;
+    height: 90%;
+    padding: 0;
+    margin: 0;
 }
 .image img{
     width: 100%;
     height: 100%;
 }
 .card p{
+  height: 10%;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-align: center;
+    padding: 0;
+    margin-top: -10px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436px) {
   .aqua {
   width: 100%;
   height: 100%;

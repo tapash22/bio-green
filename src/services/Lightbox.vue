@@ -1,16 +1,18 @@
 <template>
   <div class="light">
-    <div class="row">
-      <div
-        class="col-md-4"
-        v-for="gallery in gallerys"
-        :key="gallery"
-        @click="() => showImg(index)"
-      >
-        <div class="card">
-          <a @click.prevent="showImg(gallery)">
-            <img :src="gallery.data().image" />
-          </a>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-md-4"
+          v-for="gallery in gallerys"
+          :key="gallery"
+          @click="() => showImg(index)"
+        >
+          <div class="card">
+            <a @click.prevent="showImg(gallery)">
+              <img :src="gallery.data().image" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -79,7 +81,7 @@ export default {
 .light {
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 0;
   margin: 5px;
 }
 .row {
@@ -90,41 +92,30 @@ export default {
   display: flex;
 }
 .col-md-4 {
-  width: 30%;
+  width: 33%;
   height: 100%;
-  padding: 0;
-  margin: 10px;
+  padding: 5px;
+  margin: 0;
   border: 1px solid blue;
 }
 .col-md-4 .card {
-  width: 380px;
-  height: 200px;
-  padding: 10px;
-  margin: 5px;
-}
-
-.col-md-4 .card img {
-  width: 100%;
-  height: 85%;
-  background-position: center;
-}
-.card p {
-  z-index: 1;
-  font-size: 1.5rem;
-  font-weight: 500;
-  text-align: center;
-  color: black;
-}
-.showpic {
   width: 100%;
   height: 100%;
-  padding: 10px;
-  margin: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 99;
-  display: block;
+  padding: 0;
+  margin: 0;
 }
-
+.col-md-4 .card a {
+  padding: 0;
+  margin: 0;
+}
+.col-md-4 .card img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
 .modal {
   display: block;
   background: rgba(0, 0, 0, 0.8);
@@ -148,90 +139,62 @@ export default {
   .light {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 0;
     margin: 5px;
   }
   .row {
     width: 100%;
     height: 100%;
     padding: 0;
-    margin: 0;
+    margin: -10px;
     display: flex;
+    flex-direction: column;
   }
-  .col-md-4 {
+  .row .col-md-4{
+    width: 100%;
+    padding:5px;
+    margin:0;
+  }
+  .row .col-md-4 .card{
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
-    padding: 0;
-    margin: 10px;
-    border: 1px solid blue;
   }
-  .col-md-4 .card {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-    margin: 10px;
-  }
-
-  .col-md-4 .card img {
-    width: 100%;
-    height: 80%;
-    background-position: center;
+  .modal {
+    display: none;
   }
 
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436px) {
   .light {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 0;
     margin: 5px;
   }
   .row {
     width: 100%;
     height: 100%;
     padding: 0;
-    margin: 0;
+    margin: -10px;
     display: flex;
+    flex-direction: column;
   }
-  .col-md-4 {
-    width: 95%;
-    height: 100%;
+  .row .col-md-4{
+    width: 100%;
+    padding:5px;
+    margin:0;
+  }
+  .row .col-md-4 .card{
     padding: 0;
     margin: 0;
-    border: 1px solid blue;
-  }
-  .col-md-4 .card {
-    width: 95%;
-    height: 170px;
-    padding: 0;
-    margin: 10px;
-  }
-
-  .col-md-4 img {
     width: 100%;
     height: 100%;
-    background-position: center;
-    padding: 0;
-    margin: 0;
   }
   .modal {
-  display: none;
-  background: rgba(0, 0, 0, 0.8);
-}
-.modal .image {
-  padding: 0;
-  margin: 10px;
-  width: 90%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-}
-.modal .image img {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
+    display: none;
+  }
 }
 </style>

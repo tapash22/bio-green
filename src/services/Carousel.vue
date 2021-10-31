@@ -46,31 +46,31 @@ export default {
           id: 1,
           title: "Enzymes",
           img: require("../assets/image/pd1.jpg"),
-          url: "/enzymes",
+          url: "/enzymes_poultry",
         },
         {
           id: 2,
           title: "Essential Oil",
           img: require("../assets/image/pd2.jpg"),
-          url: "/essensialoil",
+          url: "/essentialoil_poultry",
         },
         {
           id: 3,
           title: "Feed Sanitizer",
           img: "https://i.postimg.cc/c4wdQL2j/f.jpg",
-          url: "/feedsanitizer",
+          url: "/feedsanitizer_poultry",
         },
         {
           id: 4,
           title: "Postbiotic",
           img: require("../assets/image/pd4.jpg"),
-          url: "/probiotics",
+          url: "/postbiotic_poultry",
         },
         {
           id: 5,
           title: "Organic Minerals",
           img: require("../assets/image/pd3.jpg"),
-          url: "/organicminarels",
+          url: "/organicminerals_poultry",
         },
       ],
     };
@@ -156,7 +156,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436px) {
   .full {
     display: none;
   }

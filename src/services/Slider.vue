@@ -70,7 +70,7 @@ img {
   margin: 0;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436px) {
   .image {
     width: 415px;
     height: 100%;

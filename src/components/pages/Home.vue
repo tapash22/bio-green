@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <div class="slider">
-     <div class="i" v-for="slider in sliders" :key="slider.id">
-       <img :src="slider.data().image"/>
-     </div>
-     <div class="s">
-      <Slider />
-     </div>
+      <div class="i" v-for="slider in sliders" :key="slider.id">
+        <img :src="slider.data().image" />
+      </div>
+      <div class="s">
+        <Slider />
+      </div>
     </div>
     <div class="container">
-      <div class="row blog my-3">
+      <div class="row">
         <h3>products</h3>
         <p>We deliver performances rather just a product to your business</p>
         <div class="col-md-12">
@@ -18,27 +18,17 @@
       </div>
 
       <!-- event -->
-      <div class="row blog my-1">
+      <div class="row">
         <h3>Events</h3>
-        <div
-          class="col-md-12"
-          style="width: 100%; height: 100%; padding: 0; margin: 0"
-        >
+        <div class="col-md-12">
           <EventList />
         </div>
       </div>
 
       <!-- blog -->
-      <div class="row blog my-1">
+      <div class="row">
         <h3>Blog</h3>
-        <div
-          class="col-md-4"
-          v-for="blog in blogs"
-          :key="blog.id"
-          data-aos="fade-left"
-          data-aos-delay="500"
-          data-aos-once="false"
-        >
+        <div class="col-md-4" v-for="blog in blogs" :key="blog.id">
           <div class="card">
             <div class="card-header">
               <img :src="blog.data().image" />
@@ -81,7 +71,7 @@ export default {
   },
   data() {
     return {
-       sliders: [],
+      sliders: [],
       slider: {
         name: "",
         des: "",
@@ -107,8 +97,7 @@ export default {
         });
       });
 
-
-       db.collection("sliders")
+    db.collection("sliders")
       .limit("1")
       .get()
       .then((querySnapshot) => {
@@ -128,6 +117,10 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 .home {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
   margin-top: 120px;
 }
 .home .slider {
@@ -136,23 +129,24 @@ export default {
   margin: 0;
   background: rgba(0, 0, 0, 0.301);
 }
-.slider .s{
+.slider .s {
   margin-top: -500px;
 }
 
 .row {
+  width: 100%;
+  height: 100%;
   padding: 0;
-
-  position: relative;
+  margin: 0;
 }
 .row h3 {
   text-align: center;
   font-size: 2.2rem;
-  font-weight: 900;
-  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
   color: #000;
   padding-top: 10px;
-  padding-bottom: 0;
+  padding-bottom: 5px;
   text-transform: uppercase;
 }
 
@@ -160,344 +154,313 @@ export default {
   text-align: center;
   font-size: 1.3rem;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #000;
-  margin-top: -5px;
+  padding: 0;
+  margin-top: -10px;
 }
-.row2 {
-  margin-top: 30px;
-  background: #fff;
-  display: flex;
-  margin-bottom: 18px;
-}
-.row2 .col-md-4 {
+.row .col-md-12 {
   padding: 10px;
-}
-
-/* blog */
-.blog {
+  margin: 0;
   width: 100%;
   height: 100%;
-  padding: 0;
+}
+.col-md-4 {
+  width: 33%;
+  padding: 20px;
   margin: 0;
 }
-.blog .col-md-4 {
-  width: 30%;
-  margin: 10px;
-}
 .col-md-4 .card {
-  width: 300px;
-  height: 400px;
-  padding: 0;
+  width: 100%;
+  height: 330px;
+  padding: 2px;
   margin: 5px;
-  background: rgba(5, 19, 82, 0.671);
+  background: #fff;
 }
 .col-md-4 .card .card-header {
   width: 100%;
-  height: 220px;
+  height: 200px;
   padding: 0;
   margin: 0;
 }
-.col-md-4 .card-header img {
+.card .card-header img {
   width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
-.col-md-4 .card-body {
+.card .card-body {
   width: 100%;
-  height: 180px;
+  height: 130px;
   padding: 0;
   margin: 0;
-  background: #ffa500;
 }
-.card-body ul {
+.card .card-body ul {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin-top: 10px;
+  background: #ffa500;
 }
-.card-body ul li {
-  text-align: left;
+.card .card-body ul li {
+  padding: 5px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #000;
-  list-style: none;
-  margin: 0;
+}
+.card .card-body ul li:first-child {
+  width: 100%;
+  height: 70px;
   padding: 5px;
 }
-.card-body ul li i {
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 10px;
-  color: green;
-}
-.card-body ul li a {
-  font-size: 1.3rem;
+.card .card-body ul li i {
+  font-size: 1.2rem;
   font-weight: 500;
-  color: rgb(5, 19, 82);
-  cursor: pointer;
-  text-align: justify;
-  text-decoration: none;
+  padding: 5px;
+  margin: 0;
+}
+.card .card-body ul li:last-child {
+  background: #fff;
   display: flex;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 30px;
 }
+.card .card-body ul li a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+}
+
 @media only screen and (max-width: 992px) {
   .home {
     width: 100%;
     height: 100%;
-    margin-top: 80px;
-    padding: 0;
-  }
-  .row {
-    padding: 0;
-    margin: 0;
-    position: relative;
-    margin-left: -5px;
-  }
-  .row h3 {
-    text-align: left;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: "Roboto", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    margin-left: 80px;
-  }
-  .row h3 strong {
-    color: rgba(12, 82, 15, 0.849);
-    font-weight: 900;
-    font-family: "Roboto", sans-serif;
-  }
-  .row p {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    color: #000;
-    margin-top: -5px;
-    margin-left: -40px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .row2 {
-    margin-top: 30px;
-    background: #fff;
-    display: flex;
-    margin-bottom: 20px;
-  }
-  .row2 .col-md-4 {
-    padding: 10px;
-  }
-
-  /* blog */
-  .blog {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin-left: 5%;
-  }
-  .blog h3 {
-    margin-left: 35%;
-  }
-  .blog .col-md-4 {
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-    padding: 5px;
-  }
-  .col-md-4 .card {
-    width: 80%;
-    height: 100%;
-    padding: 0;
-
-    background: rgba(5, 19, 82, 0.671);
-  }
-  .col-md-4 .card .card-header {
-    width: 100%;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-  }
-  .col-md-4 .card-header img {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .col-md-4 .card-body {
-    width: 100%;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-    background: #ffa500;
-  }
-  .card-body ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  .card-body ul li {
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #000;
-    list-style: none;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .card-body ul li i {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 5px;
-  }
-  .card-body ul li a {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: rgb(5, 19, 82);
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .home {
     margin-top: 90px;
+    padding: 0;
   }
-  .slider .i{
+  .slider .i {
     display: none;
   }
-  .slider .s{
-  margin-top: 0;
-}
-  .containr {
-    width: 100%;
+  .slider .s {
+    margin-top: 0;
+  }
+   .home .row {
+    widows: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
-  }
-  .row {
-    padding: 0;
-    margin: 0;
-    position: relative;
-    margin-left: -5px;
   }
   .row h3 {
-    text-align: left;
+    text-align: center;
     font-size: 1.8rem;
     font-weight: 700;
-    font-family: "Roboto", sans-serif;
+    font-family: "Oswald", sans-serif;
     color: #000;
     padding-top: 10px;
-    padding-bottom: 0;
+    padding-bottom: 5px;
     text-transform: uppercase;
-    margin-left: 80px;
   }
-  .row h3 strong {
-    color: rgba(12, 82, 15, 0.849);
-    font-weight: 900;
-    font-family: "Roboto", sans-serif;
-  }
+
   .row p {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    font-family: "Roboto", sans-serif;
+    font-family: "Oswald", sans-serif;
     color: #000;
-    margin-top: -5px;
-    margin-left: -40px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .row2 {
-    margin-top: 30px;
-    background: #fff;
-    display: flex;
-    margin-bottom: 20px;
-  }
-  .row2 .col-md-4 {
-    padding: 10px;
+    padding: 0;
+    margin-top: -10px;
   }
 
-  /* blog */
-  .blog {
+  .row .col-md-12{
     width: 100%;
     height: 100%;
-    padding: 0;
-    margin-left: 5%;
-  }
-  .blog h3 {
-    margin-left: 25%;
-  }
-  .blog .col-md-4 {
-    width: 100%;
-    height: 100%;
-    margin: 10px;
     padding: 5px;
+    margin: 5px;
   }
-  .col-md-4 .card {
-    width: 80%;
-    height: 100%;
-    padding: 0;
 
-    background: rgba(5, 19, 82, 0.671);
+  .row .col-md-4{
+    width: 90%;
+    height: 100%;
+    padding: 2px;
+    margin: 0;
   }
-  .col-md-4 .card .card-header {
+  .col-md-4 .card{
     width: 100%;
-    height: 200px;
+    height: 300px;
+    margin: 10px;
+    padding: 0;
+  }
+  .card .card-header{
+    width: 100%;
+    height: 60%;
     padding: 0;
     margin: 0;
   }
-  .col-md-4 .card-header img {
+  .card .card-header img{
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
   }
-  .col-md-4 .card-body {
+  .card .card-body{
     width: 100%;
-    height: 200px;
-    padding: 0;
-    margin: 0;
-    background: #ffa500;
-  }
-  .card-body ul {
-    display: flex;
-    flex-direction: column;
+    height: 40%;
     padding: 0;
     margin: 0;
   }
-  .card-body ul li {
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #000;
-    list-style: none;
+  .card-body ul{
+    padding: 0;
     margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
   }
-  .card-body ul li i {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 5px;
-  }
-  .card-body ul li a {
-    font-size: 1.3rem;
+  .card-body ul li{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: rgb(5, 19, 82);
-    cursor: pointer;
+  }
+  .card-body ul li:first-child{
+    width: 100%;
+    height: 20%;
+    padding: 2px;
+    margin: 0;
+  }
+  .card-body ul li:last-child{
+    width: 100%;
+    height: 10%;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul li i{
+    font-size: 1rem;
+    padding: 2px;
+  }
+  .card-body ul li a{
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 436px) {
+  .home {
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+    padding: 0;
+  }
+  .slider .i {
+    display: none;
+  }
+  .slider .s {
+    margin-top: 0;
+  }
+  .home .row {
+    widows: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .row h3 {
     text-align: center;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
   }
+
+  .row p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding: 0;
+    margin-top: -10px;
+  }
+
+  .row .col-md-12{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .row .col-md-4{
+    width: 90%;
+    height: 100%;
+    padding: 2px;
+    margin: 0;
+  }
+  .col-md-4 .card{
+    width: 100%;
+    height: 300px;
+    margin: 10px;
+    padding: 0;
+  }
+  .card .card-header{
+    width: 100%;
+    height: 60%;
+    padding: 0;
+    margin: 0;
+  }
+  .card .card-header img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .card .card-body{
+    width: 100%;
+    height: 40%;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul{
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul li{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .card-body ul li:first-child{
+    width: 100%;
+    height: 20%;
+    padding: 2px;
+    margin: 0;
+  }
+  .card-body ul li:last-child{
+    width: 100%;
+    height: 10%;
+    padding: 0;
+    margin: 0;
+  }
+  .card-body ul li i{
+    font-size: 1rem;
+    padding: 2px;
+  }
+  .card-body ul li a{
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+  }
+  
 }
 </style>

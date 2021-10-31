@@ -7,15 +7,20 @@
       data-aos-once="false"
     >
       <div class="event-list" v-if="active_item">
+        <div class="image">
         <img :src="occation.image" />
+        </div>
         <p>
           {{ occation.name }}<br />
           <strong>{{ occation.place }}</strong>
         </p>
       </div>
+
       <div class="tt" v-else>
         <div class="ex" v-for="occation in occations" :key="occation">
+          <div class="image">
           <img :src="occation.data().image" />
+          </div>
           <p>
             <i> {{ occation.data().name }}</i>
             <br />{{ occation.data().place }}
@@ -100,26 +105,33 @@ export default {
   padding: 10px;
 }
 .col-md-6 .tt {
-  width: 500px;
-  height: 450px;
+  width: 100%;
+  height: 400px;
   overflow-y: hidden;
   padding: 0;
   margin: 0;
 }
 .col-md-6 .ex {
-  width: 500px;
-  height: 450px;
+  width: 100%;
+  height: 400px;
   padding: 0;
   margin: 0;
   overflow-y: hidden;
 }
-.col-md-6 .ex img {
-  width: 500px;
-  height: 400px;
-  padding: 5px;
+.col-md-6 .ex .image {
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  margin: 0;
+}
+.col-md-6 .ex .image img{
+  width: 100%;
+  height: 100%;
+  padding: 0;
   margin: 0;
 }
 .col-md-6 .ex p {
+  height:10%;
   font-size: 1.5rem;
   font-weight: 500;
   padding: 5px;
@@ -127,22 +139,33 @@ export default {
 }
 .event .event-list {
   width: 100%;
-  height: 100%;
-}
-.event .event-list img {
-  width: 100%;
   height: 400px;
+  padding: 0;
+  margin: 0;
+}
+.event .event-list .image {
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  margin: 5px;
   background-position: center;
   background-size: cover;
 }
+.event .event-list .image img{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 .event .event-list p {
+  height: 10%;
   font-size: 1rem;
   font-weight: 700;
   font-family: "Oswald", sans-serif;
   color: #000;
   text-align: left;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding:0;
+  margin-left: 20px;
 }
 .event .event-item {
   width: 50%;
@@ -203,12 +226,14 @@ export default {
     width: 500px;
     height: 300px;
   }
-  .event .event-list img {
-    width: 100%;
-    height: 80%;
-    background-position: center;
-    background-size: cover;
-  }
+ .event .event-list .image {
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  margin: 5px;
+  background-position: center;
+  background-size: cover;
+}
   .event .event-list p {
     font-size: 1rem;
     font-weight: 700;
@@ -233,12 +258,12 @@ export default {
     padding: 0;
     margin: 0;
   }
-  .col-md-6 .ex img {
-    width: 500px;
-    height: 250px;
-    background-position: center;
-    background-size: cover;
-  }
+ .col-md-6 .ex .image {
+  width: 100%;
+  height: 0%;
+  padding: 10px;
+  margin: 5px;
+}
   .col-md-6 .ex p {
     font-size: 0.9rem;
     font-weight: 500;
@@ -288,7 +313,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 436px) {
   .event {
     padding: 0;
     margin: 0;
@@ -299,47 +324,55 @@ export default {
   .event .col-md-6 {
     width: 100%;
     height: 350px;
-    padding: 0;
+    padding: 10px;
     margin-left: -10px;
   }
   .event .event-list {
-    width: 350px;
+    width: 320px;
     height: 300px;
+    padding: 0;
+    margin:0;
   }
   .event .event-list img {
     width: 100%;
-    height: 80%;
+    height: 100%;
     background-position: center;
     background-size: cover;
   }
   .event .event-list p {
+    height: 15%;
     font-size: 1rem;
     font-weight: 700;
     font-family: "Oswald", sans-serif;
     color: #000;
     text-align: left;
-    padding-top: 5px;
+    padding-top: -20px;
   }
   .col-md-6 .tt {
-    width: 350px;
+    width: 320px;
     height: 300px;
     overflow-y: hidden;
     padding: 0;
     margin: 0;
   }
   .col-md-6 .ex {
-    width: 350px;
+    width: 320px;
     height: 300px;
     padding: 0;
     margin: 0;
     overflow-y: hidden;
   }
-  .col-md-6 .ex img {
-    width: 350px;
-    height: 300px;
-    padding: 0;
-    margin: 0;
+  .col-md-6 .ex .image {
+     width: 320px;
+  height: 80%;
+  padding: 10px;
+  margin: 5px;
+
   }
+   .col-md-6 .ex .image img{
+     width: 100%;
+     height: 100%;
+   }
   .col-md-6 .ex p {
     font-size: 1.5rem;
     font-weight: 500;

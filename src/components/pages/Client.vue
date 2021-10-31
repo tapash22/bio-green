@@ -1,22 +1,22 @@
 <template>
-<div class="client">
-  <Navigation />
+  <div class="client">
+    <Navigation />
 
-  <div class="row">
-    <div class="col-md-12">
-      <router-view v-slot="{ Component }">
-        <transition
-          enter-active-class="animate__animated animate__fadeInDown animate__fast	500ms "
-          leave-active-class="animate__animated animate__fadeOutDown animate__fast 500ms"
-          mode="out-in"
-        >
-          <component :is="Component" />
-        </transition>
-      </router-view>
+    <div class="row">
+      <div class="col-md-12">
+        <router-view v-slot="{ Component }">
+          <transition
+            enter-active-class="animate__animated animate__fadeInDown animate__fast	500ms "
+            leave-active-class="animate__animated animate__fadeOutDown animate__fast 500ms"
+            mode="out-in"
+          >
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </div>
     </div>
+    <Footer />
   </div>
-  <Footer />
-</div>
 </template>
 
 <script>
@@ -37,13 +37,20 @@ export default {
 
     Footer,
   },
-  
 };
 </script>
 
 <style scoped>
+.client{
+  width: 100%;
+  height:100%;
+   margin:0;
+   padding:0;
+}
 
 .row {
+  width: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
   background-image: url(../../assets/image/footer.jpg);
@@ -54,4 +61,5 @@ export default {
 .col-md-12 {
   padding: 0;
 }
+
 </style>

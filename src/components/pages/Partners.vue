@@ -1,32 +1,32 @@
 <template>
   <div class="partners">
-        <div class="image">
+    <div class="image">
       <img src="../../assets/image/partner.png" />
     </div>
-      <div class="row">
-        <h3>Partners</h3>
-        <div
-          class="col-md-12"
-          data-aos="fade-right"
-          data-aos-delay="500"
-          data-aos-once="false"
-          v-for="partner in partners"
-          :key="partner.id"
-        >
+    <h3>Partners</h3>
+    <div class="container">
+      <div
+        class="row"
+        data-aos="fade-right"
+        data-aos-delay="500"
+        data-aos-once="false"
+      >
+        <div class="col-md-12" v-for="partner in partners" :key="partner.id">
           <div class="left">
-           
             <img :src="partner.data().image" />
-          
           </div>
           <div class="right">
             <p>
-              {{partner.data().description}}
+              {{ partner.data().description }}
             </p>
-            <a :href="partner.data().company_link">{{partner.data().company_site}}</a>
+            <a :href="partner.data().company_link">{{
+              partner.data().company_site
+            }}</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
       partner: {
         partner_name: "",
         company_site: "",
-        company_link:"",
+        company_link: "",
         description: "",
         image: "",
       },
@@ -66,35 +66,25 @@ export default {
 
 <style scoped>
 .partners {
-  position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
   margin-top: 120px;
 }
 .partners .image {
-  min-height: 500px;
+  width: 100%;
+  height: 500px;
   padding: 0;
   margin: 0;
   background: #000;
 }
 .partners .image img {
-  background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
-
-.row {
-  display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 20px;
-  margin-left: 130px;
-  margin-right: 130px;
-}
-.row h3 {
+h3 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
@@ -103,44 +93,53 @@ export default {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 .col-md-12 {
   padding: 10px;
   margin: 5px;
   width: 100%;
   height: 300px;
   display: flex;
-   background:#ffa6006c;
+  background: #ffa6006c;
 }
-.col-md-12 .left{
+.col-md-12 .left {
   width: 350px;
   height: 260px;
   padding: 10px;
 }
-.col-md-12 .left img{
+.col-md-12 .left img {
   width: 100%;
   height: 100%;
   padding: 5px;
 }
-.col-md-12 .right{
+.col-md-12 .right {
   width: 60%;
   height: 260px;
   padding: 10px;
   margin-top: 20px;
 }
 
-.col-md-12 .right p{
+.col-md-12 .right p {
   font-size: 1rem;
   font-weight: 500;
-  color:#000;
+  color: #000;
   text-align: justify;
   align-items: center;
 }
-.col-md-12 .right p strong{
+.col-md-12 .right p strong {
   font-size: 1.3rem;
   font-weight: 600;
   color: blue;
 }
-.col-md-12 .right a{
+.col-md-12 .right a {
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
@@ -151,178 +150,176 @@ export default {
 }
 
 @media only screen and (max-width: 992px) {
- .partners {
+  .partners {
     width: 100%;
     height: 100%;
-    margin-top: 80px;
+    padding: 0;
+    margin-top: 90px;
+  }
+  .image {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    background: #000;
+  }
+  .image img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     padding: 0;
   }
-  .partners .image {
-  min-height: 300px;
-  padding: 0;
-  margin: 0;
-  background: #000;
-}
-.partners .image img {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 300px;
+  .row h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .col-md-12 {
+    padding: 0;
+    margin: 5px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ffa6006c;
+  }
+  .col-md-12 .left {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+  }
+  .col-md-12 .left img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
+  .col-md-12 .right {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin-top: 0;
+  }
+
+  .col-md-12 .right p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    text-align: justify;
+    align-items: center;
+  }
+  .col-md-12 .right p strong {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: blue;
+  }
+  .col-md-12 .right a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: blue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.row {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.row h3 {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.col-md-12 {
-  padding: 10px;
-  margin: 5px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-   background:#ffa6006c;
-}
-.col-md-12 .left{
-  width: 100%;
-  height: 200px;
-  padding: 10px;
-}
-.col-md-12 .left img{
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-}
-.col-md-12 .right{
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  margin-top: 0;
-}
+@media only screen and (max-width: 436px) {
+  .partners {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 90px;
+  }
+   .partners .image {
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    background: #000;
+  }
+   .partners .image img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-.col-md-12 .right p{
-  font-size: 1rem;
-  font-weight: 500;
-  color:#000;
-  text-align: justify;
-  align-items: center;
-}
-.col-md-12 .right p strong{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: blue;
-}
-.col-md-12 .right a{
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: blue;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-}
+  .row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .row h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .col-md-12 {
+    padding: 0;
+    margin: 5px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ffa6006c;
+  }
+  .col-md-12 .left {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+  }
+  .col-md-12 .left img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
+  .col-md-12 .right {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    margin-top: 0;
+  }
 
-@media only screen and (max-width: 767px) {
- .partners {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-top: 90px;
-}
-.partners .image {
-  min-height: 300px;
-  padding: 0;
-  margin: 0;
-  background: #000;
-}
-.partners .image img {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 300px;
-}
-
-.row {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.row h3 {
-  text-align: center;
-  font-size: 2.2rem;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #000;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.col-md-12 {
-  padding: 10px;
-  margin: 5px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-   background:#ffa6006c;
-}
-.col-md-12 .left{
-  width: 100%;
-  height: 200px;
-  padding: 10px;
-}
-.col-md-12 .left img{
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-}
-.col-md-12 .right{
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  margin-top: 0;
-}
-
-.col-md-12 .right p{
-  font-size: 1rem;
-  font-weight: 500;
-  color:#000;
-  text-align: justify;
-  align-items: center;
-}
-.col-md-12 .right p strong{
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: blue;
-}
-.col-md-12 .right a{
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: blue;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
+  .col-md-12 .right p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    text-align: justify;
+    align-items: center;
+  }
+  .col-md-12 .right p strong {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: blue;
+  }
+  .col-md-12 .right a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: blue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>
