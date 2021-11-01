@@ -267,7 +267,8 @@ h3 {
     width: 100%;
     height: 300px;
     margin: 10px;
-    padding: 0;
+    padding: 2px;
+    background: #fff;
   }
   .card .card-header {
     width: 100%;
@@ -286,39 +287,43 @@ h3 {
     height: 40%;
     padding: 0;
     margin: 0;
+    background: #fff;
   }
-  .card-body ul {
-    padding: 0;
+  .card .card-body ul {
+    padding:0;
     margin: 0;
     width: 100%;
     height: 100%;
+    
   }
-  .card-body ul li {
+  .card .card-body ul li {
     width: 100%;
     height: 20%;
-    padding: 0;
+    padding: 2px;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
   }
-  .card-body ul li:first-child {
+  .card .card-body ul li:first-child {
     width: 100%;
     height: 50%;
     padding: 2px;
     margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
-  .card-body ul li:last-child {
+  .card .card-body ul li:last-child {
     width: 100%;
     height: 20%;
-    padding: 0;
+    padding: 2px;
     margin: 0;
   }
-  .card-body ul li i {
-    font-size: 1rem;
+  .card .card-body ul li i {
+    font-size: 1.1rem;
     padding: 2px;
   }
-  .card-body ul li a {
-    font-size: 0.8rem;
+  .card .card-body ul li a {
+    font-size: 1rem;
     font-weight: 500;
     padding: 0;
     margin: 0;
