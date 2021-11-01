@@ -134,12 +134,14 @@ h3 {
 .card .card-header img {
   width: 100%;
   height: 100%;
+  padding: 0;
+  margin: 0;
   background-position: center;
   background-size: cover;
 }
 .card .card-body {
   width: 100%;
-  height: 150px;
+  height: 160px;
   padding: 0;
   margin: 0;
 }
@@ -156,6 +158,7 @@ h3 {
   padding: 5px;
   margin: 0;
   width: 100%;
+  height: 40px;
   display: flex;
   justify-content: flex-start;
   font-size: 1.1rem;
@@ -165,6 +168,7 @@ h3 {
   width: 100%;
   height: 70px;
   padding: 5px;
+  margin: 0;
 }
 .card .card-body ul li i {
   font-size: 1.2rem;
