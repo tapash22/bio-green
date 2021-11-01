@@ -81,6 +81,7 @@ export default {
 <style scoped>
 .blog {
   width: 100%;
+  height: auto;
   padding: 0;
   margin-top: 120px;
 }
@@ -119,7 +120,7 @@ h3 {
 }
 .col-md-4 .card {
   width: 100%;
-  height: 330px;
+  height: 350px;
   padding: 2px;
   margin: 5px;
   background: #fff;
@@ -138,7 +139,7 @@ h3 {
 }
 .card .card-body {
   width: 100%;
-  height: 130px;
+  height: 150px;
   padding: 0;
   margin: 0;
 }
@@ -189,6 +190,7 @@ h3 {
 @media only screen and (max-width: 992px) {
   .blog {
     width: 100%;
+    height: 100%;
     padding: 0;
     margin-top: 90px;
   }
@@ -213,12 +215,12 @@ h3 {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
 }
 
 @media only screen and (max-width: 436px) {
   .blog {
     width: 100%;
+    height: 100%;
     padding: 0;
     margin-top: 90px;
   }
@@ -243,77 +245,79 @@ h3 {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .blog .row{
+  .blog .row {
     widows: 100%;
     height: 100%;
     padding: 0;
-    margin: 5px;
+    margin: 0;
     display: flex;
     flex-direction: column;
   }
-  .row .col-md-4{
+  .row .col-md-4 {
     width: 90%;
     height: 100%;
-    padding: 0;
+    padding: 10px;
     margin: 0;
   }
-  .col-md-4 .card{
+  .col-md-4 .card {
     width: 100%;
     height: 300px;
     margin: 10px;
     padding: 0;
   }
-  .card .card-header{
+  .card .card-header {
     width: 100%;
     height: 60%;
     padding: 0;
     margin: 0;
   }
-  .card .card-header img{
+  .card .card-header img {
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover;
   }
-  .card .card-body{
+  .card .card-body {
     width: 100%;
     height: 40%;
     padding: 0;
     margin: 0;
   }
-  .card-body ul{
+  .card-body ul {
     padding: 0;
     margin: 0;
-  }
-  .card-body ul li{
     width: 100%;
+    height: 100%;
+  }
+  .card-body ul li {
+    width: 100%;
+    height: 20%;
     padding: 0;
     margin: 0;
     font-size: 0.9rem;
     font-weight: 500;
   }
-  .card-body ul li:first-child{
+  .card-body ul li:first-child {
     width: 100%;
-    height: 20%;
+    height: 50%;
     padding: 2px;
     margin: 0;
   }
-  .card-body ul li:last-child{
+  .card-body ul li:last-child {
     width: 100%;
-    height: 10%;
+    height: 20%;
     padding: 0;
     margin: 0;
   }
-  .card-body ul li i{
+  .card-body ul li i {
     font-size: 1rem;
     padding: 2px;
   }
-  .card-body ul li a{
+  .card-body ul li a {
     font-size: 0.8rem;
     font-weight: 500;
     padding: 0;
     margin: 0;
   }
-  
 }
 </style>

@@ -231,15 +231,11 @@ address a {
     padding-top: 10px;
     padding-bottom: 5px;
   }
-  .container {
-    padding: 0;
-    margin: 0;
-  }
   .contact .row {
     widows: 100%;
     height: 100%;
-    padding: 10px;
-    margin: 0;
+    padding: 0;
+    margin:0;
     justify-content: center;
   }
   .row .col-md-4 {

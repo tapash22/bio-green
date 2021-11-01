@@ -242,117 +242,20 @@ export default {
 @media only screen and (max-width: 992px) {
   .home {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-top: 90px;
     padding: 0;
   }
-  .slider .i {
-    display: none;
-  }
-  .slider .s {
-    margin-top: 0;
-  }
-   .home .row {
-    widows: 100%;
-    height: 100%;
+  .row {
     padding: 0;
     margin: 0;
-  }
-  .row h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-  }
-
-  .row p {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    font-family: "Oswald", sans-serif;
-    color: #000;
-    padding: 0;
-    margin-top: -10px;
-  }
-
-  .row .col-md-12{
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    margin: 5px;
-  }
-
-  .row .col-md-4{
-    width: 90%;
-    height: 100%;
-    padding: 2px;
-    margin: 0;
-  }
-  .col-md-4 .card{
-    width: 100%;
-    height: 300px;
-    margin: 10px;
-    padding: 0;
-  }
-  .card .card-header{
-    width: 100%;
-    height: 60%;
-    padding: 0;
-    margin: 0;
-  }
-  .card .card-header img{
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-  }
-  .card .card-body{
-    width: 100%;
-    height: 40%;
-    padding: 0;
-    margin: 0;
-  }
-  .card-body ul{
-    padding: 0;
-    margin: 0;
-  }
-  .card-body ul li{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  .card-body ul li:first-child{
-    width: 100%;
-    height: 20%;
-    padding: 2px;
-    margin: 0;
-  }
-  .card-body ul li:last-child{
-    width: 100%;
-    height: 10%;
-    padding: 0;
-    margin: 0;
-  }
-  .card-body ul li i{
-    font-size: 1rem;
-    padding: 2px;
-  }
-  .card-body ul li a{
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0;
-    margin: 0;
+    position: relative;
+    margin-left: -5px;
   }
 }
 
 @media only screen and (max-width: 436px) {
-  .home {
+    .home {
     width: 100%;
     height: 100%;
     margin-top: 90px;
@@ -380,7 +283,6 @@ export default {
     padding-bottom: 5px;
     text-transform: uppercase;
   }
-
   .row p {
     text-align: center;
     font-size: 1.2rem;
@@ -390,18 +292,16 @@ export default {
     padding: 0;
     margin-top: -10px;
   }
-
   .row .col-md-12{
     width: 100%;
     height: 100%;
     padding: 5px;
     margin: 5px;
   }
-
   .row .col-md-4{
-    width: 90%;
+      width: 90%;
     height: 100%;
-    padding: 2px;
+    padding: 10px;
     margin: 0;
   }
   .col-md-4 .card{
@@ -431,9 +331,12 @@ export default {
   .card-body ul{
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
   }
   .card-body ul li{
     width: 100%;
+    height: 20%;
     padding: 0;
     margin: 0;
     font-size: 0.9rem;
@@ -441,13 +344,13 @@ export default {
   }
   .card-body ul li:first-child{
     width: 100%;
-    height: 20%;
+    height: 50%;
     padding: 2px;
     margin: 0;
   }
   .card-body ul li:last-child{
     width: 100%;
-    height: 10%;
+    height: 20%;
     padding: 0;
     margin: 0;
   }
@@ -461,6 +364,5 @@ export default {
     padding: 0;
     margin: 0;
   }
-  
 }
 </style>

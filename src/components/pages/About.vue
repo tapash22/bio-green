@@ -352,7 +352,6 @@ h3 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
 .about .row {
   display: flex;
   flex-direction: column;
@@ -361,7 +360,6 @@ h3 {
   height: 100%;
   margin: 0;
 }
-
 .col-md-6 {
   /* background: #fff; */
   width: 50%;
@@ -395,7 +393,6 @@ h3 {
     color: #000;
     text-align: justify;
   }
-
   .wrap {
     padding-top: 50px;
     display: flex;
@@ -419,7 +416,6 @@ h3 {
     padding: 15px;
     margin: 0;
   }
-
   .col-md-3 .title h2 {
     font-size: 2rem;
     font-weight: 700;

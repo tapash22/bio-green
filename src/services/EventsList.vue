@@ -1,5 +1,5 @@
 <template>
-  <div class="row event my-2">
+  <div class="row event">
     <div
       class="col-md-6"
       data-aos="fade-right"
@@ -44,7 +44,7 @@
             <i>{{ occation.data().name }}</i
             ><br /><strong>{{ occation.data().place }}</strong>
           </p>
-          <button class="btn btn-primary" @click.prevent="onClick(occation)">
+          <button class="btn" @click.prevent="onClick(occation)">
             View
           </button>
         </div>
@@ -317,30 +317,36 @@ export default {
   .event {
     padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
+    widows: 100%;
+    height: auto;
+   
   }
   .event .col-md-6 {
     width: 100%;
-    height: 350px;
+    height: 380px;
     padding: 10px;
     margin-left: -10px;
   }
   .event .event-list {
-    width: 320px;
+    width: 90%;
     height: 300px;
     padding: 0;
     margin:0;
   }
-  .event .event-list img {
+  .event .event-list .image {
     width: 100%;
-    height: 100%;
+    height: 90%;
+    padding: 0;
+    margin: 0;
+  }
+  .event .event-list .image img{
+    width: 100%;
+    height:100%;
     background-position: center;
     background-size: cover;
-  }
+    }
   .event .event-list p {
-    height: 15%;
+    height: 10%;
     font-size: 1rem;
     font-weight: 700;
     font-family: "Oswald", sans-serif;
@@ -349,39 +355,45 @@ export default {
     padding-top: -20px;
   }
   .col-md-6 .tt {
-    width: 320px;
+    width: 90%;
     height: 300px;
     overflow-y: hidden;
     padding: 0;
     margin: 0;
   }
   .col-md-6 .ex {
-    width: 320px;
+    width: 100%;
     height: 300px;
     padding: 0;
     margin: 0;
     overflow-y: hidden;
   }
   .col-md-6 .ex .image {
-     width: 320px;
-  height: 80%;
-  padding: 10px;
-  margin: 5px;
+     width: 100%;
+  height: 90%;
+  padding: 0;
+  margin: 0;
 
   }
    .col-md-6 .ex .image img{
      width: 100%;
      height: 100%;
+     background-position: center;
+     background-size: cover;
    }
   .col-md-6 .ex p {
+    width: 100%;
+    height: 10%;
     font-size: 1.5rem;
     font-weight: 500;
     padding: 5px;
     margin: 0;
   }
   .event .event-item {
-    width: 400px;
+    width: 90%;
     height: 400px;
+    padding: 0;
+    margin-left: -10px;
     overflow-y: scroll;
   }
   .event .event-item .box {
@@ -393,21 +405,23 @@ export default {
     height: 200px;
   }
   .event .box .box-h {
-    width: 200px;
-    height: 150px;
-  }
-  .event .box a {
-    text-decoration: none;
+    width: 45%;
+    height: 200px;
+    padding: 10px;
+    margin: 0;
   }
   .event .box .box-h img {
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 80%;
+    padding: 10px;
+    margin: 0;
     background-position: center;
+    background-size: cover;
   }
   .event .box .box-b {
-    width: 180px;
-    height: 100px;
-    padding-left: 15px;
+    width: 45%;
+    height: 200px;
+    padding:0;
     margin: 0;
   }
   .event .box .box-b p {
@@ -415,7 +429,17 @@ export default {
     font-weight: 500;
     font-family: "Oswald", sans-serif;
     color: #000;
-    text-align: left;
+    text-align: justify;
+  }
+  .event .box .box-b .btn{
+    width: 50px;
+    height: 25px;
+    padding: 2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: #ffa6006c;
+    color: #000;
+
   }
 }
 </style>
