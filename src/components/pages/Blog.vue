@@ -120,18 +120,18 @@ h3 {
 }
 .col-md-4 .card {
   width: 100%;
-  height: 350px;
+  height: 300px;
   padding: 2px;
   margin: 5px;
   background: #fff;
 }
 .col-md-4 .card .card-header {
   width: 100%;
-  height: 200px;
-  padding: 0;
+  height: 150px;
+  padding: 2px;
   margin: 0;
 }
-.card .card-header img {
+.col-md-4 .card .card-header img {
   width: 100%;
   height: 100%;
   padding: 0;
@@ -141,7 +141,7 @@ h3 {
 }
 .card .card-body {
   width: 100%;
-  height: 160px;
+  height: 150px;
   padding: 0;
   margin: 0;
 }
@@ -158,15 +158,14 @@ h3 {
   padding: 5px;
   margin: 0;
   width: 100%;
-  height: 40px;
+  height: 25%;
   display: flex;
-  justify-content: flex-start;
   font-size: 1.1rem;
   font-weight: 500;
 }
 .card .card-body ul li:first-child {
   width: 100%;
-  height: 70px;
+  height: 50%;
   padding: 5px;
   margin: 0;
 }
@@ -182,7 +181,7 @@ h3 {
   justify-content: center;
   padding: 0;
   margin: 0;
-  height: 30px;
+  height: 25%;
 }
 .card .card-body ul li a {
   font-size: 1.2rem;
