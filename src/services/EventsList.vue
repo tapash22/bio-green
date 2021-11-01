@@ -203,9 +203,16 @@ export default {
   color: #000;
   text-align: left;
 }
-.event .box .box-b .btn {
-  background: rgb(5, 19, 82);
-}
+  .event .box .box-b .btn{
+    width: 50px;
+    height: 30px;
+    padding: 2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: blue;
+    color: #fff;
+    border-radius: none;
+  }
 
 @media only screen and (max-width: 992px) {
   .event {
@@ -310,6 +317,16 @@ export default {
     font-family: "Oswald", sans-serif;
     color: #000;
     text-align: left;
+  }
+    .event .box .box-b .btn{
+    width: 50px;
+    height: 30px;
+    padding: 2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: blue;
+    color: #fff;
+    border-radius: none;
   }
 }
 
@@ -433,13 +450,13 @@ export default {
   }
   .event .box .box-b .btn{
     width: 50px;
-    height: 25px;
+    height: 30px;
     padding: 2px;
     font-size: 0.9rem;
     font-weight: 500;
-    background: #ffa6006c;
-    color: #000;
-
+    background: blue;
+    color: #fff;
+    border-radius: none;
   }
 }
 </style>

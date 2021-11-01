@@ -127,7 +127,7 @@ a {
     display: block;
     padding: 0;
     margin: 0;
-    width: 100%;
+    widows: 95%;
   }
   a {
     text-decoration: none;
@@ -163,9 +163,9 @@ a {
   .res {
     display: block;
     padding: 0;
-    margin: 0;
-    width: 100%;
-    margin-left: -20px;
+    margin-left: -15px;
+    widows: 95%;
+
   }
   .card {
     width: 350px;

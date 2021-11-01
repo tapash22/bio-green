@@ -148,22 +148,33 @@ h3 {
   padding: 0;
   margin: 0;
 }
-.logo ul {
+.add .logo ul {
   padding: 0;
   margin: 0;
   display: flex;
 }
-.logo ul li {
+.add .logo ul li {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 50px;
+  height: 40px;
+  display: flex;
 }
-.logo ul li a {
+.add .logo ul li a {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  text-decoration: none;
+  justify-content: center;
+}
+.add .logo ul li a i{
   font-size: 1.5rem;
   font-weight: 700;
+  text-align: center;
   padding: 0;
   margin: 0;
-  text-decoration: none;
 }
 
 .bottom {
@@ -230,7 +241,7 @@ h3 {
   .col-md-4 .info {
     width: 100%;
     padding: 10px;
-    margin-left: -20px;
+    margin-left: -10px;
   }
   h3 {
     font-size: 1.3rem;
@@ -246,7 +257,7 @@ h3 {
   .col-md-4 .link {
     width: 100%;
     padding: 0;
-    margin-left: -20px;
+    margin-left: -10px;
   }
   .col-md-4 .link ul {
     padding: 0;
@@ -265,7 +276,7 @@ h3 {
   .col-md-4 .add {
     width: 100%;
     padding: 0;
-    margin-left: -20px;
+    margin-left: -10px;
   }
   .add address{
     padding-left: 30px;
@@ -282,22 +293,29 @@ h3 {
     display: flex;
     justify-content: center;
   }
-  .add .logo ul li {
-    list-style: none;
-    padding: 0px;
-    margin: 0;
-  }
-  .add .logo ul li a {
-    padding: 5px;
-    margin: 5px;
-  }
-  .add.logo ul li a i {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0;
-    padding: 5px;
-  }
-
+ .add .logo ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 40px;
+  display: flex;
+}
+.add .logo ul li a {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  text-decoration: none;
+  justify-content: center;
+}
+.add .logo ul li a i{
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
   .bottom {
     width: 100%;
     background: #000;
