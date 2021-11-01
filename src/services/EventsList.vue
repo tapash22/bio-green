@@ -355,7 +355,7 @@ export default {
     padding-top: -20px;
   }
   .col-md-6 .tt {
-    width: 90%;
+    width: 95%;
     height: 300px;
     overflow-y: hidden;
     padding: 0;
@@ -390,7 +390,7 @@ export default {
     margin: 0;
   }
   .event .event-item {
-    width: 90%;
+    width: 95%;
     height: 400px;
     padding: 0;
     margin-left: -10px;
