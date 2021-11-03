@@ -41,11 +41,11 @@ export default {
 </script>
 
 <style scoped>
-.client{
+.client {
   width: 100%;
-  height:100%;
-   margin:0;
-   padding:0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .row {
@@ -54,7 +54,6 @@ export default {
   padding: 0;
   margin: 0;
   background-image: url(../../assets/image/footer.jpg);
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
@@ -62,4 +61,26 @@ export default {
   padding: 0;
 }
 
+@media only screen and (max-width: 436px) {
+  .client {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .row {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-image: url(../../assets/image/footer.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: contrast(90%);
+  }
+  .col-md-12 {
+    padding: 0;
+  }
+}
 </style>

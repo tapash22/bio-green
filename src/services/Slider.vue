@@ -49,18 +49,6 @@ export default {
 </script>
 
 <style scoped>
-
-.image {
-  /* margin-top: -550px; */
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  top: 0;
-  z-index: 1;
-  left: 0;
-  right: 0;
-}
-
 img {
   width: 100%;
   height: 500px;
@@ -71,15 +59,10 @@ img {
 }
 
 @media only screen and (max-width: 436px) {
-  .image {
-    width: 415px;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-  }
   img {
+    
     width: 100%;
-    height: 100%;
+    height: 300px;
     background-size: cover;
     background-position: center;
   }

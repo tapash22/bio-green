@@ -1,12 +1,7 @@
 <template>
   <div class="home">
     <div class="slider">
-      <div class="i" v-for="slider in sliders" :key="slider.id">
-        <img :src="slider.data().image" />
-      </div>
-      <div class="s">
-        <Slider />
-      </div>
+      <Slider />
     </div>
     <div class="container">
       <div class="row">
@@ -124,15 +119,12 @@ export default {
   margin-top: 120px;
 }
 .home .slider {
-  width: 100%;
+  widows: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
   background: rgba(0, 0, 0, 0.301);
 }
-.slider .s {
-  margin-top: -500px;
-}
-
 .row {
   width: 100%;
   height: 100%;
@@ -258,17 +250,18 @@ export default {
 }
 
 @media only screen and (max-width: 436px) {
-    .home {
+  .home {
     width: 100%;
     height: 100%;
     margin-top: 90px;
     padding: 0;
   }
-  .slider .i {
-    display: none;
-  }
-  .slider .s {
-    margin-top: 0;
+  .home .slider {
+    widows: 100%;
+    height: 330px;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.301);
   }
   .home .row {
     widows: 100%;
@@ -295,14 +288,14 @@ export default {
     padding: 0;
     margin-top: -10px;
   }
-  .row .col-md-12{
+  .row .col-md-12 {
     width: 100%;
     height: 100%;
     padding: 5px;
     margin: 5px;
   }
-  .row .col-md-4{
-      width: 90%;
+  .row .col-md-4 {
+    width: 90%;
     height: 100%;
     padding: 10px;
     margin: 0;
@@ -334,11 +327,10 @@ export default {
     background: #fff;
   }
   .card .card-body ul {
-    padding:0;
+    padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
-    
   }
   .card .card-body ul li {
     width: 100%;

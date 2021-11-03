@@ -38,7 +38,7 @@
             <div class="image">
               <img :src="product.image" />
             </div>
-            <div class="text">
+            <div class="info">
               <h5 style="text-align: left; padding: 10px">
                 {{ product.product_name }}
               </h5>

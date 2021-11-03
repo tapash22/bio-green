@@ -1,37 +1,35 @@
 <template>
-  <Carousel
-    :items-to-show="3"
-    :autoplay="4000"
-    :wrap-around="true"
-    class="full"
-  >
-    <Slide v-for="slide in products" :key="slide.id">
-      <router-link :to="slide.url">
-        <div class="card">
-          <img :src="slide.img" />
+  <div class="row caros">
+    <div class="col-md-12 car">
+      <Carousel :items-to-show="3" :autoplay="4000" :wrap-around="true">
+        <Slide v-for="slide in products" :key="slide.id">
+          <router-link :to="slide.url">
+            <div class="card">
+              <img :src="slide.img" />
 
-          <p>{{ slide.title }}</p>
-        </div>
-      </router-link>
-    </Slide>
-    <template #addons>
-      <Navigation />
-    </template>
-  </Carousel>
-  <Carousel :items-to-show="1" :autoplay="4000" :wrap-around="true" class="res">
-    <Slide v-for="slide in products" :key="slide.id">
-      <router-link :to="slide.url">
-        <div class="card">
-          <img :src="slide.img" />
+              <p>{{ slide.title }}</p>
+            </div>
+          </router-link>
+        </Slide>
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
+    <div class="col-md-12 caro">
+      <Carousel :items-to-show="1" :autoplay="4000" :wrap-around="true">
+        <Slide v-for="slide in products" :key="slide.id">
+          <router-link :to="slide.url">
+            <div class="card">
+              <img :src="slide.img" />
 
-          <p>{{ slide.title }}</p>
-        </div>
-      </router-link>
-    </Slide>
-    <!-- <template #addons>
-      <Navigation />
-    </template> -->
-  </Carousel>
+              <p>{{ slide.title }}</p>
+            </div>
+          </router-link>
+        </Slide>
+      </Carousel>
+    </div>
+  </div>
 </template>
 <script>
 import { Carousel, Slide } from "vue3-carousel";
@@ -84,30 +82,34 @@ export default {
 };
 </script>
 <style scoped>
-.full {
+.row {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.row .car {
   display: block;
   padding: 0;
   margin: 0;
   width: 100%;
+  height: 320px;
 }
-.res {
-  display: none;
-}
-a {
+.row .car a {
   text-decoration: none;
 }
-.card {
+.row .car a .card {
   width: 300px;
   height: 300px;
   padding: 10px;
   background: rgb(5, 19, 82);
 }
-.card img {
+.row .card img {
   width: 100%;
   height: 270px;
   background-position: center;
 }
-.card p {
+.row .card p {
   height: 30px;
   font-size: 1.2rem;
   font-weight: 700;
@@ -118,78 +120,94 @@ a {
   text-transform: uppercase;
   padding: 10px;
 }
+.row .caro {
+  display: none;
+}
 
 @media only screen and (max-width: 992px) {
-  .full {
-    display: none;
-  }
-  .res {
-    display: block;
+  .row {
+    widows: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
-    widows: 95%;
   }
-  a {
-    text-decoration: none;
+   .row .car {
+    display: none;
   }
-  .card {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-    background: rgb(5, 19, 82);
-  }
-  .card img {
+  .row .caro {
     width: 100%;
     height: 250px;
-    background-position: center;
+    padding: 5px;
+    margin: 0;
+    display: block;
   }
-  .card p {
-    height: 30px;
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: "Oswald", sans-serif;
-    color: #fff;
+  .row .caro a {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+  }
+  .row .caro a .card {
+    width: 90%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .row .caro a .card img {
+    widows: 100%;
+    height: 90%;
+    padding: 0;
+    margin: 0;
+  }
+   .row .caro a .card p {
+    width: 100%;
+    height: 10%;
+    font-size: 1.1rem;
+    font-weight: 500;
     text-align: center;
-    z-index: 1;
-    text-transform: uppercase;
-    padding: 10px;
   }
 }
 
 @media only screen and (max-width: 436px) {
-  .full {
+  .row {
+    widows: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  .row .car {
     display: none;
   }
-  .res {
+  .row .caro {
     display: block;
-    padding: 0;
-    margin-left: -15px;
-    widows: 95%;
-
-  }
-  .card {
-    width: 350px;
-    height: 250px;
-    padding: 0;
-    margin: 0;
-    background: rgb(5, 19, 82);
-  }
-  .card img {
     width: 100%;
-    height: 90%;
-    background-position: center;
+    height: 300px;
+    padding: 5px;
+    margin: 0;
+  }
+ .row .caro a {
+    padding: 0;
+    margin-left: -20px;
+    text-decoration: none;
+  }
+ .row .caro a .card {
+    width: 100%;
+    height: 290px;
     padding: 0;
     margin: 0;
   }
-  .card p {
-    font-size: 1.2rem;
+ .row .caro a .card img {
+    widows: 100%;
+    height: 85%;
+    padding: 0;
+    margin: 0;
+  }
+ .row .caro a .card p {
+    width: 100%;
+    height: 15%;
+    font-size: 1.1rem;
     font-weight: 500;
-    font-family: "Oswald", sans-serif;
-    color: #fff;
     text-align: center;
-    margin-top: -3%;
-    z-index: 1;
-    text-transform: uppercase;
+    color: #000;
   }
 }
 </style>

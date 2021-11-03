@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <div class="info">
+          <div class="inf">
             <h3>We are</h3>
             <p>
               BioGreen International Limited is a World Class Animal Health Care
@@ -107,12 +107,12 @@ h3 {
   font-weight: 500;
   text-align: center;
 }
-.col-md-4 .info {
+.col-md-4 .inf {
   width: 100%;
   padding: 10px;
   margin: 0;
 }
-.info p {
+.inf p {
   font-size: 1rem;
   font-weight: 500;
   text-align: justify;
@@ -142,11 +142,14 @@ h3 {
   padding: 10px;
   margin: 0;
 }
+.col-md-4 .add address {
+  margin-left: 30px;
+}
 
 .add .logo {
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin-left: 30px;
 }
 .add .logo ul {
   padding: 0;
@@ -165,11 +168,11 @@ h3 {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin:0;
+  margin: 0;
   text-decoration: none;
   justify-content: center;
 }
-.add .logo ul li a i{
+.add .logo ul li a i {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
@@ -219,7 +222,7 @@ h3 {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     background-image: url("../assets/image/footer.jpg");
     background-position: center;
     background-size: cover;
@@ -235,10 +238,11 @@ h3 {
   }
   .row .col-md-4 {
     width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
   }
-  .col-md-4 .info {
+  .col-md-4 .inf {
     width: 100%;
     padding: 10px;
     margin-left: -10px;
@@ -248,7 +252,7 @@ h3 {
     font-weight: 500;
     text-align: center;
   }
-  .info p {
+  .col-md-4 .inf p {
     font-size: 1rem;
     font-weight: 500;
     text-align: justify;
@@ -278,7 +282,7 @@ h3 {
     padding: 0;
     margin-left: -10px;
   }
-  .add address{
+  .add address {
     padding-left: 30px;
   }
 
@@ -288,34 +292,34 @@ h3 {
     margin: 0;
   }
   .add .logo ul {
-    padding:0;
+    padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
   }
- .add .logo ul li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 50px;
-  height: 40px;
-  display: flex;
-}
-.add .logo ul li a {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin:0;
-  text-decoration: none;
-  justify-content: center;
-}
-.add .logo ul li a i{
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
+  .add .logo ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 50px;
+    height: 40px;
+    display: flex;
+  }
+  .add .logo ul li a {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    justify-content: center;
+  }
+  .add .logo ul li a i {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
   .bottom {
     width: 100%;
     background: #000;
