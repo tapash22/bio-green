@@ -144,7 +144,7 @@ nav .row {
   width: 200px;
 }
 
-.text {
+.info {
   width: 20%;
   padding: 20px;
   margin-top: 0;
@@ -152,7 +152,7 @@ nav .row {
   justify-content: center;
   align-items: center;
 }
-.text ul {
+.info ul {
   padding: 5px;
   margin: 0;
   display: flex;
@@ -160,22 +160,22 @@ nav .row {
   justify-content: left;
   width: 100%;
 }
-.text ul li {
+.info ul li {
   padding: 2px;
   list-style: none;
 }
-.text ul li {
+.info ul li {
   font-size: 1.2rem;
   font-weight: 600;
   color: #000;
 }
-.text ul li i {
+.info ul li i {
   font-size: 1.3rem;
   font-weight: 700;
   color: #000;
   padding-right: 5px;
 }
-.text ul li a {
+.info ul li a {
   padding: 10px;
 }
 .mini {

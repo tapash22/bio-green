@@ -4,19 +4,21 @@
       <Slider />
     </div>
     <div class="container">
-      <div class="row">
-        <h3>products</h3>
-        <p>We deliver performances rather just a product to your business</p>
-        <div class="col-md-12">
-          <Carousel />
-        </div>
-      </div>
+    
 
       <!-- event -->
       <div class="row">
         <h3>Events</h3>
         <div class="col-md-12">
           <EventList />
+        </div>
+      </div>
+
+        <div class="row">
+        <h3>products</h3>
+        <p>We deliver performances rather just a product to your business</p>
+        <div class="col-md-12">
+          <Carousel />
         </div>
       </div>
 
