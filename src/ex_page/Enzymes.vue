@@ -2,7 +2,6 @@
   <div class="products">
     <div class="container">
       <h3>Enzymes</h3>
-      <div class="container">
         <div class="row">
           <div class="col-md-4" v-for="product in products" :key="product">
             <div class="card">
@@ -16,7 +15,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
 
     <div class="modal" tabindex="-1" role="dialog" v-if="showModal">

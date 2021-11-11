@@ -1,23 +1,21 @@
 <template>
   <div class="products">
     <div class="container">
-      <div class="row">
         <h3>Feed sanitizer</h3>
 
-        <div class="col-md-4" v-for="product in products" :key="product">
-          <div class="card">
-            <div class="card-body">
-              <div class="img">
+   <div class="row">
+          <div class="col-md-4" v-for="product in products" :key="product">
+            <div class="card">
+              <div class="card-body">
                 <img :src="product.data().image" />
               </div>
-            </div>
-            <div class="card-footer">
-              <p>{{ product.data().product_name }}</p>
-              <a class="btn" @click.prevent="productDetail(product)">View</a>
+              <div class="card-footer">
+                <p>{{ product.data().product_name }}</p>
+                <a class="btn" @click.prevent="productDetail(product)">View</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
 
     <div class="modal" tabindex="-1" role="dialog" v-if="showModal">

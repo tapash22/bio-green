@@ -4,21 +4,18 @@
       <Slider />
     </div>
     <div class="container">
-    
-
+      <div class="row">
+        <h3>products</h3>
+        <p>We deliver performances rather just a product to your business</p>
+        <div class="col-md-12">
+          <Carousel />
+        </div>
+      </div>
       <!-- event -->
       <div class="row">
         <h3>Events</h3>
         <div class="col-md-12">
           <EventList />
-        </div>
-      </div>
-
-        <div class="row">
-        <h3>products</h3>
-        <p>We deliver performances rather just a product to your business</p>
-        <div class="col-md-12">
-          <Carousel />
         </div>
       </div>
 
@@ -120,7 +117,7 @@ export default {
   margin: 0;
   margin-top: 120px;
 }
-.home .slider {
+ .slider {
   widows: 100%;
   height: 100%;
   padding: 0;
@@ -159,7 +156,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.col-md-4 {
+ .col-md-12 .col-md-4 {
   width: 33%;
   padding: 20px;
   margin: 0;
@@ -185,13 +182,13 @@ export default {
   background-position: center;
   background-size: cover;
 }
-.card .card-body {
+.col-md-4 .card .card-body {
   width: 100%;
   height: 150px;
   padding: 0;
   margin: 0;
 }
-.card .card-body ul {
+.col-md-4 .card .card-body ul {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -200,7 +197,7 @@ export default {
   flex-direction: column;
   background: #ffa500;
 }
-.card .card-body ul li {
+.col-md-4 .card .card-body ul li {
   padding: 5px;
   margin: 0;
   width: 100%;
@@ -209,19 +206,19 @@ export default {
   font-size: 1.1rem;
   font-weight: 500;
 }
-.card .card-body ul li:first-child {
+.col-md-4 .card .card-body ul li:first-child {
   width: 100%;
   height: 50%;
   padding: 5px;
   margin: 0;
 }
-.card .card-body ul li i {
+.col-md-4 .card .card-body ul li i {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 5px;
   margin: 0;
 }
-.card .card-body ul li:last-child {
+.col-md-4 .card .card-body ul li:last-child {
   background: #fff;
   display: flex;
   justify-content: center;
@@ -229,9 +226,10 @@ export default {
   margin: 0;
   height: 25%;
 }
-.card .card-body ul li a {
+.col-md-4 .card .card-body ul li a {
   font-size: 1.2rem;
   font-weight: 500;
+  text-align: center;
   text-decoration: none;
   color: #000;
 }

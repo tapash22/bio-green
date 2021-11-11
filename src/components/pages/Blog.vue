@@ -186,6 +186,7 @@ h3 {
 .card .card-body ul li a {
   font-size: 1.2rem;
   font-weight: 500;
+  text-align: center;
   text-decoration: none;
   color: #000;
 }

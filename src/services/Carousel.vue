@@ -186,7 +186,9 @@ export default {
   }
  .row .caro a {
     padding: 0;
-    margin-left: -20px;
+    margin:0;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
   }
  .row .caro a .card {

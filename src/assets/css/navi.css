@@ -34,51 +34,59 @@ nav .row {
 
 .row .brand {
   width: 20%;
-  height: 80%;
-  padding: 20px;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.row .brand a{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .brand a img {
-  width: 280px;
-  height: auto;
-  padding: 10px;
-  margin-left: 40px;
-  align-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding:0;
+  margin-top: 20px;
 }
 .brand .btn {
   display: none;
 }
 
-.link {
-  padding-top: 40px;
-  margin-top: 10px;
-  position: relative;
+.row .link {
   width: 60%;
   height: 100%;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  margin: 0;
 }
 .link .ul {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+  align-items: center;
 }
 .link .ul li {
+  padding-top: 20px;
+  margin: 5px;
   list-style: none;
-  padding: 5px;
 }
 .link .ul li a {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: rgb(22, 4, 54);
   text-decoration: none;
   padding: 5px;
+  margin: 0;
   border-bottom: 3px none #000;
   transition: 1s transform ease-out;
 }
@@ -144,34 +152,33 @@ nav .row {
   width: 200px;
 }
 
-.info {
+.row .info {
   width: 20%;
-  padding: 20px;
-  margin-top: 0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
   position: relative;
-  justify-content: center;
-  align-items: center;
 }
 .info ul {
-  padding: 5px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
   width: 100%;
+  height: 100%;
+  padding:0;
+  margin-top: 25px;
+  display: block;
+  justify-content: start;
 }
 .info ul li {
   padding: 2px;
   list-style: none;
 }
 .info ul li {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #000;
 }
 .info ul li i {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #000;
   padding-right: 5px;
 }
@@ -414,7 +421,7 @@ nav .row {
     margin-right: 70%;
   }
 
-  .link {
+  .mini nav .link {
     padding: 0;
     margin: 0;
     position: relative;
@@ -511,7 +518,7 @@ nav .row {
     width: 200px;
   }
 
-  .info {
+  .mini nav .info {
     padding-top: 5px;
     margin-top: 0;
     position: relative;

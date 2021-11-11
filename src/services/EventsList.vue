@@ -2,9 +2,6 @@
   <div class="row event">
     <div
       class="col-md-6"
-      data-aos="fade-right"
-      data-aos-delay="500"
-      data-aos-once="false"
     >
       <div class="event-list" v-if="active_item">
         <div class="image">
@@ -30,9 +27,6 @@
     </div>
     <div
       class="col-md-6 event-item"
-      data-aos="fade-left"
-      data-aos-delay="500"
-      data-aos-once="false"
     >
       <div class="box" v-for="occation in occations" :key="occation.id">
         <div class="box-h">
@@ -336,7 +330,7 @@ export default {
     width: 100%;
     height: 390px;
     padding: 10px;
-    margin-left: -10px;
+    margin:0;
   }
   .event .event-list {
     width: 100%;
@@ -346,13 +340,15 @@ export default {
   }
   .event .event-list .image {
     width: 100%;
-    height: 90%;
+    height: 100%;
     padding: 0;
     margin: 0;
   }
   .event .event-list .image img {
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
     background-position: center;
     background-size: cover;
   }
@@ -366,7 +362,7 @@ export default {
     padding-top: -20px;
   }
   .col-md-6 .tt {
-    width: 95%;
+    width: 100%;
     height: 300px;
     overflow-y: hidden;
     padding: 0;
@@ -403,7 +399,7 @@ export default {
     width: 100%;
     height: 400px;
     padding: 0;
-    margin-left: -20px;
+    margin-left: -10px;
     overflow-y: scroll;
   }
   .event .event-item .box {
@@ -430,7 +426,7 @@ export default {
   .event .box .box-b {
     width: 50%;
     height: 200px;
-    padding: 2px;
+    padding: 0;
     margin: 0;
   }
   .event .box .box-b p {
@@ -438,7 +434,9 @@ export default {
     font-weight: 500;
     font-family: "Oswald", sans-serif;
     color: #000;
-    text-align: justify;
+    text-align: left;
+    padding: 5px;
+    margin: 0;
   }
   .event .box .box-b .btn {
     width: 50px;

@@ -3,7 +3,6 @@
     <div class="navi">
       <nav>
         <div class="row">
-          <!-- <div class="col-md-3"> -->
           <div class="brand">
             <router-link to="/home" style="text-decoration: none">
               <img src="../assets/image/logo4.png" />
@@ -12,8 +11,6 @@
               <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
           </div>
-          <!-- </div> -->
-          <!-- <div class="col-md-7"> -->
           <div class="link">
             <ul class="ul">
               <transition-group name="slide-fade">

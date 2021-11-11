@@ -1,15 +1,13 @@
 <template>
   <div class="products">
     <div class="container">
-      <div class="row">
-        <h3>Essensial oil</h3>
+      <h3>Essensial oil</h3>
 
+      <div class="row">
         <div class="col-md-4" v-for="product in products" :key="product">
           <div class="card">
             <div class="card-body">
-              <div class="img">
-                <img :src="product.data().image" />
-              </div>
+              <img :src="product.data().image" />
             </div>
             <div class="card-footer">
               <p>{{ product.data().product_name }}</p>
@@ -44,12 +42,7 @@
                 {{ product.product_name }}
               </h5>
               <p>{{ product.description }}</p>
-              <a
-                :href="product.pdf"  
-                target="_parent"
-              >
-                Read Pdf
-              </a>
+              <a :href="product.pdf" target="_parent"> Read Pdf </a>
             </div>
           </div>
         </div>
@@ -91,7 +84,6 @@ export default {
   },
 
   methods: {
-
     inClose() {
       this.showModal = false;
     },
@@ -110,5 +102,5 @@ export default {
 </script>
         
 <style >
-@import '../assets/css/subpage.css';
+@import "../assets/css/subpage.css";
 </style>
