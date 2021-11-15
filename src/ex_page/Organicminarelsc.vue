@@ -32,17 +32,19 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+                <div class="modal-body">
             <div class="image">
               <img :src="product.image" />
             </div>
-            <div class="text">
-              <h5 style="text-align: left; padding: 10px">
+            <div class="info">
+              <h5>
                 {{ product.product_name }}
               </h5>
               <p>{{ product.description }}</p>
-              <a :href="product.pdf" target="_parent"> Read Pdf </a>
             </div>
+          </div>
+          <div class="modal-footer">
+            <a :href="product.pdf" target="_parent"> Read Pdf </a>
           </div>
         </div>
       </div>

@@ -433,15 +433,15 @@ nav .row {
   .link .ul {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 0;
     margin: 0;
   }
   .link .ul li {
     list-style: none;
     padding: 0;
-    display: block;
+    margin: 0;
     background: #ffa600;
+    width: 100%;
     height: 50px;
   }
   .link .ul li a {
@@ -456,7 +456,7 @@ nav .row {
   }
   .link .ul li:hover ul {
     position: absolute;
-    display: flexbox;
+    display: block;
   }
   .link .ul li:hover {
     background: #ffa600;
@@ -466,11 +466,13 @@ nav .row {
   }
   .link .ul li ul {
     display: none;
+    position: absolute;
     padding: 0;
     margin: 0;
     background: #ffa600;
     margin-top: 0;
     margin-left: 80px;
+    width: 100%;
   }
   .link .ul li ul li {
     padding: 10px;

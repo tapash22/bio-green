@@ -1,21 +1,21 @@
 <template>
   <div class="products">
     <div class="container">
-        <h3>Feed sanitizer</h3>
+      <h3>Feed sanitizer</h3>
 
-   <div class="row">
-          <div class="col-md-4" v-for="product in products" :key="product">
-            <div class="card">
-              <div class="card-body">
-                <img :src="product.data().image" />
-              </div>
-              <div class="card-footer">
-                <p>{{ product.data().product_name }}</p>
-                <a class="btn" @click.prevent="productDetail(product)">View</a>
-              </div>
+      <div class="row">
+        <div class="col-md-4" v-for="product in products" :key="product">
+          <div class="card">
+            <div class="card-body">
+              <img :src="product.data().image" />
+            </div>
+            <div class="card-footer">
+              <p>{{ product.data().product_name }}</p>
+              <a class="btn" @click.prevent="productDetail(product)">View</a>
             </div>
           </div>
         </div>
+      </div>
     </div>
 
     <div class="modal" tabindex="-1" role="dialog" v-if="showModal">
@@ -37,13 +37,15 @@
             <div class="image">
               <img :src="product.image" />
             </div>
-            <div class="text">
-              <h5 style="text-align: left; padding: 10px">
+            <div class="info">
+              <h5>
                 {{ product.product_name }}
               </h5>
               <p>{{ product.description }}</p>
-              <a :href="product.pdf" target="_parent"> Read Pdf </a>
             </div>
+          </div>
+          <div class="modal-footer">
+            <a :href="product.pdf" target="_parent"> Read Pdf </a>
           </div>
         </div>
       </div>
@@ -102,5 +104,5 @@ export default {
 </script>
         
 <style >
-@import '../assets/css/subpage.css';
+@import "../assets/css/subpage.css";
 </style>
