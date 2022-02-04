@@ -1,44 +1,42 @@
 <template>
   <div class="row event">
-    <div
-      class="col-md-6"
-    >
+    <div class="col-md-6">
       <div class="event-list" v-if="active_item">
         <div class="image">
-          <img :src="occation.image" />
+          <img src="occation.eimage" />
         </div>
         <p>
-          {{ occation.name }}<br />
-          <strong>{{ occation.place }}</strong>
+          {{ occation.ename }}<br />
+          <strong>{{ occation.eplace }}</strong>
         </p>
       </div>
 
       <div class="tt" v-else>
         <div class="ex" v-for="occation in occations" :key="occation">
           <div class="image">
-            <img :src="occation.data().image" />
+            <img :src="occation.eimage" />
           </div>
           <p>
-            <i> {{ occation.data().name }}</i>
-            <br />{{ occation.data().place }}
+            <i> {{ occation.ename }}</i>
+            <br />{{ occation.eplace }}
           </p>
         </div>
       </div>
     </div>
-    <div
-      class="col-md-6 event-item"
-    >
+    <div class="col-md-6 event-item">
       <div class="box" v-for="occation in occations" :key="occation.id">
         <div class="box-h">
-          <img :src="occation.data().image" />
+          <img :src="occation.eimage" />
         </div>
 
         <div class="box-b">
           <p>
-            <i>{{ occation.data().name }}</i
-            ><br /><strong>{{ occation.data().place }}</strong>
+            <i>{{ occation.ename }}</i
+            ><br /><strong>{{ occation.eplace }}</strong>
           </p>
-          <button class="btn" @click.prevent="onClick(occation)">View</button>
+          <button class="btn btn-primary" @click="onClick(occation.id)">
+            View
+          </button>
         </div>
       </div>
     </div>
@@ -46,36 +44,32 @@
 </template>
 
 <script>
-import { db } from "../firebase";
+import Events from "../apis/Events";
 
 export default {
   data() {
     return {
+      occation:[],
       occations: [],
-      occation: {
-        name: "",
-        place: "",
-        image: "",
-      },
+      id: "",
       active_item: null,
     };
   },
 
   created() {
-    db.collection("occations")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          this.occations.push(doc);
-        });
-      });
+    Events.getOcations().then((response) => {
+      this.occations = response.data;
+      console.log(this.occations);
+    });
   },
 
   methods: {
-    onClick(occation) {
-      this.occation = occation.data();
-      this.active_item = occation.id;
-    },
+   onClick(id){
+     Events.getEventid(id).then((res)=>{
+       this.occation =res.data;
+       this.active_item = this.occation;
+     });
+   }
   },
 };
 </script>
@@ -86,7 +80,6 @@ export default {
   margin: 10px;
   width: 100%;
   height: 500px;
-
   /* display:flex;
   flex-direction: row; */
 }
@@ -330,7 +323,7 @@ export default {
     width: 100%;
     height: 390px;
     padding: 10px;
-    margin:0;
+    margin: 0;
   }
   .event .event-list {
     width: 100%;
