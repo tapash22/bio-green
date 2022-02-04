@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Blogs</h3>
-          <p style="text-align:center;color:blue;">Use 800px/400px Picture</p>
+          <p style="text-align: center; color: blue">Use 800px/400px Picture</p>
           <form>
             <div class="form-group">
               <label>Blog Title</label>
@@ -12,7 +12,7 @@
                 class="form-control"
                 type="text"
                 placeholder="Event Name .."
-                v-model="blog.title"
+                v-model="btitle"
               />
             </div>
             <div class="form-group">
@@ -21,36 +21,24 @@
                 class="form-control"
                 type="text"
                 placeholder="Event Name .."
-                v-model="blog.author"
-              />
-            </div>
-            <div class="form-group">
-              <label>Date</label>
-              <input
-                class="form-control"
-                type="date"
-                placeholder="05/09/2019"
-                v-model="blog.mydate"
+                v-model="bauthor"
               />
             </div>
             <div class="form-group">
               <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="blog.description"
-              ></textarea>
-            </div>
-            <div class="form-group my-4 upload">
-              <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" />
+              <textarea class="form-control" v-model="bdescription"></textarea>
             </div>
             <div class="form-group">
-              <div class="p-1">
-                <img :src="blog.image" style="width: 80px; height: 50px" />
-              </div>
+              <label>Upload Image</label>
+              <input
+                class="form-control"
+                type="file"
+                ref="bimage"
+                @change="uploadImage()"
+              />
             </div>
             <div class="btn">
-              <button class="btn btn-primary" @click.prevent="saveData">
+              <button class="btn btn-primary" @click.prevent="addBlog">
                 Add Blog
               </button>
             </div>
@@ -73,20 +61,20 @@
             </thead>
             <tbody>
               <tr v-for="blog in blogs" :key="blog.id">
-                <td>{{ blog.data().title }}</td>
-                <td>{{ blog.data().author}}</td>
-                <td>{{ blog.data().mydate}}</td>
-                <td>{{ blog.data().description }}</td>
-                <td>{{ blog.data().image }}</td>
+                <td>{{ blog.btitle }}</td>
+                <td>{{ blog.bauthor }}</td>
+                
+                <td>{{ blog.bdescription }}</td>
+                <td><img :src="blog.bimage"/></td>
                 <td>
                   <button
-                    @click.prevent="editProduct(blog)"
+                    @click.prevent="editBlog(blog)"
                     class="btn btn-primary"
                   >
                     Edit
                   </button>
                   <button
-                    @click="deleteProduct(blog.id)"
+                    @click="deleteBlog(blog.id)"
                     class="btn btn-danger"
                   >
                     Delete
@@ -177,135 +165,87 @@
 </template>
 
 <script>
-import { fb, db } from "../../firebase";
+import Blog from "../../apis/Blog";
+
 export default {
   name: "blog",
   data() {
     return {
       showModal: false,
       blogs: [],
-      blog: {
-        title: "",
-        author: "",
-        description: "",
-        image: "",
-        mydate: "",
-      },
-      active_item: null,
+      id:"",
+        btitle: "",
+        bauthor: "",
+        bdescription: "",
+        bimage: "",
     };
   },
 
-  created() {
-    db.collection("blogs")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.blogs.push(doc);
+    created() {
+    this.getBlogs();
+  },
+
+  methods: {
+    addBlog() {
+      var data = new FormData();
+      data.append("btitle", this.btitle);
+      data.append("bauthor", this.bauthor);
+      data.append("bdescription", this.bdescription);
+      data.append("bimage", this.bimage);
+
+      Blog.addBlog(data, {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => {
+          if (res.data.error) {
+            console.log("errors", res.data.error);
+            alert(res.data.error);
+          } else {
+            console.log(res.data.message);
+            alert(res.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
         });
+    },
+
+    getBlogs() {
+      Blog.getBlog().then((response) => {
+        this.blogs = response.data;
+        console.log(this.blogs);
       });
+    },
+
+    uploadImage() {
+      this.bimage = this.$refs.bimage.files[0];
+    },
+
+    deleteProduct(id) {
+      if (window.confirm("Are you want to delete this?")) {
+        Blog.deleteBlog(id)
+          .then((res) => {
+            if (res.data.error) {
+              console.log("errors", res.data);
+              alert(res.data);
+            } else {
+              console.log(res.data.message);
+              alert(res.data);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    },
   },
 
   mounted() {
     window.scrollTo(0, 0);
   },
 
-  methods: {
-    deleteImage() {},
-    uploadImage(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("blogs/" + file.name);
-        let uploadTask = storageRef.put(file);
-
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {
-            // Handle unsuccessful uploads
-          },
-          () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.blog.image = downloadURL;
-              console.log("File available at", downloadURL);
-            });
-          }
-        );
-      }
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    watcher() {
-      db.collection("blogs").onSnapshot((querySnapshot) => {
-        this.blogs = [];
-        querySnapshot.forEach((doc) => {
-          this.blogs.push(doc);
-        });
-      });
-    },
-
-    updateProduct() {
-      db.collection("blogs")
-        .doc(this.active_item)
-        .update(this.blog)
-        .then(() => {
-          this.showModal = false;
-          this.watcher();
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-        });
-    },
-
-    editProduct(blog) {
-      this.showModal = true;
-      this.blog = blog.data();
-      this.active_item = blog.id;
-    },
-
-    deleteProduct(doc) {
-      if (confirm("Are you sure?")) {
-        db.collection("blogs")
-          .doc(doc)
-          .delete()
-          .then(() => {
-            this.watcher();
-            console.log("Document successfully deleted!");
-          })
-          .catch((error) => {
-            console.error("Error removing document: ", error);
-          });
-      }
-    },
-
-    reset() {
-      this.blog = {
-        title: "",
-        author: "",
-        description: "",
-        image: "",
-      };
-    },
-
-    saveData() {
-      db.collection("blogs")
-        .add(this.blog)
-        .then((docRef) => {
-          this.reset();
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
-    },
-  },
 };
 </script>
 
@@ -314,14 +254,14 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 20px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 750px;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
   display: flex;
 }
 .col-md-12 {
@@ -333,7 +273,6 @@ export default {
 }
 .form {
   width: 100%;
-  height: 100%;
   padding: 20px;
   background: #fff;
 }
@@ -354,7 +293,7 @@ label {
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
 }
 .col-md-12 {
   padding: 0;

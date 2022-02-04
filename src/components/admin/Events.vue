@@ -4,31 +4,27 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Celebration</h3>
-           <p style="text-align:center;color:blue;">Use 500px/400px Picture</p>
+          <p style="text-align: center; color: blue">Use 500px/400px Picture</p>
           <form>
             <div class="form-group">
               <label>Occation Name</label>
-              <input type="text" class="form-control" v-model="occation.name" />
+              <input type="text" class="form-control" v-model="ename" />
             </div>
             <div class="form-group">
               <label>Occation Place</label>
-              <input
-                type="text"
-                class="form-control"
-                v-model="occation.place"
-              />
+              <input type="text" class="form-control" v-model="eplace" />
             </div>
             <div class="form-group">
               <label>Upload Image</label>
-              <input type="file" class="form-control" @change="uploadImage" />
-            </div>
-            <div class="form-group">
-              <div class="p-3">
-                <img :src="occation.image" style="width: 80px; height: 50px" placeholder=" Use 500px/400px Picture"/>
-              </div>
+              <input
+                class="form-control"
+                type="file"
+                ref="eimage"
+                @change="uploadImage()"
+              />
             </div>
             <div class="my-3">
-              <button class="btn btn-primary" @click.prevent="saveData">
+              <button class="btn btn-primary" @click.prevent="createEvents">
                 Save
               </button>
             </div>
@@ -43,27 +39,31 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>place</th>
-                <th>Image</th>
-                <th>Modify</th>
+                <th scope="col">#</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event place</th>
+                <th scope="col">Event Image</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="occation in occations" :key="occation.id">
-                <td>{{ occation.data().name }}</td>
-                <td>{{ occation.data().place }}</td>
-                <td>{{ occation.data().image }}</td>
+              <tr v-for="event in events" :key="event.id">
+                <td>{{ event.id }}</td>
+                <td>{{ event.ename }}</td>
+                <td>{{ event.eplace }}</td>
+                <td>
+                  <img :src="'/sub/storage/app/' + event.eimage" />
+                </td>
                 <td>
                   <button
-                    @click.prevent="editOccation(occation)"
-                    class="btn btn-primary"
+                    @click="editProduct(event.id)"
+                    class="btn btn-small btn-info"
                   >
                     Edit
                   </button>
                   <button
-                    @click="deleteOccation(occation.id)"
-                    class="btn btn-danger"
+                    @click="deleteProduct(event.id)"
+                    class="btn btn-small btn-warning"
                   >
                     Delete
                   </button>
@@ -104,14 +104,14 @@
             </div>
             <div class="form-group my-2 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 500px/400px Picture"/>
+              <input
+                class="form-control"
+                type="file"
+                @change="uploadImage"
+                placeholder=" Use 500px/400px Picture"
+              />
             </div>
-            <div class="form-group">
-              <div class="p-1">
-                <img :src="occation.image" style="width: 80px; height: 50px" />
-                <span class="delete-img" @click="deleteImage(image)">X</span>
-              </div>
-            </div>
+          
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" @click="inClose()">
@@ -132,128 +132,76 @@
 </template>
 
 <script>
-import { fb, db } from "../../firebase";
+import Event from "../../apis/Events";
 
 export default {
   data() {
     return {
-      showModal: false,
-      occations: [],
-      occation: {
-        name: "",
-        place: "",
-        image: "",
-      },
-      active_item: null,
+      ename: "",
+      eplace:"",
+      eimage: "",
+      events: [],
+      id: "",
     };
   },
 
   created() {
-    db.collection("occations")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.occations.push(doc);
-        });
-      });
-  },
-
-  mounted() {
-    window.scrollTo(0, 0);
+    this.getOcations();
   },
 
   methods: {
-    uploadImage(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("occations/" + file.name);
-        let uploadTask = storageRef.put(file);
-        console.log(uploadTask);
+    createEvents() {
+      var data = new FormData();
+      data.append("ename", this.ename);
+      data.append("eplace", this.eplace);
+      data.append("eimage", this.eimage);
 
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {},
-          () => {
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.occation.image = downloadURL;
-              console.log("File available at", downloadURL);
-            });
-            console.log(this.occation.image);
+      Event.addOcations(data, {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => {
+          if (res.data.error) {
+            console.log("errors", res.data.error);
+            alert(res.data.error);
+          } else {
+            console.log(res.data.message);
+            alert(res.data);
           }
-        );
-      }
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    watcher() {
-      db.collection("occations").onSnapshot((querySnapshot) => {
-        this.occations = [];
-        querySnapshot.forEach((doc) => {
-          this.occations.push(doc);
+        })
+        .catch((err) => {
+          console.log(err);
         });
+    },
+
+    getOcations() {
+      Event.getOcations().then((response) => {
+        this.events = response.data;
+        console.log(this.events);
       });
     },
 
-    updateOccation() {
-      db.collection("occations")
-        .doc(this.active_item)
-        .update(this.occation)
-        .then(() => {
-          this.showModal = false;
-          this.watcher();
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-        });
+    uploadImage() {
+      this.eimage = this.$refs.eimage.files[0];
     },
 
-    editOccation(occation) {
-      this.showModal = true;
-      this.occation = occation.data();
-      this.active_item = occation.id;
-    },
-
-    deleteOccation(doc) {
-      if (confirm("Are you sure?")) {
-        db.collection("occations")
-          .doc(doc)
-          .delete()
-          .then(() => {
-            this.watcher();
-            console.log("Document successfully deleted!");
+    deleteProduct(id) {
+      if (window.confirm("Are you want to delete this?")) {
+        Event.deleteEvent(id)
+          .then((res) => {
+            if (res.data.error) {
+              console.log("errors", res.data);
+              alert(res.data);
+            } else {
+              console.log(res.data.message);
+              alert(res.data);
+            }
           })
-          .catch((error) => {
-            console.error("Error removing document: ", error);
+          .catch((err) => {
+            console.log(err);
           });
       }
-    },
-
-    reset() {
-      this.occation = {
-        name: "",
-        place: "",
-        image: "",
-      };
-    },
-
-    saveData() {
-      db.collection("occations")
-        .add(this.occation)
-        .then((docRef) => {
-          this.reset();
-
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
     },
   },
 };
@@ -264,14 +212,14 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 20px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 550px;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
   display: flex;
 }
 .col-md-12 {
@@ -304,7 +252,7 @@ label {
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
 }
 .col-md-12 {
   padding: 10px;

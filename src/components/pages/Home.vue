@@ -25,16 +25,16 @@
         <div class="col-md-4" v-for="blog in blogs" :key="blog.id">
           <div class="card">
             <div class="card-header">
-              <img :src="blog.data().image" />
+              <img :src="blog.bimage" />
             </div>
             <div class="card-body">
               <ul>
                 <li style="">
-                  {{ blog.data().title }}
+                  {{ blog.btitle }}
                 </li>
                 <li>
                   <i class="fa fa-user" aria-hidden="true"></i>
-                  {{ blog.data().author }}
+                  {{ blog.bauthor }}
                 </li>
                 <li>
                   <router-link
@@ -55,7 +55,9 @@
 import Slider from "../../services/Slider.vue";
 import Carousel from "../../services/Carousel.vue";
 import EventList from "../../services/EventsList.vue";
-import { db } from "../../firebase";
+
+import Blogs from "../../apis/Blog";
+
 
 export default {
   components: {
@@ -65,41 +67,22 @@ export default {
   },
   data() {
     return {
-      sliders: [],
-      slider: {
-        name: "",
-        des: "",
-        image: "",
-      },
-      occations: [],
-      occation: {
-        name: "",
-        place: "",
-        image: "",
-      },
       blogs: [],
     };
   },
   created() {
-    db.collection("blogs")
-      .limit("3")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.blogs.push(doc);
-        });
+    this.getBlogs();
+  },
+
+  methods:{
+    getBlogs(){
+            Blogs.getBlog().then((response) => {
+        this.blogs = response.data;
+        console.log(this.blogs);
       });
 
-    db.collection("sliders")
-      .limit("1")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.sliders.push(doc);
-        });
-      });
+    },
+
   },
 
   mounted() {

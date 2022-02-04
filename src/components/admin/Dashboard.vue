@@ -91,13 +91,13 @@ export default {
   width: 100%;
   height: 200px;
   padding: 0;
-  margin-left: 25%;
+  margin:0;
 }
 .col-md-3 {
-  width: 260px;
+  width: 220px;
 }
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: blue;
   text-align: right;
@@ -105,7 +105,7 @@ export default {
 }
 
 .card h1 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #000;
   text-align: left;
@@ -114,7 +114,7 @@ export default {
 .row2 {
   width: 100%;
   padding: 0;
-  margin-left: 25%;
+  margin:0;
   display: flex;
 }
 

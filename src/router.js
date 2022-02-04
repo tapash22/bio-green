@@ -8,8 +8,9 @@ import Blog from './components/pages/Blog.vue';
 import Gallery from './components/pages/Gallery.vue';
 import Contact from './components/pages/Contact.vue';
 import Login from './components/pages/Login.vue';
-import NotFound from './components/pages/NotFound.vue';
+// import NotFound from './components/pages/NotFound.vue';
 import BlogItem from './services/BlogItem.vue';
+import ProductDetail from './services/ProductDatail.vue';
 
 
 import Organicminarels from './ex_page/Organicminarels.vue';
@@ -40,7 +41,7 @@ import Photo from './components/admin/Photo.vue';
 import Slider from './components/admin/Slider.vue';
 import Events from './components/admin/Events.vue';
 import Blogs from './components/admin/Blog.vue';
-import { fb } from './firebase';
+
 
 
 const routes = [
@@ -52,13 +53,14 @@ const routes = [
             { path: 'home', component: Home },
             { path: 'about', component: About,},
             { path: 'products', component: Products, },
+            { path: 'products/:id',name:'ProductDetail', component: ProductDetail },
             { path: 'partners', component: Partners, },
             { path: 'blog', component: Blog, },
             { path: 'blog/:id',name:'BlogItem', component: BlogItem },
             { path: 'gallery', component: Gallery,},
             { path: 'contact', component: Contact, },
             { path: 'login',name:'Login', component: Login, },
-            { path:'/:catchAll(.*)', component: NotFound, },
+            // { path:'/:catchAll(.*)', component: NotFound, },
 
             { path: 'essentialoil_poultry' , component: Essensialoil },
             { path: 'organicminerals_poultry' , component: Organicminarels },
@@ -83,7 +85,7 @@ const routes = [
     },
 
     {
-        path: '/admin', component: Admin,  meta: { requiresAuth: true },
+        path: '/admin', component: Admin,  redirect: "/admin/dashboard",meta: { authOnly: true },
         children: [
             { path: 'dashboard', component: Dashboard },
             { path: 'user', component: User },
@@ -102,16 +104,36 @@ const router = createRouter({
     routes: routes,
 });
 
+function isLoggedIn() {
+    return localStorage.getItem("token");
+  }
+
 router.beforeEach((to, from, next) => {
-    const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
-    const currentUser = fb.auth().currentUser;
-    if (requiresAuth && !currentUser) {
-        next('/login');
-    } else if (requiresAuth && currentUser) {
+    if (to.matched.some(record => record.meta.authOnly)) {
+      // this route requires auth, check if logged in
+      // if not, redirect to login page.
+      if (!isLoggedIn()) {
+        next({
+          path: "/login",
+          query: { redirect: to.fullPath }
+        });
+      } else {
         next();
+      }
+    } else if (to.matched.some(record => record.meta.guestOnly)) {
+      // this route requires auth, check if logged in
+      // if not, redirect to login page.
+      if (isLoggedIn()) {
+        next({
+          path: "/admin",
+          query: { redirect: to.fullPath }
+        });
+      } else {
+        next();
+      }
     } else {
-        next();
+      next(); // make sure to always call next()!
     }
-});
+  });
 
 export default router;

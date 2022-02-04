@@ -10,7 +10,7 @@
         >
           <div class="card">
             <a @click.prevent="showImg(gallery)">
-              <img :src="gallery.data().image" />
+              <img :src="gallery.gimage" />
             </a>
           </div>
         </div>
@@ -25,7 +25,7 @@
     >
       <div class="modal-body">
         <div class="image">
-          <img :src="gallery.image" />
+          <img :src="gallery.gimage" />
         </div>
       </div>
     </div>
@@ -34,7 +34,8 @@
 
 <script>
 // If VueApp is already registered with VueEasyLightbox, there is no need to register it here.
-import { db } from "../firebase";
+// import { db } from "../firebase";
+import Gallerys from "../apis/Gallery";
 // import VueEasyLightbox from "vue-easy-lightbox";
 
 export default {
@@ -46,33 +47,28 @@ export default {
       visible: false,
       index: 0,
       gallerys: [],
-      gallery: {
-        occation_name: "",
-        description: "",
-        image: "",
-      },
+      id:"",
       active_item: null,
     };
   },
   created() {
-    db.collection("gallerys", "image")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.gallerys.push(doc);
-        });
-      });
+    this.getGallerys();
   },
   methods: {
-    showImg(gallery) {
-      this.visible = true;
-      this.gallery = gallery.data();
-      this.active_item = gallery.id;
-    },
-    handleHide() {
-      this.visible = false;
-    },
+    getGallerys(){
+      Gallerys.getGallerys().then((response)=>{
+        this.gallerys =response.data;
+        console.log(this.gallerys);
+      })
+    }
+    // showImg(gallery) {
+    //   this.visible = true;
+    //   this.gallery = gallery.data();
+    //   this.active_item = gallery.id;
+    // },
+    // handleHide() {
+    //   this.visible = false;
+    // },
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <carousel :autoplay="6000" :wrap-around="true">
+  <carousel :autoplay="4000" :nav="true" :wrap-around="true">
     <slide v-for="slider in sliders" :key="slider.id">
-      <img :src="slider.data().image" />
+      <img :src="'http://localhost:8000/api/storage/app/'+slider.simage" />
     </slide>
 
     <template #addons>
@@ -15,36 +15,33 @@
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination } from "vue3-carousel";
 // import {  Slide } from "vue3-carousel";
-import { db } from "../firebase";
+import Sliders from "../apis/Slider"
 export default {
   data() {
     return {
       sliders: [],
-      slider: {
-        name: "",
-        des: "",
-        image: "",
-      },
+      id:"",
       active_item: null,
     };
   },
   components: {
     Carousel,
     Slide,
-
     Pagination,
   },
 
   created() {
-    db.collection("sliders")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.sliders.push(doc);
-        });
-      });
+    this.getSliders();
   },
+
+  methods:{
+    getSliders(){
+      Sliders.getSlider().then((response)=>{
+        this.sliders = response.data;
+        console.log(this.sliders);
+      })
+    }
+  }
 };
 </script>
 

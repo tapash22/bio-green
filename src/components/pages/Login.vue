@@ -7,18 +7,26 @@
           <form>
             <div class="from-group">
               <label>Email</label>
-              <input type="text" class="form-control" v-model.trim="email" />
+              <input type="text" class="form-control" v-model.trim="form.email" />
+              <span class="text-danger" v-if="errors.email">
+                {{ errors.email[0] }}
+              </span>
             </div>
             <div class="from-group">
               <label>Password</label>
               <input
                 type="password"
                 class="form-control"
-                v-model.trim="password"
+                v-model.trim="form.password"
               />
+              <span class="text-danger" v-if="errors.password">
+                {{ errors.password[0] }}
+              </span>
             </div>
             <div class="my-3">
-              <button class="btn btn-primary" @click.prevent="onLogin">LogIn</button>
+              <button class="btn btn-primary" @click.prevent="login">
+                LogIn
+              </button>
             </div>
           </form>
         </div>
@@ -28,38 +36,36 @@
 </template>
 
 <script>
-import { fb } from "../../firebase";
+import User from "../../apis/User";
 
 export default {
-  name:'Login',
   data() {
     return {
-      email: "",
-      password: "",
+      form: {
+        email: "",
+        password: "",
+        device_name: "browser",
+      },
+      errors: [],
     };
   },
-  
+
   mounted() {
     window.scrollTo(0, 0);
   },
 
   methods: {
-    onLogin() {
-      fb.auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(()=>{
-          this.$router.replace('/admin/dashboard');
+    login() {
+      User.login(this.form)
+        .then((response) => {
+          this.$root.$emit("login", true);
+          localStorage.setItem("token", response.data);
+          this.$router.push("/admin");
         })
-        .catch(function (error) {
-          // Handle Errors here. 
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          if (errorCode === "auth/wrong-password") {
-            alert("Wrong password.");
-          } else {
-            alert(errorMessage);
+        .catch((error) => {
+          if (error.response.status === 422) {
+            this.errors = error.response.data.errors;
           }
-          console.log(error);
         });
     },
   },
@@ -109,12 +115,12 @@ label {
 
 @media only screen and (max-width: 436px) {
   .login {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin-top:100px;
-}
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-top: 100px;
+  }
   .row {
     display: flex;
     justify-content: space-around;

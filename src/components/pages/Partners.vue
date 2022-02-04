@@ -13,14 +13,14 @@
       >
         <div class="col-md-12" v-for="partner in partners" :key="partner.id">
           <div class="left">
-            <img :src="partner.data().image" />
+            <img :src="partner.pimage" />
           </div>
           <div class="right">
             <p>
-              {{ partner.data().description }}
+              {{ partner.pdescription }}
             </p>
-            <a :href="partner.data().company_link">{{
-              partner.data().company_site
+            <a :href="partner.plink">{{
+              partner.pname
             }}</a>
           </div>
         </div>
@@ -30,32 +30,29 @@
 </template>
 
 <script>
-import { db } from "../../firebase";
+import Partner from "../../apis/Partner";
 
 export default {
   data() {
     return {
       partners: [],
-      partner: {
-        partner_name: "",
-        company_site: "",
-        company_link: "",
-        description: "",
-        image: "",
-      },
+      id:"",
       active_item: null,
     };
   },
 
   created() {
-    db.collection("partners")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.partners.push(doc);
-        });
-      });
+    this.getPartners();
+  },
+
+  methods:{
+    getPartners(){
+      Partner.getPartner().then((response)=>{
+        this.partners = response.data;
+        console.log(this.partners);
+      })
+    }
+    
   },
 
   mounted() {

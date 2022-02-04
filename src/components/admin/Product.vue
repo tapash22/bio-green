@@ -12,11 +12,11 @@
                 class="form-control"
                 type="text"
                 placeholder="Product Name .."
-                v-model="product.product_name"
+                v-model="pdname"
               />
             </div>
             <div class="form-group my-3">
-              <select v-model="product.p_category" style="width:100%;height:40px;">
+              <select v-model="pcname" style="width: 100%; height: 40px">
                 <option disabled value="">
                   Please click and select Category
                 </option>
@@ -26,7 +26,7 @@
               </select>
             </div>
             <div class="form-groupmy-3">
-              <select v-model="product.sub_category" style="width:100%;height:40px;">
+              <select v-model="pscname" style="width: 100%; height: 40px">
                 <option disabled value="">
                   Please click and select Sub-Category
                 </option>
@@ -39,30 +39,37 @@
             </div>
             <div class="form-group">
               <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="product.description"
-              ></textarea>
+              <textarea class="form-control" v-model="pdescription"></textarea>
             </div>
-            <div class="form-group my-4 upload">
+            <div class="form-group">
               <label>Upload Pdf</label>
-              <input class="form-control" type="file" @change="uploadPdf" />
+              <input
+                class="form-control"
+                type="file"
+                ref="ppdf"
+                @change="uploadPdf()"
+              />
             </div>
-            <div class="form-group my-4 upload">
+            <div class="form-group">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" />
+              <input
+                class="form-control"
+                type="file"
+                ref="pimage"
+                @change="uploadImage()"
+              />
             </div>
             <div class="form-group">
               <div class="p-1">
                 <img
-                  :src="product.image"
+                  :src="pimage"
                   style="width: 80px; height: 50px"
                   placeholder=" Use 300px/250px Picture"
                 />
               </div>
             </div>
             <div class="btn">
-              <button class="btn btn-primary" @click.prevent="saveData">
+              <button class="btn btn-primary" @click.prevent="createProduct">
                 Add Product
               </button>
             </div>
@@ -82,17 +89,20 @@
                 <th>Description</th>
                 <th>Image</th>
                 <th>PDF</th>
-                <th>Modify</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="product in products" :key="product.id">
-                <td>{{ product.data().product_name }}</td>
-                <td>{{ product.data().p_category }}</td>
-                <td>{{ product.data().sub_category }}</td>
-                <td>{{ product.data().description }}</td>
-                <td>{{ product.data().image }}</td>
-                <td>{{ product.data().pdf }}</td>
+                <td>{{ product.pdname }}</td>
+                <td>{{ product.pcname }}</td>
+                <td>{{ product.pscname }}</td>
+                <td>{{ product.pdescription }}</td>
+                <td>
+                  <img :src="'/sub/storage/app/' + product.pimage" />
+                </td>
+                <td>{{ product.ppdf }}</td>
+                
                 <td>
                   <button
                     @click.prevent="editProduct(product)"
@@ -133,13 +143,17 @@
               <label>Product Name</label>
               <input
                 class="form-control"
+                toufiq201
                 type="text"
                 placeholder="Event Name .."
                 v-model="product.product_name"
               />
             </div>
             <div class="form-group my-3">
-              <select v-model="product.p_category" style="width:100%;height:40px;">
+              <select
+                v-model="product.p_category"
+                style="width: 100%; height: 40px"
+              >
                 <option disabled value="">Please select Category</option>
                 <option>poultry</option>
                 <option>cattle</option>
@@ -147,7 +161,10 @@
               </select>
             </div>
             <div class="form-group my-3">
-              <select v-model="product.sub_category" style="width:100%;height:40px;">
+              <select
+                v-model="product.sub_category"
+                style="width: 100%; height: 40px"
+              >
                 <option disabled value="">Please select Sub-Category</option>
                 <option>Enzymes</option>
                 <option>Essential oil</option>
@@ -201,161 +218,92 @@
 </template>
 
 <script>
-import { fb, db } from "../../firebase";
+import Product from "../../apis/Product";
 export default {
   name: "product",
   data() {
     return {
       showModal: false,
+      pdname: "",
+      pcname: "",
+      pscname: "",
+      pdescription: "",
+      pimage: "",
+      ppdf: "",
+
       products: [],
-      product: {
-        product_name: "",
-        p_category: "",
-        sub_category: "",
-        description: "",
-        image: "",
-        pdf: "",
-      },
-      active_item: null,
+      id: "",
     };
   },
 
   created() {
-    db.collection("products")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.products.push(doc);
-        });
-      });
-  },
-
-  mounted() {
-    window.scrollTo(0, 0);
+    this.getProduct();
   },
 
   methods: {
-    deleteImage() {},
-    uploadImage(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("products/" + file.name);
-        let uploadTask = storageRef.put(file);
+    createProduct() {
+      var data = new FormData();
+      data.append("pdname", this.pdname);
+      data.append("pcname", this.pcname);
+      data.append("pscname", this.pscname);
+      data.append("pdescription", this.pdescription);
+      data.append("pimage", this.pimage);
+      data.append("ppdf", this.ppdf);
 
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {
-            // Handle unsuccessful uploads
-          },
-          () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.product.image = downloadURL;
-              console.log("File available at", downloadURL);
-            });
+      Product.addProduct(data, {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => {
+          if (res.data.error) {
+            console.log("errors", res.data.error);
+            alert(res.data.error);
+          } else {
+            console.log(res.data.message);
+            alert(res.data);
           }
-        );
-      }
-    },
-
-    uploadPdf(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("pdf/" + file.name);
-        let uploadTask = storageRef.put(file);
-
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {
-            // Handle unsuccessful uploads
-          },
-          () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.product.pdf = downloadURL;
-              console.log("File available at", downloadURL);
-            });
-          }
-        );
-      }
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    watcher() {
-      db.collection("products").onSnapshot((querySnapshot) => {
-        this.products = [];
-        querySnapshot.forEach((doc) => {
-          this.products.push(doc);
+        })
+        .catch((err) => {
+          console.log(err);
         });
+    },
+
+    getProduct() {
+      Product.getProduct().then((response) => {
+        this.products = response.data;
+        console.log(this.products);
       });
     },
 
-    updateProduct() {
-      db.collection("products")
-        .doc(this.active_item)
-        .update(this.product)
-        .then(() => {
-          this.showModal = false;
-          this.watcher();
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-        });
+    uploadImage() {
+      this.pimage = this.$refs.pimage.files[0];
     },
 
-    editProduct(product) {
-      this.showModal = true;
-      this.product = product.data();
-      this.active_item = product.id;
+    uploadPdf() {
+      this.ppdf = this.$refs.ppdf.files[0];
     },
 
-    deleteProduct(doc) {
-      if (confirm("Are you sure?")) {
-        db.collection("products")
-          .doc(doc)
-          .delete()
-          .then(() => {
-            this.watcher();
-            console.log("Document successfully deleted!");
+    deleteProduct(id) {
+      if (window.confirm("Are you want to delete this?")) {
+        Product.deleteProduct(id)
+          .then((res) => {
+            if (res.data.error) {
+              console.log("errors", res.data);
+              alert(res.data);
+            } else {
+              console.log(res.data.message);
+              alert(res.data);
+            }
           })
-          .catch((error) => {
-            console.error("Error removing document: ", error);
+          .catch((err) => {
+            console.log(err);
           });
       }
     },
-
-    reset() {
-      this.product = {
-        product_name: "",
-        p_category: "",
-        sub_category: "",
-        description: "",
-        image: "",
-        pdf: "",
-      };
-    },
-
-    saveData() {
-      db.collection("products")
-        .add(this.product)
-        .then((docRef) => {
-          this.reset();
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
-    },
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>
@@ -365,14 +313,14 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 20px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 800px;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
   display: flex;
 }
 .col-md-12 {
@@ -405,7 +353,7 @@ label {
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
 }
 .col-md-12 {
   padding: 0;

@@ -54,6 +54,7 @@ h3 {
   padding: 0;
   margin: 0;
   background: #ffa500;
+  display: block;
 }
 .col-md-4 .card .card-footer p {
   width: 100%;
@@ -67,14 +68,14 @@ h3 {
   text-transform: uppercase;
   background: #ffa500;
 }
-.col-md-4 .card .card-footer .btn {
-  width: 100%;
-  height: 35px;
-  font-size: 1rem;
+.col-md-4 .card .card-footer a {
+  font-size: 1.2rem;
   font-weight: 500;
   padding: 5px;
   margin: 0;
-  background: #fff;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 30%;
 }
 .modal {
   display: block;

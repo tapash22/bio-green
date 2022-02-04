@@ -7,11 +7,14 @@
         <div class="col-md-4" v-for="product in products" :key="product">
           <div class="card">
             <div class="card-body">
-              <img :src="product.data().image" />
+              <img :src="product.pimage" />
             </div>
             <div class="card-footer">
-              <p>{{ product.data().product_name }}</p>
-              <a class="btn" @click.prevent="productDetail(product)">View</a>
+              <p>{{ product.pdname }}</p>
+              <router-link
+                :to="{ name: 'ProductDetail', params: { id: product.id } }"
+                >Show Details</router-link
+              >
             </div>
           </div>
         </div>
@@ -35,17 +38,17 @@
           </div>
           <div class="modal-body">
             <div class="image">
-              <img :src="product.image" />
+              <img :src="product.pimage" />
             </div>
             <div class="info">
               <h5>
-                {{ product.product_name }}
+                {{ product.pdname }}
               </h5>
-              <p>{{ product.description }}</p>
+              <p>{{ product.pdescription }}</p>
             </div>
           </div>
           <div class="modal-footer">
-            <a :href="product.pdf" target="_parent"> Read Pdf </a>
+            <a :href="product.ppdf" target="_parent"> Read Pdf </a>
           </div>
         </div>
       </div>
@@ -54,46 +57,28 @@
 </template>
         
 <script>
-import { db } from "../firebase";
+import Product from "../apis/Product";
 
 export default {
   data() {
     return {
       showModal: false,
       products: [],
-      product: {
-        product_name: "",
-        p_category: "",
-        sub_category: "",
-        description: "",
-        image: "",
-        pdf: "",
-      },
+      id: "",
       active_item: null,
     };
   },
 
   created() {
-    db.collection("products")
-      .where("p_category", "==", "poultry")
-      .where("sub_category", "==", "Feed Sanitizer")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          this.products.push(doc);
-        });
-      });
+    Product.getFeedsanitizer().then((response) => {
+      this.products = response.data;
+      console.log(this.products);
+    });
   },
 
   methods: {
     inClose() {
       this.showModal = false;
-    },
-
-    productDetail(product) {
-      this.showModal = true;
-      this.product = product.data();
-      this.active_item = product.id;
     },
   },
 

@@ -1,11 +1,12 @@
 <template>
-  <div class="admin">
+  <div class="dashboard">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <nav>
-          <div class="brand"><img src="../../assets/image/log.png" /></div>
+          <a class="brand">
+            <img src="../../assets/image/log.png" />
+          </a>
           <ul>
-            <li><router-link to="/admin/dashboard">Dashboard</router-link></li>
             <li><router-link to="/admin/user">Add User</router-link></li>
             <li>
               <router-link to="/admin/product">Add product</router-link>
@@ -23,193 +24,163 @@
               <li>
               <router-link to="/admin/events">Add Event</router-link>
             </li>
+            <li><a href="#" @click.prevent="logout">Logout</a></li>
           </ul>
         </nav>
       </div>
-      <div class="col-md-8">
-        <div class="main">
-          <div class="row head-bar">
-            <div class="col-md-12">
-              <div class="brand"><img src="../../assets/image/logo4.png" /></div>
-              <div class="header">
-               
-                <ul>
-                  <li><a href="#" @click.prevent="onLogout()">LogOut</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <router-view />
-            </div>
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body" v-if="user">
+            <h3>Hello, {{ user.name }}</h3>
+            <span>{{ user.email }}</span>
           </div>
         </div>
+        <router-view />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { fb } from '../../firebase';
+import User from "../../apis/User";
+
 export default {
-  methods:{
-    onLogout(){
-      fb.auth().signOut()
-      .then(()=>{
-        this.$router.replace('/home')
-        .catch((err)=>{
-          console.log(err);
-        });
-      })
-    }
-  }
+  data() {
+    return {
+      user: null,
+    };
+  },
+
+  mounted() {
+    User.auth().then((response) => {
+      this.user = response.data;
+    });
+  },
+
+  methods: {
+    logout() {
+      User.logout().then(() => {
+        localStorage.removeItem("token");
+        this.$router.push("/home");
+      });
+    },
+  },
 };
 </script>
 
+
 <style scoped>
-.admin {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background: #fff;
-}
-.row {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-.col-md-4 {
-  width: 20%;
-  height: 100%;
-  background: rgb(21, 30, 104);
-  padding: 0;
-  margin: 0;
-  position: fixed;
-}
-nav {
-  width: 100%;
-  height: 100%;
-  padding-bottom: 15px;
-}
-.brand {
-  width: 100%;
-  height: 120px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.brand img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  z-index: 1;
-}
-.col-md-4 ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-}
-.col-md-4 ul li {
-  height: 60px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.col-md-4 ul li a {
-  font-size: 1.8rem;
-  font-weight: 700;
-  font-family: "Oswald", sans-serif;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-}
-.col-md-4 ul li:hover,
-.col-md-4 ul li a:hover
- {
-  background: #fff;
-  color: #000;
-}
-/* .col-md-4 ul li a.router-link-active{
-  background: #fff;
-} */
-.col-md-8 {
-  width: 80%;
-  height: 100%;
-  background: #fff;
-  padding: 0;
-  margin: 0;
-}
-.col-md-8 .main {
+.dashboard {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
 }
-.main .head-bar {
-  padding: 0;
-  margin: 0;
-  background: #fff;
-}
-.main .head-bar .col-md-12 {
-  padding: 0;
-  margin: 0;
+.dashboard .row {
   width: 100%;
-  height: 100px;
-  background: rgb(21, 30, 104);
-  position: fixed;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-}
-.main .head-bar .col-md-12 .brand {
-  width: 250px;
-  height: 120px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 40px;
-  padding-left: 30px;
-  padding-right: 10px;
-}
-.main .head-bar .header {
-  width: 30%;
-  height: 100px;
+  height: 100%;
   padding: 0;
   margin: 0;
-  position: relative;
   display: flex;
-  float: right;
 }
 
-.main .head-bar .header ul {
+.row .col-md-3 {
+  width: 25%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.col-md-3 nav {
+  width: 25%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: green;
+  position: fixed;
+}
+nav .brand {
+  width: 100%;
+  height: 20%;
+  padding: 0;
+  margin: 0;
   display: flex;
+  justify-content: center;
+  background: #fff;
+  border-right: 1px solid green;
 }
-.main .head-bar .header ul li {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  list-style: none;
-   padding-top: 30px;
-   padding-left: 200px;
+nav .brand img {
+  width: 80%;
+  height: 100%;
+  padding: 15px;
+  margin: 0;
 }
-.main .head-bar .header ul li a {
+nav ul {
+  width: 100%;
+  height: 80%;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+nav ul li {
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li:hover {
+  background: rgba(255, 255, 255, 0.486);
+}
+nav ul li a {
   font-size: 1.5rem;
-  font-weight: 500px;
-  font-family: "Oswald", sans-serif;
-  color: #fff;
+  font-weight: 500;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
   text-decoration: none;
+  color: #fff;
 }
+ .row .col-md-9 {
+  width: 75%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgb(254, 255, 254);
+  display: block;
+} 
+.col-md-9 .card{
+  width: 100%;
+  height: 80px;
+  background: green;
+  padding:10px;
+  margin: 0;
+  position: fixed;
+  z-index: 99;
+}
+.card .card-body{
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.card-body h3{
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  padding-right: 100px;
+  margin: 0;
+}
+.card-body span{
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+
+} 
 </style>
+
+
+

@@ -4,24 +4,61 @@
       <div class="col-md-6">
         <div class="form">
           <h3>Add User</h3>
-          <form>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="text" class="form-control" v-model="email" />
-
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                class="form-control"
-                v-model.trim="password"
-              />
-            </div>
-            <div class="my-3">
-              <button class="btn btn-primary" @click.prevent="onCreate">Add User</button>
-            </div>
-          </form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              v-model="form.name"
+              class="form-control"
+              id="name"
+            />
+            <span class="text-danger" v-if="errors.name">
+              {{ errors.name[0] }}
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input
+              type="email"
+              v-model="form.email"
+              class="form-control"
+              id="email"
+            />
+            <span class="text-danger" v-if="errors.email">
+              {{ errors.email[0] }}
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              v-model="form.password"
+              class="form-control"
+              id="password"
+            />
+            <span class="text-danger" v-if="errors.password">
+              {{ errors.password[0] }}
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="password_confirmation">Confirm Password:</label>
+            <input
+              type="password"
+              v-model="form.password_confirmation"
+              class="form-control"
+              id="password_confirmation"
+            />
+            <span class="text-danger" v-if="errors.password_confirmation">
+              {{ errors.password_confirmation[0] }}
+            </span>
+          </div>
+          <button
+            type="submit"
+            @click.prevent="register"
+            class="btn btn-primary btn-block"
+          >
+            Register
+          </button>
         </div>
       </div>
     </div>
@@ -32,27 +69,11 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Password</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-              </tr>
-            </tbody>
           </table>
         </div>
       </div>
@@ -60,55 +81,58 @@
   </div>
 </template>
 
+
 <script>
-import { fb } from "../../firebase";
+import User from "../../apis/User";
+
 export default {
   data() {
     return {
-      email: "",
-      password: "",
+      form: {
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      },
       errors: [],
+      users: [],
     };
   },
+
   methods: {
-    onCreate() {
-      fb.auth()
-        .createUserWithEmailAndPassword(this.email,this.password)
-        .then(()=>{
-          this.reset();
+    register() {
+      User.register(this.form)
+        .then(() => {
+          alert("Registration successfull!!" + this.form.name);
         })
-        .catch(function (error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          if (errorCode == "auth/weak-password") {
-            alert("The password is too weak.");
-          } else {
-            alert(errorMessage);
+        .catch((error) => {
+          if (error.response.status === 422) {
+            this.errors = error.response.data.errors;
           }
-          console.log(error);
         });
     },
-    reset(){
-      Object.assign(this.$data, this.$options.data.apply(this));
-    }
   },
 };
 </script>
+
+    // reset(){
+    //   Object.assign(this.$data, this.$options.data.apply(this));
+    // }
+
 
 <style scoped>
 .user {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 80px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 500px;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
   display: flex;
   background-image: url("../../assets/image/a_user.jpg");
   background-position: center;
@@ -144,7 +168,7 @@ label {
   width: 100%;
   height: 200px;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
 }
 .col-md-8 {
   padding: 10px;

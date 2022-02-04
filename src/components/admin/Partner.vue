@@ -4,52 +4,32 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Partner</h3>
-           <p style="text-align:center;color:blue;">Use 300px/250px Picture</p>
+          <p style="text-align: center; color: blue">Use 300px/250px Picture</p>
           <form>
             <div class="form-group">
               <label>Company Name</label>
-              <input
-                class="form-control"
-                type="text"
-                v-model="partner.partner_name"
-              />
+              <input class="form-control" type="text" v-model="pname" />
             </div>
-            <div class="form-group">
-              <label>Website text</label>
-              <input
-                class="form-control"
-                type="text"
-                v-model="partner.company_site"
-              />
-            </div>
-
             <div class="form-group">
               <label>company Link</label>
-              <input
-                class="form-control"
-                type="text"
-                v-model="partner.company_link"
-              />
+              <input class="form-control" type="text" v-model="plink" />
             </div>
             <div class="form-group">
               <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="partner.description"
-              ></textarea>
-            </div>
-            <div class="form-group my-4 upload">
-              <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 300px/250px Picture"/>
+              <textarea class="form-control" v-model="pdescription"></textarea>
             </div>
             <div class="form-group">
-              <div class="p-1">
-                <img :src="partner.image" style="width: 80px; height: 50px" />
-                <span class="delete-img" @click="deleteImage(image)">X</span>
-              </div>
+              <label>Upload Image</label>
+              <input
+                class="form-control"
+                type="file"
+                ref="pimage"
+                @change="uploadImage()"
+              />
             </div>
+
             <div class="btn">
-              <button class="btn btn-primary" @click.prevent="saveData">
+              <button class="btn btn-primary" @click.prevent="createPartner">
                 Add Partner
               </button>
             </div>
@@ -64,7 +44,6 @@
             <thead>
               <tr>
                 <th>Company Name</th>
-                <th>Company site</th>
                 <th>Company link</th>
                 <th>Detail</th>
                 <th>Image</th>
@@ -72,20 +51,21 @@
             </thead>
             <tbody>
               <tr v-for="partner in partners" :key="partner.id">
-                <td>{{ partner.data().partner_name }}</td>
-                <td>{{ partner.data().company_site }}</td>
-                <td>{{ partner.data().company_link }}</td>
-                <td>{{ partner.data().description }}</td>
-                <td>{{ partner.data().image }}</td>
+                <td>{{ partner.pname }}</td>
+                <td>{{ partner.plink }}</td>
+                <td>{{ partner.pdescription }}</td>
+                <td>
+                  <img :src="'/sub/storage/app/' + partner.pimage" />
+                </td>
                 <td>
                   <button
-                    @click.prevent="editProduct(partner)"
+                    @click.prevent="editProduct(partner.id)"
                     class="btn btn-primary"
                   >
                     Edit
                   </button>
                   <button
-                    @click="deleteProduct(partner.id)"
+                    @click="deletePartner(partner.id)"
                     class="btn btn-danger"
                   >
                     Delete
@@ -121,7 +101,7 @@
                 v-model="partner.partner_name"
               />
             </div>
-        
+
             <div class="form-group">
               <label>Website</label>
               <input
@@ -148,7 +128,12 @@
             </div>
             <div class="form-group my-2 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 300px/250px Picture"/>
+              <input
+                class="form-control"
+                type="file"
+                @change="uploadImage"
+                placeholder=" Use 300px/250px Picture"
+              />
             </div>
             <div class="form-group">
               <div class="p-1">
@@ -176,130 +161,78 @@
 </template>
 
 <script>
-import { fb, db } from "../../firebase";
+import Partner from "../../apis/Partner";
+
 export default {
-  name: "partner",
   data() {
     return {
-      showModal: false,
+      pname: "",
+      plink: "",
+      pdescription: "",
+      pimage: "",
       partners: [],
-      partner: {
-        partner_name: "",
-        company_site: "",
-        company_link:"",
-        description: "",
-        image: "",
-      },
-      active_item: null,
+      id: "",
     };
   },
 
   created() {
-    db.collection("partners")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.partners.push(doc);
-        });
-      });
-  },
-
-  mounted() {
-    window.scrollTo(0, 0);
+    this.getPartner();
   },
 
   methods: {
-    deleteImage() {},
-    uploadImage(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("partners/" + file.name);
-        let uploadTask = storageRef.put(file);
+    createPartner() {
+      var data = new FormData();
+      data.append("pname", this.pname);
+      data.append("plink", this.plink);
+      data.append("pdescription", this.pdescription);
+      data.append("pimage", this.pimage);
 
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {},
-          () => {
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.partner.image = downloadURL;
-              console.log("File available at", downloadURL);
-            });
+      Partner.addPartner(data, {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => {
+          if (res.data.error) {
+            console.log("errors", res.data.error);
+            alert(res.data.error);
+          } else {
+            console.log(res.data.message);
+            alert(res.data);
           }
-        );
-      }
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    watcher() {
-      db.collection("partners").onSnapshot((querySnapshot) => {
-        this.partners = [];
-        querySnapshot.forEach((doc) => {
-          this.partners.push(doc);
+        })
+        .catch((err) => {
+          console.log(err);
         });
+    },
+
+    getPartner() {
+      Partner.getPartner().then((response) => {
+        this.partners = response.data;
+        console.log(this.partners);
       });
     },
 
-    updateProduct() {
-      db.collection("partners")
-        .doc(this.active_item)
-        .update(this.partner)
-        .then(() => {
-          this.showModal = false;
-          this.watcher();
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-        });
+    uploadImage() {
+      this.pimage = this.$refs.pimage.files[0];
     },
 
-    editProduct(partner) {
-      this.showModal = true;
-      this.partner = partner.data();
-      this.active_item = partner.id;
-    },
-
-    deleteProduct(doc) {
-      if (confirm("Are you sure?")) {
-        db.collection("partners")
-          .doc(doc)
-          .delete()
-          .then(() => {
-            this.watcher();
-            console.log("Document successfully deleted!");
+    deletePartner(id) {
+      if (window.confirm("Are you want to delete this?")) {
+        Partner.deletePartner(id)
+          .then((res) => {
+            if (res.data.error) {
+              console.log("errors", res.data);
+              alert(res.data);
+            } else {
+              console.log(res.data.message);
+              alert(res.data);
+            }
           })
-          .catch((error) => {
-            console.error("Error removing document: ", error);
+          .catch((err) => {
+            console.log(err);
           });
       }
-    },
-
-    reset() {
-      this.product = {
-        partner_name: "",
-        company_site: "",
-        company_link:"",
-        description: "",
-        image: "",
-      };
-    },
-
-    saveData() {
-      db.collection("partners")
-        .add(this.partner)
-        .then((docRef) => {
-          this.reset();
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
     },
   },
 };
@@ -310,14 +243,14 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 20px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 750px;
   padding: 20px;
-  margin-left: 25%;
+  margin: 0;
   display: flex;
 }
 .col-md-12 {
@@ -350,7 +283,7 @@ label {
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin-left: 25%;
+  margin: 0;
 }
 .col-md-12 {
   padding: 10px;

@@ -14,16 +14,16 @@
         <div class="col-md-4" v-for="blog in blogs" :key="blog.id">
           <div class="card">
             <div class="card-header">
-              <img :src="blog.data().image" />
+              <img :src="blog.bimage" />
             </div>
             <div class="card-body">
               <ul>
                 <li>
-                  {{ blog.data().title }}
+                  {{ blog.btitle }}
                 </li>
                 <li>
                   <i class="fa fa-user" aria-hidden="true"></i>
-                  {{ blog.data().author }}
+                  {{ blog.bauthor }}
                 </li>
                 <li>
                   <router-link
@@ -41,36 +41,33 @@
 </template>
 
 <script>
-import { db } from "../../firebase";
+import Blogs from "../../apis/Blog";
+
 export default {
   data() {
     return {
       showModal: false,
       blogs: [],
+      id: "",
       active_item: null,
     };
   },
 
   created() {
-    db.collection("blogs")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.blogs.push(doc);
-        });
-      });
+    this.getBlogs();
   },
   mounted() {
     window.scrollTo(0, 0);
   },
 
   methods: {
-    onClick(blog) {
-      this.showModal = true;
-      this.blog = blog.data();
-      this.active_item = blog.id;
+    getBlogs() {
+      Blogs.getBlog().then((response) => {
+        this.blogs = response.data;
+        console.log(this.blogs);
+      });
     },
+
     inClose() {
       this.showModal = false;
     },
@@ -290,11 +287,10 @@ h3 {
     background: #fff;
   }
   .card .card-body ul {
-    padding:0;
+    padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
-    
   }
   .card .card-body ul li {
     width: 100%;

@@ -4,27 +4,25 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Slider</h3>
-          <p style="text-align:center;color:blue;">Use 1360px/500px Picture</p>
+          <p style="text-align: center; color: blue">
+            Use 1360px/500px Picture
+          </p>
           <form>
             <div class="form-group">
               <label>Slider Name</label>
-              <input type="text" class="form-control" v-model="slider.name" />
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <textarea class="form-control" v-model="slider.des"></textarea>
+              <input type="text" class="form-control" v-model="sname" />
             </div>
             <div class="form-group">
               <label>Upload Image</label>
-              <input type="file" class="form-control" @change="uploadImage"  placeholder=" Use 1360px/500px Picture"/>
-            </div>
-            <div class="form-group">
-              <div class="p-3">
-                <img :src="slider.image" style="width: 80px; height: 50px" />
-              </div>
+              <input
+                class="form-control"
+                type="file"
+                ref="simage"
+                @change="uploadImage()"
+              />
             </div>
             <div class="my-3">
-              <button class="btn btn-primary" @click.prevent="saveData">
+              <button class="btn btn-primary" @click.prevent="createSlider">
                 Add Slider
               </button>
             </div>
@@ -38,27 +36,29 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Modify</th>
+                <th scope="col">#</th>
+                <th scope="col">slider Name</th>
+                <th scope="col">slider Image</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="slider in sliders" :key="slider.id">
-                <td>{{ slider.data().name }}</td>
-                <td>{{ slider.data().des }}</td>
-                <td>{{ slider.data().image }}</td>
+                <td>{{ slider.id }}</td>
+                <td>{{ slider.sname }}</td>
+                <td>
+                  <img :src="'/sub/storage/app/' + simage" />
+                </td>
                 <td>
                   <button
-                    @click.prevent="editSlider(slider)"
-                    class="btn btn-primary"
+                    @click="editProduct(slider.id)"
+                    class="btn btn-small btn-info"
                   >
                     Edit
                   </button>
                   <button
-                    @click="deleteSlider(slider.id)"
-                    class="btn btn-danger"
+                    @click="deleteProduct(slider.id)"
+                    class="btn btn-small btn-warning"
                   >
                     Delete
                   </button>
@@ -100,7 +100,11 @@
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input type="file" @change="uploadImage"  placeholder=" Use 1360px/500px Picture"/>
+              <input
+                type="file"
+                @change="uploadImage"
+                placeholder=" Use 1360px/500px Picture"
+              />
             </div>
             <div class="form-group">
               <div class="p-1">
@@ -128,127 +132,74 @@
 </template>
 
 <script>
-import { fb, db } from "../../firebase";
+import Slider from "../../apis/Slider";
 
 export default {
   data() {
     return {
-      showModal: false,
+      sname: "",
+      simage: "",
       sliders: [],
-      slider: {
-        name: "",
-        des: "",
-        image: "",
-      },
-      active_item: null,
+      id: "",
     };
   },
 
   created() {
-    db.collection("sliders")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.sliders.push(doc);
-        });
-      });
+    this.getSlider();
   },
 
-  mounted() {
-    window.scrollTo(0, 0);
-  },
   methods: {
-    uploadImage(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("sliders/" + file.name);
-        let uploadTask = storageRef.put(file);
+    createSlider() {
+      var data = new FormData();
+      data.append("sname", this.sname);
+      data.append("simage", this.simage);
 
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {
-            // Handle unsuccessful uploads
-          },
-          () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.slider.image = downloadURL;
-              console.log("File available at", downloadURL);
-            });
+      Slider.addSlider(data, {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => {
+          if (res.data.error) {
+            console.log("errors", res.data.error);
+            alert(res.data.error);
+          } else {
+            console.log(res.data.message);
+            alert(res.data);
           }
-        );
-      }
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    watcher() {
-      db.collection("sliders").onSnapshot((querySnapshot) => {
-        this.products = [];
-        querySnapshot.forEach((doc) => {
-          this.sliders.push(doc);
+        })
+        .catch((err) => {
+          console.log(err);
         });
+    },
+
+    getSlider() {
+      Slider.getSlider().then((response) => {
+        this.sliders = response.data;
+        console.log(this.sliders);
       });
     },
 
-    updateSlider() {
-      db.collection("sliders")
-        .doc(this.active_item)
-        .update(this.slider)
-        .then(() => {
-          this.showModal = false;
-          this.watcher();
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-        });
+    uploadImage() {
+      this.simage = this.$refs.simage.files[0];
     },
 
-    editSlider(slider) {
-      this.showModal = true;
-      this.slider = slider.data();
-      this.active_item = slider.id;
-    },
-
-    deleteSlider(doc) {
-      if (confirm("Are you sure?")) {
-        db.collection("sliders")
-          .doc(doc)
-          .delete()
-          .then(() => {
-            this.watcher();
-            console.log("Document successfully deleted!");
+    deleteProduct(id) {
+      if (window.confirm("Are you want to delete this?")) {
+        Slider.deleteSlider(id)
+          .then((res) => {
+            if (res.data.error) {
+              console.log("errors", res.data);
+              alert(res.data);
+            } else {
+              console.log(res.data.message);
+              alert(res.data);
+            }
           })
-          .catch((error) => {
-            console.error("Error removing document: ", error);
+          .catch((err) => {
+            console.log(err);
           });
       }
-    },
-
-    reset() {
-      this.slider = {
-        name: "",
-        des: "",
-        image: "",
-      };
-    },
-    saveData() {
-      db.collection("sliders")
-        .add(this.slider)
-        .then((docRef) => {
-          this.reset();
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
     },
   },
 };
@@ -259,14 +210,14 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 20px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 550px;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
   display: flex;
 }
 .col-md-12 {
@@ -299,7 +250,7 @@ label {
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin-left: 25%;
+  margin:0;
 }
 .col-md-12 {
   padding: 10px;

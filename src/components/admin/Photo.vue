@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="form">
           <h3>Add Event</h3>
-          <p style="text-align:center;color:blue;">Use 900px/400px Picture</p>
+          <p style="text-align: center; color: blue">Use 900px/400px Picture</p>
           <form>
             <div class="form-group">
               <label>Occation Name</label>
@@ -12,27 +12,20 @@
                 class="form-control"
                 type="text"
                 placeholder="Event Name .."
-                v-model="gallery.occation_name"
+                v-model="gname"
               />
             </div>
             <div class="form-group">
-              <label>Description</label>
-              <textarea
-                class="form-control"
-                v-model="gallery.description"
-              ></textarea>
-            </div>
-            <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input class="form-control" type="file" @change="uploadImage" placeholder=" Use 900px/400px Picture"/>
-            </div>
-            <div class="form-group">
-              <div class="p-1">
-                <img :src="gallery.image" style="width: 80px; height: 50px" />
-              </div>
+              <input
+                class="form-control"
+                type="file"
+                ref="gimage"
+                @change="uploadImage()"
+              />
             </div>
             <div class="btn">
-              <button class="btn btn-primary" @click.prevent="saveData">
+              <button class="btn btn-primary" @click.prevent="createGallery">
                 Add Gallary
               </button>
             </div>
@@ -47,16 +40,16 @@
             <thead>
               <tr>
                 <th>Event name</th>
-                <th>Description</th>
                 <th>Image</th>
-                <th>Modify</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="gallery in gallerys" :key="gallery.id">
-                <td>{{ gallery.data().occation_name }}</td>
-                <td>{{ gallery.data().description }}</td>
-                <td>{{ gallery.data().image }}</td>
+                <td>{{ gallery.gname }}</td>
+                <td>
+                  <img :src="'/sub/storage/app/' + gallery.gimage" />
+                </td>
                 <td>
                   <button
                     @click.prevent="editProduct(gallery)"
@@ -111,7 +104,11 @@
             </div>
             <div class="form-group my-4 upload">
               <label>Upload Image</label>
-              <input type="file" @change="uploadImage" placeholder=" Use 900px/400px Picture"/>
+              <input
+                type="file"
+                @change="uploadImage"
+                placeholder=" Use 900px/400px Picture"
+              />
             </div>
             <div class="form-group">
               <div class="p-1">
@@ -139,149 +136,92 @@
 </template>
 
 <script>
-import { fb, db } from "../../firebase";
+import Gallery from "../../apis/Gallery";
+
 export default {
-  name: "Gallery",
   data() {
     return {
-      showModal: false,
+      gname: "",
+      gimage: "",
       gallerys: [],
-      gallery: {
-        occation_name: "",
-        description: "",
-        image: "",
-      },
-      active_item: null,
+      id: "",
     };
   },
 
   created() {
-    db.collection("gallerys")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          this.gallerys.push(doc);
-        });
-      });
+    this.getGallery();
   },
 
-  mounted() {
-    window.scrollTo(0, 0);
-  },
   methods: {
-    deleteImage() {},
+    createGallery() {
+      var data = new FormData();
+      data.append("gname", this.gname);
+      data.append("gimage", this.gimage);
 
-    uploadImage(e) {
-      if (e.target.files[0]) {
-        let file = e.target.files[0];
-        var storageRef = fb.storage().ref("gallerys/" + file.name);
-        let uploadTask = storageRef.put(file);
-
-        uploadTask.on(
-          "state_changed",
-          () => {},
-          () => {
-            // Handle unsuccessful uploads
-          },
-          () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-              this.gallery.image = downloadURL;
-              console.log("File available at", downloadURL);
-            });
+      Gallery.addGallery(data, {
+        header: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+        .then((res) => {
+          if (res.data.error) {
+            console.log("errors", res.data.error);
+            alert(res.data.error);
+          } else {
+            console.log(res.data.message);
+            alert(res.data);
           }
-        );
-      }
-    },
-
-    inClose() {
-      this.showModal = false;
-    },
-
-    watcher() {
-      db.collection("gallerys").onSnapshot((querySnapshot) => {
-        this.gallarys = [];
-        querySnapshot.forEach((doc) => {
-          this.gallerys.push(doc);
+        })
+        .catch((err) => {
+          console.log(err);
         });
+    },
+
+    getGallery() {
+      Gallery.getGallery().then((response) => {
+        this.gallerys = response.data;
+        console.log(this.gallerys);
       });
     },
 
-    updateProduct() {
-      db.collection("gallerys")
-        .doc(this.active_item)
-        .update(this.gallery)
-        .then(() => {
-          this.showModal = false;
-          this.watcher();
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-        });
+    uploadImage() {
+      this.gimage = this.$refs.gimage.files[0];
     },
 
-    editProduct(gallery) {
-      this.showModal = true;
-      this.gallery = gallery.data();
-      this.active_item = gallery.id;
-    },
-
-    deleteProduct(doc) {
-      if (confirm("Are you sure?")) {
-        db.collection("gallerys")
-          .doc(doc)
-          .delete()
-          .then(() => {
-            this.watcher();
-            console.log("Document successfully deleted!");
+    deleteProduct(id) {
+      if (window.confirm("Are you want to delete this?")) {
+        Gallery.deleteGallery(id)
+          .then((res) => {
+            if (res.data.error) {
+              console.log("errors", res.data);
+              alert(res.data);
+            } else {
+              console.log(res.data.message);
+              alert(res.data);
+            }
           })
-          .catch((error) => {
-            console.error("Error removing document: ", error);
+          .catch((err) => {
+            console.log(err);
           });
       }
-    },
-
-    reset() {
-      this.gallery = {
-        gallery_name: "",
-        description: "",
-        image: null,
-      };
-    },
-
-    saveData() {
-      db.collection("gallerys")
-        .add(this.gallery)
-        .then((docRef) => {
-          this.reset();
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
     },
   },
 };
 </script>
-
 
 <style scoped>
 .photo {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-top: 110px;
+  margin-top: 20px;
   background: #fff;
 }
 .row {
   width: 100%;
   height: 600px;
   padding: 20px;
-  margin-left: 25%;
+  margin: 0;
   display: flex;
 }
 .col-md-12 {
@@ -293,7 +233,6 @@ export default {
 }
 .form {
   width: 100%;
-  height: 100%;
   padding: 20px;
   background: #fff;
 }
@@ -314,7 +253,7 @@ label {
   width: 100%;
   height: 100%;
   padding: 20px;
-  margin-left: 25%;
+  margin: 0;
 }
 .col-md-12 {
   padding: 10px;

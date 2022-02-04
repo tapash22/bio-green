@@ -2,19 +2,22 @@
   <div class="products">
     <div class="container">
       <h3>Enzymes</h3>
-        <div class="row">
-          <div class="col-md-4" v-for="product in products" :key="product">
-            <div class="card">
-              <div class="card-body">
-                <img :src="product.data().image" />
-              </div>
-              <div class="card-footer">
-                <p>{{ product.data().product_name }}</p>
-                <a class="btn" @click.prevent="productDetail(product)">View</a>
-              </div>
+      <div class="row">
+        <div class="col-md-4" v-for="product in products" :key="product">
+          <div class="card">
+            <div class="card-body">
+              <img :src="'http://localhost:8000/api/storage/app/'+product.pimage" />
+            </div>
+            <div class="card-footer">
+              <p>{{ product.pdname }}</p>
+              <router-link
+                :to="{ name: 'ProductDetail', params: { id: product.id } }"
+                >Show Details</router-link
+              >
             </div>
           </div>
         </div>
+      </div>
     </div>
 
     <div class="modal" tabindex="-1" role="dialog" v-if="showModal">
@@ -34,17 +37,23 @@
           </div>
           <div class="modal-body">
             <div class="image">
-              <img :src="product.image" />
+              <img :src="product.pimage" />
             </div>
             <div class="info">
               <h5>
-                {{ product.product_name }}
+                {{ product.pdname }}
               </h5>
-              <p>{{ product.description }}</p>
+              <p>{{ product.pdescription }}</p>
             </div>
           </div>
           <div class="modal-footer">
-            <a :href="product.pdf" target="_parent"> Read Pdf </a>
+            <button
+              class="btn btn-primary"
+              @click.prevent="downloadFile"
+              target="_parent"
+            >
+              Download Pdf
+            </button>
           </div>
         </div>
       </div>
@@ -53,35 +62,23 @@
 </template>
         
 <script>
-import { db } from "../firebase";
+import Product from "../apis/Product";
 
 export default {
   data() {
     return {
       showModal: false,
       products: [],
-      product: {
-        product_name: "",
-        p_category: "",
-        sub_category: "",
-        description: "",
-        image: "",
-        pdf: "",
-      },
+      id: "",
       active_item: null,
     };
   },
 
   created() {
-    db.collection("products")
-      .where("p_category", "==", "poultry")
-      .where("sub_category", "==", "Enzymes")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          this.products.push(doc);
-        });
-      });
+    Product.getEnzymes().then((response) => {
+      this.products = response.data;
+      console.log(this.products);
+    });
   },
 
   methods: {
@@ -89,11 +86,16 @@ export default {
       this.showModal = false;
     },
 
-    productDetail(product) {
-      this.showModal = true;
-      this.product = product.data();
-      this.active_item = product.id;
-    },
+    // downloadFile() {
+    //   Product.downloadPdf(pdf).then((res) => {
+    //     const url = window.URL.createObjectURL(new Blob([res.data]));
+    //     const link = document.createElement("a");
+    //     link.href = url;
+    //     link.setAttribute("download", pdf);
+    //     document.body.appendChild(link);
+    //     link.click();
+    //   });
+    // },
   },
 
   mounted() {
