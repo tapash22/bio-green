@@ -7,7 +7,7 @@
         <div class="col-md-4" v-for="product in products" :key="product">
           <div class="card">
             <div class="card-body">
-              <img :src="product.pimage" />
+              <img :src="'/sub/storage/app/'+product.pimage" />
             </div>
             <div class="card-footer">
               <p>{{ product.pdname }}</p>
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-
+<!-- 
     <div class="modal" tabindex="-1" role="dialog" v-if="showModal">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
         

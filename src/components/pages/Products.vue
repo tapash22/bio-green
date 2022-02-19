@@ -16,7 +16,7 @@
             <div class="card-body">
               <router-link :to="product.url">
                 <div class="img">
-                  <img :src="product.img" />
+                  <img :src="'/sub/storage/app/'+product.img" />
                 </div>
               </router-link>
             </div>

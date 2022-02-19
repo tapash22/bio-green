@@ -65,7 +65,7 @@
                 <td>{{ blog.bauthor }}</td>
                 
                 <td>{{ blog.bdescription }}</td>
-                <td><img :src="blog.bimage"/></td>
+                <td><img :src="'sub/storage/app'+blog.bimage"/></td>
                 <td>
                   <button
                     @click.prevent="editBlog(blog)"

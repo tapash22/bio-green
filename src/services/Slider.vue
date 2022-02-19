@@ -1,7 +1,7 @@
 <template>
   <carousel :autoplay="4000" :nav="true" :wrap-around="true">
     <slide v-for="slider in sliders" :key="slider.id">
-      <img :src="'http://localhost:8000/api/storage/app/'+slider.simage" />
+      <img :src="'/sub/storage/app/'+slider.simage" />
     </slide>
 
     <template #addons>

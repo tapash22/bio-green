@@ -25,7 +25,7 @@
         <div class="col-md-4" v-for="blog in blogs" :key="blog.id">
           <div class="card">
             <div class="card-header">
-              <img :src="blog.bimage" />
+              <img :src="'sub/storage/app'+blog.bimage" />
             </div>
             <div class="card-body">
               <ul>

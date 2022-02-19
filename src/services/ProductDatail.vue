@@ -7,7 +7,7 @@
             <div class="image">
               <img
                 :src="
-                  'http://localhost:8000/api/storage/app/' + products.pimage
+                  '/sub/storage/app/' + products.pimage
                 "
               />
               <h3>{{ products.pdname }}</h3>
@@ -37,7 +37,7 @@
 
               <div class="des">
                 <h3>Details</h3>
-                <a :href="'http://localhost:8000/api/storage/app/'+products.ppdf">Read pdf</a>
+                <a :href="'/sub/storage/app/'+products.ppdf">Read pdf</a>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@
       >
         <div class="col-md-12" v-for="partner in partners" :key="partner.id">
           <div class="left">
-            <img :src="partner.pimage" />
+            <img :src="'/sub/storage/app/'+partner.pimage" />
           </div>
           <div class="right">
             <p>

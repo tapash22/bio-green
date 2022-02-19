@@ -10,13 +10,13 @@
         >
           <div class="card">
             <a @click.prevent="showImg(gallery)">
-              <img :src="gallery.gimage" />
+              <img :src="'/sub/storage/app/'+gallery.gimage" />
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div
+    <!-- <div
       class="modal"
       tabindex="-1"
       role="dialog"
@@ -25,10 +25,10 @@
     >
       <div class="modal-body">
         <div class="image">
-          <img :src="gallery.gimage" />
+          <img :src="'/storage/app/'+gallery.gimage" />
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     getGallerys(){
-      Gallerys.getGallerys().then((response)=>{
+      Gallerys.getGallery().then((response)=>{
         this.gallerys =response.data;
         console.log(this.gallerys);
       })

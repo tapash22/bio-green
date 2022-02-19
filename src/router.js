@@ -1,35 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Client from './components/pages/Client.vue';
-import Home from './components/pages/Home.vue';
-import About from './components/pages/About.vue';
-import Products from './components/pages/Products.vue';
-import Partners from './components/pages/Partners.vue';
-import Blog from './components/pages/Blog.vue';
-import Gallery from './components/pages/Gallery.vue';
-import Contact from './components/pages/Contact.vue';
-import Login from './components/pages/Login.vue';
-// import NotFound from './components/pages/NotFound.vue';
-import BlogItem from './services/BlogItem.vue';
-import ProductDetail from './services/ProductDatail.vue';
-
-
-import Organicminarels from './ex_page/Organicminarels.vue';
-import Feedsanitizer from './ex_page/Feedsanitizer.vue';
-import Enzymes from './ex_page/Enzymes.vue';
-import Essensialoil from './ex_page/Essensialoil.vue';
-import Probiotics from './ex_page/Probiotics.vue';
-
-import Prebioticsc from './ex_page/Prebioticsc.vue';
-import Organicminarelsc from './ex_page/Organicminarelsc.vue';
-
-import Essensialoila from './ex_page/Essensialoila.vue';
-import Probioticsa from './ex_page/Probioticsa.vue';
-import Organicminarelsa from './ex_page/Organicminarelsa.vue';
-import EnzymesC from './ex_page/EnzymesC.vue';
-
-import Poultry from './services/Poultry.vue';
-import Aqua from './services/Aqua.vue';
-import Cattle from './services/Cattle.vue';
 
 
 import Admin from './components/pages/Admin.vue';
@@ -50,36 +20,36 @@ const routes = [
         component: Client,
         redirect:'home',
         children: [
-            { path: 'home', component: Home },
-            { path: 'about', component: About,},
-            { path: 'products', component: Products, },
-            { path: 'products/:id',name:'ProductDetail', component: ProductDetail },
-            { path: 'partners', component: Partners, },
-            { path: 'blog', component: Blog, },
-            { path: 'blog/:id',name:'BlogItem', component: BlogItem },
-            { path: 'gallery', component: Gallery,},
-            { path: 'contact', component: Contact, },
-            { path: 'login',name:'Login', component: Login, },
+            { path: 'home', component:( )=>import(/* webpackChunkName: "home" */'./components/pages/Home.vue') },
+            { path: 'about', component:( )=>import(/* webpackChunkName: "about" */'./components/pages/About.vue')},
+            { path: 'products', component:( )=>import(/* webpackChunkName: "products" */'./components/pages/Products.vue') },
+            { path: 'products/:id',name:'ProductDetail', component:( )=>import(/* webpackChunkName: "ProductDetail" */'./services/ProductDatail.vue') },
+            { path: 'partners', component:( )=>import(/* webpackChunkName: "partners" */'./components/pages/Partners.vue') },
+            { path: 'blog', component:( )=>import(/* webpackChunkName: "blog" */'./components/pages/Blog.vue') },
+            { path: 'blog/:id',name:'BlogItem',component:( )=>import(/* webpackChunkName: "BlogItem" */'./services/BlogItem.vue') },
+            { path: 'gallery', component:( )=>import(/* webpackChunkName: "gallery" */'./components/pages/Gallery.vue')},
+            { path: 'contact', component:( )=>import(/* webpackChunkName: "contact" */'./components/pages/Contact.vue') },
+            { path: 'login',name:'Login', component:( )=>import(/* webpackChunkName: "login" */'./components/pages/Login.vue') },
             // { path:'/:catchAll(.*)', component: NotFound, },
 
-            { path: 'essentialoil_poultry' , component: Essensialoil },
-            { path: 'organicminerals_poultry' , component: Organicminarels },
-            { path: 'feedsanitizer_poultry' , component: Feedsanitizer },
-            { path: 'postbiotic_poultry' , name:'Probiotics', component: Probiotics },
-            { path: 'enzymes_poultry' , component: Enzymes },
+            { path: 'essentialoil_poultry' , component:( )=>import(/* webpackChunkName: "essentialoil_poultry" */'./ex_page/Essensialoil.vue') },
+            { path: 'organicminerals_poultry' , component:( )=>import(/* webpackChunkName: "organicminerals_poultry" */'./ex_page/Organicminarels.vue') },
+            { path: 'feedsanitizer_poultry' , component:( )=>import(/* webpackChunkName: "feedsanitizer_poultry" */'./ex_page/Feedsanitizer.vue') },
+            { path: 'postbiotic_poultry' , name:'Probiotics', component:( )=>import(/* webpackChunkName: "postbiotic_poultry" */'./ex_page/Probiotics.vue') },
+            { path: 'enzymes_poultry' , component:( )=>import(/* webpackChunkName: "enzymes_poultry" */'./ex_page/Enzymes.vue') },
 
-            { path: 'postbiotic_cattle' ,name:'Prebioticsc', component: Prebioticsc },
-            { path: 'organicminerals_cattle' , component: Organicminarelsc },
+            { path: 'postbiotic_cattle' ,name:'Prebioticsc', component:( )=>import(/* webpackChunkName: "postbiotic_cattle" */'./ex_page/Prebioticsc.vue') },
+            { path: 'organicminerals_cattle' , component:( )=>import(/* webpackChunkName: "organicminerals_cattle" */'./ex_page/Organicminarelsc.vue') },
 
-            { path: 'essentialoil_aqua' , component: Essensialoila },
+            { path: 'essentialoil_aqua' , component:( )=>import(/* webpackChunkName: "essentialoil_aqua" */'./ex_page/Essensialoila.vue') },
             
-            { path: 'postbiotic_aqua' ,name:'Probioticsa', component: Probioticsa },
-            { path: 'organicminerals_aqua' , component: Organicminarelsa },
-            { path: 'enzymes_aqua', component: EnzymesC },
+            { path: 'postbiotic_aqua' ,name:'Probioticsa', component:( )=>import(/* webpackChunkName: "postbiotic_aqua" */'./ex_page/Probioticsa.vue') },
+            { path: 'organicminerals_aqua' , component:( )=>import(/* webpackChunkName: "organicminerals_aqua" */'./ex_page/Organicminarelsa.vue') },
+            { path: 'enzymes_aqua', component:( )=>import(/* webpackChunkName: "enzymes_aqua" */'./ex_page/EnzymesC.vue') },
 
-            { path: 'poultry', component: Poultry },
-            { path: 'cattle', component: Cattle },
-            { path: 'aqua', component: Aqua },
+            { path: 'poultry', component:( )=>import(/* webpackChunkName: "poultry" */'./services/Poultry.vue') },
+            { path: 'cattle', component:( )=>import(/* webpackChunkName: "cattle" */'./services/Cattle.vue') },
+            { path: 'aqua', component:( )=>import(/* webpackChunkName: "aqua" */'./services/Aqua.vue') },
 
         ]
     },

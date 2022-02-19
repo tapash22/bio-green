@@ -6,7 +6,7 @@
           <div class="box">
             <h3>{{ blog.btitle }}</h3>
             <div class="image">
-              <img :src="blog.bimage" />
+              <img :src="'/sub/storage/app/'+blog.bimage" />
             </div>
             <div class="info">
               <p>

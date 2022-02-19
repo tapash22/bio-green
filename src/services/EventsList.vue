@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <div class="event-list" v-if="active_item">
         <div class="image">
-          <img src="occation.eimage" />
+          <img src="'/sub/storage/app/'+occation.eimage" />
         </div>
         <p>
           {{ occation.ename }}<br />
@@ -14,7 +14,7 @@
       <div class="tt" v-else>
         <div class="ex" v-for="occation in occations" :key="occation">
           <div class="image">
-            <img :src="occation.eimage" />
+            <img :src="'/sub/storage/app/'+occation.eimage" />
           </div>
           <p>
             <i> {{ occation.ename }}</i>
@@ -26,7 +26,7 @@
     <div class="col-md-6 event-item">
       <div class="box" v-for="occation in occations" :key="occation.id">
         <div class="box-h">
-          <img :src="occation.eimage" />
+          <img :src="'/sub/storage/app/'+occation.eimage" />
         </div>
 
         <div class="box-b">
